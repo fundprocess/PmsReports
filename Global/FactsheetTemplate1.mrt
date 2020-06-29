@@ -5248,7 +5248,7 @@
                         "Value": "{Breakdowns.Weight*100}"
                       },
                       "Argument": {
-                        "Value": "{MyFunction.GetTranslation(Breakdowns.ClassificationName,Lang)}\r\n"
+                        "Value": "{GetTranslation(Breakdowns.ClassificationName,Lang)}\r\n"
                       },
                       "Title": {
                         "Value": "Series 1"
@@ -5645,7 +5645,7 @@
                         "Value": "{Positions.Security.AssetClassificationCode}"
                       },
                       "DisplayValue": {
-                        "Value": "{MyFunction.GetTranslation(Positions.Security.AssetClassification,Lang)}"
+                        "Value": "{GetTranslation(Positions.Security.AssetClassification,Lang)}"
                       },
                       "TotalGuid": "bfa0768d0688482ea4155f53a6465666"
                     },
@@ -5671,7 +5671,7 @@
                         "Value": "{Positions.Security.RegionCode}"
                       },
                       "DisplayValue": {
-                        "Value": "{MyFunction.GetTranslation(Positions.Security.Region,Lang)}"
+                        "Value": "{GetTranslation(Positions.Security.Region,Lang)}"
                       },
                       "TotalGuid": "90bf6b484f8b4455ae3af3b9705e46f0",
                       "SortDirection": "None",
@@ -5808,7 +5808,7 @@
                             "Ident": "StiInteraction"
                           },
                           "Text": {
-                            "Value": "{MyFunction.GetTranslation(PortfolioNotes.Text,Lang)}"
+                            "Value": "{GetTranslation(PortfolioNotes.Text,Lang)}"
                           },
                           "CanBreak": true,
                           "HorAlignment": "Width",
@@ -6012,7 +6012,7 @@
                     "Ident": "StiInteraction"
                   },
                   "Text": {
-                    "Value": "•<b>&nbsp;NAV:</b> {InternalShareClasses.Nav} {InternalShareClasses.CcyIso}<br>\r\n•<b>&nbsp;Base Currency:</b> {InternalShareClasses.CcyIso}<br>\r\n•<b>&nbsp;ISIN:</b> {InternalShareClasses.Isin}<br>\r\n•<b>&nbsp;Fund Manager:</b>&nbsp;{Left(InternalShareClasses.Portfolio.Manager1.FirstName,1)}.{InternalShareClasses.Portfolio.Manager1.LastName} since <font color=\"#ff0000\">TBC</font><br>\r\n•<b>&nbsp;Fund AUM:</b> {InternalShareClasses.Portfolio.Tna} {InternalShareClasses.Portfolio.CcyIso}<br>\r\n•<b>&nbsp;Share Class AUM:</b> {InternalShareClasses.Tna} {InternalShareClasses.CcyIso}<br>\r\n•<b>&nbsp;Domicile:</b> {MyFunction.GetTranslation(InternalShareClasses.Portfolio.DomicileName,Lang)} <br>\r\n•<b>&nbsp;Dividend Policy:</b> {InternalShareClasses.DividendDistributionPolicy}<br>\r\n•<b>&nbsp;Fund Inception Date:</b> {Format(\"{0:dd/MM/yyyy}\", InternalShareClasses.Portfolio.InceptionDate)}\r\n"
+                    "Value": "•<b>&nbsp;NAV:</b> {InternalShareClasses.Nav} {InternalShareClasses.CcyIso}<br>\r\n•<b>&nbsp;Base Currency:</b> {InternalShareClasses.CcyIso}<br>\r\n•<b>&nbsp;ISIN:</b> {InternalShareClasses.Isin}<br>\r\n•<b>&nbsp;Fund Manager:</b>&nbsp;{Left(InternalShareClasses.Portfolio.Manager1.FirstName,1)}.{InternalShareClasses.Portfolio.Manager1.LastName} since <font color=\"#ff0000\">TBC</font><br>\r\n•<b>&nbsp;Fund AUM:</b> {InternalShareClasses.Portfolio.Tna} {InternalShareClasses.Portfolio.CcyIso}<br>\r\n•<b>&nbsp;Share Class AUM:</b> {InternalShareClasses.Tna} {InternalShareClasses.CcyIso}<br>\r\n•<b>&nbsp;Domicile:</b> {GetTranslation(InternalShareClasses.Portfolio.DomicileName,Lang)} <br>\r\n•<b>&nbsp;Dividend Policy:</b> {InternalShareClasses.DividendDistributionPolicy}<br>\r\n•<b>&nbsp;Fund Inception Date:</b> {Format(\"{0:dd/MM/yyyy}\", InternalShareClasses.Portfolio.InceptionDate)}\r\n"
                   },
                   "Border": ";;;;;;;solid:Black",
                   "Brush": "solid:",
@@ -6219,7 +6219,7 @@
                             "Ident": "StiInteraction"
                           },
                           "Text": {
-                            "Value": "{MyFunction.GetTranslation(LastPositions.Security.SectorClassification,Lang)}\r\n"
+                            "Value": "{GetTranslation(LastPositions.Security.SectorClassification,Lang)}\r\n"
                           },
                           "VertAlignment": "Center",
                           "Font": "Arial Narrow;6;;",
@@ -6248,7 +6248,7 @@
                             "Ident": "StiInteraction"
                           },
                           "Text": {
-                            "Value": "{\r\n(LastPositions.Security.CountryCode==\"US\")?\"USA\":MyFunction.GetTranslation(LastPositions.Security.Country,Lang)}\r\n"
+                            "Value": "{\r\n(LastPositions.Security.CountryCode==\"US\")?\"USA\":GetTranslation(LastPositions.Security.Country,Lang)}\r\n"
                           },
                           "VertAlignment": "Center",
                           "Font": "Arial Narrow;6;;",
@@ -10611,7 +10611,7 @@
                             "Ident": "StiInteraction"
                           },
                           "Text": {
-                            "Value": "{MyFunction.GetTranslation(StatisticsTree.ClassificationName,Lang)}"
+                            "Value": "{GetTranslation(StatisticsTree.ClassificationName,Lang)}"
                           },
                           "CanBreak": true,
                           "VertAlignment": "Center",
@@ -10744,7 +10744,7 @@
                     "Ident": "StiInteraction"
                   },
                   "Text": {
-                    "Value": "{MyFunction.GetTranslation(PortfolioNotes.Text,Lang)}"
+                    "Value": "{GetTranslation(PortfolioNotes.Text,Lang)}"
                   },
                   "HorAlignment": "Width",
                   "VertAlignment": "Center",
@@ -10814,7 +10814,7 @@
                     "Ident": "StiInteraction"
                   },
                   "Text": {
-                    "Value": "{MyFunction.GetTranslation(PortfolioNotes.Text,Lang)}"
+                    "Value": "{GetTranslation(PortfolioNotes.Text,Lang)}"
                   },
                   "HorAlignment": "Width",
                   "VertAlignment": "Center",
@@ -10894,7 +10894,7 @@
                     "Ident": "StiInteraction"
                   },
                   "Text": {
-                    "Value": "{MyFunction.GetTranslation(PortfolioNotes.Text,Lang)}"
+                    "Value": "{GetTranslation(PortfolioNotes.Text,Lang)}"
                   },
                   "HorAlignment": "Width",
                   "VertAlignment": "Center",
@@ -10965,7 +10965,7 @@
                     "Ident": "StiInteraction"
                   },
                   "Text": {
-                    "Value": "{MyFunction.GetTranslation(PortfolioNotes.Text,Lang)}"
+                    "Value": "{GetTranslation(PortfolioNotes.Text,Lang)}"
                   },
                   "HorAlignment": "Width",
                   "VertAlignment": "Center",
