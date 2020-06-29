@@ -1,17 +1,16 @@
 {
-  "ReportGuid": "c3a87541ca9038c017178f8c85fbb020",
+  "ReportVersion": "2020.2.3.0",
+  "ReportGuid": "0937d88361bf421cae937b92e8c1b08b",
   "ReportName": "Factsheet",
   "ReportAlias": "Factsheet",
-  "ReportFile": "Factsheet13.mrt",
   "ReportAuthor": "FundProcess",
   "ReportDescription": "FundProcess",
   "ReportCreated": "/Date(0+0100)/",
-  "ReportChanged": "/Date(1592598701000+0200)/",
+  "ReportChanged": "/Date(1593463315673+0200)/",
   "EngineVersion": "EngineV2",
-  "CalculationMode": "Interpretation",
-  "ReportUnit": "Centimeters",
-  "AutoLocalizeReportOnRun": true,
   "PreviewSettings": 268435455,
+  "AutoLocalizeReportOnRun": true,
+  "Script": "using System;\r\nusing System.Drawing;\r\nusing System.Windows.Forms;\r\nusing System.Data;\r\nusing Stimulsoft.Controls;\r\nusing Stimulsoft.Base.Drawing;\r\nusing Stimulsoft.Report;\r\nusing Stimulsoft.Report.Dialogs;\r\nusing Stimulsoft.Report.Components;\r\nusing System.Collections.Generic;\r\n\r\nnamespace Reports\r\n{\r\n\tpublic class MyFunction\r\n\t{\r\n\t\tprivate const string Category = \"MyFuncCategory\";\r\n\r\n\t\tpublic static string GetTranslation(string jsonStr,string lang)\r\n\t\t{\r\n\t\t\tif (string.IsNullOrEmpty(jsonStr))\r\n\t\t\t\treturn null;\r\n\t\t\t\t\r\n\t\t\treturn Stimulsoft.Base.Json.JsonConvert.DeserializeObject<Dictionary<string,string>>(jsonStr)[lang];\r\n\t\t}\r\n\r\n\t\tpublic static void RegisterFunctions()\r\n\t\t{\r\n\t\t\tvar ParamNames = new string[1];\r\n\t\t\tvar ParamTypes = new Type[1];\r\n\t\t\tvar ParamDescriptions = new string[1];\r\n\r\n\t\t\tParamNames[0] = \"value\";\r\n\t\t\tParamDescriptions[0] = \"Descriptions\";\r\n\t\t\tParamTypes[0] = typeof(string);\r\n\r\n\t\t\tStimulsoft.Report.Dictionary.StiFunctions.RemoveFunction(\"GetTranslation\");\r\n\t\t\tStimulsoft.Report.Dictionary.StiFunctions.AddFunction(Category, \"GetTranslation\", \"GetTranslation\", \"Description\", \r\n\t\t\t\ttypeof(MyFunction),\r\n\t\t\t\ttypeof(string), \"Return Description\", ParamTypes, ParamNames, ParamDescriptions);\r\n\t\t}\r\n\t}\r\n\t\r\n    public class Report : Stimulsoft.Report.StiReport\r\n    {\r\n        public Report()        {\r\n            this.InitializeComponent();\r\n\t\t\tMyFunction.RegisterFunctions();\r\n        }\r\n\r\n        #region StiReport Designer generated code - do not modify\r\n\t\t#endregion StiReport Designer generated code - do not modify\r\n    }\r\n}\r\n",
   "Styles": {
     "0": {
       "Ident": "StiStyle",
@@ -22,15 +21,19 @@
       "NegativeTextBrush": "solid:179,0,75"
     }
   },
+  "ReferencedAssemblies": {
+    "0": "System.Dll",
+    "1": "System.Drawing.Dll",
+    "2": "System.Windows.Forms.Dll",
+    "3": "System.Data.Dll",
+    "4": "System.Xml.Dll",
+    "5": "Stimulsoft.Controls.Dll",
+    "6": "Stimulsoft.Base.Dll",
+    "7": "Stimulsoft.Report.Dll"
+  },
   "GlobalizationStrings": {
     "0": {
-      "CultureName": "en",
-      "Items": {
-        "0": {
-          "PropertyName": "Text10.Text",
-          "Text": "Recommended \r\nminimum investment \r\nhorizon :"
-        }
-      }
+      "CultureName": "en"
     },
     "1": {
       "CultureName": "fr",
@@ -176,182 +179,224 @@
             "Index": -1,
             "NameInSource": "Id",
             "Alias": "Id",
-            "Type": "System.Int32"
+            "Type": "System.Int32",
+            "Key": "861bcbc2a94342c49c631ed05b19ecdc"
           },
           "1": {
             "Name": "InternalCode",
             "Index": -1,
             "NameInSource": "InternalCode",
             "Alias": "InternalCode",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "02d5dcb3ebef4ebea57c1e2a137f98b2"
           },
           "2": {
             "Name": "Name",
             "Index": -1,
             "NameInSource": "Name",
             "Alias": "Name",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "dff437249728437e87a81045a99d23c0"
           },
           "3": {
             "Name": "Type",
             "Index": -1,
             "NameInSource": "Type",
             "Alias": "Type",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "9d1c955f1dca4f099b1efca177993c13"
           },
           "4": {
             "Name": "CcyIso",
             "Index": -1,
             "NameInSource": "CcyIso",
             "Alias": "CcyIso",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "b3ce7fb3bdb840108affe48b665c98a9"
           },
           "5": {
             "Name": "DomicileIso2",
             "Index": -1,
             "NameInSource": "DomicileIso2",
             "Alias": "DomicileIso2",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "0f192f3555ac47e0a19482a3b14c1844"
           },
           "6": {
             "Name": "DomicileName",
             "Index": -1,
             "NameInSource": "DomicileName",
             "Alias": "DomicileName",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "6c588ae85bfa442193b47081c0201d91"
           },
           "7": {
             "Name": "BenchmarkName",
             "Index": -1,
             "NameInSource": "BenchmarkName",
             "Alias": "BenchmarkName",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "5ce089bedd7a48d6b8ec2776394cffd4"
           },
           "8": {
             "Name": "InceptionDate",
             "Index": -1,
             "NameInSource": "InceptionDate",
             "Alias": "InceptionDate",
-            "Type": "System.DateTime"
+            "Type": "System.DateTime",
+            "Key": "a73461d8a16840e7b6a12fd9b528809f"
           },
           "9": {
             "Name": "CutOffTime",
             "Index": -1,
             "NameInSource": "CutOffTime",
             "Alias": "CutOffTime",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "22804409656241a3b9943b457b7b6cd3"
           },
           "10": {
             "Name": "RecommendedTimeHorizon",
             "Index": -1,
             "NameInSource": "RecommendedTimeHorizon",
             "Alias": "RecommendedTimeHorizon",
-            "Type": "System.Decimal"
+            "Type": "System.Decimal",
+            "Key": "a436ccc439fa4f409de371036053b7bd"
           },
           "11": {
             "Name": "SettlementNbDays",
             "Index": -1,
             "NameInSource": "SettlementNbDays",
             "Alias": "SettlementNbDays",
-            "Type": "System.Int32"
+            "Type": "System.Decimal",
+            "Key": "b985f8449f844d29939a44093c21231c"
           },
           "12": {
             "Name": "PrimaryShareClassId",
             "Index": -1,
             "NameInSource": "PrimaryShareClassId",
             "Alias": "PrimaryShareClassId",
-            "Type": "System.Int32"
+            "Type": "System.Int32",
+            "Key": "8f5c285c6588417f8c7de2342e85e9c4"
           },
           "13": {
             "Name": "SicavEntityId",
             "Index": -1,
             "NameInSource": "SicavEntityId",
             "Alias": "SicavEntityId",
-            "Type": "System.Int32"
+            "Type": "System.Int32",
+            "Key": "858c2be5485443649cb898c95d804df7"
           },
           "14": {
             "Name": "InLiquidation",
             "Index": -1,
             "NameInSource": "InLiquidation",
             "Alias": "InLiquidation",
-            "Type": "System.Boolean"
+            "Type": "System.Boolean",
+            "Key": "04b6e16014e943d8a85ecbf2ecd27e27"
           },
           "15": {
             "Name": "Url",
             "Index": -1,
             "NameInSource": "Url",
             "Alias": "Url",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "e0b111b441774e6fb40b96b763e4baf9"
           },
           "16": {
             "Name": "BenchmarkId",
             "Index": -1,
             "NameInSource": "BenchmarkId",
             "Alias": "BenchmarkId",
-            "Type": "System.Int32"
+            "Type": "System.Int32",
+            "Key": "6d3b9b70b29f4aeba61cbf2ba808f76e"
           },
           "17": {
             "Name": "CustodianEntityId",
             "Index": -1,
             "NameInSource": "CustodianEntityId",
             "Alias": "CustodianEntityId",
-            "Type": "System.Int32"
+            "Type": "System.Int32",
+            "Key": "51873247e2b14f20a490d2306a850ca0"
           },
           "18": {
             "Name": "ManCoEntityId",
             "Index": -1,
             "NameInSource": "ManCoEntityId",
             "Alias": "ManCoEntityId",
-            "Type": "System.Int32"
+            "Type": "System.Int32",
+            "Key": "4d86df67b7744fa696d7bcd9a5cdb85c"
           },
           "19": {
             "Name": "Manager1EntityId",
             "Index": -1,
             "NameInSource": "Manager1EntityId",
             "Alias": "Manager1EntityId",
-            "Type": "System.Int32"
+            "Type": "System.Int32",
+            "Key": "9d6f6d6f1d70424595f103dc33826a8f"
           },
           "20": {
+            "Name": "Manager1StartDate",
+            "Index": -1,
+            "NameInSource": "Manager1StartDate",
+            "Alias": "Manager1StartDate",
+            "Type": "System.DateTime",
+            "Key": "e9b09f35211e4863af8570ddfd1a6cbc"
+          },
+          "21": {
             "Name": "Manager2EntityId",
             "Index": -1,
             "NameInSource": "Manager2EntityId",
             "Alias": "Manager2EntityId",
-            "Type": "System.Int32"
+            "Type": "System.Int32",
+            "Key": "dbcefa17c9e04aff91c543a15d2a0c3e"
           },
-          "21": {
+          "22": {
             "Name": "NavDate",
             "Index": -1,
             "NameInSource": "NavDate",
             "Alias": "NavDate",
-            "Type": "System.DateTime"
+            "Type": "System.DateTime",
+            "Key": "4b2045fffafd4126a8e16927531426a7"
           },
-          "22": {
+          "23": {
             "Name": "Nav",
             "Index": -1,
             "NameInSource": "Nav",
             "Alias": "Nav",
-            "Type": "System.Decimal"
+            "Type": "System.Decimal",
+            "Key": "6975bdbe80db4ad8b77090714ee6710f"
           },
-          "23": {
+          "24": {
             "Name": "PreviousNav",
             "Index": -1,
             "NameInSource": "PreviousNav",
             "Alias": "PreviousNav",
-            "Type": "System.Decimal"
+            "Type": "System.Decimal",
+            "Key": "64a99730b4f14711bdbe67f42b667f3e"
           },
-          "24": {
+          "25": {
             "Name": "Tna",
             "Index": -1,
             "NameInSource": "Tna",
             "Alias": "Tna",
-            "Type": "System.Decimal"
+            "Type": "System.Decimal",
+            "Key": "55ef8a82e9c841aa99de4be582c830aa"
           },
-          "25": {
+          "26": {
             "Name": "PreviousTna",
             "Index": -1,
             "NameInSource": "PreviousTna",
             "Alias": "PreviousTna",
-            "Type": "System.Decimal"
+            "Type": "System.Decimal",
+            "Key": "db1d3465f68a4a409fd01510de97e33b"
+          },
+          "27": {
+            "Name": "LiquidationDate",
+            "Index": -1,
+            "NameInSource": "LiquidationDate",
+            "Alias": "LiquidationDate",
+            "Type": "System.Nullable`1[System.DateTime]",
+            "Key": "53aa4b35761e40b4b43ff84a1cf01144"
           }
         },
         "NameInSource": "BU.Portfolios"
@@ -367,28 +412,32 @@
             "Index": -1,
             "NameInSource": "PortfolioId",
             "Alias": "PortfolioId",
-            "Type": "System.Int32"
+            "Type": "System.Int32",
+            "Key": "fa91227e945f4a3db9625cceb9dc1a71"
           },
           "1": {
             "Name": "Date",
             "Index": -1,
             "NameInSource": "Date",
             "Alias": "Date",
-            "Type": "System.DateTime"
+            "Type": "System.DateTime",
+            "Key": "eb51cc9c05ae404982520649f156214b"
           },
           "2": {
             "Name": "Tna",
             "Index": -1,
             "NameInSource": "Tna",
             "Alias": "Tna",
-            "Type": "System.Decimal"
+            "Type": "System.Decimal",
+            "Key": "bdac73de31b043d5aec7be01908975bb"
           },
           "3": {
             "Name": "TotalCash",
             "Index": -1,
             "NameInSource": "TotalCash",
             "Alias": "TotalCash",
-            "Type": "System.Decimal"
+            "Type": "System.Decimal",
+            "Key": "170babfe7d65492e9a892e20cf71f442"
           }
         },
         "NameInSource": "BU.Compositions"
@@ -404,77 +453,88 @@
             "Index": -1,
             "NameInSource": "PortfolioId",
             "Alias": "PortfolioId",
-            "Type": "System.Int32"
+            "Type": "System.Int32",
+            "Key": "9746b05d24444f51accff4bac377829b"
           },
           "1": {
             "Name": "Date",
             "Index": -1,
             "NameInSource": "Date",
             "Alias": "Date",
-            "Type": "System.DateTime"
+            "Type": "System.DateTime",
+            "Key": "41defb1015b042cd8bca37b2ce641bca"
           },
           "2": {
             "Name": "SecurityId",
             "Index": -1,
             "NameInSource": "SecurityId",
             "Alias": "SecurityId",
-            "Type": "System.Int32"
+            "Type": "System.Int32",
+            "Key": "ca6e5ae450e24ddd9f419674af64cd15"
           },
           "3": {
             "Name": "Quantity",
             "Index": -1,
             "NameInSource": "Quantity",
             "Alias": "Quantity",
-            "Type": "System.Decimal"
+            "Type": "System.Decimal",
+            "Key": "66ab78b5304d4a028041fdde57150580"
           },
           "4": {
             "Name": "CostPrice",
             "Index": -1,
             "NameInSource": "CostPrice",
             "Alias": "CostPrice",
-            "Type": "System.Decimal"
+            "Type": "System.Decimal",
+            "Key": "ffe101d55e6241e6844c1497fcca82de"
           },
           "5": {
             "Name": "BookCostInSecurityCcy",
             "Index": -1,
             "NameInSource": "BookCostInSecurityCcy",
             "Alias": "BookCostInSecurityCcy",
-            "Type": "System.Decimal"
+            "Type": "System.Decimal",
+            "Key": "65f50c6534b94934854e62b3501217be"
           },
           "6": {
             "Name": "BookCostInPortfolioCcy",
             "Index": -1,
             "NameInSource": "BookCostInPortfolioCcy",
             "Alias": "BookCostInPortfolioCcy",
-            "Type": "System.Decimal"
+            "Type": "System.Decimal",
+            "Key": "33078793c12644478ee36ccc433e2e52"
           },
           "7": {
             "Name": "MarketValueInSecurityCcy",
             "Index": -1,
             "NameInSource": "MarketValueInSecurityCcy",
             "Alias": "MarketValueInSecurityCcy",
-            "Type": "System.Decimal"
+            "Type": "System.Decimal",
+            "Key": "c01a584440a34be193f3e226c135c50d"
           },
           "8": {
             "Name": "MarketValueInPortfolioCcy",
             "Index": -1,
             "NameInSource": "MarketValueInPortfolioCcy",
             "Alias": "MarketValueInPortfolioCcy",
-            "Type": "System.Decimal"
+            "Type": "System.Decimal",
+            "Key": "6d11261aa7ad467da3546c80dfa5c49a"
           },
           "9": {
             "Name": "Weight",
             "Index": -1,
             "NameInSource": "Weight",
             "Alias": "Weight",
-            "Type": "System.Decimal"
+            "Type": "System.Decimal",
+            "Key": "aa646b85e9514791b43980f5016df4b5"
           },
           "10": {
             "Name": "OrderId",
             "Index": -1,
             "NameInSource": "OrderId",
             "Alias": "OrderId",
-            "Type": "System.Int32"
+            "Type": "System.Int32",
+            "Key": "2e1b3d84eac44bd4bad77ddb6b8def9e"
           }
         },
         "NameInSource": "BU.LastPositions"
@@ -692,154 +752,183 @@
             "Index": -1,
             "NameInSource": "Id",
             "Alias": "Id",
-            "Type": "System.Int32"
+            "Type": "System.Int32",
+            "Key": "38c661418754432aa7e94252b3507f41"
           },
           "1": {
             "Name": "PortfolioId",
             "Index": -1,
             "NameInSource": "PortfolioId",
             "Alias": "PortfolioId",
-            "Type": "System.Int32"
+            "Type": "System.Int32",
+            "Key": "2cfd5ee6f745434999a848f9a9f4791d"
           },
           "2": {
             "Name": "InternalCode",
             "Index": -1,
             "NameInSource": "InternalCode",
             "Alias": "InternalCode",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "e5806d589a6440dca13102d084518b51"
           },
           "3": {
             "Name": "Name",
             "Index": -1,
             "NameInSource": "Name",
             "Alias": "Name",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "51ff95affd3f4498852a55983cff8174"
           },
           "4": {
             "Name": "ShortName",
             "Index": -1,
             "NameInSource": "ShortName",
             "Alias": "ShortName",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "e7985caec9f841b0a12234c399312cc7"
           },
           "5": {
             "Name": "IsPrimaryShareClass",
             "Index": -1,
             "NameInSource": "IsPrimaryShareClass",
             "Alias": "IsPrimaryShareClass",
-            "Type": "System.Boolean"
+            "Type": "System.Boolean",
+            "Key": "8b3b8dd4a9144fb7a1d2bdb1ab6cd23d"
           },
           "6": {
             "Name": "Isin",
             "Index": -1,
             "NameInSource": "Isin",
             "Alias": "Isin",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "4a231db322414991bf2dd9e36ebe2964"
           },
           "7": {
             "Name": "CcyIso",
             "Index": -1,
             "NameInSource": "CcyIso",
             "Alias": "CcyIso",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "9540484f040042dc9d39733666b5e7c9"
           },
           "8": {
             "Name": "InvestorType",
             "Index": -1,
             "NameInSource": "InvestorType",
             "Alias": "InvestorType",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "684763e477f8480990e54921b32a86af"
           },
           "9": {
             "Name": "DividendDistributionPolicy",
             "Index": -1,
             "NameInSource": "DividendDistributionPolicy",
             "Alias": "DividendDistributionPolicy",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "de47a95b2764449ba3752eb464d51f00"
           },
           "10": {
             "Name": "InceptionDate",
             "Index": -1,
             "NameInSource": "InceptionDate",
             "Alias": "InceptionDate",
-            "Type": "System.DateTime"
+            "Type": "System.DateTime",
+            "Key": "05f68f261b52496d95d19b6a680673aa"
           },
           "11": {
             "Name": "IsHedged",
             "Index": -1,
             "NameInSource": "IsHedged",
             "Alias": "IsHedged",
-            "Type": "System.Boolean"
+            "Type": "System.Boolean",
+            "Key": "7b6c9001e5f7495da22f1204041bdf8e"
           },
           "12": {
             "Name": "MinimumInvestment",
             "Index": -1,
             "NameInSource": "MinimumInvestment",
             "Alias": "MinimumInvestment",
-            "Type": "System.Decimal"
+            "Type": "System.Decimal",
+            "Key": "588d5f44f0204532990eea2b3469a63d"
           },
           "13": {
             "Name": "MaximumSubscriptionFee",
             "Index": -1,
             "NameInSource": "MaximumSubscriptionFee",
             "Alias": "MaximumSubscriptionFee",
-            "Type": "System.Decimal"
+            "Type": "System.Decimal",
+            "Key": "802a58d1332342cf8efb34994c93a0e2"
           },
           "14": {
             "Name": "ManagementFee",
             "Index": -1,
             "NameInSource": "ManagementFee",
             "Alias": "ManagementFee",
-            "Type": "System.Decimal"
+            "Type": "System.Decimal",
+            "Key": "af8fd11a751d41deb530c201c91ee746"
           },
           "15": {
             "Name": "PerformanceFee",
             "Index": -1,
             "NameInSource": "PerformanceFee",
             "Alias": "PerformanceFee",
-            "Type": "System.Decimal"
+            "Type": "System.Decimal",
+            "Key": "dda7a2c9f5cd48b49a2d0ca43980b467"
           },
           "16": {
             "Name": "NavDate",
             "Index": -1,
             "NameInSource": "NavDate",
             "Alias": "NavDate",
-            "Type": "System.DateTime"
+            "Type": "System.DateTime",
+            "Key": "630ebd5b5e84456998f09a1ab403f633"
           },
           "17": {
             "Name": "Nav",
             "Index": -1,
             "NameInSource": "Nav",
             "Alias": "Nav",
-            "Type": "System.Decimal"
+            "Type": "System.Decimal",
+            "Key": "9873ccfa06d34c1a82aa8f0a272c4e94"
           },
           "18": {
+            "Name": "Nbs",
+            "Index": -1,
+            "NameInSource": "Nbs",
+            "Alias": "Nbs",
+            "Type": "System.Decimal"
+          },
+          "19": {
             "Name": "Tna",
             "Index": -1,
             "NameInSource": "Tna",
             "Alias": "Tna",
-            "Type": "System.Decimal"
+            "Type": "System.Decimal",
+            "Key": "9bf3e4e200d94e9bb18595fc5ae2bd87"
           },
-          "19": {
+          "20": {
             "Name": "EntryFee",
             "Index": -1,
             "NameInSource": "EntryFee",
             "Alias": "EntryFee",
-            "Type": "System.Decimal"
+            "Type": "System.Decimal",
+            "Key": "4d45103412994c1a8f0d45fdf37944ab"
           },
-          "20": {
+          "21": {
             "Name": "ExitFee",
             "Index": -1,
             "NameInSource": "ExitFee",
             "Alias": "ExitFee",
-            "Type": "System.Decimal"
+            "Type": "System.Decimal",
+            "Key": "ee3aafea29594319b02fb6682a77fc96"
           },
-          "21": {
+          "22": {
             "Name": "Srri",
             "Index": -1,
             "NameInSource": "Srri",
             "Alias": "Srri",
-            "Type": "System.Int32"
+            "Type": "System.Decimal",
+            "Key": "27da55dfaa8e4a658ea286ad65fdaefa"
           }
         },
         "NameInSource": "BU.InternalShareClasses"
@@ -855,189 +944,230 @@
             "Index": -1,
             "NameInSource": "Id",
             "Alias": "Id",
-            "Type": "System.Int32"
+            "Type": "System.Int32",
+            "Key": "dc4c141a4a884c5fb49231c98830876b"
           },
           "1": {
             "Name": "Type",
             "Index": -1,
             "NameInSource": "Type",
             "Alias": "Type",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "4f3e3676df30428787f7bc15c96aa39f"
           },
           "2": {
             "Name": "InternalCode",
             "Index": -1,
             "NameInSource": "InternalCode",
             "Alias": "InternalCode",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "f4c1a7cf0b2a4ee08c1a07964c15e7b9"
           },
           "3": {
             "Name": "Isin",
             "Index": -1,
             "NameInSource": "Isin",
             "Alias": "Isin",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "b559c65af36648d3b5ba2f058dde5533"
           },
           "4": {
             "Name": "BloombergCode",
             "Index": -1,
             "NameInSource": "BloombergCode",
             "Alias": "BloombergCode",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "7984191928924829b6706127c8e65c84"
           },
           "5": {
             "Name": "Name",
             "Index": -1,
             "NameInSource": "Name",
             "Alias": "Name",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "fc209b3970424226bf188a7ecf54a499"
           },
           "6": {
             "Name": "CcyIso",
             "Index": -1,
             "NameInSource": "CcyIso",
             "Alias": "CcyIso",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "35997b5e7e554e1db89b278cff4d70c5"
           },
           "7": {
             "Name": "AssetClassificationCode",
             "Index": -1,
             "NameInSource": "AssetClassificationCode",
             "Alias": "AssetClassificationCode",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "80b4f0e112774fa287ada7297a8df434"
           },
           "8": {
             "Name": "AssetClassification",
             "Index": -1,
             "NameInSource": "AssetClassification",
             "Alias": "AssetClassification",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "faed8fc7977d44ef8d1960ba785e6968"
           },
           "9": {
             "Name": "IsOtc",
             "Index": -1,
             "NameInSource": "IsOtc",
             "Alias": "IsOtc",
-            "Type": "System.Boolean"
+            "Type": "System.Boolean",
+            "Key": "f117b64e46144d3b83f940f1e6e9ffa2"
           },
           "10": {
             "Name": "PriceDate",
             "Index": -1,
             "NameInSource": "PriceDate",
             "Alias": "PriceDate",
-            "Type": "System.DateTime"
+            "Type": "System.DateTime",
+            "Key": "b9666e54a982417587852118076ccce0"
           },
           "11": {
             "Name": "Price",
             "Index": -1,
             "NameInSource": "Price",
             "Alias": "Price",
-            "Type": "System.Decimal"
+            "Type": "System.Decimal",
+            "Key": "904985d474724e0eae1c21e1cb98e438"
           },
           "12": {
             "Name": "SectorClassificationCode",
             "Index": -1,
             "NameInSource": "SectorClassificationCode",
             "Alias": "SectorClassificationCode",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "8b7a4aa7edcc4cf0b824d74d848154ed"
           },
           "13": {
             "Name": "SectorClassification",
             "Index": -1,
             "NameInSource": "SectorClassification",
             "Alias": "SectorClassification",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "2784b7baf51140eab9fdeb58a82c79a1"
           },
           "14": {
             "Name": "GeographicalClassificationCode",
             "Index": -1,
             "NameInSource": "GeographicalClassificationCode",
             "Alias": "GeographicalClassificationCode",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "25b0ee01886e44d3ae72c8dd0f8d4300"
           },
           "15": {
             "Name": "GeographicalClassification",
             "Index": -1,
             "NameInSource": "GeographicalClassification",
             "Alias": "GeographicalClassification",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "d2b3e7267f244b4283704db887e5c1a7"
           },
           "16": {
+            "Name": "Custom1ClassificationCode",
+            "Index": -1,
+            "NameInSource": "Custom1ClassificationCode",
+            "Alias": "Custom1ClassificationCode",
+            "Type": "System.String"
+          },
+          "17": {
+            "Name": "Custom1Classification",
+            "Index": -1,
+            "NameInSource": "Custom1Classification",
+            "Alias": "Custom1Classification",
+            "Type": "System.String"
+          },
+          "18": {
             "Name": "GicsSector",
             "Index": -1,
             "NameInSource": "GicsSector",
             "Alias": "GicsSector",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "ff38435d0ad94a849cd649b9443f0d91"
           },
-          "17": {
+          "19": {
             "Name": "IcbSector",
             "Index": -1,
             "NameInSource": "IcbSector",
             "Alias": "IcbSector",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "7acdaa3afbe04a72a1785465ccf1e146"
           },
-          "18": {
+          "20": {
             "Name": "CountryCode",
             "Index": -1,
             "NameInSource": "CountryCode",
             "Alias": "CountryCode",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "6482636e822b405e812e0365970c8bf5"
           },
-          "19": {
+          "21": {
             "Name": "Country",
             "Index": -1,
             "NameInSource": "Country",
             "Alias": "Country",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "08e3955ba32241c088c86fdf90fc67d6"
           },
-          "20": {
+          "22": {
             "Name": "RegionCode",
             "Index": -1,
             "NameInSource": "RegionCode",
             "Alias": "RegionCode",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "dc63b17b0ad345afad8de60d8144c688"
           },
-          "21": {
+          "23": {
             "Name": "Region",
             "Index": -1,
             "NameInSource": "Region",
             "Alias": "Region",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "917cf12b32db466db80f3d960be4a3ec"
           },
-          "22": {
+          "24": {
             "Name": "Volatility1W1Y",
             "Index": -1,
             "NameInSource": "Volatility1W1Y",
             "Alias": "Volatility1W1Y",
-            "Type": "System.Decimal"
+            "Type": "System.Decimal",
+            "Key": "ba8ae954f3944222b2b45220404ec8bf"
           },
-          "23": {
+          "25": {
             "Name": "StrikePrice",
             "Index": -1,
             "NameInSource": "StrikePrice",
             "Alias": "StrikePrice",
-            "Type": "System.Decimal"
+            "Type": "System.Decimal",
+            "Key": "86c34926cb134ff7a9959fcb078f997c"
           },
-          "24": {
+          "26": {
             "Name": "ContractSize",
             "Index": -1,
             "NameInSource": "ContractSize",
             "Alias": "ContractSize",
-            "Type": "System.Decimal"
+            "Type": "System.Decimal",
+            "Key": "fceee15b150c45ac8a80f1455005b5ed"
           },
-          "25": {
+          "27": {
             "Name": "PutCall",
             "Index": -1,
             "NameInSource": "PutCall",
             "Alias": "PutCall",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "16a26a34f03345d799ff9eed9364d1aa"
           },
-          "26": {
+          "28": {
             "Name": "MaturityDate",
             "Index": -1,
             "NameInSource": "MaturityDate",
             "Alias": "MaturityDate",
-            "Type": "System.DateTime"
+            "Type": "System.DateTime",
+            "Key": "9bc3f44b7d0d40a98b6105da9a966102"
           }
         },
         "NameInSource": "BU.Securities"
@@ -1963,43 +2093,6 @@
       },
       "16": {
         "Ident": "StiDataTableSource",
-        "Name": "DueDiligenceTasks",
-        "Alias": "DueDiligenceTasks",
-        "Key": "6a65fd4d21074c678a10accc4c5293f5",
-        "Columns": {
-          "0": {
-            "Name": "DueDiligenceId",
-            "Index": -1,
-            "NameInSource": "DueDiligenceId",
-            "Alias": "DueDiligenceId",
-            "Type": "System.Int32"
-          },
-          "1": {
-            "Name": "Comment",
-            "Index": -1,
-            "NameInSource": "Comment",
-            "Alias": "Comment",
-            "Type": "System.String"
-          },
-          "2": {
-            "Name": "RelatedFile",
-            "Index": -1,
-            "NameInSource": "RelatedFile",
-            "Alias": "RelatedFile",
-            "Type": "System.String"
-          },
-          "3": {
-            "Name": "Status",
-            "Index": -1,
-            "NameInSource": "Status",
-            "Alias": "Status",
-            "Type": "System.String"
-          }
-        },
-        "NameInSource": "BU.DueDiligenceTasks"
-      },
-      "17": {
-        "Ident": "StiDataTableSource",
         "Name": "DueDiligences",
         "Alias": "DueDiligences",
         "Key": "8e90be4482d24019b96a160f0ad20725",
@@ -2091,6 +2184,43 @@
         },
         "NameInSource": "BU.DueDiligences"
       },
+      "17": {
+        "Ident": "StiDataTableSource",
+        "Name": "DueDiligenceTasks",
+        "Alias": "DueDiligenceTasks",
+        "Key": "6a65fd4d21074c678a10accc4c5293f5",
+        "Columns": {
+          "0": {
+            "Name": "DueDiligenceId",
+            "Index": -1,
+            "NameInSource": "DueDiligenceId",
+            "Alias": "DueDiligenceId",
+            "Type": "System.Int32"
+          },
+          "1": {
+            "Name": "Comment",
+            "Index": -1,
+            "NameInSource": "Comment",
+            "Alias": "Comment",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "RelatedFile",
+            "Index": -1,
+            "NameInSource": "RelatedFile",
+            "Alias": "RelatedFile",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "Status",
+            "Index": -1,
+            "NameInSource": "Status",
+            "Alias": "Status",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "BU.DueDiligenceTasks"
+      },
       "18": {
         "Ident": "StiDataTableSource",
         "Name": "Entities",
@@ -2102,166 +2232,312 @@
             "Index": -1,
             "NameInSource": "Id",
             "Alias": "Id",
-            "Type": "System.Int32"
+            "Type": "System.Int32",
+            "Key": "aeb85228c3224faf8f7010d66c1dd2fe"
           },
           "1": {
             "Name": "InternalCode",
             "Index": -1,
             "NameInSource": "InternalCode",
             "Alias": "InternalCode",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "91ef0b06e45341589b6cfd5c1f1870a6"
           },
           "2": {
+            "Name": "Name",
+            "Index": -1,
+            "NameInSource": "Name",
+            "Alias": "Name",
+            "Type": "System.String"
+          },
+          "3": {
             "Name": "Type",
             "Index": -1,
             "NameInSource": "Type",
             "Alias": "Type",
-            "Type": "System.String"
-          },
-          "3": {
-            "Name": "CompanyName",
-            "Index": -1,
-            "NameInSource": "CompanyName",
-            "Alias": "CompanyName",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "a612065c5c8845258e9d8418a447450e"
           },
           "4": {
             "Name": "PreferredLanguageCode",
             "Index": -1,
             "NameInSource": "PreferredLanguageCode",
             "Alias": "PreferredLanguageCode",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "7b90af86d05a4b0fbd51107f49fc0b85"
           },
           "5": {
             "Name": "Country",
             "Index": -1,
             "NameInSource": "Country",
             "Alias": "Country",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "c85aff9bfb4740029bc969f66a5289b0"
           },
           "6": {
             "Name": "Regulated",
             "Index": -1,
             "NameInSource": "Regulated",
             "Alias": "Regulated",
-            "Type": "System.Boolean"
+            "Type": "System.Boolean",
+            "Key": "336c4df1335b40cb90ae109f6edf890a"
           },
           "7": {
             "Name": "CssfEquivalentSupervision",
             "Index": -1,
             "NameInSource": "CssfEquivalentSupervision",
             "Alias": "CssfEquivalentSupervision",
-            "Type": "System.Boolean"
+            "Type": "System.Boolean",
+            "Key": "3cbf44f949a240abbf74181d6584abdb"
           },
           "8": {
             "Name": "DiscretionaryManagementLicensed",
             "Index": -1,
             "NameInSource": "DiscretionaryManagementLicensed",
             "Alias": "DiscretionaryManagementLicensed",
-            "Type": "System.Boolean"
+            "Type": "System.Boolean",
+            "Key": "8542c28bbc2841a79664cd706512fef3"
           },
           "9": {
             "Name": "Aifm",
             "Index": -1,
             "NameInSource": "Aifm",
             "Alias": "Aifm",
-            "Type": "System.Boolean"
+            "Type": "System.Boolean",
+            "Key": "a2cf01c8ae47404dab549a95daf680cc"
           },
           "10": {
             "Name": "FirstName",
             "Index": -1,
             "NameInSource": "FirstName",
             "Alias": "FirstName",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "7e1126809d3f491baad138a622240349"
           },
           "11": {
             "Name": "LastName",
             "Index": -1,
             "NameInSource": "LastName",
             "Alias": "LastName",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "14d8280040364a37864ad14c13683775"
           },
           "12": {
             "Name": "Email",
             "Index": -1,
             "NameInSource": "Email",
             "Alias": "Email",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "1a54cb08aa5449a1ab671d36f56301f1"
           },
           "13": {
             "Name": "Title",
             "Index": -1,
             "NameInSource": "Title",
             "Alias": "Title",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "d5a8cb58cf5b413eae18ee350ae95ddb"
           },
           "14": {
             "Name": "StreetAddress",
             "Index": -1,
             "NameInSource": "StreetAddress",
             "Alias": "StreetAddress",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "0ecd75e5447044df986aba32f2eddffe"
           },
           "15": {
             "Name": "ZipCode",
             "Index": -1,
             "NameInSource": "ZipCode",
             "Alias": "ZipCode",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "f8ce4173dbaf4a04bbc8878fc5a6e2a2"
           },
           "16": {
             "Name": "Location",
             "Index": -1,
             "NameInSource": "Location",
             "Alias": "Location",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "b38cfa553f23421cb940845190df4e7f"
           },
           "17": {
             "Name": "CountryCode",
             "Index": -1,
             "NameInSource": "CountryCode",
             "Alias": "CountryCode",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "924fff8fa5f84019a8621f8739aceeba"
           },
           "18": {
             "Name": "PhoneNumber",
             "Index": -1,
             "NameInSource": "PhoneNumber",
             "Alias": "PhoneNumber",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "031aa2929ac649fd97ecfbb42096c066"
           },
           "19": {
             "Name": "IdentificationNumber",
             "Index": -1,
             "NameInSource": "IdentificationNumber",
             "Alias": "IdentificationNumber",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "403b47a87ec9414fa2deae71027ce14a"
           },
           "20": {
             "Name": "VAT",
             "Index": -1,
             "NameInSource": "VAT",
             "Alias": "VAT",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "e1bac3120cc240f3b31f3ab305e3dad4"
           },
           "21": {
             "Name": "RegistrationNumber",
             "Index": -1,
             "NameInSource": "RegistrationNumber",
             "Alias": "RegistrationNumber",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "a2c6985a3d314abcab61bd04f820b265"
           },
           "22": {
             "Name": "YearEnd",
             "Index": -1,
             "NameInSource": "YearEnd",
             "Alias": "YearEnd",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "67443bd8466c4b8d888a8e148a5cd860"
           }
         },
         "NameInSource": "BU.Entities"
       },
       "19": {
+        "Ident": "StiDataTableSource",
+        "Name": "Sicavs",
+        "Alias": "Sicavs",
+        "Key": "8d3170ff81204699adc108dbb27cb814",
+        "Columns": {
+          "0": {
+            "Name": "EntityId",
+            "Index": -1,
+            "NameInSource": "EntityId",
+            "Alias": "EntityId",
+            "Type": "System.Int32",
+            "Key": "cdc3c4332b2c41b684517e94d207a4b4"
+          },
+          "1": {
+            "Name": "IssuerEntityId",
+            "Index": -1,
+            "NameInSource": "IssuerEntityId",
+            "Alias": "IssuerEntityId",
+            "Type": "System.Int32",
+            "Key": "20643b12980847799a20dabb26f3ed53"
+          },
+          "2": {
+            "Name": "LegalForm",
+            "Index": -1,
+            "NameInSource": "LegalForm",
+            "Alias": "LegalForm",
+            "Type": "System.String",
+            "Key": "f1ce038e701e41ff889d28a32a6947cb"
+          },
+          "3": {
+            "Name": "SicavType",
+            "Index": -1,
+            "NameInSource": "SicavType",
+            "Alias": "SicavType",
+            "Type": "System.String",
+            "Key": "15fa0bb2929a4dfe824e1f83b4f98d8e"
+          },
+          "4": {
+            "Name": "CustodianEntityId",
+            "Index": -1,
+            "NameInSource": "CustodianEntityId",
+            "Alias": "CustodianEntityId",
+            "Type": "System.Int32",
+            "Key": "ce0b0f7c15664a1787f8c08f68fb8c5c"
+          },
+          "5": {
+            "Name": "ManCoEntityId",
+            "Index": -1,
+            "NameInSource": "ManCoEntityId",
+            "Alias": "ManCoEntityId",
+            "Type": "System.Int32",
+            "Key": "30f5574b112d41669ea2b6479dab93d8"
+          },
+          "6": {
+            "Name": "ManCoStartDate",
+            "Index": -1,
+            "NameInSource": "ManCoStartDate",
+            "Alias": "ManCoStartDate",
+            "Type": "System.DateTime"
+          },
+          "7": {
+            "Name": "ReferenceCurrencyIso",
+            "Index": -1,
+            "NameInSource": "ReferenceCurrencyIso",
+            "Alias": "ReferenceCurrencyIso",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "BU.Sicavs"
+      },
+      "20": {
+        "Ident": "StiDataTableSource",
+        "Name": "SicavRoles",
+        "Alias": "SicavRoles",
+        "Key": "5377361b01e842c98dcf9c1003752e1c",
+        "Columns": {
+          "0": {
+            "Name": "SicavEntityId",
+            "Index": -1,
+            "NameInSource": "SicavEntityId",
+            "Alias": "SicavEntityId",
+            "Type": "System.Int32",
+            "Key": "52da464ca7ce4957ab93b79d42bfc898"
+          },
+          "1": {
+            "Name": "RoleProviderEntityId",
+            "Index": -1,
+            "NameInSource": "RoleProviderEntityId",
+            "Alias": "RoleProviderEntityId",
+            "Type": "System.Int32",
+            "Key": "0d480be5a7694cedaba4c90b81d79adc"
+          },
+          "2": {
+            "Name": "StartDate",
+            "Index": -1,
+            "NameInSource": "StartDate",
+            "Alias": "StartDate",
+            "Type": "System.DateTime"
+          },
+          "3": {
+            "Name": "RoleCode",
+            "Index": -1,
+            "NameInSource": "RoleCode",
+            "Alias": "RoleCode",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "RoleName",
+            "Index": -1,
+            "NameInSource": "RoleName",
+            "Alias": "RoleName",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "RoleDomain",
+            "Index": -1,
+            "NameInSource": "RoleDomain",
+            "Alias": "RoleDomain",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "BU.SicavRoles"
+      },
+      "21": {
         "Ident": "StiDataTableSource",
         "Name": "ForecastedCashFlows",
         "Alias": "ForecastedCashFlows",
@@ -2305,86 +2581,7 @@
         },
         "NameInSource": "BU.ForecastedCashFlows"
       },
-      "20": {
-        "Ident": "StiDataTableSource",
-        "Name": "LastAccountBalances",
-        "Alias": "LastAccountBalances",
-        "Key": "ab8f8267bc114b6aa181ded72bcba6fb",
-        "Columns": {
-          "0": {
-            "Name": "Id",
-            "Index": -1,
-            "NameInSource": "Id",
-            "Alias": "Id",
-            "Type": "System.Int32"
-          },
-          "1": {
-            "Name": "PortfolioId",
-            "Index": -1,
-            "NameInSource": "PortfolioId",
-            "Alias": "PortfolioId",
-            "Type": "System.Int32"
-          },
-          "2": {
-            "Name": "Date",
-            "Index": -1,
-            "NameInSource": "Date",
-            "Alias": "Date",
-            "Type": "System.DateTime"
-          },
-          "3": {
-            "Name": "AccountingChartCode",
-            "Index": -1,
-            "NameInSource": "AccountingChartCode",
-            "Alias": "AccountingChartCode",
-            "Type": "System.String"
-          },
-          "4": {
-            "Name": "AccountingChartLabel",
-            "Index": -1,
-            "NameInSource": "AccountingChartLabel",
-            "Alias": "AccountingChartLabel",
-            "Type": "System.String"
-          },
-          "5": {
-            "Name": "AccountName",
-            "Index": -1,
-            "NameInSource": "AccountName",
-            "Alias": "AccountName",
-            "Type": "System.String"
-          },
-          "6": {
-            "Name": "AccountNumber",
-            "Index": -1,
-            "NameInSource": "AccountNumber",
-            "Alias": "AccountNumber",
-            "Type": "System.String"
-          },
-          "7": {
-            "Name": "Balance",
-            "Index": -1,
-            "NameInSource": "Balance",
-            "Alias": "Balance",
-            "Type": "System.Decimal"
-          },
-          "8": {
-            "Name": "BalanceInPortfolioCcy",
-            "Index": -1,
-            "NameInSource": "BalanceInPortfolioCcy",
-            "Alias": "BalanceInPortfolioCcy",
-            "Type": "System.Decimal"
-          },
-          "9": {
-            "Name": "CurrencyIso",
-            "Index": -1,
-            "NameInSource": "CurrencyIso",
-            "Alias": "CurrencyIso",
-            "Type": "System.String"
-          }
-        },
-        "NameInSource": "BU.LastAccountBalances"
-      },
-      "21": {
+      "22": {
         "Ident": "StiDataTableSource",
         "Name": "LastCashMovements",
         "Alias": "LastCashMovements",
@@ -2477,7 +2674,7 @@
         },
         "NameInSource": "BU.LastCashMovements"
       },
-      "22": {
+      "23": {
         "Ident": "StiDataTableSource",
         "Name": "LastSecurityTransactions",
         "Alias": "LastSecurityTransactions",
@@ -2563,7 +2760,7 @@
         },
         "NameInSource": "BU.LastSecurityTransactions"
       },
-      "23": {
+      "24": {
         "Ident": "StiDataTableSource",
         "Name": "PortfolioClassifications",
         "Alias": "PortfolioClassifications",
@@ -2607,7 +2804,7 @@
         },
         "NameInSource": "BU.PortfolioClassifications"
       },
-      "24": {
+      "25": {
         "Ident": "StiDataTableSource",
         "Name": "PortfolioHistValues",
         "Alias": "PortfolioHistValues",
@@ -2618,54 +2815,75 @@
             "Index": -1,
             "NameInSource": "PortfolioId",
             "Alias": "PortfolioId",
-            "Type": "System.Int32"
+            "Type": "System.Int32",
+            "Key": "79189c79539f4467b6a57cd775c2f796"
           },
           "1": {
             "Name": "Date",
             "Index": -1,
             "NameInSource": "Date",
             "Alias": "Date",
-            "Type": "System.DateTime"
+            "Type": "System.DateTime",
+            "Key": "8c1b895299dc423292220e0034dbf574"
           },
           "2": {
             "Name": "Nav",
             "Index": -1,
             "NameInSource": "Nav",
             "Alias": "Nav",
-            "Type": "System.Decimal"
+            "Type": "System.Decimal",
+            "Key": "08170363a9894ad6b3fee7a0733d164d"
           },
           "3": {
             "Name": "BenchmarkAdjustedPrice",
             "Index": -1,
             "NameInSource": "BenchmarkAdjustedPrice",
             "Alias": "BenchmarkAdjustedPrice",
-            "Type": "System.Decimal"
+            "Type": "System.Decimal",
+            "Key": "0aef3e3c329b4a04a0b7a75a2ffb5736"
           },
           "4": {
             "Name": "Tna",
             "Index": -1,
             "NameInSource": "Tna",
             "Alias": "Tna",
-            "Type": "System.Decimal"
+            "Type": "System.Decimal",
+            "Key": "c73926b9e13d4e09b45a96a84618eccf"
           },
           "5": {
             "Name": "Sub",
             "Index": -1,
             "NameInSource": "Sub",
             "Alias": "Sub",
-            "Type": "System.Decimal"
+            "Type": "System.Decimal",
+            "Key": "e4cec8f5e4084d6ba15d798abdb076d0"
           },
           "6": {
             "Name": "Red",
             "Index": -1,
             "NameInSource": "Red",
             "Alias": "Red",
+            "Type": "System.Decimal",
+            "Key": "af4df62a582440ddb1f040eb975b1c07"
+          },
+          "7": {
+            "Name": "SubAmount",
+            "Index": -1,
+            "NameInSource": "SubAmount",
+            "Alias": "SubAmount",
+            "Type": "System.Decimal"
+          },
+          "8": {
+            "Name": "RedAmount",
+            "Index": -1,
+            "NameInSource": "RedAmount",
+            "Alias": "RedAmount",
             "Type": "System.Decimal"
           }
         },
         "NameInSource": "BU.PortfolioHistValues"
       },
-      "25": {
+      "26": {
         "Ident": "StiDataTableSource",
         "Name": "PortfolioNotes",
         "Alias": "PortfolioNotes",
@@ -2676,47 +2894,53 @@
             "Index": -1,
             "NameInSource": "PortfolioId",
             "Alias": "PortfolioId",
-            "Type": "System.Int32"
+            "Type": "System.Int32",
+            "Key": "14f646fc374e433e8af3be7d6922e519"
           },
           "1": {
             "Name": "Date",
             "Index": -1,
             "NameInSource": "Date",
             "Alias": "Date",
-            "Type": "System.DateTime"
+            "Type": "System.DateTime",
+            "Key": "89b62da0bbc14bb18132d2bb190b12a4"
           },
           "2": {
             "Name": "Label",
             "Index": -1,
             "NameInSource": "Label",
             "Alias": "Label",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "42228561794343b7b3c528450d22119f"
           },
           "3": {
             "Name": "Text",
             "Index": -1,
             "NameInSource": "Text",
             "Alias": "Text",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "40bf7512995b408a9980703caff8dea3"
           },
           "4": {
             "Name": "AuthorEntityId",
             "Index": -1,
             "NameInSource": "AuthorEntityId",
             "Alias": "AuthorEntityId",
-            "Type": "System.Int32"
+            "Type": "System.Int32",
+            "Key": "c37d08886ad44161892da57da1de5bb0"
           },
           "5": {
             "Name": "LastModificationDate",
             "Index": -1,
             "NameInSource": "LastModificationDate",
             "Alias": "LastModificationDate",
-            "Type": "System.DateTime"
+            "Type": "System.DateTime",
+            "Key": "22159a40c3e64911a5c02600294ea004"
           }
         },
         "NameInSource": "BU.PortfolioNotes"
       },
-      "26": {
+      "27": {
         "Ident": "StiDataTableSource",
         "Name": "Roles",
         "Alias": "Roles",
@@ -2781,7 +3005,7 @@
         },
         "NameInSource": "BU.Roles"
       },
-      "27": {
+      "28": {
         "Ident": "StiDataTableSource",
         "Name": "SecurityClassifications",
         "Alias": "SecurityClassifications",
@@ -2839,7 +3063,7 @@
         },
         "NameInSource": "BU.SecurityClassifications"
       },
-      "28": {
+      "29": {
         "Ident": "StiDataTableSource",
         "Name": "SecurityTransactions",
         "Alias": "SecurityTransactions",
@@ -2925,7 +3149,7 @@
         },
         "NameInSource": "BU.SecurityTransactions"
       },
-      "29": {
+      "30": {
         "Ident": "StiDataTableSource",
         "Name": "ShareClassHistValues",
         "Alias": "ShareClassHistValues",
@@ -2990,7 +3214,7 @@
         },
         "NameInSource": "BU.ShareClassHistValues"
       },
-      "30": {
+      "31": {
         "Ident": "StiDataTableSource",
         "Name": "SicavNotes",
         "Alias": "SicavNotes",
@@ -3001,103 +3225,51 @@
             "Index": -1,
             "NameInSource": "SicavEntityId",
             "Alias": "SicavEntityId",
-            "Type": "System.Int32"
+            "Type": "System.Int32",
+            "Key": "b4cc2001ce614c6891bdf2dabc05995c"
           },
           "1": {
             "Name": "Date",
             "Index": -1,
             "NameInSource": "Date",
             "Alias": "Date",
-            "Type": "System.DateTime"
+            "Type": "System.DateTime",
+            "Key": "6f73627af9e34a2993a416573b6af6a7"
           },
           "2": {
             "Name": "Label",
             "Index": -1,
             "NameInSource": "Label",
             "Alias": "Label",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "7056b40667044d9ab0782a70c1dcdf5e"
           },
           "3": {
             "Name": "Text",
             "Index": -1,
             "NameInSource": "Text",
             "Alias": "Text",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "3011d9677a18472a8464a0a98121fa11"
           },
           "4": {
             "Name": "AuthorEntityId",
             "Index": -1,
             "NameInSource": "AuthorEntityId",
             "Alias": "AuthorEntityId",
-            "Type": "System.Int32"
+            "Type": "System.Int32",
+            "Key": "ecbb71274a27434ca056ce99b61aded2"
           },
           "5": {
             "Name": "LastModificationDate",
             "Index": -1,
             "NameInSource": "LastModificationDate",
             "Alias": "LastModificationDate",
-            "Type": "System.DateTime"
+            "Type": "System.DateTime",
+            "Key": "ac386a140613428aa738b3109d0dca2d"
           }
         },
         "NameInSource": "BU.SicavNotes"
-      },
-      "31": {
-        "Ident": "StiDataTableSource",
-        "Name": "SicavServiceProviders",
-        "Alias": "SicavServiceProviders",
-        "Key": "44fac1c41da347d3aee32497263274d3",
-        "Columns": {
-          "0": {
-            "Name": "SicavEntityId",
-            "Index": -1,
-            "NameInSource": "SicavEntityId",
-            "Alias": "SicavEntityId",
-            "Type": "System.Int32"
-          },
-          "1": {
-            "Name": "ServiceProviderEntityId",
-            "Index": -1,
-            "NameInSource": "ServiceProviderEntityId",
-            "Alias": "ServiceProviderEntityId",
-            "Type": "System.Int32"
-          },
-          "2": {
-            "Name": "StartDate",
-            "Index": -1,
-            "NameInSource": "StartDate",
-            "Alias": "StartDate",
-            "Type": "System.DateTime"
-          },
-          "3": {
-            "Name": "EndDate",
-            "Index": -1,
-            "NameInSource": "EndDate",
-            "Alias": "EndDate",
-            "Type": "System.DateTime"
-          },
-          "4": {
-            "Name": "RoleCode",
-            "Index": -1,
-            "NameInSource": "RoleCode",
-            "Alias": "RoleCode",
-            "Type": "System.String"
-          },
-          "5": {
-            "Name": "RoleName",
-            "Index": -1,
-            "NameInSource": "RoleName",
-            "Alias": "RoleName",
-            "Type": "System.String"
-          },
-          "6": {
-            "Name": "RoleDomain",
-            "Index": -1,
-            "NameInSource": "RoleDomain",
-            "Alias": "RoleDomain",
-            "Type": "System.String"
-          }
-        },
-        "NameInSource": "BU.SicavServiceProviders"
       },
       "32": {
         "Ident": "StiDataTableSource",
@@ -3143,6 +3315,823 @@
           }
         },
         "NameInSource": "BU.TimeFrames"
+      },
+      "33": {
+        "Ident": "StiDataTableSource",
+        "Name": "LastAccountBalances",
+        "Alias": "LastAccountBalances",
+        "Key": "ab8f8267bc114b6aa181ded72bcba6fb",
+        "Columns": {
+          "0": {
+            "Name": "Id",
+            "Index": -1,
+            "NameInSource": "Id",
+            "Alias": "Id",
+            "Type": "System.Int32"
+          },
+          "1": {
+            "Name": "PortfolioId",
+            "Index": -1,
+            "NameInSource": "PortfolioId",
+            "Alias": "PortfolioId",
+            "Type": "System.Int32"
+          },
+          "2": {
+            "Name": "Date",
+            "Index": -1,
+            "NameInSource": "Date",
+            "Alias": "Date",
+            "Type": "System.DateTime"
+          },
+          "3": {
+            "Name": "AccountingChartCode",
+            "Index": -1,
+            "NameInSource": "AccountingChartCode",
+            "Alias": "AccountingChartCode",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "AccountingChartLabel",
+            "Index": -1,
+            "NameInSource": "AccountingChartLabel",
+            "Alias": "AccountingChartLabel",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "AccountName",
+            "Index": -1,
+            "NameInSource": "AccountName",
+            "Alias": "AccountName",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "AccountNumber",
+            "Index": -1,
+            "NameInSource": "AccountNumber",
+            "Alias": "AccountNumber",
+            "Type": "System.String"
+          },
+          "7": {
+            "Name": "Balance",
+            "Index": -1,
+            "NameInSource": "Balance",
+            "Alias": "Balance",
+            "Type": "System.Decimal"
+          },
+          "8": {
+            "Name": "BalanceInPortfolioCcy",
+            "Index": -1,
+            "NameInSource": "BalanceInPortfolioCcy",
+            "Alias": "BalanceInPortfolioCcy",
+            "Type": "System.Decimal"
+          },
+          "9": {
+            "Name": "CurrencyIso",
+            "Index": -1,
+            "NameInSource": "CurrencyIso",
+            "Alias": "CurrencyIso",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "BU.LastAccountBalances"
+      },
+      "34": {
+        "Ident": "StiDataTableSource",
+        "Name": "LastFinancialStatements",
+        "Alias": "LastFinancialStatements",
+        "Key": "4b666cf178ea4f4eb2220f4a76d87b8c",
+        "Columns": {
+          "0": {
+            "Name": "PortfolioId",
+            "Index": -1,
+            "NameInSource": "PortfolioId",
+            "Alias": "PortfolioId",
+            "Type": "System.Int32",
+            "Key": "06e966e4f068440795f3fbc6f0b5c547"
+          },
+          "1": {
+            "Name": "Date",
+            "Index": -1,
+            "NameInSource": "Date",
+            "Alias": "Date",
+            "Type": "System.DateTime",
+            "Key": "66509365631c479fb7413842f03ae90b"
+          },
+          "2": {
+            "Name": "TnaBeginOfPeriod",
+            "Index": -1,
+            "NameInSource": "TnaBeginOfPeriod",
+            "Alias": "TnaBeginOfPeriod",
+            "Type": "System.Decimal",
+            "Key": "c4705e228b4c421ba45c485647f46065"
+          },
+          "3": {
+            "Name": "Assets_InvestmentsPortfolio",
+            "Index": -1,
+            "NameInSource": "Assets_InvestmentsPortfolio",
+            "Alias": "Assets_InvestmentsPortfolio",
+            "Type": "System.Decimal",
+            "Key": "2cc06ea893a7421ba3f03daa19402f5e"
+          },
+          "4": {
+            "Name": "Assets_OptionsPurchased",
+            "Index": -1,
+            "NameInSource": "Assets_OptionsPurchased",
+            "Alias": "Assets_OptionsPurchased",
+            "Type": "System.Decimal",
+            "Key": "d7c53ba64896481b8e59d0a94c7dc1f5"
+          },
+          "5": {
+            "Name": "Assets_CashAtBank",
+            "Index": -1,
+            "NameInSource": "Assets_CashAtBank",
+            "Alias": "Assets_CashAtBank",
+            "Type": "System.Decimal",
+            "Key": "8a7fce48eb0549b9b53189466426ab1b"
+          },
+          "6": {
+            "Name": "Assets_AmountsReceivableOnSaleOfInvestments",
+            "Index": -1,
+            "NameInSource": "Assets_AmountsReceivableOnSaleOfInvestments",
+            "Alias": "Assets_AmountsReceivableOnSaleOfInvestments",
+            "Type": "System.Decimal",
+            "Key": "7974a45baa904990ae15b29d4ad66bd5"
+          },
+          "7": {
+            "Name": "Assets_InterestAndDividendsReceivable",
+            "Index": -1,
+            "NameInSource": "Assets_InterestAndDividendsReceivable",
+            "Alias": "Assets_InterestAndDividendsReceivable",
+            "Type": "System.Decimal",
+            "Key": "54af1797c4574bb6952a1939ff786f91"
+          },
+          "8": {
+            "Name": "Assets_OtherAssets",
+            "Index": -1,
+            "NameInSource": "Assets_OtherAssets",
+            "Alias": "Assets_OtherAssets",
+            "Type": "System.Decimal",
+            "Key": "d212c132257845ec9d5d0a0fb391a1c9"
+          },
+          "9": {
+            "Name": "Liabilities_OptionsShortPosition",
+            "Index": -1,
+            "NameInSource": "Liabilities_OptionsShortPosition",
+            "Alias": "Liabilities_OptionsShortPosition",
+            "Type": "System.Decimal",
+            "Key": "e4587eccf5de44ec80b5198517c0ca2d"
+          },
+          "10": {
+            "Name": "Liabilities_PayableOnPurchaseOfInvestments",
+            "Index": -1,
+            "NameInSource": "Liabilities_PayableOnPurchaseOfInvestments",
+            "Alias": "Liabilities_PayableOnPurchaseOfInvestments",
+            "Type": "System.Decimal",
+            "Key": "e599ae4f9c5946e4a532a9e36b1bb7d1"
+          },
+          "11": {
+            "Name": "Liabilities_PayableOnRedemptions",
+            "Index": -1,
+            "NameInSource": "Liabilities_PayableOnRedemptions",
+            "Alias": "Liabilities_PayableOnRedemptions",
+            "Type": "System.Decimal",
+            "Key": "6786178391e7421eaef302f306714190"
+          },
+          "12": {
+            "Name": "Liabilities_ManagementFeesPayable",
+            "Index": -1,
+            "NameInSource": "Liabilities_ManagementFeesPayable",
+            "Alias": "Liabilities_ManagementFeesPayable",
+            "Type": "System.Decimal",
+            "Key": "cbe186a73eea4c2685d062f119f46b9c"
+          },
+          "13": {
+            "Name": "Liabilities_PerformanceFeesPayable",
+            "Index": -1,
+            "NameInSource": "Liabilities_PerformanceFeesPayable",
+            "Alias": "Liabilities_PerformanceFeesPayable",
+            "Type": "System.Decimal",
+            "Key": "00e9bff233d145ada61abee9ab4c2614"
+          },
+          "14": {
+            "Name": "Liabilities_TaxesAndExpensesPayable",
+            "Index": -1,
+            "NameInSource": "Liabilities_TaxesAndExpensesPayable",
+            "Alias": "Liabilities_TaxesAndExpensesPayable",
+            "Type": "System.Decimal",
+            "Key": "d136e7c5b7dd471fabd72f1f9f5ccd63"
+          },
+          "15": {
+            "Name": "Liabilities_OtherLiabilities",
+            "Index": -1,
+            "NameInSource": "Liabilities_OtherLiabilities",
+            "Alias": "Liabilities_OtherLiabilities",
+            "Type": "System.Decimal",
+            "Key": "c6f8d0724162478aadbac49894a09c22"
+          },
+          "16": {
+            "Name": "Income_Dividends",
+            "Index": -1,
+            "NameInSource": "Income_Dividends",
+            "Alias": "Income_Dividends",
+            "Type": "System.Decimal",
+            "Key": "16c19fabc320431b8c43814d47c02bb0"
+          },
+          "17": {
+            "Name": "Income_BondInterests",
+            "Index": -1,
+            "NameInSource": "Income_BondInterests",
+            "Alias": "Income_BondInterests",
+            "Type": "System.Decimal",
+            "Key": "056cc7150e4647fa963b8bee33abe760"
+          },
+          "18": {
+            "Name": "Income_BankInterests",
+            "Index": -1,
+            "NameInSource": "Income_BankInterests",
+            "Alias": "Income_BankInterests",
+            "Type": "System.Decimal",
+            "Key": "012a18c919da4a91b1fbd1bc57ce7b4b"
+          },
+          "19": {
+            "Name": "Income_TrailerFees",
+            "Index": -1,
+            "NameInSource": "Income_TrailerFees",
+            "Alias": "Income_TrailerFees",
+            "Type": "System.Decimal",
+            "Key": "c333523797cc48b882916d79da1c6238"
+          },
+          "20": {
+            "Name": "Income_OtherIncome",
+            "Index": -1,
+            "NameInSource": "Income_OtherIncome",
+            "Alias": "Income_OtherIncome",
+            "Type": "System.Decimal",
+            "Key": "5f0d3d7d0b09441eaa23a5cbdabf09f6"
+          },
+          "21": {
+            "Name": "Expenses_ManagementFees",
+            "Index": -1,
+            "NameInSource": "Expenses_ManagementFees",
+            "Alias": "Expenses_ManagementFees",
+            "Type": "System.Decimal",
+            "Key": "7657bf6d72054b08ae01f001e8bc78b7"
+          },
+          "22": {
+            "Name": "Expenses_PerformanceFees",
+            "Index": -1,
+            "NameInSource": "Expenses_PerformanceFees",
+            "Alias": "Expenses_PerformanceFees",
+            "Type": "System.Decimal",
+            "Key": "5dc1afdebed44b5a80f6de9c62f05c0f"
+          },
+          "23": {
+            "Name": "Expenses_DepositaryFees",
+            "Index": -1,
+            "NameInSource": "Expenses_DepositaryFees",
+            "Alias": "Expenses_DepositaryFees",
+            "Type": "System.Decimal",
+            "Key": "189526ac1d6149399c113fa7f14bd568"
+          },
+          "24": {
+            "Name": "Expenses_DomiciliationAdministrationTransferAgentFees",
+            "Index": -1,
+            "NameInSource": "Expenses_DomiciliationAdministrationTransferAgentFees",
+            "Alias": "Expenses_DomiciliationAdministrationTransferAgentFees",
+            "Type": "System.Decimal",
+            "Key": "3365a4dfe41e4d6fb031c2baf7df66f7"
+          },
+          "25": {
+            "Name": "Expenses_AuditPrintingPublicationExpenses",
+            "Index": -1,
+            "NameInSource": "Expenses_AuditPrintingPublicationExpenses",
+            "Alias": "Expenses_AuditPrintingPublicationExpenses",
+            "Type": "System.Decimal",
+            "Key": "93116b82b4db40618e2fc2436e62c560"
+          },
+          "26": {
+            "Name": "Expenses_LiquidationFees",
+            "Index": -1,
+            "NameInSource": "Expenses_LiquidationFees",
+            "Alias": "Expenses_LiquidationFees",
+            "Type": "System.Decimal",
+            "Key": "3520637d477c4f8aa7e75df4f070e294"
+          },
+          "27": {
+            "Name": "Expenses_SubscriptionTax",
+            "Index": -1,
+            "NameInSource": "Expenses_SubscriptionTax",
+            "Alias": "Expenses_SubscriptionTax",
+            "Type": "System.Decimal",
+            "Key": "fe4aa754925e450ab7297a83373db456"
+          },
+          "28": {
+            "Name": "Expenses_BankCharges",
+            "Index": -1,
+            "NameInSource": "Expenses_BankCharges",
+            "Alias": "Expenses_BankCharges",
+            "Type": "System.Decimal",
+            "Key": "fbc139398c284b67ac3c3b5ab82e4b93"
+          },
+          "29": {
+            "Name": "Expenses_InterestPaid",
+            "Index": -1,
+            "NameInSource": "Expenses_InterestPaid",
+            "Alias": "Expenses_InterestPaid",
+            "Type": "System.Decimal",
+            "Key": "b3fca5ff931d4aa286a081e63acb90ed"
+          },
+          "30": {
+            "Name": "Expenses_FormationExpensesAmortization",
+            "Index": -1,
+            "NameInSource": "Expenses_FormationExpensesAmortization",
+            "Alias": "Expenses_FormationExpensesAmortization",
+            "Type": "System.Decimal",
+            "Key": "f8cff72a42f64da0ba85713328a7a00a"
+          },
+          "31": {
+            "Name": "Expenses_LegalFees",
+            "Index": -1,
+            "NameInSource": "Expenses_LegalFees",
+            "Alias": "Expenses_LegalFees",
+            "Type": "System.Decimal",
+            "Key": "f4d9e02f4e4c42fb8b907be69ea966b4"
+          },
+          "32": {
+            "Name": "Expenses_OtherCharges",
+            "Index": -1,
+            "NameInSource": "Expenses_OtherCharges",
+            "Alias": "Expenses_OtherCharges",
+            "Type": "System.Decimal",
+            "Key": "4734938a4dcd49d88b396a50c12be911"
+          },
+          "33": {
+            "Name": "Realized_NetRealisedOnSalesOfInvestments",
+            "Index": -1,
+            "NameInSource": "Realized_NetRealisedOnSalesOfInvestments",
+            "Alias": "Realized_NetRealisedOnSalesOfInvestments",
+            "Type": "System.Decimal",
+            "Key": "b650be99784244f59bb9b39aebec76c7"
+          },
+          "34": {
+            "Name": "Realized_NetRealisedOnOptions",
+            "Index": -1,
+            "NameInSource": "Realized_NetRealisedOnOptions",
+            "Alias": "Realized_NetRealisedOnOptions",
+            "Type": "System.Decimal",
+            "Key": "62d5d0b0a84e4beb8971658868d389c7"
+          },
+          "35": {
+            "Name": "Realized_NetRealisedOnForeignExchange",
+            "Index": -1,
+            "NameInSource": "Realized_NetRealisedOnForeignExchange",
+            "Alias": "Realized_NetRealisedOnForeignExchange",
+            "Type": "System.Decimal",
+            "Key": "2c77816d7bdf4b62a505002a42181aa2"
+          },
+          "36": {
+            "Name": "Unrealized_ChangeInNetUnrealisedOnInvestments",
+            "Index": -1,
+            "NameInSource": "Unrealized_ChangeInNetUnrealisedOnInvestments",
+            "Alias": "Unrealized_ChangeInNetUnrealisedOnInvestments",
+            "Type": "System.Decimal",
+            "Key": "b4ce6b6a3d894cf1957e16c73d6ce24a"
+          },
+          "37": {
+            "Name": "Unrealized_ChangeInNetUnrealisedOnOptions",
+            "Index": -1,
+            "NameInSource": "Unrealized_ChangeInNetUnrealisedOnOptions",
+            "Alias": "Unrealized_ChangeInNetUnrealisedOnOptions",
+            "Type": "System.Decimal",
+            "Key": "923a0e54fa66424bb1d4a37abc444276"
+          },
+          "38": {
+            "Name": "Capital_SubscriptionsOfshares",
+            "Index": -1,
+            "NameInSource": "Capital_SubscriptionsOfshares",
+            "Alias": "Capital_SubscriptionsOfshares",
+            "Type": "System.Decimal",
+            "Key": "71ab76a663f84d5b9006982feea3db81"
+          },
+          "39": {
+            "Name": "Capital_RedemptionsOfShares",
+            "Index": -1,
+            "NameInSource": "Capital_RedemptionsOfShares",
+            "Alias": "Capital_RedemptionsOfShares",
+            "Type": "System.Decimal",
+            "Key": "a331745e24e046b0a0073cc57085fd1e"
+          },
+          "40": {
+            "Name": "Capital_DividendPaidOut",
+            "Index": -1,
+            "NameInSource": "Capital_DividendPaidOut",
+            "Alias": "Capital_DividendPaidOut",
+            "Type": "System.Decimal",
+            "Key": "16a397bb09ed416e8e54d480eb723a62"
+          }
+        },
+        "NameInSource": "BU.LastFinancialStatements"
+      },
+      "35": {
+        "Ident": "StiDataTableSource",
+        "Name": "FinancialStatementsFxRates",
+        "Alias": "FinancialStatementsFxRates",
+        "Key": "5bed8cd6dac4428ea65a594515673649",
+        "Columns": {
+          "0": {
+            "Name": "Date",
+            "Index": -1,
+            "NameInSource": "Date",
+            "Alias": "Date",
+            "Type": "System.DateTime"
+          },
+          "1": {
+            "Name": "Rate",
+            "Index": -1,
+            "NameInSource": "Rate",
+            "Alias": "Rate",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "CurrencyFromIso",
+            "Index": -1,
+            "NameInSource": "CurrencyFromIso",
+            "Alias": "CurrencyFromIso",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "CurrencyToIso",
+            "Index": -1,
+            "NameInSource": "CurrencyToIso",
+            "Alias": "CurrencyToIso",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "BU.FinancialStatementsFxRates"
+      },
+      "36": {
+        "Ident": "StiDataTableSource",
+        "Name": "FinancialStatements",
+        "Alias": "FinancialStatements",
+        "Key": "671f263c36d1482aa48154a505f9f6f7",
+        "Columns": {
+          "0": {
+            "Name": "PortfolioId",
+            "Index": -1,
+            "NameInSource": "PortfolioId",
+            "Alias": "PortfolioId",
+            "Type": "System.Decimal",
+            "Key": "159ed9ee4ac54de09ed4b26166a770c8"
+          },
+          "1": {
+            "Name": "Date",
+            "Index": -1,
+            "NameInSource": "Date",
+            "Alias": "Date",
+            "Type": "System.DateTime"
+          },
+          "2": {
+            "Name": "TnaBeginOfPeriod",
+            "Index": -1,
+            "NameInSource": "TnaBeginOfPeriod",
+            "Alias": "TnaBeginOfPeriod",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "Assets_InvestmentsPortfolio",
+            "Index": -1,
+            "NameInSource": "Assets_InvestmentsPortfolio",
+            "Alias": "Assets_InvestmentsPortfolio",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "Assets_OptionsPurchased",
+            "Index": -1,
+            "NameInSource": "Assets_OptionsPurchased",
+            "Alias": "Assets_OptionsPurchased",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "Assets_CashAtBank",
+            "Index": -1,
+            "NameInSource": "Assets_CashAtBank",
+            "Alias": "Assets_CashAtBank",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "Assets_AmountsReceivableOnSaleOfInvestments",
+            "Index": -1,
+            "NameInSource": "Assets_AmountsReceivableOnSaleOfInvestments",
+            "Alias": "Assets_AmountsReceivableOnSaleOfInvestments",
+            "Type": "System.Decimal"
+          },
+          "7": {
+            "Name": "Assets_InterestAndDividendsReceivable",
+            "Index": -1,
+            "NameInSource": "Assets_InterestAndDividendsReceivable",
+            "Alias": "Assets_InterestAndDividendsReceivable",
+            "Type": "System.Decimal"
+          },
+          "8": {
+            "Name": "Assets_OtherAssets",
+            "Index": -1,
+            "NameInSource": "Assets_OtherAssets",
+            "Alias": "Assets_OtherAssets",
+            "Type": "System.Decimal"
+          },
+          "9": {
+            "Name": "Liabilities_OptionsShortPosition",
+            "Index": -1,
+            "NameInSource": "Liabilities_OptionsShortPosition",
+            "Alias": "Liabilities_OptionsShortPosition",
+            "Type": "System.Decimal"
+          },
+          "10": {
+            "Name": "Liabilities_PayableOnPurchaseOfInvestments",
+            "Index": -1,
+            "NameInSource": "Liabilities_PayableOnPurchaseOfInvestments",
+            "Alias": "Liabilities_PayableOnPurchaseOfInvestments",
+            "Type": "System.Decimal"
+          },
+          "11": {
+            "Name": "Liabilities_PayableOnRedemptions",
+            "Index": -1,
+            "NameInSource": "Liabilities_PayableOnRedemptions",
+            "Alias": "Liabilities_PayableOnRedemptions",
+            "Type": "System.Decimal"
+          },
+          "12": {
+            "Name": "Liabilities_ManagementFeesPayable",
+            "Index": -1,
+            "NameInSource": "Liabilities_ManagementFeesPayable",
+            "Alias": "Liabilities_ManagementFeesPayable",
+            "Type": "System.Decimal"
+          },
+          "13": {
+            "Name": "Liabilities_PerformanceFeesPayable",
+            "Index": -1,
+            "NameInSource": "Liabilities_PerformanceFeesPayable",
+            "Alias": "Liabilities_PerformanceFeesPayable",
+            "Type": "System.Decimal"
+          },
+          "14": {
+            "Name": "Liabilities_TaxesAndExpensesPayable",
+            "Index": -1,
+            "NameInSource": "Liabilities_TaxesAndExpensesPayable",
+            "Alias": "Liabilities_TaxesAndExpensesPayable",
+            "Type": "System.Decimal"
+          },
+          "15": {
+            "Name": "Liabilities_OtherLiabilities",
+            "Index": -1,
+            "NameInSource": "Liabilities_OtherLiabilities",
+            "Alias": "Liabilities_OtherLiabilities",
+            "Type": "System.Decimal"
+          },
+          "16": {
+            "Name": "Income_Dividends",
+            "Index": -1,
+            "NameInSource": "Income_Dividends",
+            "Alias": "Income_Dividends",
+            "Type": "System.Decimal"
+          },
+          "17": {
+            "Name": "Income_BondInterests",
+            "Index": -1,
+            "NameInSource": "Income_BondInterests",
+            "Alias": "Income_BondInterests",
+            "Type": "System.Decimal"
+          },
+          "18": {
+            "Name": "Income_BankInterests",
+            "Index": -1,
+            "NameInSource": "Income_BankInterests",
+            "Alias": "Income_BankInterests",
+            "Type": "System.Decimal"
+          },
+          "19": {
+            "Name": "Income_TrailerFees",
+            "Index": -1,
+            "NameInSource": "Income_TrailerFees",
+            "Alias": "Income_TrailerFees",
+            "Type": "System.Decimal"
+          },
+          "20": {
+            "Name": "Income_OtherIncome",
+            "Index": -1,
+            "NameInSource": "Income_OtherIncome",
+            "Alias": "Income_OtherIncome",
+            "Type": "System.Decimal"
+          },
+          "21": {
+            "Name": "Expenses_ManagementFees",
+            "Index": -1,
+            "NameInSource": "Expenses_ManagementFees",
+            "Alias": "Expenses_ManagementFees",
+            "Type": "System.Decimal"
+          },
+          "22": {
+            "Name": "Expenses_PerformanceFees",
+            "Index": -1,
+            "NameInSource": "Expenses_PerformanceFees",
+            "Alias": "Expenses_PerformanceFees",
+            "Type": "System.Decimal"
+          },
+          "23": {
+            "Name": "Expenses_DepositaryFees",
+            "Index": -1,
+            "NameInSource": "Expenses_DepositaryFees",
+            "Alias": "Expenses_DepositaryFees",
+            "Type": "System.Decimal"
+          },
+          "24": {
+            "Name": "Expenses_DomiciliationAdministrationTransferAgentFees",
+            "Index": -1,
+            "NameInSource": "Expenses_DomiciliationAdministrationTransferAgentFees",
+            "Alias": "Expenses_DomiciliationAdministrationTransferAgentFees",
+            "Type": "System.Decimal"
+          },
+          "25": {
+            "Name": "Expenses_AuditPrintingPublicationExpenses",
+            "Index": -1,
+            "NameInSource": "Expenses_AuditPrintingPublicationExpenses",
+            "Alias": "Expenses_AuditPrintingPublicationExpenses",
+            "Type": "System.Decimal"
+          },
+          "26": {
+            "Name": "Expenses_LiquidationFees",
+            "Index": -1,
+            "NameInSource": "Expenses_LiquidationFees",
+            "Alias": "Expenses_LiquidationFees",
+            "Type": "System.Decimal"
+          },
+          "27": {
+            "Name": "Expenses_SubscriptionTax",
+            "Index": -1,
+            "NameInSource": "Expenses_SubscriptionTax",
+            "Alias": "Expenses_SubscriptionTax",
+            "Type": "System.Decimal"
+          },
+          "28": {
+            "Name": "Expenses_BankCharges",
+            "Index": -1,
+            "NameInSource": "Expenses_BankCharges",
+            "Alias": "Expenses_BankCharges",
+            "Type": "System.Decimal"
+          },
+          "29": {
+            "Name": "Expenses_InterestPaid",
+            "Index": -1,
+            "NameInSource": "Expenses_InterestPaid",
+            "Alias": "Expenses_InterestPaid",
+            "Type": "System.Decimal"
+          },
+          "30": {
+            "Name": "Expenses_FormationExpensesAmortization",
+            "Index": -1,
+            "NameInSource": "Expenses_FormationExpensesAmortization",
+            "Alias": "Expenses_FormationExpensesAmortization",
+            "Type": "System.Decimal"
+          },
+          "31": {
+            "Name": "Expenses_LegalFees",
+            "Index": -1,
+            "NameInSource": "Expenses_LegalFees",
+            "Alias": "Expenses_LegalFees",
+            "Type": "System.Decimal"
+          },
+          "32": {
+            "Name": "Expenses_OtherCharges",
+            "Index": -1,
+            "NameInSource": "Expenses_OtherCharges",
+            "Alias": "Expenses_OtherCharges",
+            "Type": "System.Decimal"
+          },
+          "33": {
+            "Name": "Realized_NetRealisedOnSalesOfInvestments",
+            "Index": -1,
+            "NameInSource": "Realized_NetRealisedOnSalesOfInvestments",
+            "Alias": "Realized_NetRealisedOnSalesOfInvestments",
+            "Type": "System.Decimal"
+          },
+          "34": {
+            "Name": "Realized_NetRealisedOnOptions",
+            "Index": -1,
+            "NameInSource": "Realized_NetRealisedOnOptions",
+            "Alias": "Realized_NetRealisedOnOptions",
+            "Type": "System.Decimal"
+          },
+          "35": {
+            "Name": "Realized_NetRealisedOnForeignExchange",
+            "Index": -1,
+            "NameInSource": "Realized_NetRealisedOnForeignExchange",
+            "Alias": "Realized_NetRealisedOnForeignExchange",
+            "Type": "System.Decimal"
+          },
+          "36": {
+            "Name": "Unrealized_ChangeInNetUnrealisedOnInvestments",
+            "Index": -1,
+            "NameInSource": "Unrealized_ChangeInNetUnrealisedOnInvestments",
+            "Alias": "Unrealized_ChangeInNetUnrealisedOnInvestments",
+            "Type": "System.Decimal"
+          },
+          "37": {
+            "Name": "Unrealized_ChangeInNetUnrealisedOnOptions",
+            "Index": -1,
+            "NameInSource": "Unrealized_ChangeInNetUnrealisedOnOptions",
+            "Alias": "Unrealized_ChangeInNetUnrealisedOnOptions",
+            "Type": "System.Decimal"
+          },
+          "38": {
+            "Name": "Capital_SubscriptionsOfshares",
+            "Index": -1,
+            "NameInSource": "Capital_SubscriptionsOfshares",
+            "Alias": "Capital_SubscriptionsOfshares",
+            "Type": "System.Decimal"
+          },
+          "39": {
+            "Name": "Capital_RedemptionsOfShares",
+            "Index": -1,
+            "NameInSource": "Capital_RedemptionsOfShares",
+            "Alias": "Capital_RedemptionsOfShares",
+            "Type": "System.Decimal"
+          },
+          "40": {
+            "Name": "Capital_DividendPaidOut",
+            "Index": -1,
+            "NameInSource": "Capital_DividendPaidOut",
+            "Alias": "Capital_DividendPaidOut",
+            "Type": "System.Decimal"
+          }
+        },
+        "NameInSource": "BU.FinancialStatements"
+      },
+      "37": {
+        "Ident": "StiDataTableSource",
+        "Name": "ShareClassStatements",
+        "Alias": "ShareClassStatements",
+        "Key": "642a496e335d491ab9be5f4629e78a50",
+        "Columns": {
+          "0": {
+            "Name": "PortfolioId",
+            "Index": -1,
+            "NameInSource": "PortfolioId",
+            "Alias": "PortfolioId",
+            "Type": "System.Int32",
+            "Key": "28f94fba247c4605b35c9d68e5c344be"
+          },
+          "1": {
+            "Name": "ShareClassId",
+            "Index": -1,
+            "NameInSource": "ShareClassId",
+            "Alias": "ShareClassId",
+            "Type": "System.Int32",
+            "Key": "73750b35c1814577b98921c3c2bc9ed6"
+          },
+          "2": {
+            "Name": "Date",
+            "Index": -1,
+            "NameInSource": "Date",
+            "Alias": "Date",
+            "Type": "System.DateTime"
+          },
+          "3": {
+            "Name": "Tna",
+            "Index": -1,
+            "NameInSource": "Tna",
+            "Alias": "Tna",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "Nav",
+            "Index": -1,
+            "NameInSource": "Nav",
+            "Alias": "Nav",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "Nbs",
+            "Index": -1,
+            "NameInSource": "Nbs",
+            "Alias": "Nbs",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "NbsIssuedYtd",
+            "Index": -1,
+            "NameInSource": "NbsIssuedYtd",
+            "Alias": "NbsIssuedYtd",
+            "Type": "System.Decimal"
+          },
+          "7": {
+            "Name": "NbsRedeemedYtd",
+            "Index": -1,
+            "NameInSource": "NbsRedeemedYtd",
+            "Alias": "NbsRedeemedYtd",
+            "Type": "System.Decimal"
+          }
+        },
+        "NameInSource": "BU.ShareClassStatements"
       }
     },
     "Databases": {
@@ -3151,7 +4140,7 @@
         "Name": "BU",
         "Alias": "BU",
         "Key": "ecb9425b5dbd4959bb76e73fc1192cea",
-        "PathData": "C:\\Users\\frede\\OneDrive\\Bureau\\Factsheet template\\DictionaryJson.json"
+        "PathData": "C:\\Users\\frede\\OneDrive - FundProcess\\OPERATIONS\\REPORTING\\Daily report\\DictionaryJson.json"
       }
     },
     "Relations": {
@@ -3393,8 +4382,216 @@
         },
         "NameInSource": "PortfolioSicavEntity",
         "Alias": "SicavEntity",
+        "Key": "37c2a90f3cd741638ac8db768d84390b",
         "ParentSource": "Entities",
         "ChildSource": "Portfolios"
+      },
+      "17": {
+        "Name": "Portfolio",
+        "ChildColumns": {
+          "0": "PortfolioId"
+        },
+        "ParentColumns": {
+          "0": "Id"
+        },
+        "NameInSource": "FinancialStatementsPortfolio",
+        "Alias": "Portfolio",
+        "Active": true,
+        "Key": "2eeb905909f44e93b1a4f2fd195a942a",
+        "ParentSource": "Portfolios",
+        "ChildSource": "LastFinancialStatements"
+      },
+      "18": {
+        "Name": "Manager1Role",
+        "ChildColumns": {
+          "0": "Manager1EntityId"
+        },
+        "ParentColumns": {
+          "0": "EntityId"
+        },
+        "NameInSource": "PortfolioManager1ToRole",
+        "Alias": "Manager1Role",
+        "Key": "5457ab7d9199421e90a6cf87f7d683bf",
+        "ParentSource": "Roles",
+        "ChildSource": "Portfolios"
+      },
+      "19": {
+        "Name": "Issuer",
+        "ChildColumns": {
+          "0": "IssuerEntityId"
+        },
+        "ParentColumns": {
+          "0": "Id"
+        },
+        "NameInSource": "SicavIssuer",
+        "Alias": "Issuer",
+        "Key": "5b45f68525124c0e864d423cfd7fe09b",
+        "ParentSource": "Entities",
+        "ChildSource": "Sicavs"
+      },
+      "20": {
+        "Name": "Entity",
+        "ChildColumns": {
+          "0": "EntityId"
+        },
+        "ParentColumns": {
+          "0": "Id"
+        },
+        "NameInSource": "SicavEntity",
+        "Alias": "Entity",
+        "Key": "253548ae145c40eb9d17e1d162b085a3",
+        "ParentSource": "Entities",
+        "ChildSource": "Sicavs"
+      },
+      "21": {
+        "Name": "ManCo",
+        "ChildColumns": {
+          "0": "ManCoEntityId"
+        },
+        "ParentColumns": {
+          "0": "Id"
+        },
+        "NameInSource": "SicavMancoEntity",
+        "Alias": "ManCo",
+        "Key": "e094895b7b0b4933819d3ae79ecaef55",
+        "ParentSource": "Entities",
+        "ChildSource": "Sicavs"
+      },
+      "22": {
+        "Name": "RoleProviderEntity",
+        "ChildColumns": {
+          "0": "RoleProviderEntityId"
+        },
+        "ParentColumns": {
+          "0": "Id"
+        },
+        "NameInSource": "SicavRoleProviderEntity",
+        "Alias": "RoleProviderEntity",
+        "Key": "30e7bfc348064bf9841df56db5e0d76e",
+        "ParentSource": "Entities",
+        "ChildSource": "SicavRoles"
+      },
+      "23": {
+        "Name": "SicavEntity",
+        "ChildColumns": {
+          "0": "SicavEntityId"
+        },
+        "ParentColumns": {
+          "0": "Id"
+        },
+        "NameInSource": "SicavRoleEntity",
+        "Alias": "SicavEntity",
+        "Key": "23f00a0ee18c4aa49c22034da0e6e9ff",
+        "ParentSource": "Entities",
+        "ChildSource": "SicavRoles"
+      },
+      "24": {
+        "Name": "InternalShareClass",
+        "ChildColumns": {
+          "0": "ShareClassId"
+        },
+        "ParentColumns": {
+          "0": "Id"
+        },
+        "NameInSource": "ShareClassStatementsInternalShareClass",
+        "Alias": "InternalShareClass",
+        "ParentSource": "InternalShareClasses",
+        "ChildSource": "ShareClassStatements"
+      },
+      "25": {
+        "Name": "Portfolio",
+        "ChildColumns": {
+          "0": "PortfolioId"
+        },
+        "ParentColumns": {
+          "0": "Id"
+        },
+        "NameInSource": "ShareClassStatementsPortfolio",
+        "Alias": "Portfolio",
+        "ParentSource": "Portfolios",
+        "ChildSource": "ShareClassStatements"
+      },
+      "26": {
+        "Name": "Entity",
+        "ChildColumns": {
+          "0": "EntityId"
+        },
+        "ParentColumns": {
+          "0": "Id"
+        },
+        "NameInSource": "CounterpartyEntity",
+        "Alias": "Entity",
+        "ParentSource": "Entities",
+        "ChildSource": "Counterparties"
+      },
+      "27": {
+        "Name": "Portfolio",
+        "ChildColumns": {
+          "0": "PortfolioId"
+        },
+        "ParentColumns": {
+          "0": "Id"
+        },
+        "NameInSource": "PortfolioHistValuesPortfolio",
+        "Alias": "Portfolio",
+        "Key": "d2641b3b1d6848789c96a777b5d97a1e",
+        "ParentSource": "Portfolios",
+        "ChildSource": "PortfolioHistValues"
+      },
+      "28": {
+        "Name": "DueDiligence",
+        "ChildColumns": {
+          "0": "DueDiligenceId"
+        },
+        "ParentColumns": {
+          "0": "Id"
+        },
+        "NameInSource": "DueDiligenceTaskDueDiligence",
+        "Alias": "DueDiligence",
+        "ParentSource": "DueDiligences",
+        "ChildSource": "DueDiligenceTasks"
+      },
+      "29": {
+        "Name": "Entity",
+        "ChildColumns": {
+          "0": "EntityId"
+        },
+        "ParentColumns": {
+          "0": "Id"
+        },
+        "NameInSource": "DueDiligenceEntity",
+        "Alias": "Entity",
+        "Active": true,
+        "Key": "5c7214d0e3c14325a6c563723e69e642",
+        "ParentSource": "Entities",
+        "ChildSource": "DueDiligences"
+      },
+      "30": {
+        "Name": "Portfolio",
+        "ChildColumns": {
+          "0": "SubFundId"
+        },
+        "ParentColumns": {
+          "0": "Id"
+        },
+        "NameInSource": "ForecastedCashFlowPortfolio",
+        "Alias": "Portfolio",
+        "Active": true,
+        "ParentSource": "Portfolios",
+        "ChildSource": "ForecastedCashFlows"
+      },
+      "31": {
+        "Name": "Role",
+        "ChildColumns": {
+          "0": "EntityId"
+        },
+        "ParentColumns": {
+          "0": "EntityId"
+        },
+        "NameInSource": "DueDiligencesRole",
+        "Alias": "Role",
+        "ParentSource": "Roles",
+        "ChildSource": "DueDiligences"
       }
     }
   },
@@ -3442,8 +4639,7 @@
                   "Brush": "solid:",
                   "ImageURL": {
                     "Value": "resource://IdFd"
-                  },
-                  "ImageBytes": ""
+                  }
                 },
                 "1": {
                   "Ident": "StiText",
@@ -3563,7 +4759,7 @@
                     "Ident": "StiInteraction"
                   },
                   "Text": {
-                    "Value": "Recommended \r\nminimum investment \r\nhorizon:"
+                    "Value": "Recommended \r\nminimum investment \r\nhorizon :"
                   },
                   "Font": "Arial Narrow;;;",
                   "Border": ";;;;;;;solid:Black",
@@ -4052,7 +5248,7 @@
                         "Value": "{Breakdowns.Weight*100}"
                       },
                       "Argument": {
-                        "Value": "{Breakdowns.ClassificationName.Substring(\r\nBreakdowns.ClassificationName.IndexOf(\"<\"+Lang+\">\")+4,\r\n(  \r\nBreakdowns.ClassificationName.IndexOf(\"</\"+Lang+\">\")\r\n-(Breakdowns.ClassificationName.IndexOf(\"<\"+Lang+\">\")+4)\r\n)\r\n)}\r\n"
+                        "Value": "{MyFunction.GetTranslation(Breakdowns.ClassificationName,Lang)}\r\n"
                       },
                       "Title": {
                         "Value": "Series 1"
@@ -4100,15 +5296,16 @@
                       "Ident": "StiYLeftAxis",
                       "Labels": {
                         "Font": "Arial Narrow;6;;",
+                        "Placement": "AutoRotation",
                         "WordWrap": true
+                      },
+                      "Ticks": {
+                        "Visible": false
                       },
                       "LineColor": "140,140,140",
                       "Title": {
                         "Color": "140,140,140",
                         "Direction": "BottomToTop"
-                      },
-                      "Ticks": {
-                        "Visible": false
                       }
                     },
                     "YRightAxis": {
@@ -4146,7 +5343,7 @@
                     }
                   },
                   "Table": {
-                    "GridLineColor": "Transparent",
+                    "GridLineColor": "225,225,225",
                     "Header": {
                       "Brush": "solid:White"
                     },
@@ -4170,7 +5367,7 @@
                   },
                   "Legend": {
                     "ShowShadow": false,
-                    "BorderColor": "Transparent",
+                    "BorderColor": "225,225,225",
                     "Brush": "solid:255,255,255",
                     "TitleColor": "105,105,105",
                     "LabelsColor": "140,140,140",
@@ -4316,25 +5513,6 @@
                       "TypeOfComponent": "LeftTitle"
                     },
                     "1": {
-                      "Ident": "StiCrossTitle",
-                      "Name": "CrossTitle4",
-                      "Guid": "af34fcd0c0234f0290f84f0a7b7ffb38",
-                      "ClientRectangle": "3.05,0,1.4,0.4",
-                      "Restrictions": "AllowMove, AllowResize, AllowSelect, AllowChange",
-                      "Enabled": false,
-                      "Interaction": {
-                        "Ident": "StiInteraction"
-                      },
-                      "Text": {
-                        "Value": "Date"
-                      },
-                      "Font": "Arial Narrow;;;",
-                      "Border": "Bottom;155,155,155;;;;;;solid:Black",
-                      "Brush": "solid:White",
-                      "TextBrush": "solid:105,105,105",
-                      "TypeOfComponent": "RightTitle"
-                    },
-                    "2": {
                       "Ident": "StiCrossRowTotal",
                       "Name": "CrossTab2_RowTotal1",
                       "Guid": "bfa0768d0688482ea4155f53a6465666",
@@ -4352,7 +5530,7 @@
                       "Brush": "solid:255,255,255",
                       "TextBrush": "solid:Black"
                     },
-                    "3": {
+                    "2": {
                       "Ident": "StiCrossRowTotal",
                       "Name": "CrossTab2_RowTotal2",
                       "Guid": "90bf6b484f8b4455ae3af3b9705e46f0",
@@ -4367,10 +5545,10 @@
                       "Font": "Arial Narrow;;Italic;",
                       "Border": ";155,155,155;;;;;;solid:Black",
                       "Brush": "solid:255,255,255",
-                      "TextBrush": "solid:179,0,75",
+                      "TextBrush": "solid:Black",
                       "HorAlignment": "Right"
                     },
-                    "4": {
+                    "3": {
                       "Ident": "StiCrossColumnTotal",
                       "Name": "CrossTab2_ColTotal1",
                       "Guid": "bb874ead4083423face97b7595789708",
@@ -4388,7 +5566,7 @@
                       "Brush": "solid:255,255,255",
                       "TextBrush": "solid:Black"
                     },
-                    "5": {
+                    "4": {
                       "Ident": "StiCrossTitle",
                       "Name": "CrossTab2_Row1_Title",
                       "Guid": "04017ee14dc947cd92b5d9e231e07d91",
@@ -4408,7 +5586,7 @@
                       "Type": "Expression",
                       "TypeOfComponent": "Row:CrossTab2_Row1"
                     },
-                    "6": {
+                    "5": {
                       "Ident": "StiCrossTitle",
                       "Name": "CrossTab2_Row2_Title",
                       "Guid": "32d2f037cbb84be9b051534ee2135329",
@@ -4427,6 +5605,23 @@
                       "TextBrush": "solid:105,105,105",
                       "TypeOfComponent": "Row:CrossTab2_Row2"
                     },
+                    "6": {
+                      "Ident": "StiCrossTitle",
+                      "Name": "CrossTab2_RightTitle",
+                      "Guid": "3db552c2e11348aca998ad91bdf3d2bd",
+                      "ClientRectangle": "3.05,0,1.4,0.4",
+                      "Restrictions": "AllowMove, AllowResize, AllowSelect, AllowChange",
+                      "Interaction": {
+                        "Ident": "StiInteraction"
+                      },
+                      "Text": {
+                        "Value": "Date"
+                      },
+                      "Border": "All;155,155,155;;;;;;solid:Black",
+                      "Brush": "solid:White",
+                      "TextBrush": "solid:105,105,105",
+                      "TypeOfComponent": "RightTitle"
+                    },
                     "7": {
                       "Ident": "StiCrossRow",
                       "Name": "CrossTab2_Row1",
@@ -4443,14 +5638,14 @@
                       "Font": "Arial Narrow;;Bold;",
                       "Border": ";155,155,155;;;;;;solid:Black",
                       "Brush": "solid:White",
-                      "TextBrush": "solid:179,0,75",
+                      "TextBrush": "solid:105,105,105",
                       "HorAlignment": "Left",
                       "VertAlignment": "Top",
                       "Value": {
                         "Value": "{Positions.Security.AssetClassificationCode}"
                       },
                       "DisplayValue": {
-                        "Value": "{Positions.Security.AssetClassification.Substring(\r\nPositions.Security.AssetClassification.IndexOf(\"<\"+Lang+\">\")+4,\r\n(  \r\nPositions.Security.AssetClassification.IndexOf(\"</\"+Lang+\">\")\r\n-(Positions.Security.AssetClassification.IndexOf(\"<\"+Lang+\">\")+4)\r\n)\r\n)}"
+                        "Value": "{MyFunction.GetTranslation(Positions.Security.AssetClassification,Lang)}"
                       },
                       "TotalGuid": "bfa0768d0688482ea4155f53a6465666"
                     },
@@ -4476,7 +5671,7 @@
                         "Value": "{Positions.Security.RegionCode}"
                       },
                       "DisplayValue": {
-                        "Value": "{( (Positions.Security.Region==null)?\"\":Positions.Security.Region.Substring(Positions.Security.Region.IndexOf(\"<\"+Lang+\">\")+4,(  Positions.Security.Region.IndexOf(\"</\"+Lang+\">\")-(Positions.Security.Region.IndexOf(\"<\"+Lang+\">\")+4))))}"
+                        "Value": "{MyFunction.GetTranslation(Positions.Security.Region,Lang)}"
                       },
                       "TotalGuid": "90bf6b484f8b4455ae3af3b9705e46f0",
                       "SortDirection": "None",
@@ -4570,12 +5765,10 @@
               "Ident": "StiPanel",
               "Name": "Panel1",
               "CanShrink": true,
-              "CanGrow": true,
               "ClientRectangle": "1,5.4,9,4.4",
               "Interaction": {
                 "Ident": "StiInteraction"
               },
-              "CanBreak": true,
               "Border": ";;;;;;;solid:Black",
               "Brush": "solid:",
               "Components": {
@@ -4615,7 +5808,7 @@
                             "Ident": "StiInteraction"
                           },
                           "Text": {
-                            "Value": "{PortfolioNotes.Text.Substring(\r\nPortfolioNotes.Text.IndexOf(\"<\"+Lang+\">\")+4,\r\n(  \r\nPortfolioNotes.Text.IndexOf(\"</\"+Lang+\">\")\r\n-(PortfolioNotes.Text.IndexOf(\"<\"+Lang+\">\")+4)\r\n)\r\n)}"
+                            "Value": "{MyFunction.GetTranslation(PortfolioNotes.Text,Lang)}"
                           },
                           "CanBreak": true,
                           "HorAlignment": "Width",
@@ -4675,10 +5868,10 @@
                           "TextBrush": "solid:Black",
                           "TextQuality": "Wysiwyg",
                           "Margins": {
-                            "Left": 0,
-                            "Right": 0,
-                            "Top": 5,
-                            "Bottom": 0
+                            "Left": 0.0,
+                            "Right": 0.0,
+                            "Top": 5.0,
+                            "Bottom": 0.0
                           },
                           "Type": "Expression"
                         },
@@ -4703,10 +5896,10 @@
                           "TextQuality": "Wysiwyg",
                           "AllowHtmlTags": true,
                           "Margins": {
-                            "Left": 0,
-                            "Right": 0,
-                            "Top": 5,
-                            "Bottom": 0
+                            "Left": 0.0,
+                            "Right": 0.0,
+                            "Top": 5.0,
+                            "Bottom": 0.0
                           },
                           "Type": "Expression"
                         }
@@ -4796,7 +5989,7 @@
                     "Ident": "StiInteraction"
                   },
                   "Text": {
-                    "Value": "•<b>&nbsp;Fund Type:</b> <font color=\"#ff0000\">TBC</font><br>\r\n•<b>&nbsp;Legal Form:</b> <font color=\"#ff0000\">TBC</font><br>\r\n•<b>&nbsp;SICAV:</b> {InternalShareClasses.Portfolio.SicavEntity.CompanyName}<br>\r\n•<b>&nbsp;Fiscal Year End:</b> <font color=\"#ff0000\">TBC</font>{InternalShareClasses.Portfolio.SicavEntity.YearEnd}<br>\r\n•<b>&nbsp;Order Placement:</b> <font color=\"#ff0000\">TBC (NAV Frequency)</font><br>\r\n•<b>&nbsp;Order Cut-Off Time:</b> Before {InternalShareClasses.Portfolio.CutOffTime} (CET/CEST)<br>\r\n•<b>&nbsp;Category:</b>&nbsp;<span style=\"color: #FF0000;\">TBC&nbsp;</span>"
+                    "Value": "•<b>&nbsp;Fund Type:</b> <font color=\"#ff0000\">TBC</font><br>\r\n•<b>&nbsp;Legal Form:</b> <font color=\"#ff0000\">TBC</font><br>\r\n•<b>&nbsp;SICAV:</b> {InternalShareClasses.Portfolio.SicavEntity.Name}<br>\r\n•<b>&nbsp;Fiscal Year End:</b> <font color=\"#ff0000\">TBC</font>{InternalShareClasses.Portfolio.SicavEntity.YearEnd}<br>\r\n•<b>&nbsp;Order Placement:</b> <font color=\"#ff0000\">TBC (NAV Frequency)</font><br>\r\n•<b>&nbsp;Order Cut-Off Time:</b> Before {InternalShareClasses.Portfolio.CutOffTime} (CET/CEST)<br>\r\n•<b>&nbsp;Category:</b>&nbsp;<span style=\"color: #FF0000;\">TBC&nbsp;</span>\r\n"
                   },
                   "Border": ";;;;;;;solid:Black",
                   "Brush": "solid:",
@@ -4819,7 +6012,7 @@
                     "Ident": "StiInteraction"
                   },
                   "Text": {
-                    "Value": "•<b>&nbsp;NAV:</b> {InternalShareClasses.Nav} {InternalShareClasses.CcyIso}<br>\r\n•<b>&nbsp;Base Currency:</b> {InternalShareClasses.CcyIso}<br>\r\n•<b>&nbsp;ISIN:</b> {InternalShareClasses.Isin}<br>\r\n•<b>&nbsp;Fund Manager:</b>&nbsp;{Left(InternalShareClasses.Portfolio.Manager1.FirstName,1)}.{InternalShareClasses.Portfolio.Manager1.LastName} since <font color=\"#ff0000\">TBC</font><br>\r\n•<b>&nbsp;Fund AUM:</b> {InternalShareClasses.Portfolio.Tna} {InternalShareClasses.Portfolio.CcyIso}<br>\r\n•<b>&nbsp;Share Class AUM:</b> {InternalShareClasses.Tna} {InternalShareClasses.CcyIso}<br>\r\n•<b>&nbsp;Domicile:</b> {( (InternalShareClasses.Portfolio.DomicileName ==null)?\"\":\r\nInternalShareClasses.Portfolio.DomicileName.Substring(\r\n  InternalShareClasses.Portfolio.DomicileName.IndexOf(\"<\"+Lang+\">\")+4,\r\n  (InternalShareClasses.Portfolio.DomicileName.IndexOf(\"</\"+Lang+\">\")-(InternalShareClasses.Portfolio.DomicileName.IndexOf(\"<\"+Lang+\">\")+4))\r\n))} <br>\r\n•<b>&nbsp;Dividend Policy:</b> {InternalShareClasses.DividendDistributionPolicy}<br>\r\n•<b>&nbsp;Fund Inception Date:</b> {Format(\"{0:dd/MM/yyyy}\", InternalShareClasses.Portfolio.InceptionDate)}\r\n"
+                    "Value": "•<b>&nbsp;NAV:</b> {InternalShareClasses.Nav} {InternalShareClasses.CcyIso}<br>\r\n•<b>&nbsp;Base Currency:</b> {InternalShareClasses.CcyIso}<br>\r\n•<b>&nbsp;ISIN:</b> {InternalShareClasses.Isin}<br>\r\n•<b>&nbsp;Fund Manager:</b>&nbsp;{Left(InternalShareClasses.Portfolio.Manager1.FirstName,1)}.{InternalShareClasses.Portfolio.Manager1.LastName} since <font color=\"#ff0000\">TBC</font><br>\r\n•<b>&nbsp;Fund AUM:</b> {InternalShareClasses.Portfolio.Tna} {InternalShareClasses.Portfolio.CcyIso}<br>\r\n•<b>&nbsp;Share Class AUM:</b> {InternalShareClasses.Tna} {InternalShareClasses.CcyIso}<br>\r\n•<b>&nbsp;Domicile:</b> {MyFunction.GetTranslation(InternalShareClasses.Portfolio.DomicileName,Lang)} <br>\r\n•<b>&nbsp;Dividend Policy:</b> {InternalShareClasses.DividendDistributionPolicy}<br>\r\n•<b>&nbsp;Fund Inception Date:</b> {Format(\"{0:dd/MM/yyyy}\", InternalShareClasses.Portfolio.InceptionDate)}\r\n"
                   },
                   "Border": ";;;;;;;solid:Black",
                   "Brush": "solid:",
@@ -4840,7 +6033,6 @@
               "Interaction": {
                 "Ident": "StiInteraction"
               },
-              "CanBreak": true,
               "Border": ";;;;;;;solid:Black",
               "Brush": "solid:",
               "Components": {
@@ -5009,10 +6201,10 @@
                             "WordWrap": true
                           },
                           "Margins": {
-                            "Left": 0,
-                            "Right": 0,
-                            "Top": 2,
-                            "Bottom": 0
+                            "Left": 0.0,
+                            "Right": 0.0,
+                            "Top": 2.0,
+                            "Bottom": 0.0
                           },
                           "Type": "Expression"
                         },
@@ -5027,7 +6219,7 @@
                             "Ident": "StiInteraction"
                           },
                           "Text": {
-                            "Value": "{LastPositions.Security.SectorClassification.Substring(\r\nLastPositions.Security.SectorClassification.IndexOf(\"<\"+Lang+\">\")+4,\r\n(  \r\nLastPositions.Security.SectorClassification.IndexOf(\"</\"+Lang+\">\")\r\n-(LastPositions.Security.SectorClassification.IndexOf(\"<\"+Lang+\">\")+4)\r\n)\r\n)}\r\n"
+                            "Value": "{MyFunction.GetTranslation(LastPositions.Security.SectorClassification,Lang)}\r\n"
                           },
                           "VertAlignment": "Center",
                           "Font": "Arial Narrow;6;;",
@@ -5038,10 +6230,10 @@
                             "WordWrap": true
                           },
                           "Margins": {
-                            "Left": 0,
-                            "Right": 0,
-                            "Top": 2,
-                            "Bottom": 0
+                            "Left": 0.0,
+                            "Right": 0.0,
+                            "Top": 2.0,
+                            "Bottom": 0.0
                           },
                           "Type": "Expression"
                         },
@@ -5056,7 +6248,7 @@
                             "Ident": "StiInteraction"
                           },
                           "Text": {
-                            "Value": "{\r\n(LastPositions.Security.CountryCode==\"US\")?\"USA\":\r\nLastPositions.Security.Country.Substring(\r\nLastPositions.Security.Country.IndexOf(\"<\"+Lang+\">\")+4,\r\n(  \r\nLastPositions.Security.Country.IndexOf(\"</\"+Lang+\">\")\r\n-(LastPositions.Security.Country.IndexOf(\"<\"+Lang+\">\")+4)\r\n)\r\n)}\r\n"
+                            "Value": "{\r\n(LastPositions.Security.CountryCode==\"US\")?\"USA\":MyFunction.GetTranslation(LastPositions.Security.Country,Lang)}\r\n"
                           },
                           "VertAlignment": "Center",
                           "Font": "Arial Narrow;6;;",
@@ -5067,10 +6259,10 @@
                             "WordWrap": true
                           },
                           "Margins": {
-                            "Left": 0,
-                            "Right": 0,
-                            "Top": 2,
-                            "Bottom": 0
+                            "Left": 0.0,
+                            "Right": 0.0,
+                            "Top": 2.0,
+                            "Bottom": 0.0
                           },
                           "Type": "Expression"
                         },
@@ -5100,10 +6292,10 @@
                             "WordWrap": true
                           },
                           "Margins": {
-                            "Left": 0,
-                            "Right": 0,
-                            "Top": 2,
-                            "Bottom": 0
+                            "Left": 0.0,
+                            "Right": 0.0,
+                            "Top": 2.0,
+                            "Bottom": 0.0
                           },
                           "TextFormat": {
                             "Ident": "StiPercentageFormatService",
@@ -5320,8 +6512,8 @@
                           "Area": true
                         },
                         "GridLinesHor": {
-                          "Color": "100,105,105,105",
-                          "MinorColor": "100,105,105,105",
+                          "Color": "50,105,105,105",
+                          "MinorColor": "50,105,105,105",
                           "Area": true
                         },
                         "GridLinesHorRight": {
@@ -5329,8 +6521,8 @@
                           "Area": true
                         },
                         "GridLinesVert": {
-                          "Color": "100,105,105,105",
-                          "MinorColor": "100,105,105,105",
+                          "Color": "50,105,105,105",
+                          "MinorColor": "50,105,105,105",
                           "Visible": false,
                           "Area": true
                         },
@@ -5365,7 +6557,7 @@
                             "Font": "Arial Narrow;6;;",
                             "Placement": "TwoLines",
                             "Color": "140,140,140",
-                            "Step": 1
+                            "Step": 1.0
                           },
                           "LineColor": "140,140,140",
                           "Title": {
@@ -5384,7 +6576,7 @@
                         }
                       },
                       "Table": {
-                        "GridLineColor": "Transparent",
+                        "GridLineColor": "225,225,225",
                         "Header": {
                           "Brush": "solid:White"
                         },
@@ -5403,7 +6595,7 @@
                       },
                       "Legend": {
                         "ShowShadow": false,
-                        "BorderColor": "Transparent",
+                        "BorderColor": "225,225,225",
                         "Brush": "solid:255,255,255",
                         "TitleColor": "105,105,105",
                         "LabelsColor": "140,140,140",
@@ -5564,13 +6756,13 @@
                             "Font": "Arial Narrow;6;;",
                             "WordWrap": true
                           },
+                          "Ticks": {
+                            "Visible": false
+                          },
                           "LineColor": "140,140,140",
                           "Title": {
                             "Color": "140,140,140",
                             "Direction": "BottomToTop"
-                          },
-                          "Ticks": {
-                            "Visible": false
                           }
                         },
                         "YRightAxis": {
@@ -5608,7 +6800,7 @@
                         }
                       },
                       "Table": {
-                        "GridLineColor": "Transparent",
+                        "GridLineColor": "225,225,225",
                         "Header": {
                           "Brush": "solid:White"
                         },
@@ -5632,7 +6824,7 @@
                       },
                       "Legend": {
                         "ShowShadow": false,
-                        "BorderColor": "Transparent",
+                        "BorderColor": "225,225,225",
                         "Brush": "solid:255,255,255",
                         "TitleColor": "105,105,105",
                         "LabelsColor": "140,140,140",
@@ -5750,8 +6942,7 @@
                       "Brush": "solid:",
                       "ImageURL": {
                         "Value": "resource://Logo-FundProcess"
-                      },
-                      "ImageBytes": ""
+                      }
                     }
                   }
                 }
@@ -5819,7 +7010,7 @@
                             "0": {
                               "Ident": "StiClusteredColumnSeries",
                               "AllowApplyStyle": false,
-                              "Format": "P1",
+                              "Format": "N1",
                               "ShowInLegend": false,
                               "ShowShadow": false,
                               "SeriesLabels": {
@@ -5857,7 +7048,7 @@
                             "1": {
                               "Ident": "StiClusteredColumnSeries",
                               "AllowApplyStyle": false,
-                              "Format": "P1",
+                              "Format": "N1",
                               "ShowInLegend": false,
                               "ShowShadow": false,
                               "SeriesLabels": {
@@ -5908,8 +7099,8 @@
                               "Area": true
                             },
                             "GridLinesHor": {
-                              "Color": "100,105,105,105",
-                              "MinorColor": "100,105,105,105",
+                              "Color": "50,105,105,105",
+                              "MinorColor": "50,105,105,105",
                               "Area": true
                             },
                             "GridLinesHorRight": {
@@ -5917,8 +7108,8 @@
                               "Area": true
                             },
                             "GridLinesVert": {
-                              "Color": "100,105,105,105",
-                              "MinorColor": "100,105,105,105",
+                              "Color": "50,105,105,105",
+                              "MinorColor": "50,105,105,105",
                               "Visible": false,
                               "Area": true
                             },
@@ -5969,7 +7160,7 @@
                             }
                           },
                           "Table": {
-                            "GridLineColor": "Transparent",
+                            "GridLineColor": "225,225,225",
                             "Header": {
                               "Brush": "solid:White"
                             },
@@ -5987,7 +7178,7 @@
                             },
                             "MarkerAlignment": "Center",
                             "ValueTypeSeparator": "-",
-                            "Format": "P1",
+                            "Format": "N1",
                             "DrawBorder": false,
                             "LabelColor": "50,58,69",
                             "BorderColor": "Transparent",
@@ -5998,7 +7189,7 @@
                           },
                           "Legend": {
                             "ShowShadow": false,
-                            "BorderColor": "Transparent",
+                            "BorderColor": "225,225,225",
                             "Brush": "solid:255,255,255",
                             "TitleColor": "105,105,105",
                             "LabelsColor": "140,140,140",
@@ -6043,16 +7234,16 @@
           }
         }
       },
-      "PageWidth": 21,
+      "PageWidth": 21.0,
       "PageHeight": 29.7,
       "Watermark": {
         "TextBrush": "solid:50,0,0,0"
       },
       "Margins": {
-        "Left": 0,
-        "Right": 0,
-        "Top": 0,
-        "Bottom": 0
+        "Left": 0.0,
+        "Right": 0.0,
+        "Top": 0.0,
+        "Bottom": 0.0
       },
       "ReportUnit": {
         "Ident": "StiCentimetersUnit"
@@ -6814,8 +8005,7 @@
                   "Brush": "solid:",
                   "ImageURL": {
                     "Value": "resource://Logo-FundProcess"
-                  },
-                  "ImageBytes": ""
+                  }
                 }
               }
             }
@@ -7327,7 +8517,7 @@
                       },
                       "LineColor": "179,0,75",
                       "Lighting": false,
-                      "LineWidth": 1,
+                      "LineWidth": 1.0,
                       "LineColorNegative": "179,0,75"
                     },
                     "1": {
@@ -7367,7 +8557,7 @@
                       },
                       "LineColor": "110,110,110",
                       "Lighting": false,
-                      "LineWidth": 1,
+                      "LineWidth": 1.0,
                       "LineColorNegative": "191,191,191"
                     }
                   },
@@ -7386,8 +8576,8 @@
                       "Area": true
                     },
                     "GridLinesHor": {
-                      "Color": "100,105,105,105",
-                      "MinorColor": "100,105,105,105",
+                      "Color": "50,105,105,105",
+                      "MinorColor": "50,105,105,105",
                       "Visible": false,
                       "Area": true
                     },
@@ -7396,8 +8586,8 @@
                       "Area": true
                     },
                     "GridLinesVert": {
-                      "Color": "100,105,105,105",
-                      "MinorColor": "100,105,105,105",
+                      "Color": "50,105,105,105",
+                      "MinorColor": "50,105,105,105",
                       "Visible": false,
                       "Area": true
                     },
@@ -7435,14 +8625,14 @@
                         "Format": "MM/yyyy",
                         "Font": "Arial Narrow;6;;",
                         "Color": "140,140,140",
+                        "Step": 60.0
+                      },
+                      "Ticks": {
                         "Step": 60
                       },
                       "LineColor": "140,140,140",
                       "Title": {
                         "Color": "140,140,140"
-                      },
-                      "Ticks": {
-                        "Step": 60
                       }
                     },
                     "XTopAxis": {
@@ -7457,7 +8647,7 @@
                     }
                   },
                   "Table": {
-                    "GridLineColor": "Transparent",
+                    "GridLineColor": "225,225,225",
                     "Header": {
                       "Brush": "solid:White"
                     },
@@ -7768,10 +8958,10 @@
                             "WordWrap": true
                           },
                           "Margins": {
-                            "Left": 0,
-                            "Right": 0,
-                            "Top": 1,
-                            "Bottom": 0
+                            "Left": 0.0,
+                            "Right": 0.0,
+                            "Top": 1.0,
+                            "Bottom": 0.0
                           },
                           "Type": "Expression"
                         },
@@ -7862,10 +9052,10 @@
                           "Brush": "solid:",
                           "TextBrush": "solid:110,110,110",
                           "Margins": {
-                            "Left": 0,
-                            "Right": 10,
-                            "Top": 0,
-                            "Bottom": 0
+                            "Left": 0.0,
+                            "Right": 10.0,
+                            "Top": 0.0,
+                            "Bottom": 0.0
                           },
                           "TextFormat": {
                             "Ident": "StiPercentageFormatService",
@@ -8760,10 +9950,10 @@
                             "WordWrap": true
                           },
                           "Margins": {
-                            "Left": 0,
-                            "Right": 0,
-                            "Top": 1,
-                            "Bottom": 0
+                            "Left": 0.0,
+                            "Right": 0.0,
+                            "Top": 1.0,
+                            "Bottom": 0.0
                           },
                           "Type": "Expression"
                         },
@@ -8854,10 +10044,10 @@
                           "Brush": "solid:",
                           "TextBrush": "solid:110,110,110",
                           "Margins": {
-                            "Left": 0,
-                            "Right": 10,
-                            "Top": 0,
-                            "Bottom": 0
+                            "Left": 0.0,
+                            "Right": 10.0,
+                            "Top": 0.0,
+                            "Bottom": 0.0
                           },
                           "TextFormat": {
                             "Ident": "StiPercentageFormatService",
@@ -9421,7 +10611,7 @@
                             "Ident": "StiInteraction"
                           },
                           "Text": {
-                            "Value": "{StatisticsTree.ClassificationName.Substring(\r\nStatisticsTree.ClassificationName.IndexOf(\"<\"+Lang+\">\")+4,\r\n(  \r\nStatisticsTree.ClassificationName.IndexOf(\"</\"+Lang+\">\")\r\n-(StatisticsTree.ClassificationName.IndexOf(\"<\"+Lang+\">\")+4)\r\n)\r\n)}"
+                            "Value": "{MyFunction.GetTranslation(StatisticsTree.ClassificationName,Lang)}"
                           },
                           "CanBreak": true,
                           "VertAlignment": "Center",
@@ -9498,16 +10688,16 @@
           }
         }
       },
-      "PageWidth": 21,
+      "PageWidth": 21.0,
       "PageHeight": 29.7,
       "Watermark": {
         "TextBrush": "solid:50,0,0,0"
       },
       "Margins": {
-        "Left": 0,
-        "Right": 0,
-        "Top": 0,
-        "Bottom": 0
+        "Left": 0.0,
+        "Right": 0.0,
+        "Top": 0.0,
+        "Bottom": 0.0
       },
       "ReportUnit": {
         "Ident": "StiCentimetersUnit"
@@ -9554,7 +10744,7 @@
                     "Ident": "StiInteraction"
                   },
                   "Text": {
-                    "Value": "{PortfolioNotes.Text.Substring(\r\nPortfolioNotes.Text.IndexOf(\"<\"+Lang+\">\")+4,\r\n(  \r\nPortfolioNotes.Text.IndexOf(\"</\"+Lang+\">\")\r\n-(PortfolioNotes.Text.IndexOf(\"<\"+Lang+\">\")+4)\r\n)\r\n)}"
+                    "Value": "{MyFunction.GetTranslation(PortfolioNotes.Text,Lang)}"
                   },
                   "HorAlignment": "Width",
                   "VertAlignment": "Center",
@@ -9624,7 +10814,7 @@
                     "Ident": "StiInteraction"
                   },
                   "Text": {
-                    "Value": "{PortfolioNotes.Text.Substring(\r\nPortfolioNotes.Text.IndexOf(\"<\"+Lang+\">\")+4,\r\n(  \r\nPortfolioNotes.Text.IndexOf(\"</\"+Lang+\">\")\r\n-(PortfolioNotes.Text.IndexOf(\"<\"+Lang+\">\")+4)\r\n)\r\n)}"
+                    "Value": "{MyFunction.GetTranslation(PortfolioNotes.Text,Lang)}"
                   },
                   "HorAlignment": "Width",
                   "VertAlignment": "Center",
@@ -9704,7 +10894,7 @@
                     "Ident": "StiInteraction"
                   },
                   "Text": {
-                    "Value": "{PortfolioNotes.Text.Substring(\r\nPortfolioNotes.Text.IndexOf(\"<\"+Lang+\">\")+4,\r\n(  \r\nPortfolioNotes.Text.IndexOf(\"</\"+Lang+\">\")\r\n-(PortfolioNotes.Text.IndexOf(\"<\"+Lang+\">\")+4)\r\n)\r\n)}"
+                    "Value": "{MyFunction.GetTranslation(PortfolioNotes.Text,Lang)}"
                   },
                   "HorAlignment": "Width",
                   "VertAlignment": "Center",
@@ -9775,7 +10965,7 @@
                     "Ident": "StiInteraction"
                   },
                   "Text": {
-                    "Value": "{PortfolioNotes.Text.Substring(\r\nPortfolioNotes.Text.IndexOf(\"<\"+Lang+\">\")+4,\r\n(  \r\nPortfolioNotes.Text.IndexOf(\"</\"+Lang+\">\")\r\n-(PortfolioNotes.Text.IndexOf(\"<\"+Lang+\">\")+4)\r\n)\r\n)}"
+                    "Value": "{MyFunction.GetTranslation(PortfolioNotes.Text,Lang)}"
                   },
                   "HorAlignment": "Width",
                   "VertAlignment": "Center",
@@ -9993,8 +11183,7 @@
                   "Brush": "solid:",
                   "ImageURL": {
                     "Value": "resource://Logo-FundProcess"
-                  },
-                  "ImageBytes": ""
+                  }
                 }
               }
             }
@@ -10068,16 +11257,16 @@
           }
         }
       },
-      "PageWidth": 21,
+      "PageWidth": 21.0,
       "PageHeight": 29.7,
       "Watermark": {
         "TextBrush": "solid:50,0,0,0"
       },
       "Margins": {
-        "Left": 0,
-        "Right": 0,
-        "Top": 0,
-        "Bottom": 0
+        "Left": 0.0,
+        "Right": 0.0,
+        "Top": 0.0,
+        "Bottom": 0.0
       },
       "ReportUnit": {
         "Ident": "StiCentimetersUnit"
@@ -10144,10 +11333,10 @@
               "TextQuality": "Wysiwyg",
               "AllowHtmlTags": true,
               "Margins": {
-                "Left": 2,
-                "Right": 2,
-                "Top": 2,
-                "Bottom": 2
+                "Left": 2.0,
+                "Right": 2.0,
+                "Top": 2.0,
+                "Bottom": 2.0
               },
               "Type": "Expression"
             }
@@ -10190,8 +11379,7 @@
                   "Brush": "solid:",
                   "ImageURL": {
                     "Value": "resource://Logo-FundProcess"
-                  },
-                  "ImageBytes": ""
+                  }
                 }
               }
             }
@@ -10265,16 +11453,19 @@
           }
         }
       },
-      "PageWidth": 21,
+      "PageWidth": 21.0,
       "PageHeight": 29.7,
       "Watermark": {
         "TextBrush": "solid:50,0,0,0"
       },
       "Margins": {
-        "Left": 0,
-        "Right": 0,
-        "Top": 0,
-        "Bottom": 0
+        "Left": 0.0,
+        "Right": 0.0,
+        "Top": 0.0,
+        "Bottom": 0.0
+      },
+      "ReportUnit": {
+        "Ident": "StiCentimetersUnit"
       }
     }
   }
