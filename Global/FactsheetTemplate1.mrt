@@ -1,16 +1,16 @@
 {
   "ReportVersion": "2020.2.3.0",
-  "ReportGuid": "75d75a35aa094109836e1331b127a83b",
+  "ReportGuid": "8e5b416619cf40279080e97c4159e95d",
   "ReportName": "Factsheet",
   "ReportAlias": "Factsheet",
   "ReportAuthor": "FundProcess",
   "ReportDescription": "FundProcess",
   "ReportCreated": "/Date(0+0100)/",
-  "ReportChanged": "/Date(1593728306302+0200)/",
+  "ReportChanged": "/Date(1593735423486+0200)/",
   "EngineVersion": "EngineV2",
   "PreviewSettings": 268435455,
   "AutoLocalizeReportOnRun": true,
-  "Script": "using System;\r\nusing System.Drawing;\r\nusing System.Windows.Forms;\r\nusing System.Data;\r\nusing Stimulsoft.Controls;\r\nusing Stimulsoft.Base.Drawing;\r\nusing Stimulsoft.Report;\r\nusing Stimulsoft.Report.Dialogs;\r\nusing Stimulsoft.Report.Components;\r\nusing System.Collections.Generic;\r\n\r\nnamespace Reports\r\n{\r\n\tpublic class MyFunction\r\n\t{\r\n\t\tprivate const string Category = \"MyFuncCategory\";\r\n\r\n\t\tpublic static string GetTranslation(string jsonStr,string lang)\r\n\t\t{\r\n\t\t\tif (string.IsNullOrEmpty(jsonStr))\r\n\t\t\t\treturn null;\r\n\t\t\t\t\r\n\t\t\treturn Stimulsoft.Base.Json.JsonConvert.DeserializeObject<Dictionary<string,string>>(jsonStr)[lang];\r\n\t\t}\r\n\r\n\t\tpublic static void RegisterFunctions()\r\n\t\t{\r\n\t\t\tvar ParamNames = new string[2];\r\n\t\t\tvar ParamTypes = new Type[2];\r\n\t\t\tvar ParamDescriptions = new string[2];\r\n\r\n\t\t\tParamNames[0] = \"jsonStr\";\r\n\t\t\tParamDescriptions[0] = \"Multi-culture string\";\r\n\t\t\tParamTypes[0] = typeof(string);\r\n\t\t\t\r\n\t\t\tParamNames[1] = \"lang\";\r\n\t\t\tParamDescriptions[1] = \"LanguageTmp\";\r\n\t\t\tParamTypes[1] = typeof(string);\r\n\t\t\t\r\n\r\n\t\t\tStimulsoft.Report.Dictionary.StiFunctions.RemoveFunction(\"GetTranslation\");\r\n\t\t\tStimulsoft.Report.Dictionary.StiFunctions.AddFunction(Category, \"GetTranslation\", \"GetTranslation\", \"Description\", \r\n\t\t\t\ttypeof(MyFunction),\r\n\t\t\t\ttypeof(string), \"Return Description\", ParamTypes, ParamNames, ParamDescriptions);\r\n\t\t}\r\n\t}\r\n\t\r\n    public class Report : Stimulsoft.Report.StiReport\r\n    {\r\n        public Report()        {\r\n            this.InitializeComponent();\r\n\t\t\tMyFunction.RegisterFunctions();\r\n        }\r\n\r\n        #region StiReport Designer generated code - do not modify\r\n\t\t#endregion StiReport Designer generated code - do not modify\r\n    }\r\n}\r\n",
+  "Script": "using System;\r\nusing System.Drawing;\r\nusing System.Windows.Forms;\r\nusing System.Data;\r\nusing Stimulsoft.Controls;\r\nusing Stimulsoft.Base.Drawing;\r\nusing Stimulsoft.Report;\r\nusing Stimulsoft.Report.Dialogs;\r\nusing Stimulsoft.Report.Components;\r\nusing System.Collections.Generic;\r\n\r\nnamespace Reports\r\n{\r\n\tpublic class MyFunction\r\n\t{\r\n\t\tprivate const string Category = \"MyFuncCategory\";\r\n\r\n\t\tpublic static string GetTranslation(string jsonStr)\r\n\t\t{\r\n\t\t\tstring lang=\"en\";\r\n\t\t\tif (string.IsNullOrEmpty(jsonStr))\r\n\t\t\t\treturn null;\r\n\t\t\t\t\r\n\t\t\treturn Stimulsoft.Base.Json.JsonConvert.DeserializeObject<Dictionary<string,string>>(jsonStr)[lang];\r\n\t\t}\r\n\r\n\t\tpublic static void RegisterFunctions()\r\n\t\t{\r\n\t\t\tvar ParamNames = new string[2];\r\n\t\t\tvar ParamTypes = new Type[2];\r\n\t\t\tvar ParamDescriptions = new string[2];\r\n\r\n\t\t\tParamNames[0] = \"jsonStr\";\r\n\t\t\tParamDescriptions[0] = \"Multi-culture string\";\r\n\t\t\tParamTypes[0] = typeof(string);\r\n\t\t\t\r\n\t\t\tParamNames[1] = \"lang\";\r\n\t\t\tParamDescriptions[1] = \"LanguageTmp\";\r\n\t\t\tParamTypes[1] = typeof(string);\r\n\t\t\t\r\n\r\n\t\t\tStimulsoft.Report.Dictionary.StiFunctions.RemoveFunction(\"GetTranslation\");\r\n\t\t\tStimulsoft.Report.Dictionary.StiFunctions.AddFunction(Category, \"GetTranslation\", \"GetTranslation\", \"Description\", \r\n\t\t\t\ttypeof(MyFunction),\r\n\t\t\t\ttypeof(string), \"Return Description\", ParamTypes, ParamNames, ParamDescriptions);\r\n\t\t}\r\n\t}\r\n\t\r\n    public class Report : Stimulsoft.Report.StiReport\r\n    {\r\n        public Report()        {\r\n            this.InitializeComponent();\r\n\t\t\tMyFunction.RegisterFunctions();\r\n        }\r\n\r\n        #region StiReport Designer generated code - do not modify\r\n\t\t#endregion StiReport Designer generated code - do not modify\r\n    }\r\n}\r\n",
   "Styles": {
     "0": {
       "Ident": "StiStyle",
@@ -76,36 +76,20 @@
     },
     "Variables": {
       "0": {
-        "Value": "LU1527594953",
-        "Name": "Isin",
-        "Alias": "Isin",
-        "Type": "System.String",
+        "Value": "335",
+        "Name": "ShareClassId",
+        "Alias": "ShareClassId",
+        "Type": "System.Int32",
         "Key": "_x0032_a7778aaa22a4b3e8dd790fc06e7e8ca"
       },
       "1": {
-        "Value": "LU8730",
-        "Name": "SubFundCode",
-        "Alias": "SubFundCode",
-        "Type": "System.String",
-        "Description": "SubFundCode",
-        "Key": "d0a0f09ea36c4469bba5549ac957a682"
-      },
-      "2": {
         "Value": "1/29/2020 12:00:00 AM",
-        "Name": "NavDate",
-        "Alias": "NavDate",
+        "Name": "AsOfDate",
+        "Alias": "AsOfDate",
         "Type": "System.DateTime",
         "Key": "971ab69a95ca4e1484771d2b3a153964"
       },
-      "3": {
-        "Value": "en",
-        "Name": "Lang",
-        "Alias": "Lang",
-        "Type": "System.String",
-        "Description": "Language",
-        "Key": "243aca434dda49978c93860d30f48e01"
-      },
-      "4": {
+      "2": {
         "Value": "0",
         "Name": "temp",
         "Alias": "temp",
@@ -353,10 +337,10 @@
             "Key": "6c10f91d723245c89f6fac0623f4fb16"
           },
           "24": {
-            "Name": "NavDate",
+            "Name": "AsOfDate",
             "Index": -1,
-            "NameInSource": "NavDate",
-            "Alias": "NavDate",
+            "NameInSource": "AsOfDate",
+            "Alias": "AsOfDate",
             "Type": "System.DateTime",
             "Key": "4b2045fffafd4126a8e16927531426a7"
           },
@@ -914,10 +898,10 @@
             "Key": "dda7a2c9f5cd48b49a2d0ca43980b467"
           },
           "16": {
-            "Name": "NavDate",
+            "Name": "AsOfDate",
             "Index": -1,
-            "NameInSource": "NavDate",
-            "Alias": "NavDate",
+            "NameInSource": "AsOfDate",
+            "Alias": "AsOfDate",
             "Type": "System.DateTime",
             "Key": "630ebd5b5e84456998f09a1ab403f633"
           },
@@ -3000,10 +2984,10 @@
             "Type": "System.DateTime"
           },
           "4": {
-            "Name": "NavDate",
+            "Name": "AsOfDate",
             "Index": -1,
-            "NameInSource": "NavDate",
-            "Alias": "NavDate",
+            "NameInSource": "AsOfDate",
+            "Alias": "AsOfDate",
             "Type": "System.DateTime"
           },
           "5": {
@@ -3268,10 +3252,10 @@
             "Type": "System.DateTime"
           },
           "4": {
-            "Name": "NavDate",
+            "Name": "AsOfDate",
             "Index": -1,
-            "NameInSource": "NavDate",
-            "Alias": "NavDate",
+            "NameInSource": "AsOfDate",
+            "Alias": "AsOfDate",
             "Type": "System.DateTime"
           },
           "5": {
@@ -4384,6 +4368,56 @@
           }
         },
         "NameInSource": "FundProcessUniverse.SecurityClassifications"
+      },
+      "39": {
+        "Ident": "StiVirtualSource",
+        "Name": "ReportShareClass",
+        "Alias": "ReportShareClass",
+        "Key": "1cf21c4943464a8cba0791f2549e4b87",
+        "Columns": {
+          "0": {
+            "Name": "Id",
+            "Index": -1,
+            "NameInSource": "Id",
+            "Alias": "Id",
+            "Type": "System.Int32"
+          },
+          "1": {
+            "Name": "InternalCode",
+            "Index": -1,
+            "NameInSource": "InternalCode",
+            "Alias": "InternalCode",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "PortfolioId",
+            "Index": -1,
+            "NameInSource": "PortfolioId",
+            "Alias": "PortfolioId",
+            "Type": "System.Int32"
+          }
+        },
+        "NameInSource": "InternalShareClasses",
+        "Filters": {
+          "0": {
+            "Ident": "StiFilter",
+            "Item": "Expression",
+            "Expression": {
+              "Value": "{InternalShareClasses.Id == ShareClassId}"
+            }
+          }
+        },
+        "Results": {
+          "0": "Id",
+          "1": "",
+          "2": "Id",
+          "3": "InternalCode",
+          "4": "",
+          "5": "InternalCode",
+          "6": "PortfolioId",
+          "7": "",
+          "8": "PortfolioId"
+        }
       }
     },
     "Databases": {
@@ -5105,7 +5139,7 @@
                     "Ident": "StiInteraction"
                   },
                   "Text": {
-                    "Value": "{ToProperCase(MonthName(NavDate))} {Year(NavDate)}"
+                    "Value": "{ToProperCase(MonthName(AsOfDate))} {Year(AsOfDate)}"
                   },
                   "Font": ";;Italic;",
                   "Border": ";;;;;;;solid:Black",
@@ -5613,7 +5647,7 @@
                         "Value": "{Breakdowns.Weight*100}"
                       },
                       "Argument": {
-                        "Value": "{GetTranslation(Breakdowns.ClassificationName,Lang)}\r\n"
+                        "Value": "{GetTranslation(Breakdowns.ClassificationName)}\r\n"
                       },
                       "Title": {
                         "Value": "Series 1"
@@ -5761,7 +5795,7 @@
                       "Ident": "StiFilter",
                       "Item": "Expression",
                       "Expression": {
-                        "Value": "{Breakdowns.Date == NavDate}"
+                        "Value": "{Breakdowns.Date == AsOfDate}"
                       }
                     },
                     "2": {
@@ -6010,7 +6044,7 @@
                         "Value": "{Positions.Security.AssetClassificationCode}"
                       },
                       "DisplayValue": {
-                        "Value": "{GetTranslation(Positions.Security.AssetClassification,Lang)}"
+                        "Value": "{GetTranslation(Positions.Security.AssetClassification)}"
                       },
                       "TotalGuid": "bfa0768d0688482ea4155f53a6465666"
                     },
@@ -6036,7 +6070,7 @@
                         "Value": "{Positions.Security.RegionCode}"
                       },
                       "DisplayValue": {
-                        "Value": "{GetTranslation(Positions.Security.Region,Lang)}"
+                        "Value": "{GetTranslation(Positions.Security.Region)}"
                       },
                       "TotalGuid": "90bf6b484f8b4455ae3af3b9705e46f0",
                       "SortDirection": "None",
@@ -6173,7 +6207,7 @@
                             "Ident": "StiInteraction"
                           },
                           "Text": {
-                            "Value": "{GetTranslation(PortfolioNotes.Text,Lang)}"
+                            "Value": "{GetTranslation(PortfolioNotes.Text)}"
                           },
                           "CanBreak": true,
                           "HorAlignment": "Width",
@@ -6275,7 +6309,7 @@
                           "Ident": "StiFilter",
                           "Item": "Expression",
                           "Expression": {
-                            "Value": "{InternalShareClasses.Isin==Isin}"
+                            "Value": "{InternalShareClasses.Id == ShareClassId}"
                           }
                         }
                       }
@@ -6354,7 +6388,7 @@
                     "Ident": "StiInteraction"
                   },
                   "Text": {
-                    "Value": "•<b>&nbsp;Fund Type:</b> {InternalShareClasses.Portfolio.Sicav.SicavType}<br>\r\n•<b>&nbsp;Legal Form:</b> {InternalShareClasses.Portfolio.Sicav.LegalForm}<br>\r\n•<b>&nbsp;SICAV:</b> {InternalShareClasses.Portfolio.SicavEntity.Name}<br>\r\n•<b>&nbsp;Fiscal Year End:</b> {InternalShareClasses.Portfolio.SicavEntity.YearEnd}<br>\r\n•<b>&nbsp;Order Placement:</b> {InternalShareClasses.Portfolio.PricingFrequency}<br>\r\n•<b>&nbsp;Order Cut-Off Time:</b> Before {InternalShareClasses.Portfolio.CutOffTime} (CET/CEST)<br>\r\n•<b>&nbsp;Category:</b> {GetTranslation(InternalShareClasses.Portfolio.Custom1Classification,Lang)}<br>\r\n"
+                    "Value": "•<b>&nbsp;Fund Type:</b> {InternalShareClasses.Portfolio.Sicav.SicavType}<br>\r\n•<b>&nbsp;Legal Form:</b> {InternalShareClasses.Portfolio.Sicav.LegalForm}<br>\r\n•<b>&nbsp;SICAV:</b> {InternalShareClasses.Portfolio.SicavEntity.Name}<br>\r\n•<b>&nbsp;Fiscal Year End:</b> {InternalShareClasses.Portfolio.SicavEntity.YearEnd}<br>\r\n•<b>&nbsp;Order Placement:</b> {InternalShareClasses.Portfolio.PricingFrequency}<br>\r\n•<b>&nbsp;Order Cut-Off Time:</b> Before {InternalShareClasses.Portfolio.CutOffTime} (CET/CEST)<br>\r\n•<b>&nbsp;Category:</b> {GetTranslation(InternalShareClasses.Portfolio.Custom1Classification)}<br>\r\n"
                   },
                   "Border": ";;;;;;;solid:Black",
                   "Brush": "solid:",
@@ -6377,7 +6411,7 @@
                     "Ident": "StiInteraction"
                   },
                   "Text": {
-                    "Value": "•<b>&nbsp;NAV:</b> {InternalShareClasses.Nav} {InternalShareClasses.CcyIso}<br>\r\n•<b>&nbsp;Base Currency:</b> {InternalShareClasses.CcyIso}<br>\r\n•<b>&nbsp;ISIN:</b> {InternalShareClasses.Isin}<br>\r\n•<b>&nbsp;Fund Manager:</b>&nbsp;{Left(InternalShareClasses.Portfolio.Manager1.FirstName,1)}.{InternalShareClasses.Portfolio.Manager1.LastName} since {Format(\"{0:dd/MM/yyyy}\", InternalShareClasses.Portfolio.Manager1StartDate)}<br>\r\n•<b>&nbsp;Fund AUM:</b> {InternalShareClasses.Portfolio.Tna} {InternalShareClasses.Portfolio.CcyIso}<br>\r\n•<b>&nbsp;Share Class AUM:</b> {InternalShareClasses.Tna} {InternalShareClasses.CcyIso}<br>\r\n•<b>&nbsp;Domicile:</b> {GetTranslation(InternalShareClasses.Portfolio.DomicileName,Lang)} <br>\r\n•<b>&nbsp;Dividend Policy:</b> {InternalShareClasses.DividendDistributionPolicy}<br>\r\n•<b>&nbsp;Fund Inception Date:</b> {Format(\"{0:dd/MM/yyyy}\", InternalShareClasses.Portfolio.InceptionDate)}\r\n"
+                    "Value": "•<b>&nbsp;NAV:</b> {InternalShareClasses.Nav} {InternalShareClasses.CcyIso}<br>\r\n•<b>&nbsp;Base Currency:</b> {InternalShareClasses.CcyIso}<br>\r\n•<b>&nbsp;ISIN:</b> {InternalShareClasses.Isin}<br>\r\n•<b>&nbsp;Fund Manager:</b>&nbsp;{Left(InternalShareClasses.Portfolio.Manager1.FirstName,1)}.{InternalShareClasses.Portfolio.Manager1.LastName} since {Format(\"{0:dd/MM/yyyy}\", InternalShareClasses.Portfolio.Manager1StartDate)}<br>\r\n•<b>&nbsp;Fund AUM:</b> {InternalShareClasses.Portfolio.Tna} {InternalShareClasses.Portfolio.CcyIso}<br>\r\n•<b>&nbsp;Share Class AUM:</b> {InternalShareClasses.Tna} {InternalShareClasses.CcyIso}<br>\r\n•<b>&nbsp;Domicile:</b> {GetTranslation(InternalShareClasses.Portfolio.DomicileName)} <br>\r\n•<b>&nbsp;Dividend Policy:</b> {InternalShareClasses.DividendDistributionPolicy}<br>\r\n•<b>&nbsp;Fund Inception Date:</b> {Format(\"{0:dd/MM/yyyy}\", InternalShareClasses.Portfolio.InceptionDate)}\r\n"
                   },
                   "Border": ";;;;;;;solid:Black",
                   "Brush": "solid:",
@@ -6584,7 +6618,7 @@
                             "Ident": "StiInteraction"
                           },
                           "Text": {
-                            "Value": "{GetTranslation(LastPositions.Security.SectorClassification,Lang)}\r\n"
+                            "Value": "{GetTranslation(LastPositions.Security.SectorClassification)}\r\n"
                           },
                           "VertAlignment": "Center",
                           "Font": "Arial Narrow;6;;",
@@ -6613,7 +6647,7 @@
                             "Ident": "StiInteraction"
                           },
                           "Text": {
-                            "Value": "{\r\n(LastPositions.Security.CountryCode==\"US\")?\"USA\":GetTranslation(LastPositions.Security.Country,Lang)}\r\n"
+                            "Value": "{\r\n(LastPositions.Security.CountryCode==\"US\")?\"USA\":GetTranslation(LastPositions.Security.Country)}\r\n"
                           },
                           "VertAlignment": "Center",
                           "Font": "Arial Narrow;6;;",
@@ -7269,7 +7303,7 @@
                         "Ident": "StiInteraction"
                       },
                       "Text": {
-                        "Value": "* For the share class {InternalShareClasses.Portfolio.Name} {InternalShareClasses.ShortName}. Risk Scale from the KIID (Key Investor Information Document). Risk 1 does not mean a risk-free investment. This indicator may change over time. (1) Exchange Rate as of {NavDate}."
+                        "Value": "* For the share class {InternalShareClasses.Portfolio.Name} {InternalShareClasses.ShortName}. Risk Scale from the KIID (Key Investor Information Document). Risk 1 does not mean a risk-free investment. This indicator may change over time. (1) Exchange Rate as of {AsOfDate}."
                       },
                       "VertAlignment": "Center",
                       "Font": "Leelawadee;6;;",
@@ -7593,7 +7627,7 @@
               "Ident": "StiFilter",
               "Item": "Expression",
               "Expression": {
-                "Value": "{InternalShareClasses.Isin==Isin}"
+                "Value": "{InternalShareClasses.Id == ShareClassId}"
               }
             }
           }
@@ -7967,7 +8001,7 @@
                           "Ident": "StiFilter",
                           "Item": "Expression",
                           "Expression": {
-                            "Value": "{AnnualPerformances.Year  == Year(NavDate)}"
+                            "Value": "{AnnualPerformances.Year  == Year(AsOfDate)}"
                           }
                         },
                         "1": {
@@ -8038,7 +8072,7 @@
                           "Ident": "StiFilter",
                           "Item": "Expression",
                           "Expression": {
-                            "Value": "{AnnualPerformances.Year  == (Year(NavDate)-1)}"
+                            "Value": "{AnnualPerformances.Year  == (Year(AsOfDate)-1)}"
                           }
                         },
                         "1": {
@@ -8109,7 +8143,7 @@
                           "Ident": "StiFilter",
                           "Item": "Expression",
                           "Expression": {
-                            "Value": "{AnnualPerformances.Year  == (Year(NavDate)-2)}"
+                            "Value": "{AnnualPerformances.Year  == (Year(AsOfDate)-2)}"
                           }
                         },
                         "1": {
@@ -8180,7 +8214,7 @@
                           "Ident": "StiFilter",
                           "Item": "Expression",
                           "Expression": {
-                            "Value": "{AnnualPerformances.Year  == (Year(NavDate)-3)}"
+                            "Value": "{AnnualPerformances.Year  == (Year(AsOfDate)-3)}"
                           }
                         },
                         "1": {
@@ -8293,7 +8327,7 @@
                   "Ident": "StiFilter",
                   "Item": "Expression",
                   "Expression": {
-                    "Value": "{InternalShareClasses.Portfolio.InternalCode == SubFundCode}"
+                    "Value": "{InternalShareClasses.PortfolioId == ReportShareClass.PortfolioId}"
                   }
                 }
               }
@@ -8331,7 +8365,7 @@
                     "Ident": "StiInteraction"
                   },
                   "Text": {
-                    "Value": "(2) Value-at-Risk calculated on exposure as of {NavDate}, with a 1-year time window, a level of confidence of 99% and a holding period of 20 days."
+                    "Value": "(2) Value-at-Risk calculated on exposure as of {AsOfDate}, with a 1-year time window, a level of confidence of 99% and a holding period of 20 days."
                   },
                   "Font": "Leelawadee;6;;",
                   "Border": ";;;;;;;solid:Black",
@@ -8509,7 +8543,7 @@
                 "Ident": "StiInteraction"
               },
               "Text": {
-                "Value": "{Year(NavDate)}"
+                "Value": "{Year(AsOfDate)}"
               },
               "HorAlignment": "Center",
               "VertAlignment": "Center",
@@ -8528,7 +8562,7 @@
                 "Ident": "StiInteraction"
               },
               "Text": {
-                "Value": "{Year(NavDate)-1}"
+                "Value": "{Year(AsOfDate)-1}"
               },
               "HorAlignment": "Center",
               "VertAlignment": "Center",
@@ -8547,7 +8581,7 @@
                 "Ident": "StiInteraction"
               },
               "Text": {
-                "Value": "{Year(NavDate)-2}"
+                "Value": "{Year(AsOfDate)-2}"
               },
               "HorAlignment": "Center",
               "VertAlignment": "Center",
@@ -8566,7 +8600,7 @@
                 "Ident": "StiInteraction"
               },
               "Text": {
-                "Value": "{Year(NavDate)-3}"
+                "Value": "{Year(AsOfDate)-3}"
               },
               "HorAlignment": "Center",
               "VertAlignment": "Center",
@@ -8792,7 +8826,7 @@
                     "Ident": "StiInteraction"
                   },
                   "Text": {
-                    "Value": "<b>FACTSHEET</b> - {Format(\"{0:MM/yyyy}\", NavDate)} - <b>{PageNumber}/{TotalPageCount}</b>"
+                    "Value": "<b>FACTSHEET</b> - {Format(\"{0:MM/yyyy}\", AsOfDate)} - <b>{PageNumber}/{TotalPageCount}</b>"
                   },
                   "HorAlignment": "Right",
                   "VertAlignment": "Center",
@@ -9217,7 +9251,7 @@
                             "Ident": "StiInteraction"
                           },
                           "Text": {
-                            "Value": "31/12/{Year(NavDate)-1}"
+                            "Value": "31/12/{Year(AsOfDate)-1}"
                           },
                           "HorAlignment": "Center",
                           "VertAlignment": "Center",
@@ -9946,7 +9980,7 @@
                             "Ident": "StiInteraction"
                           },
                           "Text": {
-                            "Value": "31/12/{Year(NavDate)-1}"
+                            "Value": "31/12/{Year(AsOfDate)-1}"
                           },
                           "HorAlignment": "Center",
                           "VertAlignment": "Center",
@@ -10209,7 +10243,7 @@
                             "Ident": "StiInteraction"
                           },
                           "Text": {
-                            "Value": "31/12/{Year(NavDate)-1}"
+                            "Value": "31/12/{Year(AsOfDate)-1}"
                           },
                           "HorAlignment": "Center",
                           "VertAlignment": "Center",
@@ -10976,7 +11010,7 @@
                             "Ident": "StiInteraction"
                           },
                           "Text": {
-                            "Value": "{GetTranslation(StatisticsTree.ClassificationName,Lang)}"
+                            "Value": "{GetTranslation(StatisticsTree.ClassificationName)}"
                           },
                           "CanBreak": true,
                           "VertAlignment": "Center",
@@ -11025,7 +11059,7 @@
                           "Ident": "StiFilter",
                           "Item": "Expression",
                           "Expression": {
-                            "Value": "{StatisticsTree.PortfolioId == InternalShareClasses.PortfolioId\r\n&& StatisticsTree.Date == NavDate\r\n&& StatisticsTree.StatisticsCode == \"CTP\"\r\n&& StatisticsTree.HoldingPeriod == \"OneMonth\"\r\n&& StatisticsTree.CalculationPeriod == \"OneMonth\"\r\n&& StatisticsTree.PortfolioNode == \"AssetClass\"\r\n}"
+                            "Value": "{StatisticsTree.PortfolioId == InternalShareClasses.PortfolioId\r\n&& StatisticsTree.Date == AsOfDate\r\n&& StatisticsTree.StatisticsCode == \"CTP\"\r\n&& StatisticsTree.HoldingPeriod == \"OneMonth\"\r\n&& StatisticsTree.CalculationPeriod == \"OneMonth\"\r\n&& StatisticsTree.PortfolioNode == \"AssetClass\"\r\n}"
                           }
                         },
                         "1": {
@@ -11047,7 +11081,7 @@
               "Ident": "StiFilter",
               "Item": "Expression",
               "Expression": {
-                "Value": "{InternalShareClasses.Isin==Isin}"
+                "Value": "{InternalShareClasses.Id == ShareClassId}"
               }
             }
           }
@@ -11109,7 +11143,7 @@
                     "Ident": "StiInteraction"
                   },
                   "Text": {
-                    "Value": "{GetTranslation(PortfolioNotes.Text,Lang)}"
+                    "Value": "{GetTranslation(PortfolioNotes.Text)}"
                   },
                   "HorAlignment": "Width",
                   "VertAlignment": "Center",
@@ -11148,7 +11182,7 @@
                   "Ident": "StiFilter",
                   "Item": "Expression",
                   "Expression": {
-                    "Value": "{PortfolioNotes.Portfolio.InternalCode == SubFundCode}"
+                    "Value": "{PortfolioNotes.PortfolioId == ReportShareClass.PortfolioId}"
                   }
                 },
                 "1": {
@@ -11179,7 +11213,7 @@
                     "Ident": "StiInteraction"
                   },
                   "Text": {
-                    "Value": "{GetTranslation(PortfolioNotes.Text,Lang)}"
+                    "Value": "{GetTranslation(PortfolioNotes.Text)}"
                   },
                   "HorAlignment": "Width",
                   "VertAlignment": "Center",
@@ -11218,7 +11252,7 @@
                   "Ident": "StiFilter",
                   "Item": "Expression",
                   "Expression": {
-                    "Value": "{PortfolioNotes.Portfolio.InternalCode == SubFundCode}"
+                    "Value": "{PortfolioNotes.PortfolioId == ReportShareClass.PortfolioId}"
                   }
                 },
                 "1": {
@@ -11259,7 +11293,7 @@
                     "Ident": "StiInteraction"
                   },
                   "Text": {
-                    "Value": "{GetTranslation(PortfolioNotes.Text,Lang)}"
+                    "Value": "{GetTranslation(PortfolioNotes.Text)}"
                   },
                   "HorAlignment": "Width",
                   "VertAlignment": "Center",
@@ -11298,7 +11332,7 @@
                   "Ident": "StiFilter",
                   "Item": "Expression",
                   "Expression": {
-                    "Value": "{PortfolioNotes.Portfolio.InternalCode == SubFundCode}"
+                    "Value": "{PortfolioNotes.PortfolioId == ReportShareClass.PortfolioId}"
                   }
                 },
                 "1": {
@@ -11330,7 +11364,7 @@
                     "Ident": "StiInteraction"
                   },
                   "Text": {
-                    "Value": "{GetTranslation(PortfolioNotes.Text,Lang)}"
+                    "Value": "{GetTranslation(PortfolioNotes.Text)}"
                   },
                   "HorAlignment": "Width",
                   "VertAlignment": "Center",
@@ -11369,7 +11403,7 @@
                   "Ident": "StiFilter",
                   "Item": "Expression",
                   "Expression": {
-                    "Value": "{PortfolioNotes.Portfolio.InternalCode == SubFundCode}"
+                    "Value": "{PortfolioNotes.PortfolioId == ReportShareClass.PortfolioId}"
                   }
                 },
                 "1": {
@@ -11594,7 +11628,7 @@
                     "Ident": "StiInteraction"
                   },
                   "Text": {
-                    "Value": "<b>FACTSHEET</b> - {Format(\"{0:MM/yyyy}\", NavDate)} - <b>{PageNumber}/{TotalPageCount}</b>"
+                    "Value": "<b>FACTSHEET</b> - {Format(\"{0:MM/yyyy}\", AsOfDate)} - <b>{PageNumber}/{TotalPageCount}</b>"
                   },
                   "HorAlignment": "Right",
                   "VertAlignment": "Center",
@@ -11616,7 +11650,7 @@
               "Ident": "StiFilter",
               "Item": "Expression",
               "Expression": {
-                "Value": "{InternalShareClasses.Isin==Isin}"
+                "Value": "{InternalShareClasses.Id == ShareClassId}"
               }
             }
           }
@@ -11790,7 +11824,7 @@
                     "Ident": "StiInteraction"
                   },
                   "Text": {
-                    "Value": "<b>FACTSHEET</b> - {Format(\"{0:MM/yyyy}\", NavDate)} - <b>{PageNumber}/{TotalPageCount}</b>"
+                    "Value": "<b>FACTSHEET</b> - {Format(\"{0:MM/yyyy}\", AsOfDate)} - <b>{PageNumber}/{TotalPageCount}</b>"
                   },
                   "HorAlignment": "Right",
                   "VertAlignment": "Center",
@@ -11812,7 +11846,7 @@
               "Ident": "StiFilter",
               "Item": "Expression",
               "Expression": {
-                "Value": "{InternalShareClasses.Isin==Isin}"
+                "Value": "{InternalShareClasses.Id == ShareClassId}"
               }
             }
           }
