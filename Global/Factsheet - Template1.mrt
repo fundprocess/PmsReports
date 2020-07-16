@@ -10,7 +10,7 @@
   "EngineVersion": "EngineV2",
   "PreviewSettings": 268435455,
   "AutoLocalizeReportOnRun": true,
-  "Script": "using System;\r\nusing System.Drawing;\r\nusing System.Windows.Forms;\r\nusing System.Data;\r\nusing Stimulsoft.Controls;\r\nusing Stimulsoft.Base.Drawing;\r\nusing Stimulsoft.Report;\r\nusing Stimulsoft.Report.Dialogs;\r\nusing Stimulsoft.Report.Components;\r\nusing System.Collections.Generic;\r\n\r\nnamespace Reports\r\n{\r\n\tpublic class MyFunction\r\n\t{\r\n\t\tprivate const string Category = \"MyFuncCategory\";\r\n\r\n\t\tpublic static string GetTranslation(string jsonStr)\r\n\t\t{\r\n\t\t\tstring lang=\"en\";\r\n\t\t\tif (string.IsNullOrEmpty(jsonStr))\r\n\t\t\t\treturn null;\r\n\t\t\t\t\r\n\t\t\treturn Stimulsoft.Base.Json.JsonConvert.DeserializeObject<Dictionary<string,string>>(jsonStr)[lang];\r\n\t\t}\r\n\r\n\t\tpublic static void RegisterFunctions()\r\n\t\t{\r\n\t\t\tvar ParamNames = new string[2];\r\n\t\t\tvar ParamTypes = new Type[2];\r\n\t\t\tvar ParamDescriptions = new string[2];\r\n\r\n\t\t\tParamNames[0] = \"jsonStr\";\r\n\t\t\tParamDescriptions[0] = \"Multi-culture string\";\r\n\t\t\tParamTypes[0] = typeof(string);\r\n\t\t\t\r\n\t\t\tParamNames[1] = \"lang\";\r\n\t\t\tParamDescriptions[1] = \"LanguageTmp\";\r\n\t\t\tParamTypes[1] = typeof(string);\r\n\t\t\t\r\n\r\n\t\t\tStimulsoft.Report.Dictionary.StiFunctions.RemoveFunction(\"GetTranslation\");\r\n\t\t\tStimulsoft.Report.Dictionary.StiFunctions.AddFunction(Category, \"GetTranslation\", \"GetTranslation\", \"Description\", \r\n\t\t\t\ttypeof(MyFunction),\r\n\t\t\t\ttypeof(string), \"Return Description\", ParamTypes, ParamNames, ParamDescriptions);\r\n\t\t}\r\n\t}\r\n\t\r\n    public class Report : Stimulsoft.Report.StiReport\r\n    {\r\n        public Report()        {\r\n            this.InitializeComponent();\r\n\t\t\tMyFunction.RegisterFunctions();\r\n        }\r\n\r\n        #region StiReport Designer generated code - do not modify\r\n\t\t#endregion StiReport Designer generated code - do not modify\r\n    }\r\n}\r\n",
+  "Script": "using System;\r\nusing System.Drawing;\r\nusing System.Windows.Forms;\r\nusing System.Data;\r\nusing Stimulsoft.Controls;\r\nusing Stimulsoft.Base.Drawing;\r\nusing Stimulsoft.Report;\r\nusing Stimulsoft.Report.Dialogs;\r\nusing Stimulsoft.Report.Components;\r\nusing System.Collections.Generic;\r\n\r\nnamespace Reports\r\n{\r\n\tpublic class MyFunction\r\n\t{\r\n\t\tprivate const string Category = \"MyFuncCategory\";\r\n\r\n\t\tpublic static string GetTranslation(string jsonStr)\r\n\t\t{\r\n\t\t\tstring lang=\"en\";\r\n\t\t\tif (string.IsNullOrEmpty(jsonStr))\r\n\t\t\t\treturn null;\r\n\t\t\t\t\r\n\t\t\treturn Stimulsoft.Base.Json.JsonConvert.DeserializeObject<Dictionary<string,string>>(jsonStr)[lang];\r\n\t\t}\r\n\r\n\t\tpublic static void RegisterFunctions()\r\n\t\t{\r\n\t\t\tvar ParamNames = new string[2];\r\n\t\t\tvar ParamTypes = new Type[2];\r\n\t\t\tvar ParamDescriptions = new string[2];\r\n\r\n\t\t\tParamNames[0] = \"jsonStr\";\r\n\t\t\tParamDescriptions[0] = \"Multi-culture string\";\r\n\t\t\tParamTypes[0] = typeof(string);\r\n\t\t\t\r\n\t\t\tParamNames[1] = \"lang\";\r\n\t\t\tParamDescriptions[1] = \"LanguageTmp\";\r\n\t\t\tParamTypes[1] = typeof(string);\r\n\t\t\t\r\n\r\n\t\t\tStimulsoft.Report.Dictionary.StiFunctions.RemoveFunction(\"GetTranslation\");\r\n\t\t\tStimulsoft.Report.Dictionary.StiFunctions.AddFunction(Category, \"GetTranslation\", \"GetTranslation\", \"Description\", \r\n\t\t\t\ttypeof(MyFunction),\r\n\t\t\t\ttypeof(string), \"Return Description\", ParamTypes, ParamNames, ParamDescriptions);\r\n\t\t}\r\n\t}\r\n\t\r\n    public class Report : Stimulsoft.Report.StiReport\r\n    {\r\n        public Report()        {\r\n            this.InitializeComponent();\r\n\t\t\tRegisterFunctions();\r\n        }\r\n\r\n        #region StiReport Designer generated code - do not modify\r\n\t\t#endregion StiReport Designer generated code - do not modify\r\n    }\r\n}\r\n",
   "Styles": {
     "0": {
       "Ident": "StiStyle",
@@ -5742,7 +5742,7 @@
                         "Value": "{Breakdowns.Weight*100}"
                       },
                       "Argument": {
-                        "Value": "{MyFunction.GetTranslation(Breakdowns.ClassificationName)}\r\n"
+                        "Value": "{GetTranslation(Breakdowns.ClassificationName)}\r\n"
                       },
                       "Title": {
                         "Value": "Series 1"
@@ -6139,7 +6139,7 @@
                         "Value": "{Positions.Security.AssetClassificationCode}"
                       },
                       "DisplayValue": {
-                        "Value": "{MyFunction.GetTranslation(Positions.Security.AssetClassification)}"
+                        "Value": "{GetTranslation(Positions.Security.AssetClassification)}"
                       },
                       "TotalGuid": "bfa0768d0688482ea4155f53a6465666"
                     },
@@ -6165,7 +6165,7 @@
                         "Value": "{Positions.Security.RegionCode}"
                       },
                       "DisplayValue": {
-                        "Value": "{MyFunction.GetTranslation(Positions.Security.Region)}"
+                        "Value": "{GetTranslation(Positions.Security.Region)}"
                       },
                       "TotalGuid": "90bf6b484f8b4455ae3af3b9705e46f0",
                       "SortDirection": "None",
@@ -6302,7 +6302,7 @@
                             "Ident": "StiInteraction"
                           },
                           "Text": {
-                            "Value": "{MyFunction.GetTranslation(PortfolioNotes.Text)}"
+                            "Value": "{GetTranslation(PortfolioNotes.Text)}"
                           },
                           "CanBreak": true,
                           "HorAlignment": "Width",
@@ -6483,7 +6483,7 @@
                     "Ident": "StiInteraction"
                   },
                   "Text": {
-                    "Value": "&#8226;<b>&nbsp;Fund Type:</b> {InternalShareClasses.Portfolio.Sicav.SicavType}<br>\r\n&#8226;<b>&nbsp;Legal Form:</b> {InternalShareClasses.Portfolio.Sicav.LegalForm}<br>\r\n&#8226;<b>&nbsp;SICAV:</b> {InternalShareClasses.Portfolio.SicavEntity.Name}<br>\r\n&#8226;<b>&nbsp;Fiscal Year End:</b> {InternalShareClasses.Portfolio.SicavEntity.YearEnd}<br>\r\n&#8226;<b>&nbsp;Order Placement:</b> {InternalShareClasses.Portfolio.PricingFrequency}<br>\r\n&#8226;<b>&nbsp;Order Cut-Off Time:</b> Before {InternalShareClasses.Portfolio.CutOffTime} (CET/CEST)<br>\r\n&#8226;<b>&nbsp;Category:</b> {MyFunction.GetTranslation(InternalShareClasses.Portfolio.Custom1Classification)}<br>\r\n"
+                    "Value": "&#8226;<b>&nbsp;Fund Type:</b> {InternalShareClasses.Portfolio.Sicav.SicavType}<br>\r\n&#8226;<b>&nbsp;Legal Form:</b> {InternalShareClasses.Portfolio.Sicav.LegalForm}<br>\r\n&#8226;<b>&nbsp;SICAV:</b> {InternalShareClasses.Portfolio.SicavEntity.Name}<br>\r\n&#8226;<b>&nbsp;Fiscal Year End:</b> {InternalShareClasses.Portfolio.SicavEntity.YearEnd}<br>\r\n&#8226;<b>&nbsp;Order Placement:</b> {InternalShareClasses.Portfolio.PricingFrequency}<br>\r\n&#8226;<b>&nbsp;Order Cut-Off Time:</b> Before {InternalShareClasses.Portfolio.CutOffTime} (CET/CEST)<br>\r\n&#8226;<b>&nbsp;Category:</b> {GetTranslation(InternalShareClasses.Portfolio.Custom1Classification)}<br>\r\n"
                   },
                   "Border": ";;;;;;;solid:Black",
                   "Brush": "solid:",
@@ -6506,7 +6506,7 @@
                     "Ident": "StiInteraction"
                   },
                   "Text": {
-                    "Value": "&#8226;<b>&nbsp;NAV:</b> {InternalShareClasses.Nav} {InternalShareClasses.CcyIso}<br>\r\n&#8226;<b>&nbsp;Base Currency:</b> {InternalShareClasses.CcyIso}<br>\r\n&#8226;<b>&nbsp;ISIN:</b> {InternalShareClasses.Isin}<br>\r\n&#8226;<b>&nbsp;Fund Manager:</b>&nbsp;{Left(InternalShareClasses.Portfolio.Manager1.FirstName,1)}.{InternalShareClasses.Portfolio.Manager1.LastName} since {Format(\"{0:dd/MM/yyyy}\", InternalShareClasses.Portfolio.Manager1StartDate)}<br>\r\n&#8226;<b>&nbsp;Fund AUM:</b> {InternalShareClasses.Portfolio.Tna} {InternalShareClasses.Portfolio.CcyIso}<br>\r\n&#8226;<b>&nbsp;Share Class AUM:</b> {InternalShareClasses.Tna} {InternalShareClasses.CcyIso}<br>\r\n&#8226;<b>&nbsp;Domicile:</b> {MyFunction.GetTranslation(InternalShareClasses.Portfolio.DomicileName)} <br>\r\n&#8226;<b>&nbsp;Dividend Policy:</b> {InternalShareClasses.DividendDistributionPolicy}<br>\r\n&#8226;<b>&nbsp;Fund Inception Date:</b> {Format(\"{0:dd/MM/yyyy}\", InternalShareClasses.Portfolio.InceptionDate)}\r\n"
+                    "Value": "&#8226;<b>&nbsp;NAV:</b> {InternalShareClasses.Nav} {InternalShareClasses.CcyIso}<br>\r\n&#8226;<b>&nbsp;Base Currency:</b> {InternalShareClasses.CcyIso}<br>\r\n&#8226;<b>&nbsp;ISIN:</b> {InternalShareClasses.Isin}<br>\r\n&#8226;<b>&nbsp;Fund Manager:</b>&nbsp;{Left(InternalShareClasses.Portfolio.Manager1.FirstName,1)}.{InternalShareClasses.Portfolio.Manager1.LastName} since {Format(\"{0:dd/MM/yyyy}\", InternalShareClasses.Portfolio.Manager1StartDate)}<br>\r\n&#8226;<b>&nbsp;Fund AUM:</b> {InternalShareClasses.Portfolio.Tna} {InternalShareClasses.Portfolio.CcyIso}<br>\r\n&#8226;<b>&nbsp;Share Class AUM:</b> {InternalShareClasses.Tna} {InternalShareClasses.CcyIso}<br>\r\n&#8226;<b>&nbsp;Domicile:</b> {GetTranslation(InternalShareClasses.Portfolio.DomicileName)} <br>\r\n&#8226;<b>&nbsp;Dividend Policy:</b> {InternalShareClasses.DividendDistributionPolicy}<br>\r\n&#8226;<b>&nbsp;Fund Inception Date:</b> {Format(\"{0:dd/MM/yyyy}\", InternalShareClasses.Portfolio.InceptionDate)}\r\n"
                   },
                   "Border": ";;;;;;;solid:Black",
                   "Brush": "solid:",
@@ -6713,7 +6713,7 @@
                             "Ident": "StiInteraction"
                           },
                           "Text": {
-                            "Value": "{MyFunction.GetTranslation(LastPositions.Security.SectorClassification)}\r\n"
+                            "Value": "{GetTranslation(LastPositions.Security.SectorClassification)}\r\n"
                           },
                           "VertAlignment": "Center",
                           "Font": "Arial Narrow;6;;",
@@ -6742,7 +6742,7 @@
                             "Ident": "StiInteraction"
                           },
                           "Text": {
-                            "Value": "{\r\n(LastPositions.Security.CountryCode==\"US\")?\"USA\":MyFunction.GetTranslation(LastPositions.Security.Country)}\r\n"
+                            "Value": "{\r\n(LastPositions.Security.CountryCode==\"US\")?\"USA\":GetTranslation(LastPositions.Security.Country)}\r\n"
                           },
                           "VertAlignment": "Center",
                           "Font": "Arial Narrow;6;;",
@@ -11212,7 +11212,7 @@
                     "Ident": "StiInteraction"
                   },
                   "Text": {
-                    "Value": "{MyFunction.GetTranslation(PortfolioNotes.Text)}"
+                    "Value": "{GetTranslation(PortfolioNotes.Text)}"
                   },
                   "HorAlignment": "Width",
                   "VertAlignment": "Center",
@@ -11282,7 +11282,7 @@
                     "Ident": "StiInteraction"
                   },
                   "Text": {
-                    "Value": "{MyFunction.GetTranslation(PortfolioNotes.Text)}"
+                    "Value": "{GetTranslation(PortfolioNotes.Text)}"
                   },
                   "HorAlignment": "Width",
                   "VertAlignment": "Center",
@@ -11362,7 +11362,7 @@
                     "Ident": "StiInteraction"
                   },
                   "Text": {
-                    "Value": "{MyFunction.GetTranslation(PortfolioNotes.Text)}"
+                    "Value": "{GetTranslation(PortfolioNotes.Text)}"
                   },
                   "HorAlignment": "Width",
                   "VertAlignment": "Center",
@@ -11433,7 +11433,7 @@
                     "Ident": "StiInteraction"
                   },
                   "Text": {
-                    "Value": "{MyFunction.GetTranslation(PortfolioNotes.Text)}"
+                    "Value": "{GetTranslation(PortfolioNotes.Text)}"
                   },
                   "HorAlignment": "Width",
                   "VertAlignment": "Center",
