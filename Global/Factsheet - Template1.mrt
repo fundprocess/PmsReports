@@ -1,16 +1,16 @@
 {
   "ReportVersion": "2020.2.3.0",
-  "ReportGuid": "5a2381b8219047e3bcf63791e82b0a94",
+  "ReportGuid": "5b34e96c8cfe47aa9c337d037c8e493d",
   "ReportName": "Factsheet",
   "ReportAlias": "Factsheet",
   "ReportAuthor": "FundProcess",
   "ReportDescription": "FundProcess",
   "ReportCreated": "/Date(0+0100)/",
-  "ReportChanged": "/Date(1594737047577+0200)/",
+  "ReportChanged": "/Date(1594912194948+0200)/",
   "EngineVersion": "EngineV2",
   "PreviewSettings": 268435455,
   "AutoLocalizeReportOnRun": true,
-  "Script": "using System;\r\nusing System.Drawing;\r\nusing System.Windows.Forms;\r\nusing System.Data;\r\nusing Stimulsoft.Controls;\r\nusing Stimulsoft.Base.Drawing;\r\nusing Stimulsoft.Report;\r\nusing Stimulsoft.Report.Dialogs;\r\nusing Stimulsoft.Report.Components;\r\nusing System.Collections.Generic;\r\n\r\nnamespace Reports\r\n{\r\n\tpublic class MyFunction\r\n\t{\r\n\t\tprivate const string Category = \"MyFuncCategory\";\r\n\r\n\t\tpublic static string GetTranslation(string jsonStr)\r\n\t\t{\r\n\t\t\tstring lang=\"en\";\r\n\t\t\tif (string.IsNullOrEmpty(jsonStr))\r\n\t\t\t\treturn null;\r\n\t\t\t\t\r\n\t\t\treturn Stimulsoft.Base.Json.JsonConvert.DeserializeObject<Dictionary<string,string>>(jsonStr)[lang];\r\n\t\t}\r\n\r\n\t\tpublic static void RegisterFunctions()\r\n\t\t{\r\n\t\t\tvar ParamNames = new string[2];\r\n\t\t\tvar ParamTypes = new Type[2];\r\n\t\t\tvar ParamDescriptions = new string[2];\r\n\r\n\t\t\tParamNames[0] = \"jsonStr\";\r\n\t\t\tParamDescriptions[0] = \"Multi-culture string\";\r\n\t\t\tParamTypes[0] = typeof(string);\r\n\t\t\t\r\n\t\t\tParamNames[1] = \"lang\";\r\n\t\t\tParamDescriptions[1] = \"LanguageTmp\";\r\n\t\t\tParamTypes[1] = typeof(string);\r\n\t\t\t\r\n\r\n\t\t\tStimulsoft.Report.Dictionary.StiFunctions.RemoveFunction(\"GetTranslation\");\r\n\t\t\tStimulsoft.Report.Dictionary.StiFunctions.AddFunction(Category, \"GetTranslation\", \"GetTranslation\", \"Description\", \r\n\t\t\t\ttypeof(MyFunction),\r\n\t\t\t\ttypeof(string), \"Return Description\", ParamTypes, ParamNames, ParamDescriptions);\r\n\t\t}\r\n\t}\r\n\t\r\n    public class Report : Stimulsoft.Report.StiReport\r\n    {\r\n        public Report()        {\r\n            this.InitializeComponent();\r\n\t\t\tRegisterFunctions();\r\n        }\r\n\r\n        #region StiReport Designer generated code - do not modify\r\n\t\t#endregion StiReport Designer generated code - do not modify\r\n    }\r\n}\r\n",
+  "Script": "using System;\r\nusing System.Drawing;\r\nusing System.Windows.Forms;\r\nusing System.Data;\r\nusing Stimulsoft.Controls;\r\nusing Stimulsoft.Base.Drawing;\r\nusing Stimulsoft.Report;\r\nusing Stimulsoft.Report.Dialogs;\r\nusing Stimulsoft.Report.Components;\r\nusing System.Collections.Generic;\r\n\r\nnamespace Reports\r\n{\r\n\tpublic class MyFunction\r\n\t{\r\n\t\tprivate const string Category = \"MyFuncCategory\";\r\n\r\n\t\tpublic static string GetTranslation(string jsonStr)\r\n\t\t{\r\n\t\t\tstring lang=\"en\";\r\n\t\t\tif (string.IsNullOrEmpty(jsonStr))\r\n\t\t\t\treturn null;\r\n\t\t\t\t\r\n\t\t\treturn Stimulsoft.Base.Json.JsonConvert.DeserializeObject<Dictionary<string,string>>(jsonStr)[lang];\r\n\t\t}\r\n\r\n\t\tpublic static void RegisterFunctions()\r\n\t\t{\r\n\t\t\tvar ParamNames = new string[2];\r\n\t\t\tvar ParamTypes = new Type[2];\r\n\t\t\tvar ParamDescriptions = new string[2];\r\n\r\n\t\t\tParamNames[0] = \"jsonStr\";\r\n\t\t\tParamDescriptions[0] = \"Multi-culture string\";\r\n\t\t\tParamTypes[0] = typeof(string);\r\n\t\t\t\r\n\t\t\tParamNames[1] = \"lang\";\r\n\t\t\tParamDescriptions[1] = \"LanguageTmp\";\r\n\t\t\tParamTypes[1] = typeof(string);\r\n\t\t\t\r\n\r\n\t\t\tStimulsoft.Report.Dictionary.StiFunctions.RemoveFunction(\"GetTranslation\");\r\n\t\t\tStimulsoft.Report.Dictionary.StiFunctions.AddFunction(Category, \"GetTranslation\", \"GetTranslation\", \"Description\", \r\n\t\t\t\ttypeof(MyFunction),\r\n\t\t\t\ttypeof(string), \"Return Description\", ParamTypes, ParamNames, ParamDescriptions);\r\n\t\t}\r\n\t}\r\n\t\r\n    public class Report : Stimulsoft.Report.StiReport\r\n    {\r\n        public Report()        {\r\n            this.InitializeComponent();\r\n\t\t\tMyFunction.RegisterFunctions();\r\n        }\r\n\r\n        #region StiReport Designer generated code - do not modify\r\n\t\t#endregion StiReport Designer generated code - do not modify\r\n    }\r\n}\r\n",
   "Styles": {
     "0": {
       "Ident": "StiStyle",
@@ -76,7 +76,7 @@
     },
     "Variables": {
       "0": {
-        "Value": "348",
+        "Value": "335",
         "Name": "ShareClassId",
         "Alias": "ShareClassId",
         "Type": "System.Int32",
@@ -963,6 +963,58 @@
       },
       "8": {
         "Ident": "StiDataTableSource",
+        "Name": "SecuritySummaries",
+        "Alias": "SecuritySummaries",
+        "Key": "fb6595b9da2243028b0c9d23c2e3c0b3",
+        "Columns": {
+          "0": {
+            "Name": "Id",
+            "Index": -1,
+            "NameInSource": "Id",
+            "Alias": "Id",
+            "Type": "System.Int32",
+            "Key": "38a6db0ed97c428991792edb7bff86b4"
+          },
+          "1": {
+            "Name": "Type",
+            "Index": -1,
+            "NameInSource": "Type",
+            "Alias": "Type",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "InternalCode",
+            "Index": -1,
+            "NameInSource": "InternalCode",
+            "Alias": "InternalCode",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "Isin",
+            "Index": -1,
+            "NameInSource": "Isin",
+            "Alias": "Isin",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "Name",
+            "Index": -1,
+            "NameInSource": "Name",
+            "Alias": "Name",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "CcyIso",
+            "Index": -1,
+            "NameInSource": "CcyIso",
+            "Alias": "CcyIso",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "FundProcessUniverse.SecuritySummaries"
+      },
+      "9": {
+        "Ident": "StiDataTableSource",
         "Name": "Securities",
         "Alias": "Securities",
         "Key": "668fb661c6874cb18f6af91eccee2803",
@@ -1202,7 +1254,7 @@
         },
         "NameInSource": "FundProcessUniverse.Securities"
       },
-      "9": {
+      "10": {
         "Ident": "StiDataTableSource",
         "Name": "Performances",
         "Alias": "Performances",
@@ -1449,7 +1501,7 @@
         },
         "NameInSource": "FundProcessUniverse.Performances"
       },
-      "10": {
+      "11": {
         "Ident": "StiDataTableSource",
         "Name": "AnnualPerformances",
         "Alias": "AnnualPerformances",
@@ -1500,7 +1552,7 @@
         },
         "NameInSource": "FundProcessUniverse.AnnualPerformances"
       },
-      "11": {
+      "12": {
         "Ident": "StiDataTableSource",
         "Name": "KeyStatistics",
         "Alias": "KeyStatistics",
@@ -1587,7 +1639,7 @@
         },
         "NameInSource": "FundProcessUniverse.KeyStatistics"
       },
-      "12": {
+      "13": {
         "Ident": "StiDataTableSource",
         "Name": "AnnualizedVolatilities",
         "Alias": "AnnualizedVolatilities",
@@ -1834,7 +1886,7 @@
         },
         "NameInSource": "FundProcessUniverse.AnnualizedVolatilities"
       },
-      "13": {
+      "14": {
         "Ident": "StiDataTableSource",
         "Name": "LastStatistics",
         "Alias": "LastStatistics",
@@ -1977,7 +2029,7 @@
         },
         "NameInSource": "FundProcessUniverse.LastStatistics"
       },
-      "14": {
+      "15": {
         "Ident": "StiDataTableSource",
         "Name": "CashMovements",
         "Alias": "CashMovements",
@@ -2070,7 +2122,7 @@
         },
         "NameInSource": "FundProcessUniverse.CashMovements"
       },
-      "15": {
+      "16": {
         "Ident": "StiDataTableSource",
         "Name": "Counterparties",
         "Alias": "Counterparties",
@@ -2143,7 +2195,7 @@
         },
         "NameInSource": "FundProcessUniverse.Counterparties"
       },
-      "16": {
+      "17": {
         "Ident": "StiDataTableSource",
         "Name": "Investors",
         "Alias": "Investors",
@@ -2272,7 +2324,7 @@
         },
         "NameInSource": "FundProcessUniverse.Investors"
       },
-      "17": {
+      "18": {
         "Ident": "StiDataTableSource",
         "Name": "Roles",
         "Alias": "Roles",
@@ -2345,7 +2397,7 @@
         },
         "NameInSource": "FundProcessUniverse.Roles"
       },
-      "18": {
+      "19": {
         "Ident": "StiDataTableSource",
         "Name": "DueDiligences",
         "Alias": "DueDiligences",
@@ -2438,7 +2490,7 @@
         },
         "NameInSource": "FundProcessUniverse.DueDiligences"
       },
-      "19": {
+      "20": {
         "Ident": "StiDataTableSource",
         "Name": "DueDiligenceTasks",
         "Alias": "DueDiligenceTasks",
@@ -2511,7 +2563,7 @@
         },
         "NameInSource": "FundProcessUniverse.DueDiligenceTasks"
       },
-      "20": {
+      "21": {
         "Ident": "StiDataTableSource",
         "Name": "Entities",
         "Alias": "Entities",
@@ -2703,7 +2755,7 @@
         },
         "NameInSource": "FundProcessUniverse.Entities"
       },
-      "21": {
+      "22": {
         "Ident": "StiDataTableSource",
         "Name": "Sicavs",
         "Alias": "Sicavs",
@@ -2774,7 +2826,7 @@
         },
         "NameInSource": "FundProcessUniverse.Sicavs"
       },
-      "22": {
+      "23": {
         "Ident": "StiDataTableSource",
         "Name": "SicavRoles",
         "Alias": "SicavRoles",
@@ -2827,7 +2879,7 @@
         },
         "NameInSource": "FundProcessUniverse.SicavRoles"
       },
-      "23": {
+      "24": {
         "Ident": "StiDataTableSource",
         "Name": "ForecastedCashFlows",
         "Alias": "ForecastedCashFlows",
@@ -2871,7 +2923,7 @@
         },
         "NameInSource": "FundProcessUniverse.ForecastedCashFlows"
       },
-      "24": {
+      "25": {
         "Ident": "StiDataTableSource",
         "Name": "LastCashMovements",
         "Alias": "LastCashMovements",
@@ -2964,7 +3016,7 @@
         },
         "NameInSource": "FundProcessUniverse.LastCashMovements"
       },
-      "25": {
+      "26": {
         "Ident": "StiDataTableSource",
         "Name": "LastSecurityTransactions",
         "Alias": "LastSecurityTransactions",
@@ -3050,7 +3102,7 @@
         },
         "NameInSource": "FundProcessUniverse.LastSecurityTransactions"
       },
-      "26": {
+      "27": {
         "Ident": "StiDataTableSource",
         "Name": "PortfolioClassifications",
         "Alias": "PortfolioClassifications",
@@ -3094,7 +3146,7 @@
         },
         "NameInSource": "FundProcessUniverse.PortfolioClassifications"
       },
-      "27": {
+      "28": {
         "Ident": "StiDataTableSource",
         "Name": "PortfolioHistValues",
         "Alias": "PortfolioHistValues",
@@ -3175,7 +3227,7 @@
         },
         "NameInSource": "FundProcessUniverse.PortfolioHistValues"
       },
-      "28": {
+      "29": {
         "Ident": "StiDataTableSource",
         "Name": "PortfolioNotes",
         "Alias": "PortfolioNotes",
@@ -3232,7 +3284,7 @@
         },
         "NameInSource": "FundProcessUniverse.PortfolioNotes"
       },
-      "29": {
+      "30": {
         "Ident": "StiDataTableSource",
         "Name": "SecurityTransactions",
         "Alias": "SecurityTransactions",
@@ -3318,7 +3370,7 @@
         },
         "NameInSource": "FundProcessUniverse.SecurityTransactions"
       },
-      "30": {
+      "31": {
         "Ident": "StiDataTableSource",
         "Name": "ShareClassHistValues",
         "Alias": "ShareClassHistValues",
@@ -3383,7 +3435,7 @@
         },
         "NameInSource": "FundProcessUniverse.ShareClassHistValues"
       },
-      "31": {
+      "32": {
         "Ident": "StiDataTableSource",
         "Name": "SicavNotes",
         "Alias": "SicavNotes",
@@ -3440,7 +3492,7 @@
         },
         "NameInSource": "FundProcessUniverse.SicavNotes"
       },
-      "32": {
+      "33": {
         "Ident": "StiDataTableSource",
         "Name": "TimeFrames",
         "Alias": "TimeFrames",
@@ -3505,7 +3557,7 @@
         },
         "NameInSource": "FundProcessUniverse.TimeFrames"
       },
-      "33": {
+      "34": {
         "Ident": "StiDataTableSource",
         "Name": "LastAccountBalances",
         "Alias": "LastAccountBalances",
@@ -3584,7 +3636,7 @@
         },
         "NameInSource": "FundProcessUniverse.LastAccountBalances"
       },
-      "34": {
+      "35": {
         "Ident": "StiDataTableSource",
         "Name": "LastFinancialStatements",
         "Alias": "LastFinancialStatements",
@@ -3921,7 +3973,7 @@
         },
         "NameInSource": "FundProcessUniverse.LastFinancialStatements"
       },
-      "35": {
+      "36": {
         "Ident": "StiDataTableSource",
         "Name": "FinancialStatementsFxRates",
         "Alias": "FinancialStatementsFxRates",
@@ -3958,7 +4010,7 @@
         },
         "NameInSource": "FundProcessUniverse.FinancialStatementsFxRates"
       },
-      "36": {
+      "37": {
         "Ident": "StiDataTableSource",
         "Name": "FinancialStatements",
         "Alias": "FinancialStatements",
@@ -4255,7 +4307,7 @@
         },
         "NameInSource": "FundProcessUniverse.FinancialStatements"
       },
-      "37": {
+      "38": {
         "Ident": "StiDataTableSource",
         "Name": "ShareClassStatements",
         "Alias": "ShareClassStatements",
@@ -4322,7 +4374,7 @@
         },
         "NameInSource": "FundProcessUniverse.ShareClassStatements"
       },
-      "38": {
+      "39": {
         "Ident": "StiDataTableSource",
         "Name": "SecurityClassifications",
         "Alias": "SecurityClassifications",
@@ -4384,7 +4436,7 @@
         },
         "NameInSource": "FundProcessUniverse.SecurityClassifications"
       },
-      "39": {
+      "40": {
         "Ident": "StiDataTransformation",
         "Name": "SectorBreakdown",
         "Alias": "SectorBreakdown",
@@ -4424,7 +4476,7 @@
         },
         "NameInSource": "SectorBreakdown"
       },
-      "40": {
+      "41": {
         "Ident": "StiDataTableSource",
         "Name": "WorldMap",
         "Alias": "WorldMap",
@@ -4454,7 +4506,7 @@
         },
         "NameInSource": "FundProcessUniverse.WorldMap"
       },
-      "41": {
+      "42": {
         "Ident": "StiVirtualSource",
         "Name": "ReportShareClass",
         "Alias": "ReportShareClass",
@@ -4510,7 +4562,7 @@
         "Ident": "StiJsonDatabase",
         "Name": "FundProcessUniverse",
         "Key": "ecb9425b5dbd4959bb76e73fc1192cea",
-        "PathData": "C:\\Users\\frede\\OneDrive - FundProcess\\OPERATIONS\\REPORTING\\Factsheet\\DictionaryJson.json"
+        "PathData": "C:\\Dev\\DictionaryJson.json"
       }
     },
     "Relations": {
@@ -5083,6 +5135,19 @@
         "Key": "0cf579be86da47faa01fe217aaa7f422",
         "ParentSource": "Securities",
         "ChildSource": "LastStatistics"
+      },
+      "40": {
+        "Name": "Currency",
+        "ChildColumns": {
+          "0": "CcyIso"
+        },
+        "ParentColumns": {
+          "0": "IsoCode"
+        },
+        "NameInSource": "SecuritySummaryCurrency",
+        "Alias": "Currency",
+        "ParentSource": "Currencies",
+        "ChildSource": "SecuritySummaries"
       }
     }
   },
@@ -5164,7 +5229,7 @@
                     "Ident": "StiInteraction"
                   },
                   "Text": {
-                    "Value": "{InternalShareClasses.Portfolio.Name} {InternalShareClasses.ShortName}"
+                    "Value": "{InternalShareClasses.Portfolio.Name}\r\n<br>{InternalShareClasses.ShortName}"
                   },
                   "Font": "Arial Black;14;;",
                   "Border": ";;;;;;;solid:Black",
@@ -5173,6 +5238,8 @@
                   "TextOptions": {
                     "WordWrap": true
                   },
+                  "TextQuality": "Wysiwyg",
+                  "AllowHtmlTags": true,
                   "Type": "Expression"
                 },
                 "3": {
@@ -7049,9 +7116,9 @@
                           "Labels": {
                             "Format": "dd/MM/yyyy",
                             "Font": "Arial Narrow;6;;",
-                            "Placement": "None",
+                            "Placement": "TwoLines",
                             "Color": "140,140,140",
-                            "Step": 3.0
+                            "Step": 2.0
                           },
                           "LineColor": "140,140,140",
                           "Title": {
@@ -8993,7 +9060,7 @@
                       },
                       "TrendLine": {
                         "Ident": "StiTrendLineNone",
-                        "LineColor": "DimGray"
+                        "LineColor": "105,105,105"
                       },
                       "ValueDataColumn": "ShareClassHistValues.Nav",
                       "ArgumentDataColumn": "ShareClassHistValues.Date",
@@ -9033,7 +9100,7 @@
                       },
                       "TrendLine": {
                         "Ident": "StiTrendLineNone",
-                        "LineColor": "DimGray"
+                        "LineColor": "105,105,105"
                       },
                       "ValueDataColumn": "ShareClassHistValues.BenchmarkAdjustedPrice",
                       "ArgumentDataColumn": "ShareClassHistValues.Date",
