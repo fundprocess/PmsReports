@@ -1,12 +1,12 @@
 {
   "ReportVersion": "2020.2.3.0",
-  "ReportGuid": "5b34e96c8cfe47aa9c337d037c8e493d",
+  "ReportGuid": "23d207524b264fe3b4f4e4fad64a90f2",
   "ReportName": "Factsheet",
   "ReportAlias": "Factsheet",
   "ReportAuthor": "FundProcess",
   "ReportDescription": "FundProcess",
   "ReportCreated": "/Date(0+0100)/",
-  "ReportChanged": "/Date(1594912194948+0200)/",
+  "ReportChanged": "/Date(1594999391698+0200)/",
   "EngineVersion": "EngineV2",
   "PreviewSettings": 268435455,
   "AutoLocalizeReportOnRun": true,
@@ -76,7 +76,7 @@
     },
     "Variables": {
       "0": {
-        "Value": "335",
+        "Value": "3",
         "Name": "ShareClassId",
         "Alias": "ShareClassId",
         "Type": "System.Int32",
@@ -100,46 +100,6 @@
     },
     "DataSources": {
       "0": {
-        "Ident": "StiDataTransformation",
-        "Name": "CurrencyBreakdown",
-        "Alias": "CurrencyBreakdown",
-        "Key": "9e6083153fa345de8d32c8ca4383943d",
-        "Columns": {
-          "0": {
-            "Name": "CcyIso",
-            "Index": -1,
-            "NameInSource": "CcyIso",
-            "Alias": "CcyIso",
-            "Type": "System.String",
-            "Key": "e60b8e6236d24896a59905fcbe1517ef",
-            "Ident": "Transform",
-            "Expression": "Securities.CcyIso"
-          },
-          "1": {
-            "Name": "PortfolioId",
-            "Index": -1,
-            "NameInSource": "PortfolioId",
-            "Alias": "PortfolioId",
-            "Type": "System.Int32",
-            "Key": "a405178c99194cc48e560b61e9b086b6",
-            "Ident": "Transform",
-            "Expression": "LastPositions.PortfolioId"
-          },
-          "2": {
-            "Name": "Weight",
-            "Index": -1,
-            "NameInSource": "Weight",
-            "Alias": "Weight",
-            "Type": "System.Decimal",
-            "Key": "1feddd8b5427420a921d734a199d7589",
-            "Ident": "Transform",
-            "Expression": "Sum(LastPositions.Weight)",
-            "Mode": "Measure"
-          }
-        },
-        "NameInSource": "CurrencyBreakdown"
-      },
-      "1": {
         "Ident": "StiDataTableSource",
         "Name": "Portfolios",
         "Alias": "Portfolios",
@@ -230,7 +190,7 @@
             "Index": -1,
             "NameInSource": "PricingFrequency",
             "Alias": "PricingFrequency",
-            "Type": "System.String",
+            "Type": "System.Int32",
             "Key": "c156b1cac9724f05b6f16e6fac6c95db"
           },
           "11": {
@@ -274,6 +234,14 @@
             "Key": "04b6e16014e943d8a85ecbf2ecd27e27"
           },
           "16": {
+            "Name": "LiquidationDate",
+            "Index": -1,
+            "NameInSource": "LiquidationDate",
+            "Alias": "LiquidationDate",
+            "Type": "System.Nullable`1[System.DateTime]",
+            "Key": "53aa4b35761e40b4b43ff84a1cf01144"
+          },
+          "17": {
             "Name": "Url",
             "Index": -1,
             "NameInSource": "Url",
@@ -281,7 +249,7 @@
             "Type": "System.String",
             "Key": "e0b111b441774e6fb40b96b763e4baf9"
           },
-          "17": {
+          "18": {
             "Name": "BenchmarkId",
             "Index": -1,
             "NameInSource": "BenchmarkId",
@@ -289,7 +257,7 @@
             "Type": "System.Int32",
             "Key": "6d3b9b70b29f4aeba61cbf2ba808f76e"
           },
-          "18": {
+          "19": {
             "Name": "CustodianEntityId",
             "Index": -1,
             "NameInSource": "CustodianEntityId",
@@ -297,7 +265,7 @@
             "Type": "System.Int32",
             "Key": "51873247e2b14f20a490d2306a850ca0"
           },
-          "19": {
+          "20": {
             "Name": "ManCoEntityId",
             "Index": -1,
             "NameInSource": "ManCoEntityId",
@@ -305,7 +273,7 @@
             "Type": "System.Int32",
             "Key": "4d86df67b7744fa696d7bcd9a5cdb85c"
           },
-          "20": {
+          "21": {
             "Name": "Manager1EntityId",
             "Index": -1,
             "NameInSource": "Manager1EntityId",
@@ -313,7 +281,7 @@
             "Type": "System.Int32",
             "Key": "9d6f6d6f1d70424595f103dc33826a8f"
           },
-          "21": {
+          "22": {
             "Name": "Manager1StartDate",
             "Index": -1,
             "NameInSource": "Manager1StartDate",
@@ -321,7 +289,7 @@
             "Type": "System.DateTime",
             "Key": "e9b09f35211e4863af8570ddfd1a6cbc"
           },
-          "22": {
+          "23": {
             "Name": "Manager2EntityId",
             "Index": -1,
             "NameInSource": "Manager2EntityId",
@@ -329,7 +297,7 @@
             "Type": "System.Int32",
             "Key": "dbcefa17c9e04aff91c543a15d2a0c3e"
           },
-          "23": {
+          "24": {
             "Name": "InvestorEntityId",
             "Index": -1,
             "NameInSource": "InvestorEntityId",
@@ -337,7 +305,7 @@
             "Type": "System.Int32",
             "Key": "6c10f91d723245c89f6fac0623f4fb16"
           },
-          "24": {
+          "25": {
             "Name": "AsOfDate",
             "Index": -1,
             "NameInSource": "AsOfDate",
@@ -345,7 +313,7 @@
             "Type": "System.DateTime",
             "Key": "4b2045fffafd4126a8e16927531426a7"
           },
-          "25": {
+          "26": {
             "Name": "Nav",
             "Index": -1,
             "NameInSource": "Nav",
@@ -353,7 +321,7 @@
             "Type": "System.Decimal",
             "Key": "6975bdbe80db4ad8b77090714ee6710f"
           },
-          "26": {
+          "27": {
             "Name": "PreviousNav",
             "Index": -1,
             "NameInSource": "PreviousNav",
@@ -361,7 +329,7 @@
             "Type": "System.Decimal",
             "Key": "64a99730b4f14711bdbe67f42b667f3e"
           },
-          "27": {
+          "28": {
             "Name": "Tna",
             "Index": -1,
             "NameInSource": "Tna",
@@ -369,21 +337,13 @@
             "Type": "System.Decimal",
             "Key": "55ef8a82e9c841aa99de4be582c830aa"
           },
-          "28": {
+          "29": {
             "Name": "PreviousTna",
             "Index": -1,
             "NameInSource": "PreviousTna",
             "Alias": "PreviousTna",
             "Type": "System.Decimal",
             "Key": "db1d3465f68a4a409fd01510de97e33b"
-          },
-          "29": {
-            "Name": "LiquidationDate",
-            "Index": -1,
-            "NameInSource": "LiquidationDate",
-            "Alias": "LiquidationDate",
-            "Type": "System.DateTime",
-            "Key": "53aa4b35761e40b4b43ff84a1cf01144"
           },
           "30": {
             "Name": "NetCashFlowOverTenNextDays",
@@ -427,6 +387,87 @@
           }
         },
         "NameInSource": "FundProcessUniverse.Portfolios"
+      },
+      "1": {
+        "Ident": "StiDataTableSource",
+        "Name": "PortfolioSummaries",
+        "Alias": "PortfolioSummaries",
+        "Key": "379b3364b0c048be89e77fd0d8dd3ec8",
+        "Columns": {
+          "0": {
+            "Name": "Id",
+            "Index": -1,
+            "NameInSource": "Id",
+            "Alias": "Id",
+            "Type": "System.Int32",
+            "Key": "0497633ceb684f2eb7f06ae6817d3e1a"
+          },
+          "1": {
+            "Name": "InternalCode",
+            "Index": -1,
+            "NameInSource": "InternalCode",
+            "Alias": "InternalCode",
+            "Type": "System.String",
+            "Key": "7b57d4008cb54c688b5b4773bbfbc676"
+          },
+          "2": {
+            "Name": "Name",
+            "Index": -1,
+            "NameInSource": "Name",
+            "Alias": "Name",
+            "Type": "System.String",
+            "Key": "8c93c497433e40bfb54eaf381092a65c"
+          },
+          "3": {
+            "Name": "Type",
+            "Index": -1,
+            "NameInSource": "Type",
+            "Alias": "Type",
+            "Type": "System.String",
+            "Key": "bacaa02c1a6e4362bbb0af2f72ffc204"
+          },
+          "4": {
+            "Name": "SicavEntityId",
+            "Index": -1,
+            "NameInSource": "SicavEntityId",
+            "Alias": "SicavEntityId",
+            "Type": "System.Int32",
+            "Key": "9b41a5a674854c3ea298818ffc98b7cd"
+          },
+          "5": {
+            "Name": "CcyIso",
+            "Index": -1,
+            "NameInSource": "CcyIso",
+            "Alias": "CcyIso",
+            "Type": "System.String",
+            "Key": "3e6d9914ee6542c9b20edbf40506e53f"
+          },
+          "6": {
+            "Name": "PrimaryShareClassId",
+            "Index": -1,
+            "NameInSource": "PrimaryShareClassId",
+            "Alias": "PrimaryShareClassId",
+            "Type": "System.Int32",
+            "Key": "044ee0b0401c479fbd0fb911d632e3ee"
+          },
+          "7": {
+            "Name": "InLiquidation",
+            "Index": -1,
+            "NameInSource": "InLiquidation",
+            "Alias": "InLiquidation",
+            "Type": "System.Boolean",
+            "Key": "2e899df78b21482caeb5a3e8f5643462"
+          },
+          "8": {
+            "Name": "LiquidationDate",
+            "Index": -1,
+            "NameInSource": "LiquidationDate",
+            "Alias": "LiquidationDate",
+            "Type": "System.Nullable`1[System.DateTime]",
+            "Key": "f32b838f4e8146c9bbd2d1f327c3c26f"
+          }
+        },
+        "NameInSource": "FundProcessUniverse.PortfolioSummaries"
       },
       "2": {
         "Ident": "StiDataTableSource",
@@ -851,7 +892,7 @@
             "Index": -1,
             "NameInSource": "DividendDistributionPolicy",
             "Alias": "DividendDistributionPolicy",
-            "Type": "System.String",
+            "Type": "System.Int32",
             "Key": "de47a95b2764449ba3752eb464d51f00"
           },
           "10": {
@@ -2782,7 +2823,7 @@
             "Index": -1,
             "NameInSource": "LegalForm",
             "Alias": "LegalForm",
-            "Type": "System.String",
+            "Type": "System.Int32",
             "Key": "f1ce038e701e41ff889d28a32a6947cb"
           },
           "3": {
@@ -2790,7 +2831,7 @@
             "Index": -1,
             "NameInSource": "SicavType",
             "Alias": "SicavType",
-            "Type": "System.String",
+            "Type": "System.Int32",
             "Key": "15fa0bb2929a4dfe824e1f83b4f98d8e"
           },
           "4": {
@@ -4437,46 +4478,6 @@
         "NameInSource": "FundProcessUniverse.SecurityClassifications"
       },
       "40": {
-        "Ident": "StiDataTransformation",
-        "Name": "SectorBreakdown",
-        "Alias": "SectorBreakdown",
-        "Key": "41835ddd3e324e39beb43aee2fb0afa1",
-        "Columns": {
-          "0": {
-            "Name": "PortfolioId",
-            "Index": -1,
-            "NameInSource": "PortfolioId",
-            "Alias": "PortfolioId",
-            "Type": "System.Int32",
-            "Key": "a32165eb1fa84f6b93a938a7e4605b4d",
-            "Ident": "Transform",
-            "Expression": "LastPositions.PortfolioId"
-          },
-          "1": {
-            "Name": "SectorClassification",
-            "Index": -1,
-            "NameInSource": "SectorClassification",
-            "Alias": "SectorClassification",
-            "Type": "System.String",
-            "Key": "056e0df2a65a471c92ff6fe30072568f",
-            "Ident": "Transform",
-            "Expression": "Securities.SectorClassificationCode"
-          },
-          "2": {
-            "Name": "Weight",
-            "Index": -1,
-            "NameInSource": "Weight",
-            "Alias": "Weight",
-            "Type": "System.Double",
-            "Key": "643909adcc214b569caa9d1bc9c84982",
-            "Ident": "Transform",
-            "Expression": "Sum(LastPositions.Weight)*100",
-            "Mode": "Measure"
-          }
-        },
-        "NameInSource": "SectorBreakdown"
-      },
-      "41": {
         "Ident": "StiDataTableSource",
         "Name": "WorldMap",
         "Alias": "WorldMap",
@@ -4506,7 +4507,7 @@
         },
         "NameInSource": "FundProcessUniverse.WorldMap"
       },
-      "42": {
+      "41": {
         "Ident": "StiVirtualSource",
         "Name": "ReportShareClass",
         "Alias": "ReportShareClass",
@@ -4554,6 +4555,97 @@
           "6": "PortfolioId",
           "7": "",
           "8": "PortfolioId"
+        }
+      },
+      "42": {
+        "Ident": "StiVirtualSource",
+        "Name": "CurrencyBreakdown",
+        "Alias": "CurrencyBreakdown",
+        "Key": "35954ae7d7394c3f8be77f72af95823b",
+        "Columns": {
+          "0": {
+            "Name": "PortfolioId",
+            "Index": -1,
+            "NameInSource": "PortfolioId",
+            "Alias": "PortfolioId",
+            "Type": "System.Int32"
+          },
+          "1": {
+            "Name": "Security.CcyIso",
+            "Index": -1,
+            "NameInSource": "Security.CcyIso",
+            "Alias": "Security.CcyIso",
+            "Type": "System.Object"
+          },
+          "2": {
+            "Name": "Weight.Sum",
+            "Index": -1,
+            "NameInSource": "Weight.Sum",
+            "Alias": "Weight.Sum",
+            "Type": "System.Decimal"
+          }
+        },
+        "NameInSource": "LastPositions",
+        "GroupColumns": {
+          "0": "PortfolioId",
+          "1": "Security.CcyIso"
+        },
+        "Results": {
+          "0": "Weight",
+          "1": "Sum",
+          "2": "Weight.Sum"
+        }
+      },
+      "43": {
+        "Ident": "StiVirtualSource",
+        "Name": "SectorBreakdown",
+        "Alias": "SectorBreakdown",
+        "Key": "e26de1fd3ebe4d84842fbd70a5fbb37a",
+        "Columns": {
+          "0": {
+            "Name": "PortfolioId",
+            "Index": -1,
+            "NameInSource": "PortfolioId",
+            "Alias": "PortfolioId",
+            "Type": "System.Int32",
+            "Key": "5d189abd48db42a5b52c9b7a48a1eb6d"
+          },
+          "1": {
+            "Name": "Security.SectorClassificationCode",
+            "Index": -1,
+            "NameInSource": "Security.SectorClassificationCode",
+            "Alias": "Security.SectorClassificationCode",
+            "Type": "System.String",
+            "Key": "1db1bd92a2454adaadef87fbb666c010"
+          },
+          "2": {
+            "Name": "Security.SectorClassification",
+            "Index": -1,
+            "NameInSource": "Security.SectorClassification",
+            "Alias": "Security.SectorClassification",
+            "Type": "System.String",
+            "Key": "5ad87dcb63b04f6a937f7327ce9ee4c6"
+          },
+          "3": {
+            "Name": "Weight.Sum",
+            "Index": -1,
+            "NameInSource": "Weight.Sum",
+            "Alias": "Weight.Sum",
+            "Type": "System.Decimal"
+          }
+        },
+        "NameInSource": "LastPositions",
+        "GroupColumns": {
+          "0": "PortfolioId",
+          "1": "Security.SectorClassificationCode"
+        },
+        "Results": {
+          "0": "Security.SectorClassification",
+          "1": "",
+          "2": "Security.SectorClassification",
+          "3": "Weight",
+          "4": "Sum",
+          "5": "Weight.Sum"
         }
       }
     },
@@ -5146,8 +5238,38 @@
         },
         "NameInSource": "SecuritySummaryCurrency",
         "Alias": "Currency",
+        "Key": "73df0dbe2dd34978924ee64bfe7475c0",
         "ParentSource": "Currencies",
         "ChildSource": "SecuritySummaries"
+      },
+      "41": {
+        "Name": "Sicav",
+        "ChildColumns": {
+          "0": "SicavEntityId"
+        },
+        "ParentColumns": {
+          "0": "EntityId"
+        },
+        "NameInSource": "PortfolioSummarySicav",
+        "Alias": "Sicav",
+        "Key": "da224f58d2c74d678ddb5590e5110713",
+        "ParentSource": "Sicavs",
+        "ChildSource": "PortfolioSummaries"
+      },
+      "42": {
+        "Name": "InternalShareClass",
+        "ChildColumns": {
+          "0": "PrimaryShareClassId"
+        },
+        "ParentColumns": {
+          "0": "Id"
+        },
+        "NameInSource": "PortfolioSummaryInternalShareClass",
+        "Alias": "InternalShareClass",
+        "Active": true,
+        "Key": "e2fd3bda0d684650ba86cf5a2090e913",
+        "ParentSource": "InternalShareClasses",
+        "ChildSource": "PortfolioSummaries"
       }
     }
   },
@@ -5224,7 +5346,7 @@
                   "Ident": "StiText",
                   "Name": "Text5",
                   "Guid": "6c0a77e3577349e5b74752b9de7266aa",
-                  "ClientRectangle": "1,1,12,1.2",
+                  "ClientRectangle": "1,1,15.6,1.2",
                   "Interaction": {
                     "Ident": "StiInteraction"
                   },
@@ -5246,7 +5368,7 @@
                   "Ident": "StiText",
                   "Name": "Text6",
                   "Guid": "1336a4767b884e949d9f272750f0a831",
-                  "ClientRectangle": "1,2.4,12,0.6",
+                  "ClientRectangle": "1,2.4,15.6,0.6",
                   "Interaction": {
                     "Ident": "StiInteraction"
                   },
@@ -5757,7 +5879,7 @@
                   },
                   "Border": ";;;;;;;solid:Black",
                   "Brush": "solid:255,255,255",
-                  "DataSourceName": "Breakdowns",
+                  "DataSourceName": "SectorBreakdown",
                   "Series": {
                     "0": {
                       "Ident": "StiClusteredBarSeries",
@@ -5806,10 +5928,10 @@
                         "LineColor": "105,105,105"
                       },
                       "Value": {
-                        "Value": "{Breakdowns.Weight*100}"
+                        "Value": "{SectorBreakdown.Weight_Sum*100}"
                       },
                       "Argument": {
-                        "Value": "{GetTranslation(Breakdowns.ClassificationName)}\r\n"
+                        "Value": "{GetTranslation(SectorBreakdown.Security_SectorClassification)}\r\n"
                       },
                       "Title": {
                         "Value": "Series 1"
@@ -5950,21 +6072,7 @@
                       "Ident": "StiFilter",
                       "Item": "Expression",
                       "Expression": {
-                        "Value": "{Breakdowns.ClassificationTypeCode == \"RBC Economic Sector\"}"
-                      }
-                    },
-                    "1": {
-                      "Ident": "StiFilter",
-                      "Item": "Expression",
-                      "Expression": {
-                        "Value": "{Breakdowns.Date == InternalShareClasses.Portfolio.TimeFrames.LastDate}"
-                      }
-                    },
-                    "2": {
-                      "Ident": "StiFilter",
-                      "Item": "Expression",
-                      "Expression": {
-                        "Value": "{InternalShareClasses.PortfolioId == Breakdowns.PortfolioId}"
+                        "Value": "{SectorBreakdown.PortfolioId == InternalShareClasses.PortfolioId}"
                       }
                     }
                   }
@@ -6269,7 +6377,8 @@
                       "Name": "CrossTab2_Sum1",
                       "Guid": "967efa1268ec41dea4ef21cd15481d20",
                       "MinSize": "1.25,0",
-                      "ClientRectangle": "3.05,0.9,1.4,0.4",
+                      "MaxSize": "0,0.3",
+                      "ClientRectangle": "3.05,0.9,1.4,0.3",
                       "Alias": "Weight",
                       "Restrictions": "AllowMove, AllowResize, AllowSelect, AllowChange",
                       "Interaction": {
@@ -6550,7 +6659,7 @@
                     "Ident": "StiInteraction"
                   },
                   "Text": {
-                    "Value": "&#8226;<b>&nbsp;Fund Type:</b> {InternalShareClasses.Portfolio.Sicav.SicavType}<br>\r\n&#8226;<b>&nbsp;Legal Form:</b> {InternalShareClasses.Portfolio.Sicav.LegalForm}<br>\r\n&#8226;<b>&nbsp;SICAV:</b> {InternalShareClasses.Portfolio.SicavEntity.Name}<br>\r\n&#8226;<b>&nbsp;Fiscal Year End:</b> {InternalShareClasses.Portfolio.SicavEntity.YearEnd}<br>\r\n&#8226;<b>&nbsp;Order Placement:</b> {InternalShareClasses.Portfolio.PricingFrequency}<br>\r\n&#8226;<b>&nbsp;Order Cut-Off Time:</b> Before {InternalShareClasses.Portfolio.CutOffTime} (CET/CEST)<br>\r\n&#8226;<b>&nbsp;Category:</b> {GetTranslation(InternalShareClasses.Portfolio.Custom1Classification)}<br>\r\n"
+                    "Value": "&#8226;<b>&nbsp;Fund Type:</b> {(InternalShareClasses.Portfolio.Sicav.SicavType == 1)? \"UCITS\": \"AIFM\"}<br>\r\n&#8226;<b>&nbsp;Legal Form:</b> {(InternalShareClasses.Portfolio.Sicav.LegalForm == 2)? \"SICAF\": \"SICAV\"}<br>\r\n&#8226;<b>&nbsp;SICAV:</b> {InternalShareClasses.Portfolio.SicavEntity.Name}<br>\r\n&#8226;<b>&nbsp;Fiscal Year End:</b> {InternalShareClasses.Portfolio.SicavEntity.YearEnd}<br>\r\n&#8226;<b>&nbsp;Order Placement:</b> {(InternalShareClasses.Portfolio.PricingFrequency==1)?\"Daily\":((InternalShareClasses.Portfolio.PricingFrequency==2)?\"Weekly\":(InternalShareClasses.Portfolio.PricingFrequency==3)?\"HalfMonthly\":\"Monthly\") }<br>\r\n&#8226;<b>&nbsp;Order Cut-Off Time:</b> Before {InternalShareClasses.Portfolio.CutOffTime} (CET/CEST)<br>\r\n&#8226;<b>&nbsp;Category:</b> {GetTranslation(InternalShareClasses.Portfolio.Custom1Classification)}<br>"
                   },
                   "Border": ";;;;;;;solid:Black",
                   "Brush": "solid:",
@@ -6573,7 +6682,7 @@
                     "Ident": "StiInteraction"
                   },
                   "Text": {
-                    "Value": "&#8226;<b>&nbsp;NAV:</b> {InternalShareClasses.Nav} {InternalShareClasses.CcyIso}<br>\r\n&#8226;<b>&nbsp;Base Currency:</b> {InternalShareClasses.CcyIso}<br>\r\n&#8226;<b>&nbsp;ISIN:</b> {InternalShareClasses.Isin}<br>\r\n&#8226;<b>&nbsp;Fund Manager:</b>&nbsp;{Left(InternalShareClasses.Portfolio.Manager1.FirstName,1)}.{InternalShareClasses.Portfolio.Manager1.LastName} since {Format(\"{0:dd/MM/yyyy}\", InternalShareClasses.Portfolio.Manager1StartDate)}<br>\r\n&#8226;<b>&nbsp;Fund AUM:</b> {InternalShareClasses.Portfolio.Tna} {InternalShareClasses.Portfolio.CcyIso}<br>\r\n&#8226;<b>&nbsp;Share Class AUM:</b> {InternalShareClasses.Tna} {InternalShareClasses.CcyIso}<br>\r\n&#8226;<b>&nbsp;Domicile:</b> {GetTranslation(InternalShareClasses.Portfolio.DomicileName)} <br>\r\n&#8226;<b>&nbsp;Dividend Policy:</b> {InternalShareClasses.DividendDistributionPolicy}<br>\r\n&#8226;<b>&nbsp;Fund Inception Date:</b> {Format(\"{0:dd/MM/yyyy}\", InternalShareClasses.Portfolio.InceptionDate)}\r\n"
+                    "Value": "&#8226;<b>&nbsp;NAV:</b> {InternalShareClasses.Nav} {InternalShareClasses.CcyIso}<br>\r\n&#8226;<b>&nbsp;Base Currency:</b> {InternalShareClasses.CcyIso}<br>\r\n&#8226;<b>&nbsp;ISIN:</b> {InternalShareClasses.Isin}<br>\r\n&#8226;<b>&nbsp;Fund Manager:</b>&nbsp;{Left(InternalShareClasses.Portfolio.Manager1.FirstName,1)}.{InternalShareClasses.Portfolio.Manager1.LastName} since {Format(\"{0:dd/MM/yyyy}\", InternalShareClasses.Portfolio.Manager1StartDate)}<br>\r\n&#8226;<b>&nbsp;Fund AUM:</b> {InternalShareClasses.Portfolio.Tna} {InternalShareClasses.Portfolio.CcyIso}<br>\r\n&#8226;<b>&nbsp;Share Class AUM:</b> {InternalShareClasses.Tna} {InternalShareClasses.CcyIso}<br>\r\n&#8226;<b>&nbsp;Domicile:</b> {GetTranslation(InternalShareClasses.Portfolio.DomicileName)} <br>\r\n&#8226;<b>&nbsp;Dividend Policy:</b> {(InternalShareClasses.DividendDistributionPolicy == 0)? \"Accumulation\": \"Distribution\"}<br>\r\n&#8226;<b>&nbsp;Fund Inception Date:</b> {Format(\"{0:dd/MM/yyyy}\", InternalShareClasses.Portfolio.InceptionDate)}\r\n"
                   },
                   "Border": ";;;;;;;solid:Black",
                   "Brush": "solid:",
@@ -7043,7 +7152,7 @@
                           },
                           "TrendLine": {
                             "Ident": "StiTrendLineNone",
-                            "LineColor": "105,105,105"
+                            "LineColor": "DimGray"
                           },
                           "ArgumentDataColumn": "Compositions.Date",
                           "Value": {
@@ -7158,7 +7267,7 @@
                         "ShowShadow": false,
                         "BorderColor": "225,225,225",
                         "Brush": "solid:255,255,255",
-                        "TitleColor": "105,105,105",
+                        "TitleColor": "DimGray",
                         "LabelsColor": "140,140,140",
                         "MarkerSize": {
                           "Width": 10,
@@ -7261,13 +7370,13 @@
                           },
                           "TrendLine": {
                             "Ident": "StiTrendLineNone",
-                            "LineColor": "105,105,105"
+                            "LineColor": "DimGray"
                           },
                           "Value": {
-                            "Value": "{CurrencyBreakdown.Weight*100}"
+                            "Value": "{CurrencyBreakdown.Weight_Sum *100}"
                           },
                           "Argument": {
-                            "Value": "{CurrencyBreakdown.CcyIso}"
+                            "Value": "{CurrencyBreakdown.Security_CcyIso}"
                           },
                           "Title": {
                             "Value": "Series 1"
@@ -7387,7 +7496,7 @@
                         "ShowShadow": false,
                         "BorderColor": "225,225,225",
                         "Brush": "solid:255,255,255",
-                        "TitleColor": "105,105,105",
+                        "TitleColor": "DimGray",
                         "LabelsColor": "140,140,140",
                         "Visible": false,
                         "MarkerSize": {
@@ -7407,7 +7516,7 @@
                           "Ident": "StiFilter",
                           "Item": "Expression",
                           "Expression": {
-                            "Value": "{InternalShareClasses.PortfolioId == CurrencyBreakdown.PortfolioId}"
+                            "Value": "{ CurrencyBreakdown.PortfolioId == InternalShareClasses.PortfolioId}"
                           }
                         }
                       }
@@ -7589,7 +7698,7 @@
                               },
                               "TrendLine": {
                                 "Ident": "StiTrendLineNone",
-                                "LineColor": "105,105,105"
+                                "LineColor": "DimGray"
                               },
                               "Value": {
                                 "Value": "{AnnualPerformances.Performance*100}"
@@ -7627,7 +7736,7 @@
                               },
                               "TrendLine": {
                                 "Ident": "StiTrendLineNone",
-                                "LineColor": "105,105,105"
+                                "LineColor": "DimGray"
                               },
                               "Value": {
                                 "Value": "{AnnualPerformances.BenchmarkPerformance*100}"
@@ -7752,7 +7861,7 @@
                             "ShowShadow": false,
                             "BorderColor": "225,225,225",
                             "Brush": "solid:255,255,255",
-                            "TitleColor": "105,105,105",
+                            "TitleColor": "DimGray",
                             "LabelsColor": "140,140,140",
                             "MarkerSize": {
                               "Width": 10,
@@ -10161,7 +10270,7 @@
                             "Ident": "StiInteraction"
                           },
                           "Text": {
-                            "Value": "1 month"
+                            "Value": "1 Month"
                           },
                           "HorAlignment": "Center",
                           "VertAlignment": "Center",
