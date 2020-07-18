@@ -1,17 +1,16 @@
 {
   "ReportVersion": "2020.2.3.0",
-  "ReportGuid": "93265f14c2ea4c2eafdf31e3d0d7eeff",
-  "ReportName": "DueDiligenceManagementReport",
-  "ReportAlias": "DueDiligenceManagementReport",
+  "ReportGuid": "28f61f0584924ccbb5c40f2611e61aad",
+  "ReportName": "Factsheet",
+  "ReportAlias": "Factsheet",
   "ReportAuthor": "FundProcess",
   "ReportDescription": "FundProcess",
   "ReportCreated": "/Date(0+0100)/",
-  "ReportChanged": "/Date(1594912653113+0200)/",
+  "ReportChanged": "/Date(1595076573989+0200)/",
   "EngineVersion": "EngineV2",
-  "ConvertNulls": false,
   "PreviewSettings": 268435455,
   "AutoLocalizeReportOnRun": true,
-  "Script": "using System;\r\nusing System.Drawing;\r\nusing System.Windows.Forms;\r\nusing System.Data;\r\nusing Stimulsoft.Controls;\r\nusing Stimulsoft.Base.Drawing;\r\nusing Stimulsoft.Report;\r\nusing Stimulsoft.Report.Dialogs;\r\nusing Stimulsoft.Report.Components;\r\nusing System.Collections.Generic;\r\n\r\nnamespace Reports\r\n{\r\n\tpublic class MyFunction\r\n\t{\r\n\t\tprivate const string Category = \"MyFuncCategory\";\r\n\r\n\t\tpublic static string GetTranslation(string jsonStr)\r\n\t\t{\r\n\t\t\tstring lang=\"en\";\r\n\t\t\tif (string.IsNullOrEmpty(jsonStr))\r\n\t\t\t\treturn null;\r\n\t\t\t\t\r\n\t\t\treturn Stimulsoft.Base.Json.JsonConvert.DeserializeObject<Dictionary<string,string>>(jsonStr)[lang];\r\n\t\t}\r\n\r\n\t\tpublic static void RegisterFunctions()\r\n\t\t{\r\n\t\t\tvar ParamNames = new string[2];\r\n\t\t\tvar ParamTypes = new Type[2];\r\n\t\t\tvar ParamDescriptions = new string[2];\r\n\r\n\t\t\tParamNames[0] = \"jsonStr\";\r\n\t\t\tParamDescriptions[0] = \"Multi-culture string\";\r\n\t\t\tParamTypes[0] = typeof(string);\r\n\t\t\t\r\n\t\t\tParamNames[1] = \"lang\";\r\n\t\t\tParamDescriptions[1] = \"LanguageTmp\";\r\n\t\t\tParamTypes[1] = typeof(string);\r\n\t\t\t\r\n\r\n\t\t\tStimulsoft.Report.Dictionary.StiFunctions.RemoveFunction(\"GetTranslation\");\r\n\t\t\tStimulsoft.Report.Dictionary.StiFunctions.AddFunction(Category, \"GetTranslation\", \"GetTranslation\", \"Description\", \r\n\t\t\t\ttypeof(MyFunction),\r\n\t\t\t\ttypeof(string), \"Return Description\", ParamTypes, ParamNames, ParamDescriptions);\r\n\t\t}\r\n\t}\r\n\t\r\n\t\r\n\tpublic class DueDiligenceManagementReport : Stimulsoft.Report.StiReport\r\n    {\r\n        public DueDiligenceManagementReport()        {\r\n            this.InitializeComponent();\r\n\t\t\tMyFunction.RegisterFunctions();\r\n        }\r\n\r\n        #region StiReport Designer generated code - do not modify\r\n\t\t#endregion StiReport Designer generated code - do not modify\r\n    }\r\n}\r\n",
+  "Script": "using System;\r\nusing System.Drawing;\r\nusing System.Windows.Forms;\r\nusing System.Data;\r\nusing Stimulsoft.Controls;\r\nusing Stimulsoft.Base.Drawing;\r\nusing Stimulsoft.Report;\r\nusing Stimulsoft.Report.Dialogs;\r\nusing Stimulsoft.Report.Components;\r\nusing System.Collections.Generic;\r\n\r\nnamespace Reports\r\n{\r\n\tpublic class MyFunction\r\n\t{\r\n\t\tprivate const string Category = \"MyFuncCategory\";\r\n\r\n\t\tpublic static string GetEnumValue(string enumTitle,int intValue,string enumConversionJson)\r\n\t\t{\r\n\t\t\tstring lang=\"en\";\r\n\t\t\tif (string.IsNullOrEmpty(enumConversionJson))\r\n\t\t\t\treturn null;\r\n\t\t\tvar dic = Stimulsoft.Base.Json.JsonConvert.\r\n\t\t\t\t\tDeserializeObject<Dictionary<string, Dictionary<int, Dictionary<string, string>>>>(enumConversionJson);\r\n\t\t\t\t\r\n\t\t\treturn dic[enumTitle][intValue][lang];\r\n\t\t}\r\n\r\n\t\tpublic static void RegisterGetEnumValue()\r\n\t\t{\r\n\t\t\tvar ParamNames = new string[3];\r\n\t\t\tvar ParamTypes = new Type[3];\r\n\t\t\tvar ParamDescriptions = new string[3];\r\n\r\n\t\t\tParamNames[0] = \"enumTitle\";\r\n\t\t\tParamDescriptions[0] = \"enumTitle\";\r\n\t\t\tParamTypes[0] = typeof(string);\r\n\t\t\t\r\n\t\t\tParamNames[1] = \"intValue\";\r\n\t\t\tParamDescriptions[1] = \"intValue\";\r\n\t\t\tParamTypes[1] = typeof(int);\r\n\r\n\t\t\tParamNames[2] = \"enumConversionJson\";\r\n\t\t\tParamDescriptions[2] = \"enumConversionJson\";\r\n\t\t\tParamTypes[2] = typeof(string);\r\n\r\n\t\t\tStimulsoft.Report.Dictionary.StiFunctions.RemoveFunction(\"GetEnumValue\");\r\n\t\t\tStimulsoft.Report.Dictionary.StiFunctions.AddFunction(Category, \"GetEnumValue\", \"GetEnumValue\", \"Description\", \r\n\t\t\t\ttypeof(MyFunction),\r\n\t\t\t\ttypeof(string), \"Return Description\", ParamTypes, ParamNames, ParamDescriptions);\r\n\t\t}\r\n\t\tpublic static string GetTranslation(string jsonStr)\r\n\t\t{\r\n\t\t\tstring lang=\"en\";\r\n\t\t\tif (string.IsNullOrEmpty(jsonStr))\r\n\t\t\t\treturn null;\r\n\t\t\t\t\r\n\t\t\treturn Stimulsoft.Base.Json.JsonConvert.DeserializeObject<Dictionary<string,string>>(jsonStr)[lang];\r\n\t\t}\r\n\r\n\t\tpublic static void RegisterGetTranslation()\r\n\t\t{\r\n\t\t\tvar ParamNames = new string[2];\r\n\t\t\tvar ParamTypes = new Type[2];\r\n\t\t\tvar ParamDescriptions = new string[2];\r\n\r\n\t\t\tParamNames[0] = \"jsonStr\";\r\n\t\t\tParamDescriptions[0] = \"Multi-culture string\";\r\n\t\t\tParamTypes[0] = typeof(string);\r\n\t\t\t\r\n\t\t\tParamNames[1] = \"lang\";\r\n\t\t\tParamDescriptions[1] = \"LanguageTmp\";\r\n\t\t\tParamTypes[1] = typeof(string);\r\n\t\t\t\r\n\r\n\t\t\tStimulsoft.Report.Dictionary.StiFunctions.RemoveFunction(\"GetTranslation\");\r\n\t\t\tStimulsoft.Report.Dictionary.StiFunctions.AddFunction(Category, \"GetTranslation\", \"GetTranslation\", \"Description\", \r\n\t\t\t\ttypeof(MyFunction),\r\n\t\t\t\ttypeof(string), \"Return Description\", ParamTypes, ParamNames, ParamDescriptions);\r\n\t\t}\r\n\t}\r\n\t\r\n    public class Report : Stimulsoft.Report.StiReport\r\n    {\r\n        public Report()        {\r\n            this.InitializeComponent();\r\n\t\t\tRegisterGetTranslation();\r\n        }\r\n\r\n        #region StiReport Designer generated code - do not modify\r\n\t\t#endregion StiReport Designer generated code - do not modify\r\n    }\r\n}\r\n",
   "Styles": {
     "0": {
       "Ident": "StiStyle",
@@ -20,52 +19,6 @@
       "Brush": "solid:",
       "TextBrush": "solid:179,0,75",
       "NegativeTextBrush": "solid:179,0,75"
-    },
-    "1": {
-      "Ident": "StiStyle",
-      "Name": "PageHeader",
-      "Font": ";14;;",
-      "Border": ";;;;;;;solid:Black",
-      "Brush": "solid:",
-      "TextBrush": "solid:Black",
-      "NegativeTextBrush": "solid:Red"
-    },
-    "2": {
-      "Ident": "StiStyle",
-      "Name": "PageTitle",
-      "Font": ";12;;",
-      "Border": ";;;;;;;solid:Black",
-      "Brush": "solid:",
-      "TextBrush": "solid:Black",
-      "NegativeTextBrush": "solid:Red"
-    },
-    "3": {
-      "Ident": "StiStyle",
-      "Name": "PageFooter",
-      "Font": ";;Bold;",
-      "Border": ";;;;;;;solid:Black",
-      "Brush": "solid:",
-      "TextBrush": "solid:Black",
-      "NegativeTextBrush": "solid:Red"
-    },
-    "4": {
-      "Ident": "StiStyle",
-      "Description": "Style based on formating of 'DataBand2' component",
-      "Name": "HeaderBand",
-      "Border": "Bottom;;;;;;;solid:Black",
-      "Brush": "solid:",
-      "TextBrush": "solid:Black",
-      "NegativeTextBrush": "solid:Red",
-      "AllowUseFont": false,
-      "AllowUseTextBrush": false
-    },
-    "5": {
-      "Ident": "StiCrossTabStyle",
-      "Description": "Style based on formating of 'CrossTab2' component",
-      "Name": "Style1",
-      "ColumnHeaderBackColor": "White",
-      "ColumnHeaderForeColor": "White",
-      "RowHeaderBackColor": "White"
     }
   },
   "ReferencedAssemblies": {
@@ -86,18 +39,22 @@
       "CultureName": "fr",
       "Items": {
         "0": {
+          "PropertyName": "Text10.Text",
+          "Text": "Durée minimum \r\nde placement \r\nrecommandée :"
+        },
+        "1": {
           "PropertyName": "Text13.Text",
           "Text": "1"
         },
-        "1": {
+        "2": {
           "PropertyName": "Text15.Text",
           "Text": "Rendement potentiellement\r\nplus élevé"
         },
-        "2": {
+        "3": {
           "PropertyName": "Text14.Text",
           "Text": "5"
         },
-        "3": {
+        "4": {
           "PropertyName": "Chart2.Area.XAxis.Labels.TextAfter",
           "Text": "Durée minimum de placement recommandée :"
         }
@@ -119,102 +76,29 @@
     },
     "Variables": {
       "0": {
+        "Value": "3",
+        "Name": "SubFundId",
+        "Alias": "SubFundId",
+        "Type": "System.Int32",
+        "Key": "_x0032_a7778aaa22a4b3e8dd790fc06e7e8ca"
+      },
+      "1": {
         "Value": "1/29/2020 12:00:00 AM",
-        "Name": "NavDate",
-        "Alias": "NavDate",
+        "Name": "AsOfDate",
+        "Alias": "AsOfDate",
         "Type": "System.DateTime",
         "Key": "971ab69a95ca4e1484771d2b3a153964"
       },
-      "1": {
-        "Value": "3",
-        "Name": "SNA_NbColumsPerPage",
-        "Alias": "SNA_NbColumsPerPage",
-        "Type": "System.Int32",
-        "Category": "Layout",
-        "Key": "55742bbd3f9c4ca69a8ff841b90b4df8"
-      },
       "2": {
-        "Value": "3",
-        "Name": "SOC_NbColumsPerPage",
-        "Alias": "SOC_NbColumsPerPage",
-        "Type": "System.Int32",
-        "Category": "Layout"
-      },
-      "3": {
-        "Value": "3",
-        "Name": "CNS_NbColumsPerPage",
-        "Alias": "CNS_NbColumsPerPage",
-        "Type": "System.Int32",
-        "Category": "Layout"
-      },
-      "4": {
-        "Value": "0",
-        "Name": "Continued",
-        "Alias": "Continued",
-        "Type": "System.Int32",
-        "Category": "Layout"
-      },
-      "5": {
-        "Value": "0",
-        "Name": "Counter1",
-        "Alias": "Counter1",
-        "Type": "System.Int32",
-        "Category": "Layout"
-      },
-      "6": {
+        "Value": "{\"FrequencyType\":{\"1\":{\"en\":\"Daily\",\"fr\":\"Daily\"},\"2\":{\"en\":\"Weekly\",\"fr\":\"Weekly\"},\"3\":{\"en\":\"Half Monthly\",\"fr\":\"HalfMonthly\"},\"4\":{\"en\":\"Monthly\",\"fr\":\"Monthly\"},\"5\":{\"en\":\"Quarterly\",\"fr\":\"Quarterly\"},\"6\":{\"en\":\"Half Yearly\",\"fr\":\"HalfYearly\"},\"7\":{\"en\":\"Yearly\",\"fr\":\"Yearly\"},\"8\":{\"en\":\"Biennially\",\"fr\":\"Biennially\"},\"9\":{\"en\":\"Third Yearly\",\"fr\":\"ThirdYearly\"}},\"LegalForm\":{\"1\":{\"en\":\"S I C A V\",\"fr\":\"SICAV\"},\"2\":{\"en\":\"S I C A F\",\"fr\":\"SICAF\"}},\"SicavType\":{\"1\":{\"en\":\"U C I T S\",\"fr\":\"UCITS\"},\"2\":{\"en\":\"A I F M\",\"fr\":\"AIFM\"}},\"CollaborationType\":{\"1\":{\"en\":\"Service Provider\",\"fr\":\"ServiceProvider\"},\"2\":{\"en\":\"Collaborator\",\"fr\":\"Collaborator\"}},\"RoleDomain\":{\"1\":{\"en\":\"Management\",\"fr\":\"Management\"},\"2\":{\"en\":\"Risk Management\",\"fr\":\"RiskManagement\"},\"3\":{\"en\":\"Compliance\",\"fr\":\"Compliance\"},\"4\":{\"en\":\"Investment Management\",\"fr\":\"InvestmentManagement\"},\"5\":{\"en\":\"Marketing\",\"fr\":\"Marketing\"},\"6\":{\"en\":\"Sales\",\"fr\":\"Sales\"},\"7\":{\"en\":\"Administration\",\"fr\":\"Administration\"},\"8\":{\"en\":\"Accounting\",\"fr\":\"Accounting\"},\"9\":{\"en\":\"Legal\",\"fr\":\"Legal\"},\"10\":{\"en\":\"Depositary\",\"fr\":\"Depositary\"},\"11\":{\"en\":\"Audit\",\"fr\":\"Audit\"}},\"RolePosition\":{\"1\":{\"en\":\"Board\",\"fr\":\"Board\"},\"2\":{\"en\":\"Director\",\"fr\":\"Director\"},\"3\":{\"en\":\"Employee\",\"fr\":\"Employee\"},\"4\":{\"en\":\"External\",\"fr\":\"External\"}},\"CounterpartyType\":{\"1\":{\"en\":\"Broker\",\"fr\":\"Broker\"},\"2\":{\"en\":\"Bank\",\"fr\":\"Bank\"},\"3\":{\"en\":\"Investment Manager\",\"fr\":\"InvestmentManager\"},\"4\":{\"en\":\"Insurance Company\",\"fr\":\"InsuranceCompany\"}},\"EmirClassification\":{\"1\":{\"en\":\"Financial\",\"fr\":\"Financial\"},\"2\":{\"en\":\"Non Financial\",\"fr\":\"NonFinancial\"}},\"InvestorType\":{\"1\":{\"en\":\"Retail\",\"fr\":\"Retail\"},\"2\":{\"en\":\"Well Informed\",\"fr\":\"WellInformed\"},\"3\":{\"en\":\"Professional\",\"fr\":\"Professional\"},\"4\":{\"en\":\"Institutional\",\"fr\":\"Institutional\"}},\"DividendDistributionPolicy\":{\"0\":{\"en\":\"Accumulation\",\"fr\":\"Accumulation\"},\"1\":{\"en\":\"Distribution\",\"fr\":\"Distribution\"}},\"OversightLevel\":{\"1\":{\"en\":\"Simple\",\"fr\":\"Simple\"},\"2\":{\"en\":\"Normal\",\"fr\":\"Normal\"},\"3\":{\"en\":\"Enhanced\",\"fr\":\"Enhanced\"}},\"DueDiligenceTaskStatus\":{\"1\":{\"en\":\"Open\",\"fr\":\"Open\"},\"2\":{\"en\":\"In Progress\",\"fr\":\"InProgress\"},\"3\":{\"en\":\"Waiting\",\"fr\":\"Waiting\"},\"4\":{\"en\":\"Done\",\"fr\":\"Done\"},\"5\":{\"en\":\"Not Applicable\",\"fr\":\"NotApplicable\"},\"6\":{\"en\":\"Refused\",\"fr\":\"Refused\"}},\"PortfolioType\":{\"0\":{\"en\":\"Portfolio\",\"fr\":\"Portfolio\"},\"1\":{\"en\":\"Sub Fund\",\"fr\":\"SubFund\"}}}",
+        "Name": "EnumConversion",
+        "Alias": "EnumConversion",
         "Type": "System.String",
-        "Category": "Layout"
-      },
-      "7": {
-        "Value": "0",
-        "Name": "Counter2",
-        "Alias": "Counter2",
-        "Type": "System.Int32",
-        "Category": "Layout"
+        "Key": "c15feb358f6a4ad29726ce301523eab1"
       }
     },
     "DataSources": {
       "0": {
-        "Ident": "StiDataTransformation",
-        "Name": "CurrencyBreakdown",
-        "Alias": "CurrencyBreakdown",
-        "Key": "9e6083153fa345de8d32c8ca4383943d",
-        "Columns": {
-          "0": {
-            "Name": "CcyIso",
-            "Index": -1,
-            "NameInSource": "CcyIso",
-            "Alias": "CcyIso",
-            "Type": "System.String",
-            "Key": "e60b8e6236d24896a59905fcbe1517ef",
-            "Ident": "Transform",
-            "Expression": "Securities.CcyIso"
-          },
-          "1": {
-            "Name": "PortfolioId",
-            "Index": -1,
-            "NameInSource": "PortfolioId",
-            "Alias": "PortfolioId",
-            "Type": "System.Int32",
-            "Key": "a405178c99194cc48e560b61e9b086b6",
-            "Ident": "Transform",
-            "Expression": "LastPositions.PortfolioId"
-          },
-          "2": {
-            "Name": "Weight",
-            "Index": -1,
-            "NameInSource": "Weight",
-            "Alias": "Weight",
-            "Type": "System.Decimal",
-            "Key": "1feddd8b5427420a921d734a199d7589",
-            "Ident": "Transform",
-            "Expression": "Sum(LastPositions.Weight)",
-            "Mode": "Measure"
-          }
-        },
-        "NameInSource": "CurrencyBreakdown"
-      },
-      "1": {
         "Ident": "StiDataTableSource",
         "Name": "Portfolios",
         "Alias": "Portfolios",
@@ -249,7 +133,7 @@
             "Index": -1,
             "NameInSource": "Type",
             "Alias": "Type",
-            "Type": "System.String",
+            "Type": "System.Int32",
             "Key": "9d1c955f1dca4f099b1efca177993c13"
           },
           "4": {
@@ -305,7 +189,7 @@
             "Index": -1,
             "NameInSource": "PricingFrequency",
             "Alias": "PricingFrequency",
-            "Type": "System.String",
+            "Type": "System.Int32",
             "Key": "c156b1cac9724f05b6f16e6fac6c95db"
           },
           "11": {
@@ -349,6 +233,14 @@
             "Key": "04b6e16014e943d8a85ecbf2ecd27e27"
           },
           "16": {
+            "Name": "LiquidationDate",
+            "Index": -1,
+            "NameInSource": "LiquidationDate",
+            "Alias": "LiquidationDate",
+            "Type": "System.Nullable`1[System.DateTime]",
+            "Key": "53aa4b35761e40b4b43ff84a1cf01144"
+          },
+          "17": {
             "Name": "Url",
             "Index": -1,
             "NameInSource": "Url",
@@ -356,7 +248,7 @@
             "Type": "System.String",
             "Key": "e0b111b441774e6fb40b96b763e4baf9"
           },
-          "17": {
+          "18": {
             "Name": "BenchmarkId",
             "Index": -1,
             "NameInSource": "BenchmarkId",
@@ -364,7 +256,7 @@
             "Type": "System.Int32",
             "Key": "6d3b9b70b29f4aeba61cbf2ba808f76e"
           },
-          "18": {
+          "19": {
             "Name": "CustodianEntityId",
             "Index": -1,
             "NameInSource": "CustodianEntityId",
@@ -372,7 +264,7 @@
             "Type": "System.Int32",
             "Key": "51873247e2b14f20a490d2306a850ca0"
           },
-          "19": {
+          "20": {
             "Name": "ManCoEntityId",
             "Index": -1,
             "NameInSource": "ManCoEntityId",
@@ -380,7 +272,7 @@
             "Type": "System.Int32",
             "Key": "4d86df67b7744fa696d7bcd9a5cdb85c"
           },
-          "20": {
+          "21": {
             "Name": "Manager1EntityId",
             "Index": -1,
             "NameInSource": "Manager1EntityId",
@@ -388,7 +280,7 @@
             "Type": "System.Int32",
             "Key": "9d6f6d6f1d70424595f103dc33826a8f"
           },
-          "21": {
+          "22": {
             "Name": "Manager1StartDate",
             "Index": -1,
             "NameInSource": "Manager1StartDate",
@@ -396,7 +288,7 @@
             "Type": "System.DateTime",
             "Key": "e9b09f35211e4863af8570ddfd1a6cbc"
           },
-          "22": {
+          "23": {
             "Name": "Manager2EntityId",
             "Index": -1,
             "NameInSource": "Manager2EntityId",
@@ -404,7 +296,7 @@
             "Type": "System.Int32",
             "Key": "dbcefa17c9e04aff91c543a15d2a0c3e"
           },
-          "23": {
+          "24": {
             "Name": "InvestorEntityId",
             "Index": -1,
             "NameInSource": "InvestorEntityId",
@@ -412,15 +304,15 @@
             "Type": "System.Int32",
             "Key": "6c10f91d723245c89f6fac0623f4fb16"
           },
-          "24": {
-            "Name": "AsOfDate",
+          "25": {
+            "Name": "NavDate",
             "Index": -1,
-            "NameInSource": "AsOfDate",
-            "Alias": "AsOfDate",
+            "NameInSource": "NavDate",
+            "Alias": "NavDate",
             "Type": "System.DateTime",
             "Key": "4b2045fffafd4126a8e16927531426a7"
           },
-          "25": {
+          "26": {
             "Name": "Nav",
             "Index": -1,
             "NameInSource": "Nav",
@@ -428,7 +320,7 @@
             "Type": "System.Decimal",
             "Key": "6975bdbe80db4ad8b77090714ee6710f"
           },
-          "26": {
+          "27": {
             "Name": "PreviousNav",
             "Index": -1,
             "NameInSource": "PreviousNav",
@@ -436,7 +328,7 @@
             "Type": "System.Decimal",
             "Key": "64a99730b4f14711bdbe67f42b667f3e"
           },
-          "27": {
+          "28": {
             "Name": "Tna",
             "Index": -1,
             "NameInSource": "Tna",
@@ -444,21 +336,13 @@
             "Type": "System.Decimal",
             "Key": "55ef8a82e9c841aa99de4be582c830aa"
           },
-          "28": {
+          "29": {
             "Name": "PreviousTna",
             "Index": -1,
             "NameInSource": "PreviousTna",
             "Alias": "PreviousTna",
             "Type": "System.Decimal",
             "Key": "db1d3465f68a4a409fd01510de97e33b"
-          },
-          "29": {
-            "Name": "LiquidationDate",
-            "Index": -1,
-            "NameInSource": "LiquidationDate",
-            "Alias": "LiquidationDate",
-            "Type": "System.DateTime",
-            "Key": "53aa4b35761e40b4b43ff84a1cf01144"
           },
           "30": {
             "Name": "NetCashFlowOverTenNextDays",
@@ -502,6 +386,87 @@
           }
         },
         "NameInSource": "FundProcessUniverse.Portfolios"
+      },
+      "1": {
+        "Ident": "StiDataTableSource",
+        "Name": "PortfolioSummaries",
+        "Alias": "PortfolioSummaries",
+        "Key": "379b3364b0c048be89e77fd0d8dd3ec8",
+        "Columns": {
+          "0": {
+            "Name": "Id",
+            "Index": -1,
+            "NameInSource": "Id",
+            "Alias": "Id",
+            "Type": "System.Int32",
+            "Key": "0497633ceb684f2eb7f06ae6817d3e1a"
+          },
+          "1": {
+            "Name": "InternalCode",
+            "Index": -1,
+            "NameInSource": "InternalCode",
+            "Alias": "InternalCode",
+            "Type": "System.String",
+            "Key": "7b57d4008cb54c688b5b4773bbfbc676"
+          },
+          "2": {
+            "Name": "Name",
+            "Index": -1,
+            "NameInSource": "Name",
+            "Alias": "Name",
+            "Type": "System.String",
+            "Key": "8c93c497433e40bfb54eaf381092a65c"
+          },
+          "3": {
+            "Name": "Type",
+            "Index": -1,
+            "NameInSource": "Type",
+            "Alias": "Type",
+            "Type": "System.String",
+            "Key": "bacaa02c1a6e4362bbb0af2f72ffc204"
+          },
+          "4": {
+            "Name": "SicavEntityId",
+            "Index": -1,
+            "NameInSource": "SicavEntityId",
+            "Alias": "SicavEntityId",
+            "Type": "System.Int32",
+            "Key": "9b41a5a674854c3ea298818ffc98b7cd"
+          },
+          "5": {
+            "Name": "CcyIso",
+            "Index": -1,
+            "NameInSource": "CcyIso",
+            "Alias": "CcyIso",
+            "Type": "System.String",
+            "Key": "3e6d9914ee6542c9b20edbf40506e53f"
+          },
+          "6": {
+            "Name": "PrimaryShareClassId",
+            "Index": -1,
+            "NameInSource": "PrimaryShareClassId",
+            "Alias": "PrimaryShareClassId",
+            "Type": "System.Int32",
+            "Key": "044ee0b0401c479fbd0fb911d632e3ee"
+          },
+          "7": {
+            "Name": "InLiquidation",
+            "Index": -1,
+            "NameInSource": "InLiquidation",
+            "Alias": "InLiquidation",
+            "Type": "System.Boolean",
+            "Key": "2e899df78b21482caeb5a3e8f5643462"
+          },
+          "8": {
+            "Name": "LiquidationDate",
+            "Index": -1,
+            "NameInSource": "LiquidationDate",
+            "Alias": "LiquidationDate",
+            "Type": "System.Nullable`1[System.DateTime]",
+            "Key": "f32b838f4e8146c9bbd2d1f327c3c26f"
+          }
+        },
+        "NameInSource": "FundProcessUniverse.PortfolioSummaries"
       },
       "2": {
         "Ident": "StiDataTableSource",
@@ -918,7 +883,7 @@
             "Index": -1,
             "NameInSource": "InvestorType",
             "Alias": "InvestorType",
-            "Type": "System.String",
+            "Type": "System.Int32",
             "Key": "684763e477f8480990e54921b32a86af"
           },
           "9": {
@@ -926,7 +891,7 @@
             "Index": -1,
             "NameInSource": "DividendDistributionPolicy",
             "Alias": "DividendDistributionPolicy",
-            "Type": "System.String",
+            "Type": "System.Int32",
             "Key": "de47a95b2764449ba3752eb464d51f00"
           },
           "10": {
@@ -2434,7 +2399,7 @@
             "Index": -1,
             "NameInSource": "CollaborationType",
             "Alias": "CollaborationType",
-            "Type": "System.String",
+            "Type": "System.Int32",
             "Key": "aa8658c5f9db421f96895854e4969ed9"
           },
           "4": {
@@ -2483,70 +2448,80 @@
             "Index": -1,
             "NameInSource": "Id",
             "Alias": "Id",
-            "Type": "System.Int32"
+            "Type": "System.Int32",
+            "Key": "c769837afab240779b6445d954c316e9"
           },
           "1": {
             "Name": "EntityId",
             "Index": -1,
             "NameInSource": "EntityId",
             "Alias": "EntityId",
-            "Type": "System.Int32"
+            "Type": "System.Int32",
+            "Key": "8b9a226a2e244b20aabd279dba7aefb0"
           },
           "2": {
             "Name": "ResponsibleEntityId",
             "Index": -1,
             "NameInSource": "ResponsibleEntityId",
             "Alias": "ResponsibleEntityId",
-            "Type": "System.Int32"
+            "Type": "System.Int32",
+            "Key": "ebc8de4756bf4292b2163b788b85a3f9"
           },
           "3": {
             "Name": "RelationshipType",
             "Index": -1,
             "NameInSource": "RelationshipType",
             "Alias": "RelationshipType",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "0af6af4b56594b98b4ec90130bc77619"
           },
           "4": {
             "Name": "RoleCode",
             "Index": -1,
             "NameInSource": "RoleCode",
             "Alias": "RoleCode",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "5c921002e5054b05856786aac79d150c"
           },
           "5": {
             "Name": "RoleName",
             "Index": -1,
             "NameInSource": "RoleName",
             "Alias": "RoleName",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "811c4f5edf6c40fb98408dff78bc139a"
           },
           "6": {
             "Name": "RoleDomain",
             "Index": -1,
             "NameInSource": "RoleDomain",
             "Alias": "RoleDomain",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "11a64c429def41df8884ba5b623806db"
           },
           "7": {
             "Name": "StartValidity",
             "Index": -1,
             "NameInSource": "StartValidity",
             "Alias": "StartValidity",
-            "Type": "System.DateTime"
+            "Type": "System.DateTime",
+            "Key": "bd4b4ffba4544dfcbf91d93f7d3cb45c"
           },
           "8": {
             "Name": "EndValidity",
             "Index": -1,
             "NameInSource": "EndValidity",
             "Alias": "EndValidity",
-            "Type": "System.DateTime"
+            "Type": "System.DateTime",
+            "Key": "7f5ec84a49e44549967cbf73fa82a3cf"
           },
           "9": {
             "Name": "OversightLevel",
             "Index": -1,
             "NameInSource": "OversightLevel",
             "Alias": "OversightLevel",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "1fca86c86c874c9997df2fc772a1e6af"
           },
           "10": {
             "Name": "OnSiteDueDiligence",
@@ -2584,28 +2559,32 @@
             "Index": -1,
             "NameInSource": "Code",
             "Alias": "Code",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "ec9623c102ad418c914e632344425eed"
           },
           "2": {
             "Name": "Name",
             "Index": -1,
             "NameInSource": "Name",
             "Alias": "Name",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "1f5b892d72af46a6ab7311de24164eb1"
           },
           "3": {
             "Name": "Description",
             "Index": -1,
             "NameInSource": "Description",
             "Alias": "Description",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "a3d09b444cf949f3b6c0cf5a4f9d0b1d"
           },
           "4": {
             "Name": "Status",
             "Index": -1,
             "NameInSource": "Status",
             "Alias": "Status",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "f4a27b23112641f59531ca5479401eac"
           },
           "5": {
             "Name": "Comment",
@@ -2665,7 +2644,8 @@
             "Index": -1,
             "NameInSource": "Name",
             "Alias": "Name",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "b831fcdaa7d041989941b5b9d1ff7262"
           },
           "3": {
             "Name": "Type",
@@ -2857,7 +2837,7 @@
             "Index": -1,
             "NameInSource": "LegalForm",
             "Alias": "LegalForm",
-            "Type": "System.String",
+            "Type": "System.Nullable`1[System.Int32]",
             "Key": "f1ce038e701e41ff889d28a32a6947cb"
           },
           "3": {
@@ -2865,7 +2845,7 @@
             "Index": -1,
             "NameInSource": "SicavType",
             "Alias": "SicavType",
-            "Type": "System.String",
+            "Type": "System.Nullable`1[System.Int32]",
             "Key": "15fa0bb2929a4dfe824e1f83b4f98d8e"
           },
           "4": {
@@ -2889,14 +2869,16 @@
             "Index": -1,
             "NameInSource": "ManCoStartDate",
             "Alias": "ManCoStartDate",
-            "Type": "System.DateTime"
+            "Type": "System.DateTime",
+            "Key": "1f3edb53b77a4075afe09a972a3aec15"
           },
           "7": {
             "Name": "ReferenceCurrencyIso",
             "Index": -1,
             "NameInSource": "ReferenceCurrencyIso",
             "Alias": "ReferenceCurrencyIso",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "b3da5b9e4b2b47f4a768fd7246d9be84"
           }
         },
         "NameInSource": "FundProcessUniverse.Sicavs"
@@ -2928,28 +2910,32 @@
             "Index": -1,
             "NameInSource": "StartDate",
             "Alias": "StartDate",
-            "Type": "System.DateTime"
+            "Type": "System.DateTime",
+            "Key": "6c1ed0a7cc4d47e0aad8e56d0b45d761"
           },
           "3": {
             "Name": "RoleCode",
             "Index": -1,
             "NameInSource": "RoleCode",
             "Alias": "RoleCode",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "e9f841ce76084971bbe0d1e13250610e"
           },
           "4": {
             "Name": "RoleName",
             "Index": -1,
             "NameInSource": "RoleName",
             "Alias": "RoleName",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "160652d3a9b54e4b8c6dd0efc6584305"
           },
           "5": {
             "Name": "RoleDomain",
             "Index": -1,
             "NameInSource": "RoleDomain",
             "Alias": "RoleDomain",
-            "Type": "System.String"
+            "Type": "System.Int32",
+            "Key": "f6da3d86e47f48178efc896a41c1117d"
           }
         },
         "NameInSource": "FundProcessUniverse.SicavRoles"
@@ -4512,46 +4498,6 @@
         "NameInSource": "FundProcessUniverse.SecurityClassifications"
       },
       "40": {
-        "Ident": "StiDataTransformation",
-        "Name": "SectorBreakdown",
-        "Alias": "SectorBreakdown",
-        "Key": "41835ddd3e324e39beb43aee2fb0afa1",
-        "Columns": {
-          "0": {
-            "Name": "PortfolioId",
-            "Index": -1,
-            "NameInSource": "PortfolioId",
-            "Alias": "PortfolioId",
-            "Type": "System.Int32",
-            "Key": "a32165eb1fa84f6b93a938a7e4605b4d",
-            "Ident": "Transform",
-            "Expression": "LastPositions.PortfolioId"
-          },
-          "1": {
-            "Name": "SectorClassification",
-            "Index": -1,
-            "NameInSource": "SectorClassification",
-            "Alias": "SectorClassification",
-            "Type": "System.String",
-            "Key": "056e0df2a65a471c92ff6fe30072568f",
-            "Ident": "Transform",
-            "Expression": "Securities.SectorClassificationCode"
-          },
-          "2": {
-            "Name": "Weight",
-            "Index": -1,
-            "NameInSource": "Weight",
-            "Alias": "Weight",
-            "Type": "System.Double",
-            "Key": "643909adcc214b569caa9d1bc9c84982",
-            "Ident": "Transform",
-            "Expression": "Sum(LastPositions.Weight)*100",
-            "Mode": "Measure"
-          }
-        },
-        "NameInSource": "SectorBreakdown"
-      },
-      "41": {
         "Ident": "StiDataTableSource",
         "Name": "WorldMap",
         "Alias": "WorldMap",
@@ -4580,6 +4526,97 @@
           }
         },
         "NameInSource": "FundProcessUniverse.WorldMap"
+      },
+      "41": {
+        "Ident": "StiVirtualSource",
+        "Name": "CurrencyBreakdown",
+        "Alias": "CurrencyBreakdown",
+        "Key": "35954ae7d7394c3f8be77f72af95823b",
+        "Columns": {
+          "0": {
+            "Name": "PortfolioId",
+            "Index": -1,
+            "NameInSource": "PortfolioId",
+            "Alias": "PortfolioId",
+            "Type": "System.Int32"
+          },
+          "1": {
+            "Name": "Security.CcyIso",
+            "Index": -1,
+            "NameInSource": "Security.CcyIso",
+            "Alias": "Security.CcyIso",
+            "Type": "System.Object"
+          },
+          "2": {
+            "Name": "Weight.Sum",
+            "Index": -1,
+            "NameInSource": "Weight.Sum",
+            "Alias": "Weight.Sum",
+            "Type": "System.Decimal"
+          }
+        },
+        "NameInSource": "LastPositions",
+        "GroupColumns": {
+          "0": "PortfolioId",
+          "1": "Security.CcyIso"
+        },
+        "Results": {
+          "0": "Weight",
+          "1": "Sum",
+          "2": "Weight.Sum"
+        }
+      },
+      "42": {
+        "Ident": "StiVirtualSource",
+        "Name": "SectorBreakdown",
+        "Alias": "SectorBreakdown",
+        "Key": "e26de1fd3ebe4d84842fbd70a5fbb37a",
+        "Columns": {
+          "0": {
+            "Name": "PortfolioId",
+            "Index": -1,
+            "NameInSource": "PortfolioId",
+            "Alias": "PortfolioId",
+            "Type": "System.Int32",
+            "Key": "5d189abd48db42a5b52c9b7a48a1eb6d"
+          },
+          "1": {
+            "Name": "Security.SectorClassificationCode",
+            "Index": -1,
+            "NameInSource": "Security.SectorClassificationCode",
+            "Alias": "Security.SectorClassificationCode",
+            "Type": "System.String",
+            "Key": "1db1bd92a2454adaadef87fbb666c010"
+          },
+          "2": {
+            "Name": "Security.SectorClassification",
+            "Index": -1,
+            "NameInSource": "Security.SectorClassification",
+            "Alias": "Security.SectorClassification",
+            "Type": "System.String",
+            "Key": "5ad87dcb63b04f6a937f7327ce9ee4c6"
+          },
+          "3": {
+            "Name": "Weight.Sum",
+            "Index": -1,
+            "NameInSource": "Weight.Sum",
+            "Alias": "Weight.Sum",
+            "Type": "System.Decimal"
+          }
+        },
+        "NameInSource": "LastPositions",
+        "GroupColumns": {
+          "0": "PortfolioId",
+          "1": "Security.SectorClassificationCode"
+        },
+        "Results": {
+          "0": "Security.SectorClassification",
+          "1": "",
+          "2": "Security.SectorClassification",
+          "3": "Weight",
+          "4": "Sum",
+          "5": "Weight.Sum"
+        }
       }
     },
     "Databases": {
@@ -5171,2168 +5208,67 @@
         },
         "NameInSource": "SecuritySummaryCurrency",
         "Alias": "Currency",
+        "Key": "73df0dbe2dd34978924ee64bfe7475c0",
         "ParentSource": "Currencies",
         "ChildSource": "SecuritySummaries"
+      },
+      "41": {
+        "Name": "Sicav",
+        "ChildColumns": {
+          "0": "SicavEntityId"
+        },
+        "ParentColumns": {
+          "0": "EntityId"
+        },
+        "NameInSource": "PortfolioSummarySicav",
+        "Alias": "Sicav",
+        "Key": "da224f58d2c74d678ddb5590e5110713",
+        "ParentSource": "Sicavs",
+        "ChildSource": "PortfolioSummaries"
+      },
+      "42": {
+        "Name": "InternalShareClass",
+        "ChildColumns": {
+          "0": "PrimaryShareClassId"
+        },
+        "ParentColumns": {
+          "0": "Id"
+        },
+        "NameInSource": "PortfolioSummaryInternalShareClass",
+        "Alias": "InternalShareClass",
+        "Active": true,
+        "Key": "e2fd3bda0d684650ba86cf5a2090e913",
+        "ParentSource": "InternalShareClasses",
+        "ChildSource": "PortfolioSummaries"
       }
     }
   },
   "Pages": {
     "0": {
       "Ident": "StiPage",
-      "Name": "InvestorDueDiligences",
-      "Guid": "910889decedf400885ccafa8b06eccd3",
+      "Name": "Page1",
+      "Guid": "9bae7937650a4091b29c6301e6c264f7",
       "Interaction": {
         "Ident": "StiInteraction"
-      },
-      "Bookmark": {
-        "Value": "Investors"
       },
       "Border": ";;2;;;;;solid:Black",
       "Brush": "solid:",
       "Components": {
         "0": {
-          "Ident": "StiPageHeaderBand",
-          "Name": "PageHeaderBand1",
-          "PrintOn": "OnlyFirstPage",
-          "CanShrink": true,
-          "ClientRectangle": "0,0.4,19,5.4",
+          "Ident": "StiText",
+          "Name": "Text1",
+          "ClientRectangle": "7.2,2.4,4,2",
           "Interaction": {
             "Ident": "StiInteraction"
           },
+          "Text": {
+            "Value": "Hello World !"
+          },
+          "Font": ";18;;",
           "Border": ";;;;;;;solid:Black",
           "Brush": "solid:",
-          "Components": {
-            "0": {
-              "Ident": "StiText",
-              "Name": "Text1",
-              "ClientRectangle": "0,0,19,0.6",
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Text": {
-                "Value": "Due Diligence Management Report"
-              },
-              "VertAlignment": "Center",
-              "Font": ";12;Bold;",
-              "Border": ";;;;;;;solid:Black",
-              "Brush": "solid:",
-              "TextBrush": "solid:Black",
-              "Type": "Expression"
-            },
-            "1": {
-              "Ident": "StiPanel",
-              "Name": "Panel1",
-              "CanShrink": true,
-              "ClientRectangle": "0,1,19,4.2",
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Border": ";;;;;;;solid:Black",
-              "Brush": "solid:",
-              "Components": {
-                "0": {
-                  "Ident": "StiTable",
-                  "Name": "Table2",
-                  "Guid": "4760cd0f693641d38c8fb00bfaf69571",
-                  "CanShrink": true,
-                  "ClientRectangle": "0,0.4,19,3.2",
-                  "Interaction": {
-                    "Ident": "StiBandInteraction"
-                  },
-                  "CanBreak": true,
-                  "Border": ";;;;;;;solid:Black",
-                  "Brush": "solid:",
-                  "Components": {
-                    "0": {
-                      "Ident": "StiTableCell",
-                      "Name": "Table2_Cell1",
-                      "Guid": "deffc764e8af4b4e86baee051033a070",
-                      "CanShrink": true,
-                      "CanGrow": true,
-                      "GrowToHeight": true,
-                      "ClientRectangle": "0,0,9.6,0.8",
-                      "Restrictions": "AllowMove, AllowSelect, AllowChange",
-                      "Interaction": {
-                        "Ident": "StiInteraction"
-                      },
-                      "Text": {
-                        "Value": "Table of Content"
-                      },
-                      "CanBreak": true,
-                      "VertAlignment": "Center",
-                      "Font": ";;Italic;",
-                      "Border": ";;;;;;;solid:Black",
-                      "Brush": "solid:White",
-                      "TextBrush": "solid:Black",
-                      "Margins": {
-                        "Left": 10.0,
-                        "Right": 0.0,
-                        "Top": 0.0,
-                        "Bottom": 0.0
-                      },
-                      "Type": "Expression",
-                      "ID": 36
-                    },
-                    "1": {
-                      "Ident": "StiTableCell",
-                      "Name": "Table2_Cell2",
-                      "Guid": "b334ce87f75e422d8d83a22d5fb63811",
-                      "CanShrink": true,
-                      "CanGrow": true,
-                      "GrowToHeight": true,
-                      "ClientRectangle": "9.6,0,9.4,0.8",
-                      "Restrictions": "AllowMove, AllowSelect, AllowChange",
-                      "Interaction": {
-                        "Ident": "StiInteraction"
-                      },
-                      "Text": {
-                        "Value": "Page"
-                      },
-                      "CanBreak": true,
-                      "HorAlignment": "Right",
-                      "VertAlignment": "Center",
-                      "Border": ";;;;;;;solid:Black",
-                      "Brush": "solid:White",
-                      "TextBrush": "solid:Black",
-                      "Margins": {
-                        "Left": 0.0,
-                        "Right": 60.0,
-                        "Top": 0.0,
-                        "Bottom": 0.0
-                      },
-                      "Type": "Expression",
-                      "ID": 38
-                    },
-                    "2": {
-                      "Ident": "StiTableCell",
-                      "Name": "Table2_Cell3",
-                      "Guid": "1d4e275874d940fdbe1671127879d06f",
-                      "CanShrink": true,
-                      "CanGrow": true,
-                      "GrowToHeight": true,
-                      "ClientRectangle": "0,0.8,9.6,0.8",
-                      "Restrictions": "AllowMove, AllowSelect, AllowChange",
-                      "Interaction": {
-                        "Ident": "StiInteraction"
-                      },
-                      "Text": {
-                        "Value": "Investors"
-                      },
-                      "CanBreak": true,
-                      "VertAlignment": "Center",
-                      "Font": ";;Bold;",
-                      "Border": ";;;;;;;solid:Black",
-                      "Brush": "solid:White",
-                      "TextBrush": "solid:Black",
-                      "Margins": {
-                        "Left": 10.0,
-                        "Right": 0.0,
-                        "Top": 0.0,
-                        "Bottom": 0.0
-                      },
-                      "Type": "Expression",
-                      "ID": 0
-                    },
-                    "3": {
-                      "Ident": "StiTableCell",
-                      "Name": "Table2_Cell4",
-                      "Guid": "346432d6a50f4f1d82758230fa017d30",
-                      "CanShrink": true,
-                      "CanGrow": true,
-                      "GrowToHeight": true,
-                      "ClientRectangle": "9.6,0.8,9.4,0.8",
-                      "Restrictions": "AllowMove, AllowSelect, AllowChange",
-                      "Interaction": {
-                        "Ident": "StiInteraction"
-                      },
-                      "Text": {
-                        "Value": "1"
-                      },
-                      "CanBreak": true,
-                      "HorAlignment": "Right",
-                      "VertAlignment": "Center",
-                      "Font": ";;Bold;",
-                      "Border": ";;;;;;;solid:Black",
-                      "Brush": "solid:White",
-                      "TextBrush": "solid:Black",
-                      "Margins": {
-                        "Left": 0.0,
-                        "Right": 60.0,
-                        "Top": 0.0,
-                        "Bottom": 0.0
-                      },
-                      "Type": "Expression",
-                      "ID": 25,
-                      "FixedWidth": true
-                    },
-                    "4": {
-                      "Ident": "StiTableCell",
-                      "Name": "Table2_Cell5",
-                      "Guid": "8e2d9dcdd0a44eab81870aeddc1c1875",
-                      "CanShrink": true,
-                      "CanGrow": true,
-                      "GrowToHeight": true,
-                      "ClientRectangle": "0,1.6,9.6,0.8",
-                      "Restrictions": "AllowMove, AllowSelect, AllowChange",
-                      "Interaction": {
-                        "Ident": "StiInteraction"
-                      },
-                      "Text": {
-                        "Value": "Service Providers & Collaborators"
-                      },
-                      "CanBreak": true,
-                      "VertAlignment": "Center",
-                      "Font": ";;Bold;",
-                      "Border": ";;;;;;;solid:Black",
-                      "Brush": "solid:White",
-                      "TextBrush": "solid:Black",
-                      "Margins": {
-                        "Left": 10.0,
-                        "Right": 0.0,
-                        "Top": 0.0,
-                        "Bottom": 0.0
-                      },
-                      "Type": "Expression",
-                      "ID": 5
-                    },
-                    "5": {
-                      "Ident": "StiTableCell",
-                      "Name": "Table2_Cell6",
-                      "Guid": "ba4c92867f1b43098bddf0e97bc361cb",
-                      "CanShrink": true,
-                      "CanGrow": true,
-                      "GrowToHeight": true,
-                      "ClientRectangle": "9.6,1.6,9.4,0.8",
-                      "Restrictions": "AllowMove, AllowSelect, AllowChange",
-                      "Interaction": {
-                        "Ident": "StiInteraction"
-                      },
-                      "ProcessAtEnd": true,
-                      "ProcessAt": "EndOfReport",
-                      "Text": {
-                        "Value": "{GetAnchorPageNumber(\"Roles\")}"
-                      },
-                      "CanBreak": true,
-                      "HorAlignment": "Right",
-                      "VertAlignment": "Center",
-                      "Font": ";;Bold;",
-                      "Border": ";;;;;;;solid:Black",
-                      "Brush": "solid:White",
-                      "TextBrush": "solid:Black",
-                      "Margins": {
-                        "Left": 0.0,
-                        "Right": 60.0,
-                        "Top": 0.0,
-                        "Bottom": 0.0
-                      },
-                      "Type": "Expression",
-                      "ID": 26
-                    },
-                    "6": {
-                      "Ident": "StiTableCell",
-                      "Name": "Table2_Cell7",
-                      "Guid": "25166976bd9244feaad9592d6dda5c37",
-                      "CanShrink": true,
-                      "CanGrow": true,
-                      "GrowToHeight": true,
-                      "ClientRectangle": "0,2.4,9.6,0.8",
-                      "Restrictions": "AllowMove, AllowSelect, AllowChange",
-                      "Interaction": {
-                        "Ident": "StiInteraction"
-                      },
-                      "Text": {
-                        "Value": "Counterparties"
-                      },
-                      "CanBreak": true,
-                      "VertAlignment": "Center",
-                      "Font": ";;Bold;",
-                      "Border": ";;;;;;;solid:Black",
-                      "Brush": "solid:White",
-                      "TextBrush": "solid:Black",
-                      "Margins": {
-                        "Left": 10.0,
-                        "Right": 0.0,
-                        "Top": 0.0,
-                        "Bottom": 0.0
-                      },
-                      "Type": "Expression",
-                      "ID": 10
-                    },
-                    "7": {
-                      "Ident": "StiTableCell",
-                      "Name": "Table2_Cell8",
-                      "Guid": "f04aa4c6d922446a9b323969359202af",
-                      "CanShrink": true,
-                      "CanGrow": true,
-                      "GrowToHeight": true,
-                      "ClientRectangle": "9.6,2.4,9.4,0.8",
-                      "Restrictions": "AllowMove, AllowSelect, AllowChange",
-                      "Interaction": {
-                        "Ident": "StiInteraction"
-                      },
-                      "ProcessAtEnd": true,
-                      "ProcessAt": "EndOfReport",
-                      "Text": {
-                        "Value": "{GetAnchorPageNumber(\"Counterparties\")}"
-                      },
-                      "CanBreak": true,
-                      "HorAlignment": "Right",
-                      "VertAlignment": "Center",
-                      "Font": ";;Bold;",
-                      "Border": ";;;;;;;solid:Black",
-                      "Brush": "solid:White",
-                      "TextBrush": "solid:Black",
-                      "Margins": {
-                        "Left": 0.0,
-                        "Right": 60.0,
-                        "Top": 0.0,
-                        "Bottom": 0.0
-                      },
-                      "Type": "Expression",
-                      "ID": 27
-                    }
-                  },
-                  "RowCount": 4,
-                  "ColumnCount": 2,
-                  "NumberID": 49
-                }
-              }
-            }
-          }
-        },
-        "1": {
-          "Ident": "StiPageFooterBand",
-          "Name": "PageFooterBand2",
-          "Guid": "530933d545e44f6a85b0725a72a1dc2f",
-          "ClientRectangle": "0,27.3,19,0.4",
-          "Interaction": {
-            "Ident": "StiInteraction"
-          },
-          "Border": ";;;;;;;solid:Black",
-          "Brush": "solid:",
-          "Components": {
-            "0": {
-              "Ident": "StiText",
-              "Name": "Text30",
-              "Guid": "3cf532070ed347b9b549fc2281f837cf",
-              "ClientRectangle": "0,-0.1,9.4,0.4",
-              "ComponentStyle": "PageFooter",
-              "Conditions": {
-                "0": {
-                  "Ident": "StiCondition",
-                  "Item": "Expression",
-                  "Expression": {
-                    "Value": "{PageNumber%2== 1}"
-                  },
-                  "Enabled": false,
-                  "TextColor": "Transparent",
-                  "BorderSides": "None"
-                }
-              },
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Text": {
-                "Value": "{PageNumber}"
-              },
-              "VertAlignment": "Center",
-              "Font": ";;Bold;",
-              "Border": ";;;;;;;solid:Black",
-              "Brush": "solid:",
-              "TextBrush": "solid:Black",
-              "Type": "SystemVariables"
-            },
-            "1": {
-              "Ident": "StiText",
-              "Name": "Text31",
-              "Guid": "f753660011d5411ea77dea36950246dc",
-              "ClientRectangle": "9.6,-0.1,9.4,0.4",
-              "ComponentStyle": "PageFooter",
-              "Conditions": {
-                "0": {
-                  "Ident": "StiCondition",
-                  "Item": "Expression",
-                  "Expression": {
-                    "Value": "{PageNumber%2== 0}"
-                  },
-                  "Enabled": false,
-                  "BorderSides": "None"
-                }
-              },
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Text": {
-                "Value": "{PageNumber}"
-              },
-              "HorAlignment": "Right",
-              "VertAlignment": "Center",
-              "Font": ";;Bold;",
-              "Border": ";;;;;;;solid:Black",
-              "Brush": "solid:",
-              "TextBrush": "solid:Black",
-              "Type": "SystemVariables"
-            }
-          }
-        },
-        "2": {
-          "Ident": "StiHeaderBand",
-          "Name": "HeaderBand3",
-          "ClientRectangle": "0,6.6,19,1.2",
-          "Interaction": {
-            "Ident": "StiInteraction"
-          },
-          "Border": ";;;;;;;solid:Black",
-          "Brush": "solid:",
-          "Components": {
-            "0": {
-              "Ident": "StiText",
-              "Name": "Text8",
-              "ClientRectangle": "0,0.6,19,0.6",
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Text": {
-                "Value": "Investors"
-              },
-              "VertAlignment": "Center",
-              "Font": ";11;Bold;",
-              "Border": "Bottom;;;;;;;solid:Black",
-              "Brush": "solid:",
-              "TextBrush": "solid:Black",
-              "Type": "Expression"
-            },
-            "1": {
-              "Ident": "StiText",
-              "Name": "Text7",
-              "PrintOn": "ExceptFirstPage",
-              "ClientRectangle": "0,0,19,0.6",
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Text": {
-                "Value": "Due Diligence Management Report"
-              },
-              "VertAlignment": "Center",
-              "Font": ";12;Bold;",
-              "Border": ";;;;;;;solid:Black",
-              "Brush": "solid:",
-              "TextBrush": "solid:Black",
-              "Type": "Expression"
-            }
-          }
-        },
-        "3": {
-          "Ident": "StiDataBand",
-          "Name": "DataBand5",
-          "CanShrink": true,
-          "ClientRectangle": "0,8.6,19,2.2",
-          "Interaction": {
-            "Ident": "StiBandInteraction"
-          },
-          "Border": ";;;;;;;solid:Black",
-          "Brush": "solid:",
-          "Components": {
-            "0": {
-              "Ident": "StiText",
-              "Name": "Text22",
-              "ClientRectangle": "0,0,16.6,1",
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Text": {
-                "Value": "{Investors.Entity.Name} ({Investors.Entity.Type})"
-              },
-              "VertAlignment": "Bottom",
-              "Font": ";10;Bold;",
-              "Border": ";;;;;;;solid:Black",
-              "Brush": "solid:",
-              "TextBrush": "solid:Black",
-              "Margins": {
-                "Left": 0.0,
-                "Right": 0.0,
-                "Top": 20.0,
-                "Bottom": 0.0
-              },
-              "Type": "Expression"
-            },
-            "1": {
-              "Ident": "StiText",
-              "Name": "Text26",
-              "CanShrink": true,
-              "ClientRectangle": "0,1,16.6,0.8",
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Text": {
-                "Value": "Risk Profile: {GetTranslation(Investors.RiskProfileName)} (Validity:{Format(\"{0:dd/MM/yyyy}\", Investors.ProfileValidity)})\r\n - Client Advisor: {Investors.PrimaryAdvisor.Name}"
-              },
-              "VertAlignment": "Center",
-              "Font": ";;Italic;",
-              "Border": ";;;;;;;solid:Black",
-              "Brush": "solid:",
-              "TextBrush": "solid:Black",
-              "TextOptions": {
-                "WordWrap": true
-              },
-              "TextQuality": "Wysiwyg",
-              "AllowHtmlTags": true,
-              "Type": "Expression"
-            }
-          },
-          "DataSourceName": "Investors",
-          "Sort": {
-            "0": "ASC",
-            "1": "InvestorEntity",
-            "2": "LastName",
-            "3": "ASC",
-            "4": "InvestorEntity",
-            "5": "Name"
-          },
-          "Filters": {
-            "0": {
-              "Ident": "StiFilter",
-              "Item": "Expression",
-              "Expression": {
-                "Value": "{Investors.EndDate == null || Investors.EndDate >= NavDate}"
-              }
-            }
-          }
-        },
-        "4": {
-          "Ident": "StiDataBand",
-          "Name": "DataBand6",
-          "CanShrink": true,
-          "ClientRectangle": "0,11.6,19,1.8",
-          "Interaction": {
-            "Ident": "StiBandInteraction"
-          },
-          "CanBreak": true,
-          "Border": ";165,165,165;2;;;;;solid:Black",
-          "Brush": "solid:",
-          "Components": {
-            "0": {
-              "Ident": "StiText",
-              "Name": "Text17",
-              "CanShrink": true,
-              "CanGrow": true,
-              "ClientRectangle": "0,0,19,1.7",
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Text": {
-                "Value": "Due Diligence performed by {DueDiligences.Responsible.Name} on {Format(\"{0:dd/MM/yyyy}\", DueDiligences.StartValidity)} - Expiration: {Format(\"{0:dd/MM/yyyy}\", DueDiligences.EndValidity)}\r\n - Remaining mandatory tasks: {DueDiligences.NbRemainingMandatoryTasks}\r\n- Oversight Level: {DueDiligences.OversightLevel}\r\n{(DueDiligences.RelationshipType==\"CounterpartyRelationship\")? \"<br><u>Due diligence applied for Counterparty role</u>\":\"\"}\r\n{(DueDiligences.RelationshipType==\"RoleRelationship\")? \"<br><u>Due diligence specific for role: \"+GetTranslation(DueDiligences.RoleName)+\"</u>\":\"\"}\r\n\r\n"
-              },
-              "CanBreak": true,
-              "VertAlignment": "Center",
-              "Border": "Bottom;216,216,216;;;;;;solid:Black",
-              "Brush": "solid:",
-              "TextBrush": "solid:Black",
-              "TextOptions": {
-                "WordWrap": true
-              },
-              "TextQuality": "Wysiwyg",
-              "AllowHtmlTags": true,
-              "Margins": {
-                "Left": 0.0,
-                "Right": 0.0,
-                "Top": 5.0,
-                "Bottom": 10.0
-              },
-              "Type": "Expression"
-            }
-          },
-          "DataSourceName": "DueDiligences",
-          "DataRelationName": "DuediligenceInvestor",
-          "MasterComponent": "DataBand5"
-        },
-        "5": {
-          "Ident": "StiHeaderBand",
-          "Name": "HeaderDueDiligenceTasks",
-          "ClientRectangle": "0,14.2,19,0.4",
-          "Interaction": {
-            "Ident": "StiInteraction"
-          },
-          "Border": ";;;;;;;solid:Black",
-          "Brush": "solid:",
-          "Components": {
-            "0": {
-              "Ident": "StiText",
-              "Name": "HeaderDueDiligenceTasks_Name",
-              "ClientRectangle": "0.4,0,5.4,0.4",
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Text": {
-                "Value": "Task"
-              },
-              "HorAlignment": "Center",
-              "VertAlignment": "Center",
-              "Font": ";;Bold;",
-              "Border": ";;;;;;;solid:Black",
-              "Brush": "solid:",
-              "TextBrush": "solid:Black",
-              "TextOptions": {
-                "WordWrap": true
-              },
-              "Type": "Expression"
-            },
-            "1": {
-              "Ident": "StiText",
-              "Name": "HeaderDueDiligenceTasks_Status",
-              "ClientRectangle": "10.8,0,2.2,0.4",
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Text": {
-                "Value": "Status"
-              },
-              "HorAlignment": "Center",
-              "VertAlignment": "Center",
-              "Font": ";;Bold;",
-              "Border": ";;;;;;;solid:Black",
-              "Brush": "solid:",
-              "TextBrush": "solid:Black",
-              "TextOptions": {
-                "WordWrap": true
-              }
-            },
-            "2": {
-              "Ident": "StiText",
-              "Name": "HeaderDueDiligenceTasks_Comment",
-              "ClientRectangle": "5.8,0,5,0.4",
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Text": {
-                "Value": "Responsible Comment"
-              },
-              "HorAlignment": "Center",
-              "VertAlignment": "Center",
-              "Font": ";;Bold;",
-              "Border": ";;;;;;;solid:Black",
-              "Brush": "solid:",
-              "TextBrush": "solid:Black",
-              "TextOptions": {
-                "WordWrap": true
-              },
-              "Type": "Expression"
-            },
-            "3": {
-              "Ident": "StiText",
-              "Name": "HeaderDueDiligenceTasks_IsMandatory",
-              "ClientRectangle": "14.8,0,1,0.4",
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Text": {
-                "Value": "Mdtry"
-              },
-              "HorAlignment": "Center",
-              "VertAlignment": "Center",
-              "Font": ";;Bold;",
-              "Border": ";;;;;;;solid:Black",
-              "Brush": "solid:",
-              "TextBrush": "solid:Black",
-              "TextOptions": {
-                "WordWrap": true
-              },
-              "Type": "Expression"
-            },
-            "4": {
-              "Ident": "StiText",
-              "Name": "Text18",
-              "ClientRectangle": "13,0,1.8,0.4",
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Text": {
-                "Value": "Expiration"
-              },
-              "HorAlignment": "Center",
-              "VertAlignment": "Center",
-              "Font": ";;Bold;",
-              "Border": ";;;;;;;solid:Black",
-              "Brush": "solid:",
-              "TextBrush": "solid:Black",
-              "TextOptions": {
-                "WordWrap": true
-              },
-              "Type": "Expression"
-            },
-            "5": {
-              "Ident": "StiText",
-              "Name": "Text23",
-              "ClientRectangle": "15.8,0,3.2,0.4",
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Text": {
-                "Value": "File Attached"
-              },
-              "HorAlignment": "Center",
-              "VertAlignment": "Center",
-              "Font": ";;Bold;",
-              "Border": ";;;;;;;solid:Black",
-              "Brush": "solid:",
-              "TextBrush": "solid:Black",
-              "TextOptions": {
-                "WordWrap": true
-              },
-              "Type": "Expression"
-            }
-          }
-        },
-        "6": {
-          "Ident": "StiDataBand",
-          "Name": "DataDueDiligenceTasks",
-          "CanShrink": true,
-          "ClientRectangle": "0,15.4,19,0.8",
-          "Interaction": {
-            "Ident": "StiBandInteraction"
-          },
-          "CanBreak": true,
-          "Border": ";;;;;;;solid:Black",
-          "Brush": "solid:",
-          "Components": {
-            "0": {
-              "Ident": "StiText",
-              "Name": "DataDueDiligenceTasks_Name",
-              "CanShrink": true,
-              "ClientRectangle": "0.4,0,5.4,0.4",
-              "Conditions": {
-                "0": {
-                  "Ident": "StiCondition",
-                  "Column": "DueDiligenceTasks.Status",
-                  "Value1": "NotApplicable",
-                  "TextColor": "Gray",
-                  "BorderSides": "None"
-                }
-              },
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Text": {
-                "Value": "{GetTranslation(DueDiligenceTasks.Name)}"
-              },
-              "CanBreak": true,
-              "VertAlignment": "Center",
-              "Font": ";7;;",
-              "Border": ";;;;;;;solid:Black",
-              "Brush": "solid:",
-              "TextBrush": "solid:Black",
-              "TextOptions": {
-                "WordWrap": true
-              },
-              "Type": "Expression"
-            },
-            "1": {
-              "Ident": "StiText",
-              "Name": "DataDueDiligenceTasks_Status",
-              "CanShrink": true,
-              "ClientRectangle": "10.8,0,2.2,0.4",
-              "Conditions": {
-                "0": {
-                  "Ident": "StiCondition",
-                  "Column": "DueDiligenceTasks.Status",
-                  "Value1": "InProgress",
-                  "TextColor": "DarkBlue",
-                  "BorderSides": "None"
-                },
-                "1": {
-                  "Ident": "StiCondition",
-                  "Column": "DueDiligenceTasks.Status",
-                  "Value1": "Done",
-                  "TextColor": "Green",
-                  "BorderSides": "None"
-                },
-                "2": {
-                  "Ident": "StiCondition",
-                  "Column": "DueDiligenceTasks.Status",
-                  "Value1": "Open",
-                  "TextColor": "DarkOrange",
-                  "BorderSides": "None"
-                },
-                "3": {
-                  "Ident": "StiCondition",
-                  "Column": "DueDiligenceTasks.Status",
-                  "Value1": "Waiting",
-                  "BorderSides": "None"
-                },
-                "4": {
-                  "Ident": "StiCondition",
-                  "Column": "DueDiligenceTasks.Status",
-                  "Value1": "Refused",
-                  "BorderSides": "None"
-                },
-                "5": {
-                  "Ident": "StiCondition",
-                  "Column": "DueDiligenceTasks.Status",
-                  "Value1": "NotApplicable",
-                  "TextColor": "Gray",
-                  "BorderSides": "None"
-                }
-              },
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Text": {
-                "Value": "{\r\n(DueDiligenceTasks.Status==\"InProgress\")? \"In Progress\" : \r\n((DueDiligenceTasks.Status==\"NotApplicable\")? \"N/A\" :DueDiligenceTasks.Status)\r\n\r\n}"
-              },
-              "CanBreak": true,
-              "HorAlignment": "Center",
-              "VertAlignment": "Center",
-              "Font": ";7;;",
-              "Border": ";;;;;;;solid:Black",
-              "Brush": "solid:",
-              "TextBrush": "solid:Black",
-              "TextOptions": {
-                "WordWrap": true
-              },
-              "TextQuality": "Wysiwyg",
-              "AllowHtmlTags": true,
-              "Type": "Expression"
-            },
-            "2": {
-              "Ident": "StiText",
-              "Name": "DataDueDiligenceTasks_Comment",
-              "CanShrink": true,
-              "ClientRectangle": "5.8,0,5,0.4",
-              "Conditions": {
-                "0": {
-                  "Ident": "StiCondition",
-                  "Column": "DueDiligenceTasks.Status",
-                  "Value1": "NotApplicable",
-                  "TextColor": "Gray",
-                  "BorderSides": "None"
-                }
-              },
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Text": {
-                "Value": "{DueDiligenceTasks.Comment}"
-              },
-              "CanBreak": true,
-              "VertAlignment": "Center",
-              "Font": ";7;;",
-              "Border": ";;;;;;;solid:Black",
-              "Brush": "solid:",
-              "TextBrush": "solid:Black",
-              "TextOptions": {
-                "WordWrap": true
-              }
-            },
-            "3": {
-              "Ident": "StiCheckBox",
-              "Name": "DataDueDiligenceTasks_IsMandatory",
-              "ClientRectangle": "15,0,0.5,0.25",
-              "Conditions": {
-                "0": {
-                  "Ident": "StiCondition",
-                  "Column": "DueDiligenceTasks.Status",
-                  "Value1": "NotApplicable",
-                  "TextColor": "Gray",
-                  "BorderSides": "None"
-                }
-              },
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Brush": "solid:",
-              "Border": ";;;;;;;solid:Black",
-              "TextBrush": "solid:Black",
-              "Checked": {
-                "Value": "{DueDiligenceTasks.IsMandatory}"
-              },
-              "ContourColor": "Transparent",
-              "Size": 0.25,
-              "CheckStyleForTrue": "CheckRectangle"
-            },
-            "4": {
-              "Ident": "StiText",
-              "Name": "Text19",
-              "CanShrink": true,
-              "ClientRectangle": "13,0,1.8,0.4",
-              "Conditions": {
-                "0": {
-                  "Ident": "StiCondition",
-                  "Column": "DueDiligenceTasks.Status",
-                  "Value1": "NotApplicable",
-                  "TextColor": "Gray",
-                  "BorderSides": "None"
-                }
-              },
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Text": {
-                "Value": "{Format(\"{0:dd/MM/yyyy}\", DueDiligenceTasks.EndValidity)}"
-              },
-              "CanBreak": true,
-              "HorAlignment": "Center",
-              "VertAlignment": "Center",
-              "Font": ";7;;",
-              "Border": ";;;;;;;solid:Black",
-              "Brush": "solid:",
-              "TextBrush": "solid:Black",
-              "TextOptions": {
-                "WordWrap": true
-              },
-              "Type": "Expression"
-            },
-            "5": {
-              "Ident": "StiText",
-              "Name": "Text27",
-              "CanShrink": true,
-              "ClientRectangle": "15.8,0,3.2,0.4",
-              "Conditions": {
-                "0": {
-                  "Ident": "StiCondition",
-                  "Column": "DueDiligenceTasks.Status",
-                  "Value1": "NotApplicable",
-                  "TextColor": "Gray",
-                  "BorderSides": "None"
-                }
-              },
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Text": {
-                "Value": "{DueDiligenceTasks.RelatedFile}"
-              },
-              "CanBreak": true,
-              "VertAlignment": "Center",
-              "Font": ";7;;",
-              "Border": ";;;;;;;solid:Black",
-              "Brush": "solid:",
-              "TextBrush": "solid:Black",
-              "TextOptions": {
-                "WordWrap": true
-              },
-              "Type": "DataColumn"
-            }
-          },
-          "DataSourceName": "DueDiligenceTasks",
-          "DataRelationName": "DueDiligenceTaskDueDiligence",
-          "MasterComponent": "DataBand6"
-        }
-      },
-      "PageWidth": 21.0,
-      "PageHeight": 29.7,
-      "Watermark": {
-        "TextBrush": "solid:50,0,0,0"
-      },
-      "Margins": {
-        "Left": 1.0,
-        "Right": 1.0,
-        "Top": 1.0,
-        "Bottom": 1.0
-      },
-      "ReportUnit": {
-        "Ident": "StiCentimetersUnit"
-      }
-    },
-    "1": {
-      "Ident": "StiPage",
-      "Name": "RoleDueDiligences",
-      "Guid": "4664281ca7bd445a9730b477d0240a2c",
-      "Interaction": {
-        "Ident": "StiInteraction"
-      },
-      "Bookmark": {
-        "Value": "Service Providers & Collaborators"
-      },
-      "Border": ";;2;;;;;solid:Black",
-      "Brush": "solid:",
-      "Components": {
-        "0": {
-          "Ident": "StiPageHeaderBand",
-          "Name": "PageHeaderBand2",
-          "ClientRectangle": "0,0.4,19,1.8",
-          "Interaction": {
-            "Ident": "StiInteraction"
-          },
-          "Border": ";;;;;;;solid:Black",
-          "Brush": "solid:",
-          "Components": {
-            "0": {
-              "Ident": "StiText",
-              "Name": "Text28",
-              "ClientRectangle": "0,0.8,19,0.6",
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Text": {
-                "Value": "Service Providers & Collaborators"
-              },
-              "VertAlignment": "Center",
-              "Font": ";11;Bold;",
-              "Border": "Bottom;;;;;;;solid:Black",
-              "Brush": "solid:",
-              "TextBrush": "solid:Black",
-              "Type": "Expression"
-            },
-            "1": {
-              "Ident": "StiText",
-              "Name": "Text29",
-              "ClientRectangle": "0,0,19,0.6",
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Text": {
-                "Value": "Due Diligence Management Report"
-              },
-              "VertAlignment": "Center",
-              "Font": ";12;Bold;",
-              "Border": ";;;;;;;solid:Black",
-              "Brush": "solid:",
-              "TextBrush": "solid:Black",
-              "Type": "Expression"
-            }
-          }
-        },
-        "1": {
-          "Ident": "StiPageFooterBand",
-          "Name": "PageFooterBand1",
-          "Guid": "c1012ebc24f54d1f8d45f0149751a412",
-          "ClientRectangle": "0,27.3,19,0.4",
-          "Interaction": {
-            "Ident": "StiInteraction"
-          },
-          "Border": ";;;;;;;solid:Black",
-          "Brush": "solid:",
-          "Components": {
-            "0": {
-              "Ident": "StiText",
-              "Name": "Text46",
-              "Guid": "a055e506946a479b947eda8fd552fe38",
-              "ClientRectangle": "0,-0.1,9.4,0.4",
-              "ComponentStyle": "PageFooter",
-              "Conditions": {
-                "0": {
-                  "Ident": "StiCondition",
-                  "Item": "Expression",
-                  "Expression": {
-                    "Value": "{PageNumber%2== 1}"
-                  },
-                  "Enabled": false,
-                  "TextColor": "Transparent",
-                  "BorderSides": "None"
-                }
-              },
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Text": {
-                "Value": "{PageNumber}"
-              },
-              "VertAlignment": "Center",
-              "Font": ";;Bold;",
-              "Border": ";;;;;;;solid:Black",
-              "Brush": "solid:",
-              "TextBrush": "solid:Black",
-              "Type": "SystemVariables"
-            },
-            "1": {
-              "Ident": "StiText",
-              "Name": "Text47",
-              "Guid": "488976ef698d44d4b3da79d19651fa5d",
-              "ClientRectangle": "9.6,-0.1,9.4,0.4",
-              "ComponentStyle": "PageFooter",
-              "Conditions": {
-                "0": {
-                  "Ident": "StiCondition",
-                  "Item": "Expression",
-                  "Expression": {
-                    "Value": "{PageNumber%2== 0}"
-                  },
-                  "Enabled": false,
-                  "BorderSides": "None"
-                }
-              },
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Text": {
-                "Value": "{PageNumber}"
-              },
-              "HorAlignment": "Right",
-              "VertAlignment": "Center",
-              "Font": ";;Bold;",
-              "Border": ";;;;;;;solid:Black",
-              "Brush": "solid:",
-              "TextBrush": "solid:Black",
-              "Type": "SystemVariables"
-            }
-          }
-        },
-        "2": {
-          "Ident": "StiGroupHeaderBand",
-          "Name": "GroupHeaderBand1",
-          "CanShrink": true,
-          "ClientRectangle": "0,3,19,0",
-          "Interaction": {
-            "Ident": "StiBandInteraction"
-          },
-          "Border": ";;;;;;;solid:Black",
-          "Brush": "solid:",
-          "Condition": {
-            "Value": "{DueDiligences.Entity.Name}"
-          }
-        },
-        "3": {
-          "Ident": "StiDataBand",
-          "Name": "DataBand8",
-          "CanShrink": true,
-          "ClientRectangle": "0,3.8,19,2.6",
-          "Interaction": {
-            "Ident": "StiBandInteraction"
-          },
-          "Border": ";165,165,165;2;;;;;solid:Black",
-          "Brush": "solid:",
-          "Components": {
-            "0": {
-              "Ident": "StiText",
-              "Name": "Text32",
-              "ClientRectangle": "0,0,19,0.8",
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Text": {
-                "Value": "{DueDiligences.Entity.Name} as {GetTranslation(DueDiligences.RoleName)}"
-              },
-              "VertAlignment": "Bottom",
-              "Font": ";10;Bold;",
-              "Border": ";;;;;;;solid:Black",
-              "Brush": "solid:",
-              "TextBrush": "solid:Black",
-              "TextQuality": "Wysiwyg",
-              "AllowHtmlTags": true,
-              "Type": "Expression"
-            },
-            "1": {
-              "Ident": "StiText",
-              "Name": "Text45",
-              "CanShrink": true,
-              "CanGrow": true,
-              "ClientRectangle": "0,0.8,19,1.6",
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Text": {
-                "Value": "Since {Format(\"{0:dd/MM/yyyy}\", DueDiligences.Role.StartDate)} - {DueDiligences.Role.CollaborationType} - Position: {DueDiligences.Role.Position}\r\n<br>\r\nDue Diligence performed by {DueDiligences.Responsible.Name} on {Format(\"{0:dd/MM/yyyy}\", DueDiligences.StartValidity)} - Expiration: {Format(\"{0:dd/MM/yyyy}\", DueDiligences.EndValidity)}\r\n - Remaining mandatory tasks: {DueDiligences.NbRemainingMandatoryTasks} - Oversight Level: {DueDiligences.OversightLevel}"
-              },
-              "VertAlignment": "Center",
-              "Font": ";;Italic;",
-              "Border": "Bottom;191,191,191;;;;;;solid:Black",
-              "Brush": "solid:",
-              "TextBrush": "solid:Black",
-              "TextOptions": {
-                "WordWrap": true
-              },
-              "TextQuality": "Wysiwyg",
-              "AllowHtmlTags": true,
-              "Type": "Expression"
-            }
-          },
-          "DataSourceName": "DueDiligences",
-          "BeginRenderEvent": {
-            "Script": "AddAnchor(\"Roles\");"
-          },
-          "Sort": {
-            "0": "ASC",
-            "1": "DueDiligenceEntity",
-            "2": "Name"
-          },
-          "Filters": {
-            "0": {
-              "Ident": "StiFilter",
-              "Column": "RelationshipType",
-              "Value1": "RoleRelationship"
-            },
-            "1": {
-              "Ident": "StiFilter",
-              "Item": "Expression",
-              "Expression": {
-                "Value": "{DueDiligences.Role.EndDate == null || DueDiligences.Role.EndDate >= NavDate}"
-              }
-            }
-          }
-        },
-        "4": {
-          "Ident": "StiHeaderBand",
-          "Name": "HeaderBand1",
-          "ClientRectangle": "0,7.2,19,0.4",
-          "Interaction": {
-            "Ident": "StiInteraction"
-          },
-          "Border": ";;;;;;;solid:Black",
-          "Brush": "solid:",
-          "Components": {
-            "0": {
-              "Ident": "StiText",
-              "Name": "Text34",
-              "ClientRectangle": "0.4,0,5.4,0.4",
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Text": {
-                "Value": "Task"
-              },
-              "HorAlignment": "Center",
-              "VertAlignment": "Center",
-              "Font": ";;Bold;",
-              "Border": ";;;;;;;solid:Black",
-              "Brush": "solid:",
-              "TextBrush": "solid:Black",
-              "TextOptions": {
-                "WordWrap": true
-              },
-              "Type": "Expression"
-            },
-            "1": {
-              "Ident": "StiText",
-              "Name": "Text35",
-              "ClientRectangle": "10.8,0,2.2,0.4",
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Text": {
-                "Value": "Status"
-              },
-              "HorAlignment": "Center",
-              "VertAlignment": "Center",
-              "Font": ";;Bold;",
-              "Border": ";;;;;;;solid:Black",
-              "Brush": "solid:",
-              "TextBrush": "solid:Black",
-              "TextOptions": {
-                "WordWrap": true
-              }
-            },
-            "2": {
-              "Ident": "StiText",
-              "Name": "Text36",
-              "ClientRectangle": "5.8,0,5,0.4",
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Text": {
-                "Value": "Responsible Comment"
-              },
-              "HorAlignment": "Center",
-              "VertAlignment": "Center",
-              "Font": ";;Bold;",
-              "Border": ";;;;;;;solid:Black",
-              "Brush": "solid:",
-              "TextBrush": "solid:Black",
-              "TextOptions": {
-                "WordWrap": true
-              },
-              "Type": "Expression"
-            },
-            "3": {
-              "Ident": "StiText",
-              "Name": "Text37",
-              "ClientRectangle": "14.8,0,1,0.4",
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Text": {
-                "Value": "Mdtry"
-              },
-              "HorAlignment": "Center",
-              "VertAlignment": "Center",
-              "Font": ";;Bold;",
-              "Border": ";;;;;;;solid:Black",
-              "Brush": "solid:",
-              "TextBrush": "solid:Black",
-              "TextOptions": {
-                "WordWrap": true
-              },
-              "Type": "Expression"
-            },
-            "4": {
-              "Ident": "StiText",
-              "Name": "Text38",
-              "ClientRectangle": "13,0,1.8,0.4",
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Text": {
-                "Value": "Expiration"
-              },
-              "HorAlignment": "Center",
-              "VertAlignment": "Center",
-              "Font": ";;Bold;",
-              "Border": ";;;;;;;solid:Black",
-              "Brush": "solid:",
-              "TextBrush": "solid:Black",
-              "TextOptions": {
-                "WordWrap": true
-              },
-              "Type": "Expression"
-            },
-            "5": {
-              "Ident": "StiText",
-              "Name": "Text39",
-              "ClientRectangle": "15.8,0,3.2,0.4",
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Text": {
-                "Value": "File Attached"
-              },
-              "HorAlignment": "Center",
-              "VertAlignment": "Center",
-              "Font": ";;Bold;",
-              "Border": ";;;;;;;solid:Black",
-              "Brush": "solid:",
-              "TextBrush": "solid:Black",
-              "TextOptions": {
-                "WordWrap": true
-              },
-              "Type": "Expression"
-            }
-          }
-        },
-        "5": {
-          "Ident": "StiDataBand",
-          "Name": "DataBand9",
-          "CanShrink": true,
-          "ClientRectangle": "0,8.4,19,0.8",
-          "Interaction": {
-            "Ident": "StiBandInteraction"
-          },
-          "CanBreak": true,
-          "Border": ";;;;;;;solid:Black",
-          "Brush": "solid:",
-          "Components": {
-            "0": {
-              "Ident": "StiText",
-              "Name": "Text40",
-              "CanShrink": true,
-              "ClientRectangle": "0.4,0,5.4,0.4",
-              "Conditions": {
-                "0": {
-                  "Ident": "StiCondition",
-                  "Column": "DueDiligenceTasks.Status",
-                  "Value1": "NotApplicable",
-                  "TextColor": "Gray",
-                  "BorderSides": "None"
-                }
-              },
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Text": {
-                "Value": "{GetTranslation(DueDiligenceTasks.Name)}"
-              },
-              "CanBreak": true,
-              "VertAlignment": "Center",
-              "Font": ";7;;",
-              "Border": ";;;;;;;solid:Black",
-              "Brush": "solid:",
-              "TextBrush": "solid:Black",
-              "TextOptions": {
-                "WordWrap": true
-              },
-              "Type": "Expression"
-            },
-            "1": {
-              "Ident": "StiText",
-              "Name": "Text41",
-              "CanShrink": true,
-              "ClientRectangle": "10.8,0,2.2,0.4",
-              "Conditions": {
-                "0": {
-                  "Ident": "StiCondition",
-                  "Column": "DueDiligenceTasks.Status",
-                  "Value1": "InProgress",
-                  "TextColor": "DarkBlue",
-                  "BorderSides": "None"
-                },
-                "1": {
-                  "Ident": "StiCondition",
-                  "Column": "DueDiligenceTasks.Status",
-                  "Value1": "Done",
-                  "TextColor": "Green",
-                  "BorderSides": "None"
-                },
-                "2": {
-                  "Ident": "StiCondition",
-                  "Column": "DueDiligenceTasks.Status",
-                  "Value1": "Open",
-                  "TextColor": "DarkOrange",
-                  "BorderSides": "None"
-                },
-                "3": {
-                  "Ident": "StiCondition",
-                  "Column": "DueDiligenceTasks.Status",
-                  "Value1": "Waiting",
-                  "BorderSides": "None"
-                },
-                "4": {
-                  "Ident": "StiCondition",
-                  "Column": "DueDiligenceTasks.Status",
-                  "Value1": "Refused",
-                  "BorderSides": "None"
-                },
-                "5": {
-                  "Ident": "StiCondition",
-                  "Column": "DueDiligenceTasks.Status",
-                  "Value1": "NotApplicable",
-                  "TextColor": "Gray",
-                  "BorderSides": "None"
-                }
-              },
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Text": {
-                "Value": "{\r\n(DueDiligenceTasks.Status==\"InProgress\")? \"In Progress\" : \r\n((DueDiligenceTasks.Status==\"NotApplicable\")? \"N/A\" :DueDiligenceTasks.Status)\r\n\r\n}"
-              },
-              "CanBreak": true,
-              "HorAlignment": "Center",
-              "VertAlignment": "Center",
-              "Font": ";7;;",
-              "Border": ";;;;;;;solid:Black",
-              "Brush": "solid:",
-              "TextBrush": "solid:Black",
-              "TextOptions": {
-                "WordWrap": true
-              },
-              "TextQuality": "Wysiwyg",
-              "AllowHtmlTags": true,
-              "Type": "Expression"
-            },
-            "2": {
-              "Ident": "StiText",
-              "Name": "Text42",
-              "CanShrink": true,
-              "ClientRectangle": "5.8,0,5,0.4",
-              "Conditions": {
-                "0": {
-                  "Ident": "StiCondition",
-                  "Column": "DueDiligenceTasks.Status",
-                  "Value1": "NotApplicable",
-                  "TextColor": "Gray",
-                  "BorderSides": "None"
-                }
-              },
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Text": {
-                "Value": "{DueDiligenceTasks.Comment}"
-              },
-              "CanBreak": true,
-              "VertAlignment": "Center",
-              "Font": ";7;;",
-              "Border": ";;;;;;;solid:Black",
-              "Brush": "solid:",
-              "TextBrush": "solid:Black",
-              "TextOptions": {
-                "WordWrap": true
-              }
-            },
-            "3": {
-              "Ident": "StiCheckBox",
-              "Name": "CheckBox1",
-              "ClientRectangle": "15,0,0.5,0.25",
-              "Conditions": {
-                "0": {
-                  "Ident": "StiCondition",
-                  "Column": "DueDiligenceTasks.Status",
-                  "Value1": "NotApplicable",
-                  "TextColor": "Gray",
-                  "BorderSides": "None"
-                }
-              },
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Brush": "solid:",
-              "Border": ";;;;;;;solid:Black",
-              "TextBrush": "solid:Black",
-              "Checked": {
-                "Value": "{DueDiligenceTasks.IsMandatory}"
-              },
-              "ContourColor": "Transparent",
-              "Size": 0.25,
-              "CheckStyleForTrue": "CheckRectangle"
-            },
-            "4": {
-              "Ident": "StiText",
-              "Name": "Text43",
-              "CanShrink": true,
-              "ClientRectangle": "13,0,1.8,0.4",
-              "Conditions": {
-                "0": {
-                  "Ident": "StiCondition",
-                  "Column": "DueDiligenceTasks.Status",
-                  "Value1": "NotApplicable",
-                  "TextColor": "Gray",
-                  "BorderSides": "None"
-                }
-              },
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Text": {
-                "Value": "{Format(\"{0:dd/MM/yyyy}\", DueDiligenceTasks.EndValidity)}"
-              },
-              "CanBreak": true,
-              "HorAlignment": "Center",
-              "VertAlignment": "Center",
-              "Font": ";7;;",
-              "Border": ";;;;;;;solid:Black",
-              "Brush": "solid:",
-              "TextBrush": "solid:Black",
-              "TextOptions": {
-                "WordWrap": true
-              },
-              "Type": "Expression"
-            },
-            "5": {
-              "Ident": "StiText",
-              "Name": "Text44",
-              "CanShrink": true,
-              "ClientRectangle": "15.8,0,3.2,0.4",
-              "Conditions": {
-                "0": {
-                  "Ident": "StiCondition",
-                  "Column": "DueDiligenceTasks.Status",
-                  "Value1": "NotApplicable",
-                  "TextColor": "Gray",
-                  "BorderSides": "None"
-                }
-              },
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Text": {
-                "Value": "{DueDiligenceTasks.RelatedFile}"
-              },
-              "CanBreak": true,
-              "VertAlignment": "Center",
-              "Font": ";7;;",
-              "Border": ";;;;;;;solid:Black",
-              "Brush": "solid:",
-              "TextBrush": "solid:Black",
-              "TextOptions": {
-                "WordWrap": true
-              },
-              "Type": "DataColumn"
-            }
-          },
-          "DataSourceName": "DueDiligenceTasks",
-          "DataRelationName": "DueDiligenceTaskDueDiligence",
-          "MasterComponent": "DataBand8"
-        },
-        "6": {
-          "Ident": "StiGroupFooterBand",
-          "Name": "GroupFooterBand1",
-          "ClientRectangle": "0,10,19,0.8",
-          "Interaction": {
-            "Ident": "StiInteraction"
-          },
-          "Border": ";;;;;;;solid:Black",
-          "Brush": "solid:"
-        }
-      },
-      "PageWidth": 21.0,
-      "PageHeight": 29.7,
-      "Watermark": {
-        "TextBrush": "solid:50,0,0,0"
-      },
-      "Margins": {
-        "Left": 1.0,
-        "Right": 1.0,
-        "Top": 1.0,
-        "Bottom": 1.0
-      }
-    },
-    "2": {
-      "Ident": "StiPage",
-      "Name": "CounterpartyDueDiligences",
-      "Guid": "e03ffeb179ba4243b47c1cf34b96f444",
-      "Interaction": {
-        "Ident": "StiInteraction"
-      },
-      "Bookmark": {
-        "Value": "Counterparties"
-      },
-      "Border": ";;2;;;;;solid:Black",
-      "Brush": "solid:",
-      "Components": {
-        "0": {
-          "Ident": "StiPageHeaderBand",
-          "Name": "PageHeaderBand3",
-          "ClientRectangle": "0,0.4,19,1.8",
-          "Interaction": {
-            "Ident": "StiInteraction"
-          },
-          "Border": ";;;;;;;solid:Black",
-          "Brush": "solid:",
-          "Components": {
-            "0": {
-              "Ident": "StiText",
-              "Name": "Text33",
-              "ClientRectangle": "0,0.8,19,0.6",
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Text": {
-                "Value": "Counterparties"
-              },
-              "VertAlignment": "Center",
-              "Font": ";11;Bold;",
-              "Border": "Bottom;;;;;;;solid:Black",
-              "Brush": "solid:",
-              "TextBrush": "solid:Black",
-              "Type": "Expression"
-            },
-            "1": {
-              "Ident": "StiText",
-              "Name": "Text48",
-              "ClientRectangle": "0,0,19,0.6",
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Text": {
-                "Value": "Due Diligence Management Report"
-              },
-              "VertAlignment": "Center",
-              "Font": ";12;Bold;",
-              "Border": ";;;;;;;solid:Black",
-              "Brush": "solid:",
-              "TextBrush": "solid:Black",
-              "Type": "Expression"
-            }
-          }
-        },
-        "1": {
-          "Ident": "StiPageFooterBand",
-          "Name": "PageFooterBand3",
-          "Guid": "c1012ebc24f54d1f8d45f0149751a412",
-          "ClientRectangle": "0,27.3,19,0.4",
-          "Interaction": {
-            "Ident": "StiInteraction"
-          },
-          "Border": ";;;;;;;solid:Black",
-          "Brush": "solid:",
-          "Components": {
-            "0": {
-              "Ident": "StiText",
-              "Name": "Text49",
-              "Guid": "a055e506946a479b947eda8fd552fe38",
-              "ClientRectangle": "0,-0.1,9.4,0.4",
-              "ComponentStyle": "PageFooter",
-              "Conditions": {
-                "0": {
-                  "Ident": "StiCondition",
-                  "Item": "Expression",
-                  "Expression": {
-                    "Value": "{PageNumber%2== 1}"
-                  },
-                  "Enabled": false,
-                  "TextColor": "Transparent",
-                  "BorderSides": "None"
-                }
-              },
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Text": {
-                "Value": "{PageNumber}"
-              },
-              "VertAlignment": "Center",
-              "Font": ";;Bold;",
-              "Border": ";;;;;;;solid:Black",
-              "Brush": "solid:",
-              "TextBrush": "solid:Black",
-              "Type": "SystemVariables"
-            },
-            "1": {
-              "Ident": "StiText",
-              "Name": "Text50",
-              "Guid": "488976ef698d44d4b3da79d19651fa5d",
-              "ClientRectangle": "9.6,-0.1,9.4,0.4",
-              "ComponentStyle": "PageFooter",
-              "Conditions": {
-                "0": {
-                  "Ident": "StiCondition",
-                  "Item": "Expression",
-                  "Expression": {
-                    "Value": "{PageNumber%2== 0}"
-                  },
-                  "Enabled": false,
-                  "BorderSides": "None"
-                }
-              },
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Text": {
-                "Value": "{PageNumber}"
-              },
-              "HorAlignment": "Right",
-              "VertAlignment": "Center",
-              "Font": ";;Bold;",
-              "Border": ";;;;;;;solid:Black",
-              "Brush": "solid:",
-              "TextBrush": "solid:Black",
-              "Type": "SystemVariables"
-            }
-          }
-        },
-        "2": {
-          "Ident": "StiDataBand",
-          "Name": "DataBand4",
-          "CanShrink": true,
-          "ClientRectangle": "0,3,19,2.6",
-          "Interaction": {
-            "Ident": "StiBandInteraction"
-          },
-          "Border": ";165,165,165;2;;;;;solid:Black",
-          "Brush": "solid:",
-          "Components": {
-            "0": {
-              "Ident": "StiText",
-              "Name": "Text51",
-              "ClientRectangle": "0,0,19,0.8",
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Text": {
-                "Value": "{DueDiligences.Entity.Name}"
-              },
-              "VertAlignment": "Bottom",
-              "Font": ";10;Bold;",
-              "Border": ";;;;;;;solid:Black",
-              "Brush": "solid:",
-              "TextBrush": "solid:Black",
-              "TextQuality": "Wysiwyg",
-              "AllowHtmlTags": true,
-              "Type": "Expression"
-            },
-            "1": {
-              "Ident": "StiText",
-              "Name": "Text52",
-              "CanShrink": true,
-              "CanGrow": true,
-              "ClientRectangle": "0,0.8,19,1.6",
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Text": {
-                "Value": "Since {Format(\"{0:dd/MM/yyyy}\", DueDiligences.Counterparty.StartDate)} - {DueDiligences.Counterparty.IsAuthorized?\"Authorized\": \"NOT Authorized\"} since {Format(\"{0:dd/MM/yyyy}\", DueDiligences.Counterparty.LastAuthorizationChange)}\r\n<br>\r\nDue Diligence performed by {DueDiligences.Responsible.Name} on {Format(\"{0:dd/MM/yyyy}\", DueDiligences.StartValidity)} - Expiration: {Format(\"{0:dd/MM/yyyy}\", DueDiligences.EndValidity)}\r\n - Remaining mandatory tasks: {DueDiligences.NbRemainingMandatoryTasks} - Oversight Level: {DueDiligences.OversightLevel}"
-              },
-              "VertAlignment": "Center",
-              "Font": ";;Italic;",
-              "Border": "Bottom;191,191,191;;;;;;solid:Black",
-              "Brush": "solid:",
-              "TextBrush": "solid:Black",
-              "TextOptions": {
-                "WordWrap": true
-              },
-              "TextQuality": "Wysiwyg",
-              "AllowHtmlTags": true,
-              "Type": "Expression"
-            }
-          },
-          "DataSourceName": "DueDiligences",
-          "DataRelationName": "DueDiligenceCounterparty",
-          "BeginRenderEvent": {
-            "Script": "AddAnchor(\"Counterparties\");"
-          },
-          "Filters": {
-            "0": {
-              "Ident": "StiFilter",
-              "Column": "RelationshipType",
-              "Value1": "CounterpartyRelationship"
-            },
-            "1": {
-              "Ident": "StiFilter",
-              "Item": "Expression",
-              "Expression": {
-                "Value": "{DueDiligences.Counterparty.EndDate == null || \r\nDueDiligences.Counterparty.EndDate >= NavDate}"
-              }
-            }
-          }
-        },
-        "3": {
-          "Ident": "StiHeaderBand",
-          "Name": "HeaderBand2",
-          "ClientRectangle": "0,6.4,19,0.4",
-          "Interaction": {
-            "Ident": "StiInteraction"
-          },
-          "Border": ";;;;;;;solid:Black",
-          "Brush": "solid:",
-          "Components": {
-            "0": {
-              "Ident": "StiText",
-              "Name": "Text53",
-              "ClientRectangle": "0.4,0,5.4,0.4",
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Text": {
-                "Value": "Task"
-              },
-              "HorAlignment": "Center",
-              "VertAlignment": "Center",
-              "Font": ";;Bold;",
-              "Border": ";;;;;;;solid:Black",
-              "Brush": "solid:",
-              "TextBrush": "solid:Black",
-              "TextOptions": {
-                "WordWrap": true
-              },
-              "Type": "Expression"
-            },
-            "1": {
-              "Ident": "StiText",
-              "Name": "Text54",
-              "ClientRectangle": "10.8,0,2.2,0.4",
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Text": {
-                "Value": "Status"
-              },
-              "HorAlignment": "Center",
-              "VertAlignment": "Center",
-              "Font": ";;Bold;",
-              "Border": ";;;;;;;solid:Black",
-              "Brush": "solid:",
-              "TextBrush": "solid:Black",
-              "TextOptions": {
-                "WordWrap": true
-              }
-            },
-            "2": {
-              "Ident": "StiText",
-              "Name": "Text55",
-              "ClientRectangle": "5.8,0,5,0.4",
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Text": {
-                "Value": "Responsible Comment"
-              },
-              "HorAlignment": "Center",
-              "VertAlignment": "Center",
-              "Font": ";;Bold;",
-              "Border": ";;;;;;;solid:Black",
-              "Brush": "solid:",
-              "TextBrush": "solid:Black",
-              "TextOptions": {
-                "WordWrap": true
-              },
-              "Type": "Expression"
-            },
-            "3": {
-              "Ident": "StiText",
-              "Name": "Text56",
-              "ClientRectangle": "14.8,0,1,0.4",
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Text": {
-                "Value": "Mdtry"
-              },
-              "HorAlignment": "Center",
-              "VertAlignment": "Center",
-              "Font": ";;Bold;",
-              "Border": ";;;;;;;solid:Black",
-              "Brush": "solid:",
-              "TextBrush": "solid:Black",
-              "TextOptions": {
-                "WordWrap": true
-              },
-              "Type": "Expression"
-            },
-            "4": {
-              "Ident": "StiText",
-              "Name": "Text57",
-              "ClientRectangle": "13,0,1.8,0.4",
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Text": {
-                "Value": "Expiration"
-              },
-              "HorAlignment": "Center",
-              "VertAlignment": "Center",
-              "Font": ";;Bold;",
-              "Border": ";;;;;;;solid:Black",
-              "Brush": "solid:",
-              "TextBrush": "solid:Black",
-              "TextOptions": {
-                "WordWrap": true
-              },
-              "Type": "Expression"
-            },
-            "5": {
-              "Ident": "StiText",
-              "Name": "Text58",
-              "ClientRectangle": "15.8,0,3.2,0.4",
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Text": {
-                "Value": "File Attached"
-              },
-              "HorAlignment": "Center",
-              "VertAlignment": "Center",
-              "Font": ";;Bold;",
-              "Border": ";;;;;;;solid:Black",
-              "Brush": "solid:",
-              "TextBrush": "solid:Black",
-              "TextOptions": {
-                "WordWrap": true
-              },
-              "Type": "Expression"
-            }
-          }
-        },
-        "4": {
-          "Ident": "StiDataBand",
-          "Name": "DataBand10",
-          "CanShrink": true,
-          "ClientRectangle": "0,7.6,19,0.8",
-          "Interaction": {
-            "Ident": "StiBandInteraction"
-          },
-          "CanBreak": true,
-          "Border": ";;;;;;;solid:Black",
-          "Brush": "solid:",
-          "Components": {
-            "0": {
-              "Ident": "StiText",
-              "Name": "Text59",
-              "CanShrink": true,
-              "ClientRectangle": "0.4,0,5.4,0.4",
-              "Conditions": {
-                "0": {
-                  "Ident": "StiCondition",
-                  "Column": "DueDiligenceTasks.Status",
-                  "Value1": "NotApplicable",
-                  "TextColor": "Gray",
-                  "BorderSides": "None"
-                }
-              },
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Text": {
-                "Value": "{GetTranslation(DueDiligenceTasks.Name)}"
-              },
-              "CanBreak": true,
-              "VertAlignment": "Center",
-              "Font": ";7;;",
-              "Border": ";;;;;;;solid:Black",
-              "Brush": "solid:",
-              "TextBrush": "solid:Black",
-              "TextOptions": {
-                "WordWrap": true
-              },
-              "Type": "Expression"
-            },
-            "1": {
-              "Ident": "StiText",
-              "Name": "Text60",
-              "CanShrink": true,
-              "ClientRectangle": "10.8,0,2.2,0.4",
-              "Conditions": {
-                "0": {
-                  "Ident": "StiCondition",
-                  "Column": "DueDiligenceTasks.Status",
-                  "Value1": "InProgress",
-                  "TextColor": "DarkBlue",
-                  "BorderSides": "None"
-                },
-                "1": {
-                  "Ident": "StiCondition",
-                  "Column": "DueDiligenceTasks.Status",
-                  "Value1": "Done",
-                  "TextColor": "Green",
-                  "BorderSides": "None"
-                },
-                "2": {
-                  "Ident": "StiCondition",
-                  "Column": "DueDiligenceTasks.Status",
-                  "Value1": "Open",
-                  "TextColor": "DarkOrange",
-                  "BorderSides": "None"
-                },
-                "3": {
-                  "Ident": "StiCondition",
-                  "Column": "DueDiligenceTasks.Status",
-                  "Value1": "Waiting",
-                  "BorderSides": "None"
-                },
-                "4": {
-                  "Ident": "StiCondition",
-                  "Column": "DueDiligenceTasks.Status",
-                  "Value1": "Refused",
-                  "BorderSides": "None"
-                },
-                "5": {
-                  "Ident": "StiCondition",
-                  "Column": "DueDiligenceTasks.Status",
-                  "Value1": "NotApplicable",
-                  "TextColor": "Gray",
-                  "BorderSides": "None"
-                }
-              },
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Text": {
-                "Value": "{\r\n(DueDiligenceTasks.Status==\"InProgress\")? \"In Progress\" : \r\n((DueDiligenceTasks.Status==\"NotApplicable\")? \"N/A\" :DueDiligenceTasks.Status)\r\n\r\n}"
-              },
-              "CanBreak": true,
-              "HorAlignment": "Center",
-              "VertAlignment": "Center",
-              "Font": ";7;;",
-              "Border": ";;;;;;;solid:Black",
-              "Brush": "solid:",
-              "TextBrush": "solid:Black",
-              "TextOptions": {
-                "WordWrap": true
-              },
-              "TextQuality": "Wysiwyg",
-              "AllowHtmlTags": true,
-              "Type": "Expression"
-            },
-            "2": {
-              "Ident": "StiText",
-              "Name": "Text61",
-              "CanShrink": true,
-              "ClientRectangle": "5.8,0,5,0.4",
-              "Conditions": {
-                "0": {
-                  "Ident": "StiCondition",
-                  "Column": "DueDiligenceTasks.Status",
-                  "Value1": "NotApplicable",
-                  "TextColor": "Gray",
-                  "BorderSides": "None"
-                }
-              },
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Text": {
-                "Value": "{DueDiligenceTasks.Comment}"
-              },
-              "CanBreak": true,
-              "VertAlignment": "Center",
-              "Font": ";7;;",
-              "Border": ";;;;;;;solid:Black",
-              "Brush": "solid:",
-              "TextBrush": "solid:Black",
-              "TextOptions": {
-                "WordWrap": true
-              }
-            },
-            "3": {
-              "Ident": "StiCheckBox",
-              "Name": "CheckBox2",
-              "ClientRectangle": "15,0,0.5,0.25",
-              "Conditions": {
-                "0": {
-                  "Ident": "StiCondition",
-                  "Column": "DueDiligenceTasks.Status",
-                  "Value1": "NotApplicable",
-                  "TextColor": "Gray",
-                  "BorderSides": "None"
-                }
-              },
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Brush": "solid:",
-              "Border": ";;;;;;;solid:Black",
-              "TextBrush": "solid:Black",
-              "Checked": {
-                "Value": "{DueDiligenceTasks.IsMandatory}"
-              },
-              "ContourColor": "Transparent",
-              "Size": 0.25,
-              "CheckStyleForTrue": "CheckRectangle"
-            },
-            "4": {
-              "Ident": "StiText",
-              "Name": "Text62",
-              "CanShrink": true,
-              "ClientRectangle": "13,0,1.8,0.4",
-              "Conditions": {
-                "0": {
-                  "Ident": "StiCondition",
-                  "Column": "DueDiligenceTasks.Status",
-                  "Value1": "NotApplicable",
-                  "TextColor": "Gray",
-                  "BorderSides": "None"
-                }
-              },
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Text": {
-                "Value": "{Format(\"{0:dd/MM/yyyy}\", DueDiligenceTasks.EndValidity)}"
-              },
-              "CanBreak": true,
-              "HorAlignment": "Center",
-              "VertAlignment": "Center",
-              "Font": ";7;;",
-              "Border": ";;;;;;;solid:Black",
-              "Brush": "solid:",
-              "TextBrush": "solid:Black",
-              "TextOptions": {
-                "WordWrap": true
-              },
-              "Type": "Expression"
-            },
-            "5": {
-              "Ident": "StiText",
-              "Name": "Text63",
-              "CanShrink": true,
-              "ClientRectangle": "15.8,0,3.2,0.4",
-              "Conditions": {
-                "0": {
-                  "Ident": "StiCondition",
-                  "Column": "DueDiligenceTasks.Status",
-                  "Value1": "NotApplicable",
-                  "TextColor": "Gray",
-                  "BorderSides": "None"
-                }
-              },
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Text": {
-                "Value": "{DueDiligenceTasks.RelatedFile}"
-              },
-              "CanBreak": true,
-              "VertAlignment": "Center",
-              "Font": ";7;;",
-              "Border": ";;;;;;;solid:Black",
-              "Brush": "solid:",
-              "TextBrush": "solid:Black",
-              "TextOptions": {
-                "WordWrap": true
-              },
-              "Type": "DataColumn"
-            }
-          },
-          "DataSourceName": "DueDiligenceTasks",
-          "DataRelationName": "DueDiligenceTaskDueDiligence",
-          "MasterComponent": "DataBand4"
+          "TextBrush": "solid:Black",
+          "Type": "Expression"
         }
       },
       "PageWidth": 21.0,
