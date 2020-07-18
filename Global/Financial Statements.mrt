@@ -1,12 +1,12 @@
 {
   "ReportVersion": "2020.2.3.0",
-  "ReportGuid": "be380b0fb8bc4537801a98467e71a049",
+  "ReportGuid": "a243d980847a476e9476376d09b40202",
   "ReportName": "FinancialStatementsReport",
   "ReportAlias": "FinancialStatementsReport",
   "ReportAuthor": "FundProcess",
   "ReportDescription": "FundProcess",
   "ReportCreated": "/Date(0+0100)/",
-  "ReportChanged": "/Date(1595076504398+0200)/",
+  "ReportChanged": "/Date(1595079555557+0200)/",
   "EngineVersion": "EngineV2",
   "CacheAllData": true,
   "PreviewSettings": 268435455,
@@ -139,20 +139,13 @@
         "Key": "971ab69a95ca4e1484771d2b3a153964"
       },
       "2": {
-        "Value": "12/31/2018 12:00:00 AM",
-        "Name": "StartDate",
-        "Alias": "StartDate",
-        "Type": "System.DateTime",
-        "Key": "8867f2ece8454b00b30e1b84615549f8"
-      },
-      "3": {
         "Value": "{\"FrequencyType\":{\"1\":{\"en\":\"Daily\",\"fr\":\"Daily\"},\"2\":{\"en\":\"Weekly\",\"fr\":\"Weekly\"},\"3\":{\"en\":\"Half Monthly\",\"fr\":\"HalfMonthly\"},\"4\":{\"en\":\"Monthly\",\"fr\":\"Monthly\"},\"5\":{\"en\":\"Quarterly\",\"fr\":\"Quarterly\"},\"6\":{\"en\":\"Half Yearly\",\"fr\":\"HalfYearly\"},\"7\":{\"en\":\"Yearly\",\"fr\":\"Yearly\"},\"8\":{\"en\":\"Biennially\",\"fr\":\"Biennially\"},\"9\":{\"en\":\"Third Yearly\",\"fr\":\"ThirdYearly\"}},\"LegalForm\":{\"1\":{\"en\":\"S I C A V\",\"fr\":\"SICAV\"},\"2\":{\"en\":\"S I C A F\",\"fr\":\"SICAF\"}},\"SicavType\":{\"1\":{\"en\":\"U C I T S\",\"fr\":\"UCITS\"},\"2\":{\"en\":\"A I F M\",\"fr\":\"AIFM\"}},\"CollaborationType\":{\"1\":{\"en\":\"Service Provider\",\"fr\":\"ServiceProvider\"},\"2\":{\"en\":\"Collaborator\",\"fr\":\"Collaborator\"}},\"RoleDomain\":{\"1\":{\"en\":\"Management\",\"fr\":\"Management\"},\"2\":{\"en\":\"Risk Management\",\"fr\":\"RiskManagement\"},\"3\":{\"en\":\"Compliance\",\"fr\":\"Compliance\"},\"4\":{\"en\":\"Investment Management\",\"fr\":\"InvestmentManagement\"},\"5\":{\"en\":\"Marketing\",\"fr\":\"Marketing\"},\"6\":{\"en\":\"Sales\",\"fr\":\"Sales\"},\"7\":{\"en\":\"Administration\",\"fr\":\"Administration\"},\"8\":{\"en\":\"Accounting\",\"fr\":\"Accounting\"},\"9\":{\"en\":\"Legal\",\"fr\":\"Legal\"},\"10\":{\"en\":\"Depositary\",\"fr\":\"Depositary\"},\"11\":{\"en\":\"Audit\",\"fr\":\"Audit\"}},\"RolePosition\":{\"1\":{\"en\":\"Board\",\"fr\":\"Board\"},\"2\":{\"en\":\"Director\",\"fr\":\"Director\"},\"3\":{\"en\":\"Employee\",\"fr\":\"Employee\"},\"4\":{\"en\":\"External\",\"fr\":\"External\"}},\"CounterpartyType\":{\"1\":{\"en\":\"Broker\",\"fr\":\"Broker\"},\"2\":{\"en\":\"Bank\",\"fr\":\"Bank\"},\"3\":{\"en\":\"Investment Manager\",\"fr\":\"InvestmentManager\"},\"4\":{\"en\":\"Insurance Company\",\"fr\":\"InsuranceCompany\"}},\"EmirClassification\":{\"1\":{\"en\":\"Financial\",\"fr\":\"Financial\"},\"2\":{\"en\":\"Non Financial\",\"fr\":\"NonFinancial\"}},\"InvestorType\":{\"1\":{\"en\":\"Retail\",\"fr\":\"Retail\"},\"2\":{\"en\":\"Well Informed\",\"fr\":\"WellInformed\"},\"3\":{\"en\":\"Professional\",\"fr\":\"Professional\"},\"4\":{\"en\":\"Institutional\",\"fr\":\"Institutional\"}},\"DividendDistributionPolicy\":{\"0\":{\"en\":\"Accumulation\",\"fr\":\"Accumulation\"},\"1\":{\"en\":\"Distribution\",\"fr\":\"Distribution\"}},\"OversightLevel\":{\"1\":{\"en\":\"Simple\",\"fr\":\"Simple\"},\"2\":{\"en\":\"Normal\",\"fr\":\"Normal\"},\"3\":{\"en\":\"Enhanced\",\"fr\":\"Enhanced\"}},\"DueDiligenceTaskStatus\":{\"1\":{\"en\":\"Open\",\"fr\":\"Open\"},\"2\":{\"en\":\"In Progress\",\"fr\":\"InProgress\"},\"3\":{\"en\":\"Waiting\",\"fr\":\"Waiting\"},\"4\":{\"en\":\"Done\",\"fr\":\"Done\"},\"5\":{\"en\":\"Not Applicable\",\"fr\":\"NotApplicable\"},\"6\":{\"en\":\"Refused\",\"fr\":\"Refused\"}},\"PortfolioType\":{\"0\":{\"en\":\"Portfolio\",\"fr\":\"Portfolio\"},\"1\":{\"en\":\"Sub Fund\",\"fr\":\"SubFund\"}}}",
         "Name": "EnumConversion",
         "Alias": "EnumConversion",
         "Type": "System.String",
         "Key": "c15feb358f6a4ad29726ce301523eab1"
       },
-      "4": {
+      "3": {
         "Value": "3",
         "Name": "SNA_NbColumsPerPage",
         "Alias": "SNA_NbColumsPerPage",
@@ -160,39 +153,39 @@
         "Category": "Layout",
         "Key": "55742bbd3f9c4ca69a8ff841b90b4df8"
       },
-      "5": {
+      "4": {
         "Value": "3",
         "Name": "SOC_NbColumsPerPage",
         "Alias": "SOC_NbColumsPerPage",
         "Type": "System.Int32",
         "Category": "Layout"
       },
-      "6": {
+      "5": {
         "Value": "3",
         "Name": "CNS_NbColumsPerPage",
         "Alias": "CNS_NbColumsPerPage",
         "Type": "System.Int32",
         "Category": "Layout"
       },
-      "7": {
+      "6": {
         "Value": "0",
         "Name": "Continued",
         "Alias": "Continued",
         "Type": "System.Int32",
         "Category": "Layout"
       },
-      "8": {
+      "7": {
         "Value": "0",
         "Name": "Counter1",
         "Alias": "Counter1",
         "Type": "System.Int32",
         "Category": "Layout"
       },
-      "9": {
+      "8": {
         "Type": "System.String",
         "Category": "Layout"
       },
-      "10": {
+      "9": {
         "Value": "0",
         "Name": "Counter2",
         "Alias": "Counter2",
