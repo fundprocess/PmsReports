@@ -1,12 +1,12 @@
 {
   "ReportVersion": "2020.2.3.0",
-  "ReportGuid": "a243d980847a476e9476376d09b40202",
+  "ReportGuid": "b34f2b160882498db1e44f4e97d7fa69",
   "ReportName": "FinancialStatementsReport",
   "ReportAlias": "FinancialStatementsReport",
   "ReportAuthor": "FundProcess",
   "ReportDescription": "FundProcess",
   "ReportCreated": "/Date(0+0100)/",
-  "ReportChanged": "/Date(1595079555557+0200)/",
+  "ReportChanged": "/Date(1600627956078+0200)/",
   "EngineVersion": "EngineV2",
   "CacheAllData": true,
   "PreviewSettings": 268435455,
@@ -125,7 +125,7 @@
     },
     "Variables": {
       "0": {
-        "Value": "4",
+        "Value": "8",
         "Name": "SicavId",
         "Alias": "SicavId",
         "Type": "System.Int32",
@@ -3888,6 +3888,55 @@
       },
       "32": {
         "Ident": "StiDataTableSource",
+        "Name": "notes",
+        "Alias": "notes",
+        "Key": "b319089daad74f94938973ad97827ad8",
+        "Columns": {
+          "0": {
+            "Name": "Date",
+            "Index": -1,
+            "NameInSource": "Date",
+            "Alias": "Date",
+            "Type": "System.DateTime",
+            "Key": "e949e1e4f98c41dd8465a4405e0a305a"
+          },
+          "1": {
+            "Name": "Category",
+            "Index": -1,
+            "NameInSource": "Category",
+            "Alias": "Category",
+            "Type": "System.String",
+            "Key": "9d651bd736604e2b88493f32772ff543"
+          },
+          "2": {
+            "Name": "Text",
+            "Index": -1,
+            "NameInSource": "Text",
+            "Alias": "Text",
+            "Type": "System.String",
+            "Key": "96942fa446394e6aa10834b0a20fc084"
+          },
+          "3": {
+            "Name": "AuthorEntityId",
+            "Index": -1,
+            "NameInSource": "AuthorEntityId",
+            "Alias": "AuthorEntityId",
+            "Type": "System.Decimal",
+            "Key": "44e1f396cca94ab1b5a2113d9da02560"
+          },
+          "4": {
+            "Name": "LastModificationDate",
+            "Index": -1,
+            "NameInSource": "LastModificationDate",
+            "Alias": "LastModificationDate",
+            "Type": "System.DateTime",
+            "Key": "c6118b54de944ba4b9ea99b7d0513e42"
+          }
+        },
+        "NameInSource": "DictionaryJson.notes"
+      },
+      "33": {
+        "Ident": "StiDataTableSource",
         "Name": "PortfolioNotes",
         "Alias": "PortfolioNotes",
         "Key": "28ad0e70c00949d8941a6fbcffa4645b",
@@ -3909,10 +3958,10 @@
             "Key": "89b62da0bbc14bb18132d2bb190b12a4"
           },
           "2": {
-            "Name": "Label",
+            "Name": "Category",
             "Index": -1,
-            "NameInSource": "Label",
-            "Alias": "Label",
+            "NameInSource": "Category",
+            "Alias": "Category",
             "Type": "System.String",
             "Key": "42228561794343b7b3c528450d22119f"
           },
@@ -3943,7 +3992,64 @@
         },
         "NameInSource": "DictionaryJson.PortfolioNotes"
       },
-      "33": {
+      "34": {
+        "Ident": "StiDataTableSource",
+        "Name": "SicavNotes",
+        "Alias": "SicavNotes",
+        "Key": "a78e76f25e0c443393911c43f8de331d",
+        "Columns": {
+          "0": {
+            "Name": "SicavEntityId",
+            "Index": -1,
+            "NameInSource": "SicavEntityId",
+            "Alias": "SicavEntityId",
+            "Type": "System.Int32",
+            "Key": "b4cc2001ce614c6891bdf2dabc05995c"
+          },
+          "1": {
+            "Name": "Date",
+            "Index": -1,
+            "NameInSource": "Date",
+            "Alias": "Date",
+            "Type": "System.DateTime",
+            "Key": "6f73627af9e34a2993a416573b6af6a7"
+          },
+          "2": {
+            "Name": "Category",
+            "Index": -1,
+            "NameInSource": "Category",
+            "Alias": "Category",
+            "Type": "System.String",
+            "Key": "7056b40667044d9ab0782a70c1dcdf5e"
+          },
+          "3": {
+            "Name": "Text",
+            "Index": -1,
+            "NameInSource": "Text",
+            "Alias": "Text",
+            "Type": "System.String",
+            "Key": "3011d9677a18472a8464a0a98121fa11"
+          },
+          "4": {
+            "Name": "AuthorEntityId",
+            "Index": -1,
+            "NameInSource": "AuthorEntityId",
+            "Alias": "AuthorEntityId",
+            "Type": "System.Int32",
+            "Key": "ecbb71274a27434ca056ce99b61aded2"
+          },
+          "5": {
+            "Name": "LastModificationDate",
+            "Index": -1,
+            "NameInSource": "LastModificationDate",
+            "Alias": "LastModificationDate",
+            "Type": "System.DateTime",
+            "Key": "ac386a140613428aa738b3109d0dca2d"
+          }
+        },
+        "NameInSource": "DictionaryJson.SicavNotes"
+      },
+      "35": {
         "Ident": "StiDataTableSource",
         "Name": "SecurityTransactions",
         "Alias": "SecurityTransactions",
@@ -4029,7 +4135,7 @@
         },
         "NameInSource": "DictionaryJson.SecurityTransactions"
       },
-      "34": {
+      "36": {
         "Ident": "StiDataTableSource",
         "Name": "ShareClassHistValues",
         "Alias": "ShareClassHistValues",
@@ -4094,64 +4200,7 @@
         },
         "NameInSource": "DictionaryJson.ShareClassHistValues"
       },
-      "35": {
-        "Ident": "StiDataTableSource",
-        "Name": "SicavNotes",
-        "Alias": "SicavNotes",
-        "Key": "a78e76f25e0c443393911c43f8de331d",
-        "Columns": {
-          "0": {
-            "Name": "SicavEntityId",
-            "Index": -1,
-            "NameInSource": "SicavEntityId",
-            "Alias": "SicavEntityId",
-            "Type": "System.Int32",
-            "Key": "b4cc2001ce614c6891bdf2dabc05995c"
-          },
-          "1": {
-            "Name": "Date",
-            "Index": -1,
-            "NameInSource": "Date",
-            "Alias": "Date",
-            "Type": "System.DateTime",
-            "Key": "6f73627af9e34a2993a416573b6af6a7"
-          },
-          "2": {
-            "Name": "Label",
-            "Index": -1,
-            "NameInSource": "Label",
-            "Alias": "Label",
-            "Type": "System.String",
-            "Key": "7056b40667044d9ab0782a70c1dcdf5e"
-          },
-          "3": {
-            "Name": "Text",
-            "Index": -1,
-            "NameInSource": "Text",
-            "Alias": "Text",
-            "Type": "System.String",
-            "Key": "3011d9677a18472a8464a0a98121fa11"
-          },
-          "4": {
-            "Name": "AuthorEntityId",
-            "Index": -1,
-            "NameInSource": "AuthorEntityId",
-            "Alias": "AuthorEntityId",
-            "Type": "System.Int32",
-            "Key": "ecbb71274a27434ca056ce99b61aded2"
-          },
-          "5": {
-            "Name": "LastModificationDate",
-            "Index": -1,
-            "NameInSource": "LastModificationDate",
-            "Alias": "LastModificationDate",
-            "Type": "System.DateTime",
-            "Key": "ac386a140613428aa738b3109d0dca2d"
-          }
-        },
-        "NameInSource": "DictionaryJson.SicavNotes"
-      },
-      "36": {
+      "37": {
         "Ident": "StiDataTableSource",
         "Name": "TimeFrames",
         "Alias": "TimeFrames",
@@ -4216,7 +4265,7 @@
         },
         "NameInSource": "DictionaryJson.TimeFrames"
       },
-      "37": {
+      "38": {
         "Ident": "StiDataTableSource",
         "Name": "LastAccountBalances",
         "Alias": "LastAccountBalances",
@@ -4295,7 +4344,7 @@
         },
         "NameInSource": "DictionaryJson.LastAccountBalances"
       },
-      "38": {
+      "39": {
         "Ident": "StiDataTableSource",
         "Name": "LastFinancialStatements",
         "Alias": "LastFinancialStatements",
@@ -4632,7 +4681,7 @@
         },
         "NameInSource": "DictionaryJson.LastFinancialStatements"
       },
-      "39": {
+      "40": {
         "Ident": "StiDataTableSource",
         "Name": "FinancialStatementsFxRates",
         "Alias": "FinancialStatementsFxRates",
@@ -4669,7 +4718,7 @@
         },
         "NameInSource": "DictionaryJson.FinancialStatementsFxRates"
       },
-      "40": {
+      "41": {
         "Ident": "StiDataTableSource",
         "Name": "FinancialStatements",
         "Alias": "FinancialStatements",
@@ -4966,7 +5015,7 @@
         },
         "NameInSource": "DictionaryJson.FinancialStatements"
       },
-      "41": {
+      "42": {
         "Ident": "StiDataTableSource",
         "Name": "ShareClassStatements",
         "Alias": "ShareClassStatements",
@@ -5033,7 +5082,7 @@
         },
         "NameInSource": "DictionaryJson.ShareClassStatements"
       },
-      "42": {
+      "43": {
         "Ident": "StiDataTableSource",
         "Name": "SecurityClassifications",
         "Alias": "SecurityClassifications",
@@ -5095,7 +5144,7 @@
         },
         "NameInSource": "DictionaryJson.SecurityClassifications"
       },
-      "43": {
+      "44": {
         "Ident": "StiDataTableSource",
         "Name": "WorldMap",
         "Alias": "WorldMap",
@@ -5125,7 +5174,7 @@
         },
         "NameInSource": "DictionaryJson.WorldMap"
       },
-      "44": {
+      "45": {
         "Ident": "StiVirtualSource",
         "Name": "CurrencyBreakdown",
         "Alias": "CurrencyBreakdown",
@@ -5164,7 +5213,7 @@
           "2": "Weight.Sum"
         }
       },
-      "45": {
+      "46": {
         "Ident": "StiVirtualSource",
         "Name": "SectorBreakdown",
         "Alias": "SectorBreakdown",
@@ -7621,7 +7670,7 @@
               "Ident": "StiFilter",
               "Item": "Expression",
               "Expression": {
-                "Value": "{SicavNotes.SicavEntityId == SicavId\r\n&& SicavNotes.Label == \"Information to Shareholders\"}"
+                "Value": "{SicavNotes.SicavEntityId == SicavId\r\n&& SicavNotes.Category == \"Information to Shareholders\"}"
               }
             }
           }
@@ -7868,7 +7917,7 @@
             },
             "1": {
               "Ident": "StiFilter",
-              "Column": "Label",
+              "Column": "Category",
               "Value1": "Directors report"
             }
           }
@@ -8083,7 +8132,7 @@
               "Ident": "StiFilter",
               "Item": "Expression",
               "Expression": {
-                "Value": "{SicavNotes.SicavEntityId == SicavId\r\n&& SicavNotes.Label == \"Independent Auditor Report\"}"
+                "Value": "{SicavNotes.SicavEntityId == SicavId\r\n&& SicavNotes.Category == \"Independent Auditor Report\"}"
               }
             }
           }

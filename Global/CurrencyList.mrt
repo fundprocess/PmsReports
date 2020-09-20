@@ -1,16 +1,16 @@
 {
   "ReportVersion": "2020.2.3.0",
-  "ReportGuid": "697c5b56d59e4c0d9a997fa76c19403f",
-  "ReportName": "Hello World",
-  "ReportAlias": "Hello World",
+  "ReportGuid": "21465edcbfc64d71b03844e78ad52d97",
+  "ReportName": "Factsheet",
+  "ReportAlias": "Factsheet",
   "ReportAuthor": "FundProcess",
   "ReportDescription": "FundProcess",
   "ReportCreated": "/Date(0+0100)/",
-  "ReportChanged": "/Date(1598997918810+0200)/",
+  "ReportChanged": "/Date(1598902576679+0200)/",
   "EngineVersion": "EngineV2",
   "PreviewSettings": 268435455,
   "AutoLocalizeReportOnRun": true,
-  "Script": "using System;\r\nusing System.Drawing;\r\nusing System.Windows.Forms;\r\nusing System.Data;\r\nusing Stimulsoft.Controls;\r\nusing Stimulsoft.Base.Drawing;\r\nusing Stimulsoft.Report;\r\nusing Stimulsoft.Report.Dialogs;\r\nusing Stimulsoft.Report.Components;\r\nusing System.Collections.Generic;\r\n\r\nnamespace Reports\r\n{\r\n\tpublic class r\n\t{\r\n\t\tprivate const string Category = \"MyFuncCategory\";\r\n\r\n\t\tpublic static string GetEnumValue(string enumTitle,int intValue,string enumConversionJson)\r\n\t\t{\r\n\t\t\tstring lang=\"en\";\r\n\t\t\tif (string.IsNullOrEmpty(enumConversionJson))\r\n\t\t\t\treturn null;\r\n\t\t\tvar dic = Stimulsoft.Base.Json.JsonConvert.\r\n\t\t\t\t\tDeserializeObject<Dictionary<string, Dictionary<int, Dictionary<string, string>>>>(enumConversionJson);\r\n\t\t\t\t\r\n\t\t\treturn dic[enumTitle][intValue][lang];\r\n\t\t}\r\n\r\n\t\tpublic static void RegisterGetEnumValue()\r\n\t\t{\r\n\t\t\tvar ParamNames = new string[3];\r\n\t\t\tvar ParamTypes = new Type[3];\r\n\t\t\tvar ParamDescriptions = new string[3];\r\n\r\n\t\t\tParamNames[0] = \"enumTitle\";\r\n\t\t\tParamDescriptions[0] = \"enumTitle\";\r\n\t\t\tParamTypes[0] = typeof(string);\r\n\t\t\t\r\n\t\t\tParamNames[1] = \"intValue\";\r\n\t\t\tParamDescriptions[1] = \"intValue\";\r\n\t\t\tParamTypes[1] = typeof(int);\r\n\r\n\t\t\tParamNames[2] = \"enumConversionJson\";\r\n\t\t\tParamDescriptions[2] = \"enumConversionJson\";\r\n\t\t\tParamTypes[2] = typeof(string);\r\n\r\n\t\t\tStimulsoft.Report.Dictionary.StiFunctions.RemoveFunction(\"GetEnumValue\");\r\n\t\t\tStimulsoft.Report.Dictionary.StiFunctions.AddFunction(Category, \"GetEnumValue\", \"GetEnumValue\", \"Description\", \r\n\t\t\t\ttypeof(,\r\n\t\t\t\ttypeof(string), \"Return Description\", ParamTypes, ParamNames, ParamDescriptions);\r\n\t\t}\r\n\t\tpublic static string GetTranslation(string jsonStr)\r\n\t\t{\r\n\t\t\tstring lang=\"en\";\r\n\t\t\tif (string.IsNullOrEmpty(jsonStr))\r\n\t\t\t\treturn null;\r\n\t\t\t\t\r\n\t\t\treturn Stimulsoft.Base.Json.JsonConvert.DeserializeObject<Dictionary<string,string>>(jsonStr)[lang];\r\n\t\t}\r\n\r\n\t\tpublic static void RegisterGetTranslation()\r\n\t\t{\r\n\t\t\tvar ParamNames = new string[2];\r\n\t\t\tvar ParamTypes = new Type[2];\r\n\t\t\tvar ParamDescriptions = new string[2];\r\n\r\n\t\t\tParamNames[0] = \"jsonStr\";\r\n\t\t\tParamDescriptions[0] = \"Multi-culture string\";\r\n\t\t\tParamTypes[0] = typeof(string);\r\n\t\t\t\r\n\t\t\tParamNames[1] = \"lang\";\r\n\t\t\tParamDescriptions[1] = \"LanguageTmp\";\r\n\t\t\tParamTypes[1] = typeof(string);\r\n\t\t\t\r\n\r\n\t\t\tStimulsoft.Report.Dictionary.StiFunctions.RemoveFunction(\"GetTranslation\");\r\n\t\t\tStimulsoft.Report.Dictionary.StiFunctions.AddFunction(Category, \"GetTranslation\", \"GetTranslation\", \"Description\", \r\n\t\t\t\ttypeof(,\r\n\t\t\t\ttypeof(string), \"Return Description\", ParamTypes, ParamNames, ParamDescriptions);\r\n\t\t}\r\n\t}\r\n\t\r\n    public class Report : Stimulsoft.Report.StiReport\r\n    {\r\n        public Report()        {\r\n            this.InitializeComponent();\r\n\t\t\tRegisterGetTranslation();\r\n        }\r\n\r\n        #region StiReport Designer generated code - do not modify\r\n\t\t#endregion StiReport Designer generated code - do not modify\r\n    }\r\n}\r\n",
+  "Script": "using System;\r\nusing System.Drawing;\r\nusing System.Windows.Forms;\r\nusing System.Data;\r\nusing Stimulsoft.Controls;\r\nusing Stimulsoft.Base.Drawing;\r\nusing Stimulsoft.Report;\r\nusing Stimulsoft.Report.Dialogs;\r\nusing Stimulsoft.Report.Components;\r\nusing System.Collections.Generic;\r\n\r\nnamespace Reports\r\n{\r\n\tpublic class MyFunction\r\n\t{\r\n\t\tprivate const string Category = \"MyFuncCategory\";\r\n\r\n\t\tpublic static string GetEnumValue(string enumTitle,int intValue,string enumConversionJson)\r\n\t\t{\r\n\t\t\tstring lang=\"en\";\r\n\t\t\tif (string.IsNullOrEmpty(enumConversionJson))\r\n\t\t\t\treturn null;\r\n\t\t\tvar dic = Stimulsoft.Base.Json.JsonConvert.\r\n\t\t\t\t\tDeserializeObject<Dictionary<string, Dictionary<int, Dictionary<string, string>>>>(enumConversionJson);\r\n\t\t\t\t\r\n\t\t\treturn dic[enumTitle][intValue][lang];\r\n\t\t}\r\n\r\n\t\tpublic static void RegisterGetEnumValue()\r\n\t\t{\r\n\t\t\tvar ParamNames = new string[3];\r\n\t\t\tvar ParamTypes = new Type[3];\r\n\t\t\tvar ParamDescriptions = new string[3];\r\n\r\n\t\t\tParamNames[0] = \"enumTitle\";\r\n\t\t\tParamDescriptions[0] = \"enumTitle\";\r\n\t\t\tParamTypes[0] = typeof(string);\r\n\t\t\t\r\n\t\t\tParamNames[1] = \"intValue\";\r\n\t\t\tParamDescriptions[1] = \"intValue\";\r\n\t\t\tParamTypes[1] = typeof(int);\r\n\r\n\t\t\tParamNames[2] = \"enumConversionJson\";\r\n\t\t\tParamDescriptions[2] = \"enumConversionJson\";\r\n\t\t\tParamTypes[2] = typeof(string);\r\n\r\n\t\t\tStimulsoft.Report.Dictionary.StiFunctions.RemoveFunction(\"GetEnumValue\");\r\n\t\t\tStimulsoft.Report.Dictionary.StiFunctions.AddFunction(Category, \"GetEnumValue\", \"GetEnumValue\", \"Description\", \r\n\t\t\t\ttypeof(MyFunction),\r\n\t\t\t\ttypeof(string), \"Return Description\", ParamTypes, ParamNames, ParamDescriptions);\r\n\t\t}\r\n\t\tpublic static string GetTranslation(string jsonStr)\r\n\t\t{\r\n\t\t\tstring lang=\"en\";\r\n\t\t\tif (string.IsNullOrEmpty(jsonStr))\r\n\t\t\t\treturn null;\r\n\t\t\t\t\r\n\t\t\treturn Stimulsoft.Base.Json.JsonConvert.DeserializeObject<Dictionary<string,string>>(jsonStr)[lang];\r\n\t\t}\r\n\r\n\t\tpublic static void RegisterGetTranslation()\r\n\t\t{\r\n\t\t\tvar ParamNames = new string[2];\r\n\t\t\tvar ParamTypes = new Type[2];\r\n\t\t\tvar ParamDescriptions = new string[2];\r\n\r\n\t\t\tParamNames[0] = \"jsonStr\";\r\n\t\t\tParamDescriptions[0] = \"Multi-culture string\";\r\n\t\t\tParamTypes[0] = typeof(string);\r\n\t\t\t\r\n\t\t\tParamNames[1] = \"lang\";\r\n\t\t\tParamDescriptions[1] = \"LanguageTmp\";\r\n\t\t\tParamTypes[1] = typeof(string);\r\n\t\t\t\r\n\r\n\t\t\tStimulsoft.Report.Dictionary.StiFunctions.RemoveFunction(\"GetTranslation\");\r\n\t\t\tStimulsoft.Report.Dictionary.StiFunctions.AddFunction(Category, \"GetTranslation\", \"GetTranslation\", \"Description\", \r\n\t\t\t\ttypeof(MyFunction),\r\n\t\t\t\ttypeof(string), \"Return Description\", ParamTypes, ParamNames, ParamDescriptions);\r\n\t\t}\r\n\t}\r\n\t\r\n    public class Report : Stimulsoft.Report.StiReport\r\n    {\r\n        public Report()        {\r\n            this.InitializeComponent();\r\n\t\t\tMyFunction.RegisterGetTranslation();\r\n        }\r\n\r\n        #region StiReport Designer generated code - do not modify\r\n\t\t#endregion StiReport Designer generated code - do not modify\r\n    }\r\n}\r\n",
   "Styles": {
     "0": {
       "Ident": "StiStyle",
@@ -76,28 +76,6 @@
     },
     "Variables": {
       "0": {
-        "Value": "3",
-        "Name": "SubFundId",
-        "Alias": "SubFundId",
-        "Type": "System.Int32",
-        "Key": "_x0032_a7778aaa22a4b3e8dd790fc06e7e8ca"
-      },
-      "1": {
-        "Value": "1/30/2020 12:00:00 AM",
-        "Name": "AsOfDate",
-        "Alias": "AsOfDate",
-        "Type": "System.DateTime",
-        "Key": "971ab69a95ca4e1484771d2b3a153964"
-      },
-      "2": {
-        "Value": "0",
-        "Name": "temp",
-        "Alias": "temp",
-        "Type": "System.Decimal",
-        "Description": "temp",
-        "Key": "39fbbebe3fd144db947f4be8c6c3612b"
-      },
-      "3": {
         "Value": "{\"FrequencyType\":{\"1\":{\"en\":\"Daily\",\"fr\":\"Daily\"},\"2\":{\"en\":\"Weekly\",\"fr\":\"Weekly\"},\"3\":{\"en\":\"Half Monthly\",\"fr\":\"HalfMonthly\"},\"4\":{\"en\":\"Monthly\",\"fr\":\"Monthly\"},\"5\":{\"en\":\"Quarterly\",\"fr\":\"Quarterly\"},\"6\":{\"en\":\"Half Yearly\",\"fr\":\"HalfYearly\"},\"7\":{\"en\":\"Yearly\",\"fr\":\"Yearly\"},\"8\":{\"en\":\"Biennially\",\"fr\":\"Biennially\"},\"9\":{\"en\":\"Third Yearly\",\"fr\":\"ThirdYearly\"}},\"LegalForm\":{\"1\":{\"en\":\"S I C A V\",\"fr\":\"SICAV\"},\"2\":{\"en\":\"S I C A F\",\"fr\":\"SICAF\"}},\"SicavType\":{\"1\":{\"en\":\"U C I T S\",\"fr\":\"UCITS\"},\"2\":{\"en\":\"A I F M\",\"fr\":\"AIFM\"}},\"CollaborationType\":{\"1\":{\"en\":\"Service Provider\",\"fr\":\"ServiceProvider\"},\"2\":{\"en\":\"Collaborator\",\"fr\":\"Collaborator\"}},\"RoleDomain\":{\"1\":{\"en\":\"Management\",\"fr\":\"Management\"},\"2\":{\"en\":\"Risk Management\",\"fr\":\"RiskManagement\"},\"3\":{\"en\":\"Compliance\",\"fr\":\"Compliance\"},\"4\":{\"en\":\"Investment Management\",\"fr\":\"InvestmentManagement\"},\"5\":{\"en\":\"Marketing\",\"fr\":\"Marketing\"},\"6\":{\"en\":\"Sales\",\"fr\":\"Sales\"},\"7\":{\"en\":\"Administration\",\"fr\":\"Administration\"},\"8\":{\"en\":\"Accounting\",\"fr\":\"Accounting\"},\"9\":{\"en\":\"Legal\",\"fr\":\"Legal\"},\"10\":{\"en\":\"Depositary\",\"fr\":\"Depositary\"},\"11\":{\"en\":\"Audit\",\"fr\":\"Audit\"}},\"RolePosition\":{\"1\":{\"en\":\"Board\",\"fr\":\"Board\"},\"2\":{\"en\":\"Director\",\"fr\":\"Director\"},\"3\":{\"en\":\"Employee\",\"fr\":\"Employee\"},\"4\":{\"en\":\"External\",\"fr\":\"External\"}},\"CounterpartyType\":{\"1\":{\"en\":\"Broker\",\"fr\":\"Broker\"},\"2\":{\"en\":\"Bank\",\"fr\":\"Bank\"},\"3\":{\"en\":\"Investment Manager\",\"fr\":\"InvestmentManager\"},\"4\":{\"en\":\"Insurance Company\",\"fr\":\"InsuranceCompany\"}},\"EmirClassification\":{\"1\":{\"en\":\"Financial\",\"fr\":\"Financial\"},\"2\":{\"en\":\"Non Financial\",\"fr\":\"NonFinancial\"}},\"InvestorType\":{\"1\":{\"en\":\"Retail\",\"fr\":\"Retail\"},\"2\":{\"en\":\"Well Informed\",\"fr\":\"WellInformed\"},\"3\":{\"en\":\"Professional\",\"fr\":\"Professional\"},\"4\":{\"en\":\"Institutional\",\"fr\":\"Institutional\"}},\"DividendDistributionPolicy\":{\"0\":{\"en\":\"Accumulation\",\"fr\":\"Accumulation\"},\"1\":{\"en\":\"Distribution\",\"fr\":\"Distribution\"}},\"OversightLevel\":{\"1\":{\"en\":\"Simple\",\"fr\":\"Simple\"},\"2\":{\"en\":\"Normal\",\"fr\":\"Normal\"},\"3\":{\"en\":\"Enhanced\",\"fr\":\"Enhanced\"}},\"DueDiligenceTaskStatus\":{\"1\":{\"en\":\"Open\",\"fr\":\"Open\"},\"2\":{\"en\":\"In Progress\",\"fr\":\"InProgress\"},\"3\":{\"en\":\"Waiting\",\"fr\":\"Waiting\"},\"4\":{\"en\":\"Done\",\"fr\":\"Done\"},\"5\":{\"en\":\"Not Applicable\",\"fr\":\"NotApplicable\"},\"6\":{\"en\":\"Refused\",\"fr\":\"Refused\"}},\"PortfolioType\":{\"0\":{\"en\":\"Portfolio\",\"fr\":\"Portfolio\"},\"1\":{\"en\":\"Sub Fund\",\"fr\":\"SubFund\"}}}",
         "Name": "EnumConversion",
         "Alias": "EnumConversion",
@@ -5513,8 +5491,8 @@
   "Pages": {
     "0": {
       "Ident": "StiPage",
-      "Name": "Page1",
-      "Guid": "9bae7937650a4091b29c6301e6c264f7",
+      "Name": "Page5",
+      "Guid": "977aa09955264350a775558406678294",
       "Interaction": {
         "Ident": "StiInteraction"
       },
@@ -5522,20 +5500,107 @@
       "Brush": "solid:",
       "Components": {
         "0": {
-          "Ident": "StiText",
-          "Name": "Text1",
-          "ClientRectangle": "7.2,2.4,4,2",
+          "Ident": "StiHeaderBand",
+          "Name": "HeaderCurrencies",
+          "ClientRectangle": "0,0.4,19,0.8",
           "Interaction": {
             "Ident": "StiInteraction"
           },
-          "Text": {
-            "Value": "Hello World !"
-          },
-          "Font": ";18;;",
           "Border": ";;;;;;;solid:Black",
           "Brush": "solid:",
-          "TextBrush": "solid:Black",
-          "Type": "Expression"
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "HeaderCurrencies_IsoCode",
+              "ClientRectangle": "0,0,3,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "IsoCode"
+              },
+              "VertAlignment": "Center",
+              "Font": ";10;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              }
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "HeaderCurrencies_Name",
+              "ClientRectangle": "3,0,5.6,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Name"
+              },
+              "VertAlignment": "Center",
+              "Font": ";10;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              }
+            }
+          }
+        },
+        "1": {
+          "Ident": "StiDataBand",
+          "Name": "DataCurrencies",
+          "ClientRectangle": "0,2,19,0.8",
+          "Interaction": {
+            "Ident": "StiBandInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "DataCurrencies_IsoCode",
+              "CanGrow": true,
+              "ClientRectangle": "0,0,3,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{Currencies.IsoCode}"
+              },
+              "VertAlignment": "Center",
+              "Font": ";;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              }
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "DataCurrencies_Name",
+              "CanGrow": true,
+              "ClientRectangle": "3,0,5.6,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{GetTranslation(Currencies.Name)}"
+              },
+              "VertAlignment": "Center",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            }
+          },
+          "DataSourceName": "Currencies"
         }
       },
       "PageWidth": 21.0,
