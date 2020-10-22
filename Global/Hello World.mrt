@@ -1,12 +1,12 @@
 {
   "ReportVersion": "2020.2.3.0",
-  "ReportGuid": "697c5b56d59e4c0d9a997fa76c19403f",
+  "ReportGuid": "2f421aec18a5461abb0a3c9a0275ef0a",
   "ReportName": "Hello World",
   "ReportAlias": "Hello World",
   "ReportAuthor": "FundProcess",
   "ReportDescription": "FundProcess",
   "ReportCreated": "/Date(0+0100)/",
-  "ReportChanged": "/Date(1598997918810+0200)/",
+  "ReportChanged": "/Date(1600687954312+0200)/",
   "EngineVersion": "EngineV2",
   "PreviewSettings": 268435455,
   "AutoLocalizeReportOnRun": true,
@@ -1545,6 +1545,22 @@
             "NameInSource": "FiveYearsBenchmarkAnnualized",
             "Alias": "FiveYearsBenchmarkAnnualized",
             "Type": "System.Decimal"
+          },
+          "34": {
+            "Name": "PortfolioId",
+            "Index": -1,
+            "NameInSource": "PortfolioId",
+            "Alias": "PortfolioId",
+            "Type": "System.Int32",
+            "Key": "8ada648631de497d97fff65da1f72291"
+          },
+          "35": {
+            "Name": "ShareClassId",
+            "Index": -1,
+            "NameInSource": "ShareClassId",
+            "Alias": "ShareClassId",
+            "Type": "System.Int32",
+            "Key": "0a09ecefa8614bf1950aa8f4976690bc"
           }
         },
         "NameInSource": "FundProcessUniverse.Performances"
@@ -2017,6 +2033,22 @@
             "NameInSource": "FiveYearsBenchmarkAnnualized",
             "Alias": "FiveYearsBenchmarkAnnualized",
             "Type": "System.Decimal"
+          },
+          "34": {
+            "Name": "PortfolioId",
+            "Index": -1,
+            "NameInSource": "PortfolioId",
+            "Alias": "PortfolioId",
+            "Type": "System.Int32",
+            "Key": "076a5ae55e2d4f7a9bee691272ec98cc"
+          },
+          "35": {
+            "Name": "ShareClassId",
+            "Index": -1,
+            "NameInSource": "ShareClassId",
+            "Alias": "ShareClassId",
+            "Type": "System.Int32",
+            "Key": "7019f2150ba548628ef88b81dbea983d"
           }
         },
         "NameInSource": "FundProcessUniverse.AnnualizedVolatilities"
@@ -3499,6 +3531,50 @@
       },
       "31": {
         "Ident": "StiDataTableSource",
+        "Name": "Notes",
+        "Alias": "Notes",
+        "Key": "83719a7e05bd47af91abb7cf9c228dc2",
+        "Columns": {
+          "0": {
+            "Name": "Date",
+            "Index": -1,
+            "NameInSource": "Date",
+            "Alias": "Date",
+            "Type": "System.DateTime"
+          },
+          "1": {
+            "Name": "Category",
+            "Index": -1,
+            "NameInSource": "Category",
+            "Alias": "Category",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "Text",
+            "Index": -1,
+            "NameInSource": "Text",
+            "Alias": "Text",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "AuthorEntityId",
+            "Index": -1,
+            "NameInSource": "AuthorEntityId",
+            "Alias": "AuthorEntityId",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "LastModificationDate",
+            "Index": -1,
+            "NameInSource": "LastModificationDate",
+            "Alias": "LastModificationDate",
+            "Type": "System.DateTime"
+          }
+        },
+        "NameInSource": "FundProcessUniverse.notes"
+      },
+      "32": {
+        "Ident": "StiDataTableSource",
         "Name": "PortfolioNotes",
         "Alias": "PortfolioNotes",
         "Key": "28ad0e70c00949d8941a6fbcffa4645b",
@@ -3520,14 +3596,6 @@
             "Key": "89b62da0bbc14bb18132d2bb190b12a4"
           },
           "2": {
-            "Name": "Label",
-            "Index": -1,
-            "NameInSource": "Label",
-            "Alias": "Label",
-            "Type": "System.String",
-            "Key": "42228561794343b7b3c528450d22119f"
-          },
-          "3": {
             "Name": "Text",
             "Index": -1,
             "NameInSource": "Text",
@@ -3535,7 +3603,7 @@
             "Type": "System.String",
             "Key": "40bf7512995b408a9980703caff8dea3"
           },
-          "4": {
+          "3": {
             "Name": "AuthorEntityId",
             "Index": -1,
             "NameInSource": "AuthorEntityId",
@@ -3543,18 +3611,81 @@
             "Type": "System.Int32",
             "Key": "c37d08886ad44161892da57da1de5bb0"
           },
-          "5": {
+          "4": {
             "Name": "LastModificationDate",
             "Index": -1,
             "NameInSource": "LastModificationDate",
             "Alias": "LastModificationDate",
             "Type": "System.DateTime",
             "Key": "22159a40c3e64911a5c02600294ea004"
+          },
+          "5": {
+            "Name": "Category",
+            "Index": -1,
+            "NameInSource": "Category",
+            "Alias": "Category",
+            "Type": "System.String"
           }
         },
         "NameInSource": "FundProcessUniverse.PortfolioNotes"
       },
-      "32": {
+      "33": {
+        "Ident": "StiDataTableSource",
+        "Name": "SicavNotes",
+        "Alias": "SicavNotes",
+        "Key": "a78e76f25e0c443393911c43f8de331d",
+        "Columns": {
+          "0": {
+            "Name": "SicavEntityId",
+            "Index": -1,
+            "NameInSource": "SicavEntityId",
+            "Alias": "SicavEntityId",
+            "Type": "System.Int32",
+            "Key": "b4cc2001ce614c6891bdf2dabc05995c"
+          },
+          "1": {
+            "Name": "Date",
+            "Index": -1,
+            "NameInSource": "Date",
+            "Alias": "Date",
+            "Type": "System.DateTime",
+            "Key": "6f73627af9e34a2993a416573b6af6a7"
+          },
+          "2": {
+            "Name": "Text",
+            "Index": -1,
+            "NameInSource": "Text",
+            "Alias": "Text",
+            "Type": "System.String",
+            "Key": "3011d9677a18472a8464a0a98121fa11"
+          },
+          "3": {
+            "Name": "AuthorEntityId",
+            "Index": -1,
+            "NameInSource": "AuthorEntityId",
+            "Alias": "AuthorEntityId",
+            "Type": "System.Int32",
+            "Key": "ecbb71274a27434ca056ce99b61aded2"
+          },
+          "4": {
+            "Name": "LastModificationDate",
+            "Index": -1,
+            "NameInSource": "LastModificationDate",
+            "Alias": "LastModificationDate",
+            "Type": "System.DateTime",
+            "Key": "ac386a140613428aa738b3109d0dca2d"
+          },
+          "5": {
+            "Name": "Category",
+            "Index": -1,
+            "NameInSource": "Category",
+            "Alias": "Category",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "FundProcessUniverse.SicavNotes"
+      },
+      "34": {
         "Ident": "StiDataTableSource",
         "Name": "SecurityTransactions",
         "Alias": "SecurityTransactions",
@@ -3640,7 +3771,7 @@
         },
         "NameInSource": "FundProcessUniverse.SecurityTransactions"
       },
-      "33": {
+      "35": {
         "Ident": "StiDataTableSource",
         "Name": "ShareClassHistValues",
         "Alias": "ShareClassHistValues",
@@ -3713,64 +3844,7 @@
         },
         "NameInSource": "FundProcessUniverse.ShareClassHistValues"
       },
-      "34": {
-        "Ident": "StiDataTableSource",
-        "Name": "SicavNotes",
-        "Alias": "SicavNotes",
-        "Key": "a78e76f25e0c443393911c43f8de331d",
-        "Columns": {
-          "0": {
-            "Name": "SicavEntityId",
-            "Index": -1,
-            "NameInSource": "SicavEntityId",
-            "Alias": "SicavEntityId",
-            "Type": "System.Int32",
-            "Key": "b4cc2001ce614c6891bdf2dabc05995c"
-          },
-          "1": {
-            "Name": "Date",
-            "Index": -1,
-            "NameInSource": "Date",
-            "Alias": "Date",
-            "Type": "System.DateTime",
-            "Key": "6f73627af9e34a2993a416573b6af6a7"
-          },
-          "2": {
-            "Name": "Label",
-            "Index": -1,
-            "NameInSource": "Label",
-            "Alias": "Label",
-            "Type": "System.String",
-            "Key": "7056b40667044d9ab0782a70c1dcdf5e"
-          },
-          "3": {
-            "Name": "Text",
-            "Index": -1,
-            "NameInSource": "Text",
-            "Alias": "Text",
-            "Type": "System.String",
-            "Key": "3011d9677a18472a8464a0a98121fa11"
-          },
-          "4": {
-            "Name": "AuthorEntityId",
-            "Index": -1,
-            "NameInSource": "AuthorEntityId",
-            "Alias": "AuthorEntityId",
-            "Type": "System.Int32",
-            "Key": "ecbb71274a27434ca056ce99b61aded2"
-          },
-          "5": {
-            "Name": "LastModificationDate",
-            "Index": -1,
-            "NameInSource": "LastModificationDate",
-            "Alias": "LastModificationDate",
-            "Type": "System.DateTime",
-            "Key": "ac386a140613428aa738b3109d0dca2d"
-          }
-        },
-        "NameInSource": "FundProcessUniverse.SicavNotes"
-      },
-      "35": {
+      "36": {
         "Ident": "StiDataTableSource",
         "Name": "TimeFrames",
         "Alias": "TimeFrames",
@@ -3835,7 +3909,7 @@
         },
         "NameInSource": "FundProcessUniverse.TimeFrames"
       },
-      "36": {
+      "37": {
         "Ident": "StiDataTableSource",
         "Name": "LastAccountBalances",
         "Alias": "LastAccountBalances",
@@ -3914,7 +3988,7 @@
         },
         "NameInSource": "FundProcessUniverse.LastAccountBalances"
       },
-      "37": {
+      "38": {
         "Ident": "StiDataTableSource",
         "Name": "LastFinancialStatements",
         "Alias": "LastFinancialStatements",
@@ -4251,7 +4325,7 @@
         },
         "NameInSource": "FundProcessUniverse.LastFinancialStatements"
       },
-      "38": {
+      "39": {
         "Ident": "StiDataTableSource",
         "Name": "FinancialStatementsFxRates",
         "Alias": "FinancialStatementsFxRates",
@@ -4288,7 +4362,7 @@
         },
         "NameInSource": "FundProcessUniverse.FinancialStatementsFxRates"
       },
-      "39": {
+      "40": {
         "Ident": "StiDataTableSource",
         "Name": "FinancialStatements",
         "Alias": "FinancialStatements",
@@ -4585,7 +4659,7 @@
         },
         "NameInSource": "FundProcessUniverse.FinancialStatements"
       },
-      "40": {
+      "41": {
         "Ident": "StiDataTableSource",
         "Name": "ShareClassStatements",
         "Alias": "ShareClassStatements",
@@ -4652,7 +4726,7 @@
         },
         "NameInSource": "FundProcessUniverse.ShareClassStatements"
       },
-      "41": {
+      "42": {
         "Ident": "StiDataTableSource",
         "Name": "SecurityClassifications",
         "Alias": "SecurityClassifications",
@@ -4714,7 +4788,7 @@
         },
         "NameInSource": "FundProcessUniverse.SecurityClassifications"
       },
-      "42": {
+      "43": {
         "Ident": "StiDataTableSource",
         "Name": "WorldMap",
         "Alias": "WorldMap",
@@ -4743,56 +4817,6 @@
           }
         },
         "NameInSource": "FundProcessUniverse.WorldMap"
-      },
-      "43": {
-        "Ident": "StiVirtualSource",
-        "Name": "ReportShareClass",
-        "Alias": "ReportShareClass",
-        "Key": "e4eb1b05bee94714970c0e4f68125b26",
-        "Columns": {
-          "0": {
-            "Name": "Id",
-            "Index": -1,
-            "NameInSource": "Id",
-            "Alias": "Id",
-            "Type": "System.Int32"
-          },
-          "1": {
-            "Name": "InternalCode",
-            "Index": -1,
-            "NameInSource": "InternalCode",
-            "Alias": "InternalCode",
-            "Type": "System.String"
-          },
-          "2": {
-            "Name": "PortfolioId",
-            "Index": -1,
-            "NameInSource": "PortfolioId",
-            "Alias": "PortfolioId",
-            "Type": "System.Int32"
-          }
-        },
-        "NameInSource": "InternalShareClasses",
-        "Filters": {
-          "0": {
-            "Ident": "StiFilter",
-            "Item": "Expression",
-            "Expression": {
-              "Value": "{InternalShareClasses.Id == ShareClassId}"
-            }
-          }
-        },
-        "Results": {
-          "0": "Id",
-          "1": "",
-          "2": "Id",
-          "3": "InternalCode",
-          "4": "",
-          "5": "InternalCode",
-          "6": "PortfolioId",
-          "7": "",
-          "8": "PortfolioId"
-        }
       },
       "44": {
         "Ident": "StiVirtualSource",
