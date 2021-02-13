@@ -1,12 +1,12 @@
 {
   "ReportVersion": "2020.2.3.0",
-  "ReportGuid": "7e80b9702ba94ecbba96f06d0536303b",
+  "ReportGuid": "cf430f637879416eb8292e16711df32a",
   "ReportName": "Factsheet",
   "ReportAlias": "Factsheet",
   "ReportAuthor": "FundProcess",
   "ReportDescription": "FundProcess",
   "ReportCreated": "/Date(0+0100)/",
-  "ReportChanged": "/Date(1603405267610+0200)/",
+  "ReportChanged": "/Date(1609675481498+0100)/",
   "EngineVersion": "EngineV2",
   "PreviewSettings": 268435455,
   "AutoLocalizeReportOnRun": true,
@@ -71,20 +71,13 @@
     },
     "Variables": {
       "0": {
-        "Value": "1357",
+        "Value": "76",
         "Name": "ShareClassId",
         "Alias": "ShareClassId",
         "Type": "System.Int32",
         "Key": "_x0032_a7778aaa22a4b3e8dd790fc06e7e8ca"
       },
       "1": {
-        "Value": "9/29/2020 12:00:00 AM",
-        "Name": "AsOfDate",
-        "Alias": "AsOfDate",
-        "Type": "System.DateTime",
-        "Key": "971ab69a95ca4e1484771d2b3a153964"
-      },
-      "2": {
         "Value": "0",
         "Name": "temp",
         "Alias": "temp",
@@ -92,12 +85,27 @@
         "Description": "temp",
         "Key": "39fbbebe3fd144db947f4be8c6c3612b"
       },
+      "2": {
+        "Value": "12/29/2020 12:00:00 AM",
+        "Name": "AsOfDate",
+        "Alias": "AsOfDate",
+        "Type": "System.DateTime",
+        "Key": "971ab69a95ca4e1484771d2b3a153964"
+      },
       "3": {
         "Value": "{\"FrequencyType\":{\"1\":{\"en\":\"Daily\",\"fr\":\"Daily\",\"nl\":\"Daily\",\"de\":\"Daily\"},\"2\":{\"en\":\"Weekly\",\"fr\":\"Weekly\",\"nl\":\"Weekly\",\"de\":\"Weekly\"},\"3\":{\"en\":\"Half Monthly\",\"fr\":\"Half Monthly\",\"nl\":\"Half Monthly\",\"de\":\"Half Monthly\"},\"4\":{\"en\":\"Monthly\",\"fr\":\"Monthly\",\"nl\":\"Monthly\",\"de\":\"Monthly\"},\"5\":{\"en\":\"Quarterly\",\"fr\":\"Quarterly\",\"nl\":\"Quarterly\",\"de\":\"Quarterly\"},\"6\":{\"en\":\"Half Yearly\",\"fr\":\"Half Yearly\",\"nl\":\"Half Yearly\",\"de\":\"Half Yearly\"},\"7\":{\"en\":\"Yearly\",\"fr\":\"Yearly\",\"nl\":\"Yearly\",\"de\":\"Yearly\"},\"8\":{\"en\":\"Biennially\",\"fr\":\"Biennially\",\"nl\":\"Biennially\",\"de\":\"Biennially\"},\"9\":{\"en\":\"Third Yearly\",\"fr\":\"Third Yearly\",\"nl\":\"Third Yearly\",\"de\":\"Third Yearly\"}},\"LegalForm\":{\"1\":{\"en\":\"SICAV\",\"fr\":\"SICAV\",\"nl\":\"SICAV\",\"de\":\"SICAV\"},\"2\":{\"en\":\"SICAF\",\"fr\":\"SICAF\",\"nl\":\"SICAF\",\"de\":\"SICAF\"}},\"SicavType\":{\"1\":{\"en\":\"UCITS\",\"fr\":\"UCITS\",\"nl\":\"UCITS\",\"de\":\"UCITS\"},\"2\":{\"en\":\"AIFM\",\"fr\":\"AIFM\",\"nl\":\"AIFM\",\"de\":\"AIFM\"}},\"CollaborationType\":{\"1\":{\"en\":\"Service Provider\",\"fr\":\"Service Provider\",\"nl\":\"Service Provider\",\"de\":\"Service Provider\"},\"2\":{\"en\":\"Collaborator\",\"fr\":\"Collaborator\",\"nl\":\"Collaborator\",\"de\":\"Collaborator\"}},\"RoleDomain\":{\"1\":{\"en\":\"Management\",\"fr\":\"Management\",\"nl\":\"Management\",\"de\":\"Management\"},\"2\":{\"en\":\"Risk Management\",\"fr\":\"Risk Management\",\"nl\":\"Risk Management\",\"de\":\"Risk Management\"},\"3\":{\"en\":\"Compliance\",\"fr\":\"Compliance\",\"nl\":\"Compliance\",\"de\":\"Compliance\"},\"4\":{\"en\":\"Investment Management\",\"fr\":\"Investment Management\",\"nl\":\"Investment Management\",\"de\":\"Investment Management\"},\"5\":{\"en\":\"Marketing\",\"fr\":\"Marketing\",\"nl\":\"Marketing\",\"de\":\"Marketing\"},\"6\":{\"en\":\"Sales\",\"fr\":\"Sales\",\"nl\":\"Sales\",\"de\":\"Sales\"},\"7\":{\"en\":\"Administration\",\"fr\":\"Administration\",\"nl\":\"Administration\",\"de\":\"Administration\"},\"8\":{\"en\":\"Accounting\",\"fr\":\"Accounting\",\"nl\":\"Accounting\",\"de\":\"Accounting\"},\"9\":{\"en\":\"Legal\",\"fr\":\"Legal\",\"nl\":\"Legal\",\"de\":\"Legal\"},\"10\":{\"en\":\"Depositary\",\"fr\":\"Depositary\",\"nl\":\"Depositary\",\"de\":\"Depositary\"},\"11\":{\"en\":\"Audit\",\"fr\":\"Audit\",\"nl\":\"Audit\",\"de\":\"Audit\"},\"12\":{\"en\":\"Investment Secondary Management\",\"fr\":\"Investment Secondary Management\",\"nl\":\"Investment Secondary Management\",\"de\":\"Investment Secondary Management\"},\"13\":{\"en\":\"Management Company\",\"fr\":\"Management Company\",\"nl\":\"Management Company\",\"de\":\"Management Company\"}},\"RolePosition\":{\"1\":{\"en\":\"Board\",\"fr\":\"Board\",\"nl\":\"Board\",\"de\":\"Board\"},\"2\":{\"en\":\"Director\",\"fr\":\"Director\",\"nl\":\"Director\",\"de\":\"Director\"},\"3\":{\"en\":\"Employee\",\"fr\":\"Employee\",\"nl\":\"Employee\",\"de\":\"Employee\"},\"4\":{\"en\":\"External\",\"fr\":\"External\",\"nl\":\"External\",\"de\":\"External\"}},\"CounterpartyType\":{\"1\":{\"en\":\"Broker\",\"fr\":\"Broker\",\"nl\":\"Broker\",\"de\":\"Broker\"},\"2\":{\"en\":\"Bank\",\"fr\":\"Bank\",\"nl\":\"Bank\",\"de\":\"Bank\"},\"3\":{\"en\":\"Investment Manager\",\"fr\":\"Investment Manager\",\"nl\":\"Investment Manager\",\"de\":\"Investment Manager\"},\"4\":{\"en\":\"Insurance Company\",\"fr\":\"Insurance Company\",\"nl\":\"Insurance Company\",\"de\":\"Insurance Company\"}},\"EmirClassification\":{\"1\":{\"en\":\"Financial\",\"fr\":\"Financial\",\"nl\":\"Financial\",\"de\":\"Financial\"},\"2\":{\"en\":\"Non Financial\",\"fr\":\"Non Financial\",\"nl\":\"Non Financial\",\"de\":\"Non Financial\"}},\"InvestorType\":{\"1\":{\"en\":\"Retail\",\"fr\":\"Retail\",\"nl\":\"Retail\",\"de\":\"Retail\"},\"2\":{\"en\":\"Well Informed\",\"fr\":\"Well Informed\",\"nl\":\"Well Informed\",\"de\":\"Well Informed\"},\"3\":{\"en\":\"Professional\",\"fr\":\"Professional\",\"nl\":\"Professional\",\"de\":\"Professional\"},\"4\":{\"en\":\"Institutional\",\"fr\":\"Institutional\",\"nl\":\"Institutional\",\"de\":\"Institutional\"}},\"DividendDistributionPolicy\":{\"0\":{\"en\":\"Accumulation\",\"fr\":\"Accumulation\",\"nl\":\"Accumulation\",\"de\":\"Accumulation\"},\"1\":{\"en\":\"Distribution\",\"fr\":\"Distribution\",\"nl\":\"Distribution\",\"de\":\"Distribution\"}},\"OversightLevel\":{\"1\":{\"en\":\"Simple\",\"fr\":\"Simple\",\"nl\":\"Simple\",\"de\":\"Simple\"},\"2\":{\"en\":\"Normal\",\"fr\":\"Normal\",\"nl\":\"Normal\",\"de\":\"Normal\"},\"3\":{\"en\":\"Enhanced\",\"fr\":\"Enhanced\",\"nl\":\"Enhanced\",\"de\":\"Enhanced\"}},\"DueDiligenceTaskStatus\":{\"1\":{\"en\":\"Open\",\"fr\":\"Open\",\"nl\":\"Open\",\"de\":\"Open\"},\"2\":{\"en\":\"In Progress\",\"fr\":\"In Progress\",\"nl\":\"In Progress\",\"de\":\"In Progress\"},\"3\":{\"en\":\"Waiting\",\"fr\":\"Waiting\",\"nl\":\"Waiting\",\"de\":\"Waiting\"},\"4\":{\"en\":\"Done\",\"fr\":\"Done\",\"nl\":\"Done\",\"de\":\"Done\"},\"5\":{\"en\":\"Not Applicable\",\"fr\":\"Not Applicable\",\"nl\":\"Not Applicable\",\"de\":\"Not Applicable\"},\"6\":{\"en\":\"Refused\",\"fr\":\"Refused\",\"nl\":\"Refused\",\"de\":\"Refused\"}},\"PortfolioType\":{\"0\":{\"en\":\"Portfolio\",\"fr\":\"Portfolio\",\"nl\":\"Portfolio\",\"de\":\"Portfolio\"},\"1\":{\"en\":\"Sub Fund\",\"fr\":\"Sub Fund\",\"nl\":\"Sub Fund\",\"de\":\"Sub Fund\"}},\"PortfolioNode\":{\"1\":{\"en\":\"Portfolio\",\"fr\":\"Portfolio\",\"nl\":\"Portfolio\",\"de\":\"Portfolio\"},\"2\":{\"en\":\"Classification\",\"fr\":\"Classification\",\"nl\":\"Classification\",\"de\":\"Classification\"},\"3\":{\"en\":\"Position\",\"fr\":\"Position\",\"nl\":\"Position\",\"de\":\"Position\"},\"4\":{\"en\":\"Share Class\",\"fr\":\"Share Class\",\"nl\":\"Share Class\",\"de\":\"Share Class\"},\"5\":{\"en\":\"Benchmark\",\"fr\":\"Benchmark\",\"nl\":\"Benchmark\",\"de\":\"Benchmark\"}}}",
         "Name": "EnumConversion",
         "Alias": "EnumConversion",
         "Type": "System.String",
         "Key": "c15feb358f6a4ad29726ce301523eab1"
+      },
+      "4": {
+        "Value": "true",
+        "Name": "RecentSubFund",
+        "Alias": "RecentSubFund",
+        "Type": "System.Boolean",
+        "InitBy": "Expression",
+        "Key": "583266cd151d49e4a3faca26d7a43c60"
       }
     },
     "DataSources": {
@@ -704,6 +712,141 @@
       },
       "5": {
         "Ident": "StiDataTableSource",
+        "Name": "LastBreakdowns",
+        "Alias": "LastBreakdowns",
+        "Key": "08ffa47dc2b1434f8e3e835665ef9646",
+        "Columns": {
+          "0": {
+            "Name": "PortfolioId",
+            "Index": -1,
+            "NameInSource": "PortfolioId",
+            "Alias": "PortfolioId",
+            "Type": "System.Int32"
+          },
+          "1": {
+            "Name": "Date",
+            "Index": -1,
+            "NameInSource": "Date",
+            "Alias": "Date",
+            "Type": "System.DateTime"
+          },
+          "2": {
+            "Name": "BreakdownType",
+            "Index": -1,
+            "NameInSource": "BreakdownType",
+            "Alias": "BreakdownType",
+            "Type": "System.Int32"
+          },
+          "3": {
+            "Name": "ClassificationTypeId",
+            "Index": -1,
+            "NameInSource": "ClassificationTypeId",
+            "Alias": "ClassificationTypeId",
+            "Type": "System.Int32"
+          },
+          "4": {
+            "Name": "ClassificationTypeCode",
+            "Index": -1,
+            "NameInSource": "ClassificationTypeCode",
+            "Alias": "ClassificationTypeCode",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "ClassificationTypeName",
+            "Index": -1,
+            "NameInSource": "ClassificationTypeName",
+            "Alias": "ClassificationTypeName",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "ClassificationCode",
+            "Index": -1,
+            "NameInSource": "ClassificationCode",
+            "Alias": "ClassificationCode",
+            "Type": "System.String"
+          },
+          "7": {
+            "Name": "ClassificationName",
+            "Index": -1,
+            "NameInSource": "ClassificationName",
+            "Alias": "ClassificationName",
+            "Type": "System.String"
+          },
+          "8": {
+            "Name": "Level",
+            "Index": -1,
+            "NameInSource": "Level",
+            "Alias": "Level",
+            "Type": "System.Int32"
+          },
+          "9": {
+            "Name": "HasParent",
+            "Index": -1,
+            "NameInSource": "HasParent",
+            "Alias": "HasParent",
+            "Type": "System.Boolean"
+          },
+          "10": {
+            "Name": "HasChild",
+            "Index": -1,
+            "NameInSource": "HasChild",
+            "Alias": "HasChild",
+            "Type": "System.Boolean"
+          },
+          "11": {
+            "Name": "MarketValueInPortfolioCcy",
+            "Index": -1,
+            "NameInSource": "MarketValueInPortfolioCcy",
+            "Alias": "MarketValueInPortfolioCcy",
+            "Type": "System.Decimal"
+          },
+          "12": {
+            "Name": "Weight",
+            "Index": -1,
+            "NameInSource": "Weight",
+            "Alias": "Weight",
+            "Type": "System.Decimal"
+          },
+          "13": {
+            "Name": "BenchmarkWeight",
+            "Index": -1,
+            "NameInSource": "BenchmarkWeight",
+            "Alias": "BenchmarkWeight",
+            "Type": "System.Decimal"
+          },
+          "14": {
+            "Name": "ParentClassificationCode",
+            "Index": -1,
+            "NameInSource": "ParentClassificationCode",
+            "Alias": "ParentClassificationCode",
+            "Type": "System.String"
+          },
+          "15": {
+            "Name": "ParentClassificationName",
+            "Index": -1,
+            "NameInSource": "ParentClassificationName",
+            "Alias": "ParentClassificationName",
+            "Type": "System.String"
+          },
+          "16": {
+            "Name": "CountryId",
+            "Index": -1,
+            "NameInSource": "CountryId",
+            "Alias": "CountryId",
+            "Type": "System.Int32"
+          },
+          "17": {
+            "Name": "CurrencyId",
+            "Index": -1,
+            "NameInSource": "CurrencyId",
+            "Alias": "CurrencyId",
+            "Type": "System.Int32"
+          }
+        },
+        "NameInSource": "FundProcessUniverse.lastBreakdowns"
+      },
+      "6": {
+        "Ident": "StiDataTableSource",
         "Name": "Breakdowns",
         "Alias": "Breakdowns",
         "Key": "f01661c4ad3c4eb0ab9b008ba186926d",
@@ -803,11 +946,55 @@
             "Alias": "Weight",
             "Type": "System.Decimal",
             "Key": "4c4697b6bc44436eb3348aac8b18d09f"
+          },
+          "12": {
+            "Name": "BenchmarkWeight",
+            "Index": -1,
+            "NameInSource": "BenchmarkWeight",
+            "Alias": "BenchmarkWeight",
+            "Type": "System.Decimal"
+          },
+          "13": {
+            "Name": "BreakdownType",
+            "Index": -1,
+            "NameInSource": "BreakdownType",
+            "Alias": "BreakdownType",
+            "Type": "System.Int32"
+          },
+          "14": {
+            "Name": "ParentClassificationCode",
+            "Index": -1,
+            "NameInSource": "ParentClassificationCode",
+            "Alias": "ParentClassificationCode",
+            "Type": "System.String"
+          },
+          "15": {
+            "Name": "ParentClassificationName",
+            "Index": -1,
+            "NameInSource": "ParentClassificationName",
+            "Alias": "ParentClassificationName",
+            "Type": "System.String"
+          },
+          "16": {
+            "Name": "CountryId",
+            "Index": -1,
+            "NameInSource": "CountryId",
+            "Alias": "CountryId",
+            "Type": "System.Int32",
+            "Key": "c05feed37c5d4c42b34b7d63459dac3e"
+          },
+          "17": {
+            "Name": "CurrencyId",
+            "Index": -1,
+            "NameInSource": "CurrencyId",
+            "Alias": "CurrencyId",
+            "Type": "System.Int32",
+            "Key": "d857075276a94b1a9fb8936b5d1d263b"
           }
         },
         "NameInSource": "FundProcessUniverse.Breakdowns"
       },
-      "6": {
+      "7": {
         "Ident": "StiDataTableSource",
         "Name": "Currencies",
         "Alias": "Currencies",
@@ -830,7 +1017,7 @@
         },
         "NameInSource": "FundProcessUniverse.Currencies"
       },
-      "7": {
+      "8": {
         "Ident": "StiDataTableSource",
         "Name": "InternalShareClasses",
         "Alias": "InternalShareClasses",
@@ -1023,7 +1210,7 @@
         },
         "NameInSource": "FundProcessUniverse.InternalShareClasses"
       },
-      "8": {
+      "9": {
         "Ident": "StiDataTableSource",
         "Name": "SecuritySummaries",
         "Alias": "SecuritySummaries",
@@ -1075,7 +1262,7 @@
         },
         "NameInSource": "FundProcessUniverse.SecuritySummaries"
       },
-      "9": {
+      "10": {
         "Ident": "StiDataTableSource",
         "Name": "Securities",
         "Alias": "Securities",
@@ -1138,22 +1325,6 @@
             "Key": "35997b5e7e554e1db89b278cff4d70c5"
           },
           "7": {
-            "Name": "AssetClassificationCode",
-            "Index": -1,
-            "NameInSource": "AssetClassificationCode",
-            "Alias": "AssetClassificationCode",
-            "Type": "System.String",
-            "Key": "80b4f0e112774fa287ada7297a8df434"
-          },
-          "8": {
-            "Name": "AssetClassification",
-            "Index": -1,
-            "NameInSource": "AssetClassification",
-            "Alias": "AssetClassification",
-            "Type": "System.String",
-            "Key": "faed8fc7977d44ef8d1960ba785e6968"
-          },
-          "9": {
             "Name": "IsOtc",
             "Index": -1,
             "NameInSource": "IsOtc",
@@ -1161,7 +1332,7 @@
             "Type": "System.Boolean",
             "Key": "f117b64e46144d3b83f940f1e6e9ffa2"
           },
-          "10": {
+          "8": {
             "Name": "PriceDate",
             "Index": -1,
             "NameInSource": "PriceDate",
@@ -1169,13 +1340,27 @@
             "Type": "System.DateTime",
             "Key": "b9666e54a982417587852118076ccce0"
           },
-          "11": {
+          "9": {
             "Name": "Price",
             "Index": -1,
             "NameInSource": "Price",
             "Alias": "Price",
             "Type": "System.Decimal",
             "Key": "904985d474724e0eae1c21e1cb98e438"
+          },
+          "10": {
+            "Name": "GicsClassificationCode",
+            "Index": -1,
+            "NameInSource": "GicsClassificationCode",
+            "Alias": "GicsClassificationCode",
+            "Type": "System.String"
+          },
+          "11": {
+            "Name": "GicsClassification",
+            "Index": -1,
+            "NameInSource": "GicsClassification",
+            "Alias": "GicsClassification",
+            "Type": "System.String"
           },
           "12": {
             "Name": "SectorClassificationCode",
@@ -1186,6 +1371,22 @@
             "Key": "8b7a4aa7edcc4cf0b824d74d848154ed"
           },
           "13": {
+            "Name": "AssetClassification",
+            "Index": -1,
+            "NameInSource": "AssetClassification",
+            "Alias": "AssetClassification",
+            "Type": "System.String",
+            "Key": "faed8fc7977d44ef8d1960ba785e6968"
+          },
+          "14": {
+            "Name": "AssetClassificationCode",
+            "Index": -1,
+            "NameInSource": "AssetClassificationCode",
+            "Alias": "AssetClassificationCode",
+            "Type": "System.String",
+            "Key": "80b4f0e112774fa287ada7297a8df434"
+          },
+          "15": {
             "Name": "SectorClassification",
             "Index": -1,
             "NameInSource": "SectorClassification",
@@ -1193,7 +1394,7 @@
             "Type": "System.String",
             "Key": "2784b7baf51140eab9fdeb58a82c79a1"
           },
-          "14": {
+          "16": {
             "Name": "GeographicalClassificationCode",
             "Index": -1,
             "NameInSource": "GeographicalClassificationCode",
@@ -1201,7 +1402,7 @@
             "Type": "System.String",
             "Key": "25b0ee01886e44d3ae72c8dd0f8d4300"
           },
-          "15": {
+          "17": {
             "Name": "GeographicalClassification",
             "Index": -1,
             "NameInSource": "GeographicalClassification",
@@ -1209,7 +1410,7 @@
             "Type": "System.String",
             "Key": "d2b3e7267f244b4283704db887e5c1a7"
           },
-          "16": {
+          "18": {
             "Name": "Custom1ClassificationCode",
             "Index": -1,
             "NameInSource": "Custom1ClassificationCode",
@@ -1217,7 +1418,7 @@
             "Type": "System.String",
             "Key": "01ae0748a0534ac39526380926a36560"
           },
-          "17": {
+          "19": {
             "Name": "Custom1Classification",
             "Index": -1,
             "NameInSource": "Custom1Classification",
@@ -1225,7 +1426,7 @@
             "Type": "System.String",
             "Key": "2f4b551cc77847a8b9cf543618d31330"
           },
-          "18": {
+          "20": {
             "Name": "Country",
             "Index": -1,
             "NameInSource": "Country",
@@ -1233,7 +1434,7 @@
             "Type": "System.String",
             "Key": "08e3955ba32241c088c86fdf90fc67d6"
           },
-          "19": {
+          "21": {
             "Name": "CountryCode",
             "Index": -1,
             "NameInSource": "CountryCode",
@@ -1241,7 +1442,7 @@
             "Type": "System.String",
             "Key": "6482636e822b405e812e0365970c8bf5"
           },
-          "20": {
+          "22": {
             "Name": "GicsSector",
             "Index": -1,
             "NameInSource": "GicsSector",
@@ -1249,7 +1450,7 @@
             "Type": "System.String",
             "Key": "ff38435d0ad94a849cd649b9443f0d91"
           },
-          "21": {
+          "23": {
             "Name": "IcbSector",
             "Index": -1,
             "NameInSource": "IcbSector",
@@ -1257,7 +1458,7 @@
             "Type": "System.String",
             "Key": "7acdaa3afbe04a72a1785465ccf1e146"
           },
-          "22": {
+          "24": {
             "Name": "RegionCode",
             "Index": -1,
             "NameInSource": "RegionCode",
@@ -1265,7 +1466,7 @@
             "Type": "System.String",
             "Key": "dc63b17b0ad345afad8de60d8144c688"
           },
-          "23": {
+          "25": {
             "Name": "Region",
             "Index": -1,
             "NameInSource": "Region",
@@ -1273,7 +1474,7 @@
             "Type": "System.String",
             "Key": "917cf12b32db466db80f3d960be4a3ec"
           },
-          "24": {
+          "26": {
             "Name": "Volatility1W1Y",
             "Index": -1,
             "NameInSource": "Volatility1W1Y",
@@ -1281,7 +1482,7 @@
             "Type": "System.Decimal",
             "Key": "ba8ae954f3944222b2b45220404ec8bf"
           },
-          "25": {
+          "27": {
             "Name": "StrikePrice",
             "Index": -1,
             "NameInSource": "StrikePrice",
@@ -1289,7 +1490,7 @@
             "Type": "System.Decimal",
             "Key": "86c34926cb134ff7a9959fcb078f997c"
           },
-          "26": {
+          "28": {
             "Name": "ContractSize",
             "Index": -1,
             "NameInSource": "ContractSize",
@@ -1297,7 +1498,7 @@
             "Type": "System.Decimal",
             "Key": "fceee15b150c45ac8a80f1455005b5ed"
           },
-          "27": {
+          "29": {
             "Name": "PutCall",
             "Index": -1,
             "NameInSource": "PutCall",
@@ -1305,7 +1506,7 @@
             "Type": "System.String",
             "Key": "16a26a34f03345d799ff9eed9364d1aa"
           },
-          "28": {
+          "30": {
             "Name": "MaturityDate",
             "Index": -1,
             "NameInSource": "MaturityDate",
@@ -1316,7 +1517,7 @@
         },
         "NameInSource": "FundProcessUniverse.Securities"
       },
-      "10": {
+      "11": {
         "Ident": "StiDataTableSource",
         "Name": "Performances",
         "Alias": "Performances",
@@ -1605,7 +1806,7 @@
         },
         "NameInSource": "FundProcessUniverse.Performances"
       },
-      "11": {
+      "12": {
         "Ident": "StiDataTableSource",
         "Name": "AnnualizedVolatilities",
         "Alias": "AnnualizedVolatilities",
@@ -1894,7 +2095,7 @@
         },
         "NameInSource": "FundProcessUniverse.AnnualizedVolatilities"
       },
-      "12": {
+      "13": {
         "Ident": "StiDataTableSource",
         "Name": "AnnualPerformances",
         "Alias": "AnnualPerformances",
@@ -1959,7 +2160,7 @@
         },
         "NameInSource": "FundProcessUniverse.AnnualPerformances"
       },
-      "13": {
+      "14": {
         "Ident": "StiDataTableSource",
         "Name": "MonthlyPerformances",
         "Alias": "MonthlyPerformances",
@@ -2032,7 +2233,7 @@
         },
         "NameInSource": "FundProcessUniverse.monthlyPerformances"
       },
-      "14": {
+      "15": {
         "Ident": "StiDataTableSource",
         "Name": "LastStatistics",
         "Alias": "LastStatistics",
@@ -2257,7 +2458,47 @@
         },
         "NameInSource": "FundProcessUniverse.LastStatistics"
       },
-      "15": {
+      "16": {
+        "Ident": "StiDataTableSource",
+        "Name": "BenchmarkLastPositions",
+        "Alias": "BenchmarkLastPositions",
+        "Key": "8afc7f504b8c45138c8f9c70872e7d03",
+        "Columns": {
+          "0": {
+            "Name": "PortfolioId",
+            "Index": -1,
+            "NameInSource": "PortfolioId",
+            "Alias": "PortfolioId",
+            "Type": "System.Int32",
+            "Key": "44f903f76dab4cad8be8772f788ad6a1"
+          },
+          "1": {
+            "Name": "Date",
+            "Index": -1,
+            "NameInSource": "Date",
+            "Alias": "Date",
+            "Type": "System.DateTime",
+            "Key": "526dd3984e754e2a993983177329d4ba"
+          },
+          "2": {
+            "Name": "SecurityId",
+            "Index": -1,
+            "NameInSource": "SecurityId",
+            "Alias": "SecurityId",
+            "Type": "System.Int32",
+            "Key": "3e8cacd2538c4029be63f51f27575d80"
+          },
+          "3": {
+            "Name": "Weight",
+            "Index": -1,
+            "NameInSource": "Weight",
+            "Alias": "Weight",
+            "Type": "System.Decimal"
+          }
+        },
+        "NameInSource": "FundProcessUniverse.benchmarkLastPositions"
+      },
+      "17": {
         "Ident": "StiDataTableSource",
         "Name": "CashMovements",
         "Alias": "CashMovements",
@@ -2350,7 +2591,7 @@
         },
         "NameInSource": "FundProcessUniverse.CashMovements"
       },
-      "16": {
+      "18": {
         "Ident": "StiDataTableSource",
         "Name": "Counterparties",
         "Alias": "Counterparties",
@@ -2423,7 +2664,7 @@
         },
         "NameInSource": "FundProcessUniverse.Counterparties"
       },
-      "17": {
+      "19": {
         "Ident": "StiDataTableSource",
         "Name": "Investors",
         "Alias": "Investors",
@@ -2552,7 +2793,7 @@
         },
         "NameInSource": "FundProcessUniverse.Investors"
       },
-      "18": {
+      "20": {
         "Ident": "StiDataTableSource",
         "Name": "Roles",
         "Alias": "Roles",
@@ -2625,7 +2866,7 @@
         },
         "NameInSource": "FundProcessUniverse.Roles"
       },
-      "19": {
+      "21": {
         "Ident": "StiDataTableSource",
         "Name": "DueDiligences",
         "Alias": "DueDiligences",
@@ -2730,7 +2971,7 @@
         },
         "NameInSource": "FundProcessUniverse.DueDiligences"
       },
-      "20": {
+      "22": {
         "Ident": "StiDataTableSource",
         "Name": "DueDiligenceTasks",
         "Alias": "DueDiligenceTasks",
@@ -2807,7 +3048,7 @@
         },
         "NameInSource": "FundProcessUniverse.DueDiligenceTasks"
       },
-      "21": {
+      "23": {
         "Ident": "StiDataTableSource",
         "Name": "Entities",
         "Alias": "Entities",
@@ -3000,7 +3241,7 @@
         },
         "NameInSource": "FundProcessUniverse.Entities"
       },
-      "22": {
+      "24": {
         "Ident": "StiDataTableSource",
         "Name": "InvestorConstraints",
         "Alias": "InvestorConstraints",
@@ -3081,7 +3322,7 @@
         },
         "NameInSource": "FundProcessUniverse.InvestorConstraints"
       },
-      "23": {
+      "25": {
         "Ident": "StiDataTableSource",
         "Name": "Sicavs",
         "Alias": "Sicavs",
@@ -3108,7 +3349,7 @@
             "Index": -1,
             "NameInSource": "LegalForm",
             "Alias": "LegalForm",
-            "Type": "System.Nullable`1[System.Int32]",
+            "Type": "System.Int32",
             "Key": "f1ce038e701e41ff889d28a32a6947cb"
           },
           "3": {
@@ -3116,7 +3357,7 @@
             "Index": -1,
             "NameInSource": "SicavType",
             "Alias": "SicavType",
-            "Type": "System.Nullable`1[System.Int32]",
+            "Type": "System.Int32",
             "Key": "15fa0bb2929a4dfe824e1f83b4f98d8e"
           },
           "4": {
@@ -3154,7 +3395,7 @@
         },
         "NameInSource": "FundProcessUniverse.Sicavs"
       },
-      "24": {
+      "26": {
         "Ident": "StiDataTableSource",
         "Name": "SicavRoles",
         "Alias": "SicavRoles",
@@ -3211,7 +3452,7 @@
         },
         "NameInSource": "FundProcessUniverse.SicavRoles"
       },
-      "25": {
+      "27": {
         "Ident": "StiDataTableSource",
         "Name": "ForecastedCashFlows",
         "Alias": "ForecastedCashFlows",
@@ -3255,7 +3496,7 @@
         },
         "NameInSource": "FundProcessUniverse.ForecastedCashFlows"
       },
-      "26": {
+      "28": {
         "Ident": "StiDataTableSource",
         "Name": "LastCashMovements",
         "Alias": "LastCashMovements",
@@ -3348,7 +3589,7 @@
         },
         "NameInSource": "FundProcessUniverse.LastCashMovements"
       },
-      "27": {
+      "29": {
         "Ident": "StiDataTableSource",
         "Name": "LastSecurityTransactions",
         "Alias": "LastSecurityTransactions",
@@ -3434,7 +3675,7 @@
         },
         "NameInSource": "FundProcessUniverse.LastSecurityTransactions"
       },
-      "28": {
+      "30": {
         "Ident": "StiDataTableSource",
         "Name": "PortfolioClassifications",
         "Alias": "PortfolioClassifications",
@@ -3478,7 +3719,7 @@
         },
         "NameInSource": "FundProcessUniverse.PortfolioClassifications"
       },
-      "29": {
+      "31": {
         "Ident": "StiDataTableSource",
         "Name": "PortfolioHistValues",
         "Alias": "PortfolioHistValues",
@@ -3559,7 +3800,7 @@
         },
         "NameInSource": "FundProcessUniverse.PortfolioHistValues"
       },
-      "30": {
+      "32": {
         "Ident": "StiDataTableSource",
         "Name": "SecurityTransactions",
         "Alias": "SecurityTransactions",
@@ -3652,7 +3893,7 @@
         },
         "NameInSource": "FundProcessUniverse.SecurityTransactions"
       },
-      "31": {
+      "33": {
         "Ident": "StiDataTableSource",
         "Name": "ShareClassHistValues",
         "Alias": "ShareClassHistValues",
@@ -3683,6 +3924,14 @@
             "Key": "c4e405d2802d4b66b2a022b2d6a06d95"
           },
           "3": {
+            "Name": "AdjustedNav",
+            "Index": -1,
+            "NameInSource": "AdjustedNav",
+            "Alias": "AdjustedNav",
+            "Type": "System.Nullable`1[System.Double]",
+            "Key": "372c582a23ec49a5b3f045c166e52752"
+          },
+          "4": {
             "Name": "BenchmarkAdjustedPrice",
             "Index": -1,
             "NameInSource": "BenchmarkAdjustedPrice",
@@ -3690,7 +3939,7 @@
             "Type": "System.Nullable`1[System.Double]",
             "Key": "37bbf1ef55464149a2de6247409288c5"
           },
-          "4": {
+          "5": {
             "Name": "Tna",
             "Index": -1,
             "NameInSource": "Tna",
@@ -3698,7 +3947,7 @@
             "Type": "System.Nullable`1[System.Double]",
             "Key": "bf3c2aa8ee55452b809d54db9a0a468a"
           },
-          "5": {
+          "6": {
             "Name": "Nbs",
             "Index": -1,
             "NameInSource": "Nbs",
@@ -3706,7 +3955,7 @@
             "Type": "System.Nullable`1[System.Double]",
             "Key": "c8be643ae4f14449ad5aab19313f2e65"
           },
-          "6": {
+          "7": {
             "Name": "Sub",
             "Index": -1,
             "NameInSource": "Sub",
@@ -3714,7 +3963,7 @@
             "Type": "System.Nullable`1[System.Double]",
             "Key": "33eb5b7d7f4e45f089abbf7c441543b8"
           },
-          "7": {
+          "8": {
             "Name": "Red",
             "Index": -1,
             "NameInSource": "Red",
@@ -3725,7 +3974,7 @@
         },
         "NameInSource": "FundProcessUniverse.ShareClassHistValues"
       },
-      "32": {
+      "34": {
         "Ident": "StiDataTableSource",
         "Name": "Notes",
         "Alias": "Notes",
@@ -3769,7 +4018,7 @@
         },
         "NameInSource": "FundProcessUniverse.notes"
       },
-      "33": {
+      "35": {
         "Ident": "StiDataTableSource",
         "Name": "PortfolioNotes",
         "Alias": "PortfolioNotes",
@@ -3825,7 +4074,7 @@
         },
         "NameInSource": "FundProcessUniverse.PortfolioNotes"
       },
-      "34": {
+      "36": {
         "Ident": "StiDataTableSource",
         "Name": "SicavNotes",
         "Alias": "SicavNotes",
@@ -3880,7 +4129,7 @@
         },
         "NameInSource": "FundProcessUniverse.SicavNotes"
       },
-      "35": {
+      "37": {
         "Ident": "StiDataTableSource",
         "Name": "TimeFrames",
         "Alias": "TimeFrames",
@@ -3945,7 +4194,7 @@
         },
         "NameInSource": "FundProcessUniverse.TimeFrames"
       },
-      "36": {
+      "38": {
         "Ident": "StiDataTableSource",
         "Name": "LastAccountBalances",
         "Alias": "LastAccountBalances",
@@ -4024,7 +4273,7 @@
         },
         "NameInSource": "FundProcessUniverse.LastAccountBalances"
       },
-      "37": {
+      "39": {
         "Ident": "StiDataTableSource",
         "Name": "LastFinancialStatements",
         "Alias": "LastFinancialStatements",
@@ -4361,7 +4610,7 @@
         },
         "NameInSource": "FundProcessUniverse.LastFinancialStatements"
       },
-      "38": {
+      "40": {
         "Ident": "StiDataTableSource",
         "Name": "FinancialStatementsFxRates",
         "Alias": "FinancialStatementsFxRates",
@@ -4398,7 +4647,7 @@
         },
         "NameInSource": "FundProcessUniverse.FinancialStatementsFxRates"
       },
-      "39": {
+      "41": {
         "Ident": "StiDataTableSource",
         "Name": "FinancialStatements",
         "Alias": "FinancialStatements",
@@ -4695,7 +4944,7 @@
         },
         "NameInSource": "FundProcessUniverse.FinancialStatements"
       },
-      "40": {
+      "42": {
         "Ident": "StiDataTableSource",
         "Name": "ShareClassStatements",
         "Alias": "ShareClassStatements",
@@ -4762,7 +5011,7 @@
         },
         "NameInSource": "FundProcessUniverse.ShareClassStatements"
       },
-      "41": {
+      "43": {
         "Ident": "StiDataTableSource",
         "Name": "SecurityClassifications",
         "Alias": "SecurityClassifications",
@@ -4824,7 +5073,7 @@
         },
         "NameInSource": "FundProcessUniverse.SecurityClassifications"
       },
-      "42": {
+      "44": {
         "Ident": "StiDataTableSource",
         "Name": "WorldMap",
         "Alias": "WorldMap",
@@ -4854,7 +5103,7 @@
         },
         "NameInSource": "FundProcessUniverse.WorldMap"
       },
-      "43": {
+      "45": {
         "Ident": "StiVirtualSource",
         "Name": "ReportShareClass",
         "Alias": "ReportShareClass",
@@ -4866,7 +5115,7 @@
             "NameInSource": "Id",
             "Alias": "Id",
             "Type": "System.Int32",
-            "Key": "5e59908f188041cc8bc6663efa76b4b2"
+            "Key": "b31e0dca32d74a7e97f713e06cd453e1"
           },
           "1": {
             "Name": "InternalCode",
@@ -4874,7 +5123,7 @@
             "NameInSource": "InternalCode",
             "Alias": "InternalCode",
             "Type": "System.String",
-            "Key": "5a74d33fcc2e4610961ea4336f0c8f76"
+            "Key": "1c495c95bad24178a582967a593a41e7"
           },
           "2": {
             "Name": "PortfolioId",
@@ -4882,7 +5131,15 @@
             "NameInSource": "PortfolioId",
             "Alias": "PortfolioId",
             "Type": "System.Int32",
-            "Key": "d80125fb73eb45a3ab6c06e7cf2ded67"
+            "Key": "1d523c36bece45f69c1a3a8dcc5a1b82"
+          },
+          "3": {
+            "Name": "InceptionDateMin",
+            "Index": -1,
+            "NameInSource": "InceptionDateMin",
+            "Alias": "InceptionDateMin",
+            "Type": "System.DateTime",
+            "Key": "1dc43ad5f5fb4adb950031f7d7838326"
           }
         },
         "NameInSource": "InternalShareClasses",
@@ -4904,10 +5161,13 @@
           "5": "InternalCode",
           "6": "PortfolioId",
           "7": "",
-          "8": "PortfolioId"
+          "8": "PortfolioId",
+          "9": "InceptionDate",
+          "10": "Min",
+          "11": "InceptionDate.Min"
         }
       },
-      "44": {
+      "46": {
         "Ident": "StiVirtualSource",
         "Name": "CurrencyBreakdown",
         "Alias": "CurrencyBreakdown",
@@ -4946,7 +5206,7 @@
           "2": "Weight.Sum"
         }
       },
-      "45": {
+      "47": {
         "Ident": "StiVirtualSource",
         "Name": "SectorBreakdown",
         "Alias": "SectorBreakdown",
@@ -4999,7 +5259,7 @@
           "5": "Weight.Sum"
         }
       },
-      "46": {
+      "48": {
         "Ident": "StiVirtualSource",
         "Name": "CountryBreakdown",
         "Alias": "CountryBreakdown",
@@ -5050,6 +5310,121 @@
           "4": "Sum",
           "5": "Weight.Sum"
         }
+      },
+      "49": {
+        "Ident": "StiDataTableSource",
+        "Name": "PortfolioMacroComputations",
+        "Alias": "PortfolioMacroComputations",
+        "Key": "0538408f82d249c2ad749ecb8f99da68",
+        "Columns": {
+          "0": {
+            "Name": "PortfolioId",
+            "Index": -1,
+            "NameInSource": "PortfolioId",
+            "Alias": "PortfolioId",
+            "Type": "System.Int32"
+          },
+          "1": {
+            "Name": "MacroCode",
+            "Index": -1,
+            "NameInSource": "MacroCode",
+            "Alias": "MacroCode",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "Type",
+            "Index": -1,
+            "NameInSource": "Type",
+            "Alias": "Type",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "Label",
+            "Index": -1,
+            "NameInSource": "Label",
+            "Alias": "Label",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "Code",
+            "Index": -1,
+            "NameInSource": "Code",
+            "Alias": "Code",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "ParentSectionPath",
+            "Index": -1,
+            "NameInSource": "ParentSectionPath",
+            "Alias": "ParentSectionPath",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "ParentListCode",
+            "Index": -1,
+            "NameInSource": "ParentListCode",
+            "Alias": "ParentListCode",
+            "Type": "System.String"
+          },
+          "7": {
+            "Name": "ParentRowCode",
+            "Index": -1,
+            "NameInSource": "ParentRowCode",
+            "Alias": "ParentRowCode",
+            "Type": "System.String"
+          },
+          "8": {
+            "Name": "Text",
+            "Index": -1,
+            "NameInSource": "Text",
+            "Alias": "Text",
+            "Type": "System.String"
+          },
+          "9": {
+            "Name": "Date",
+            "Index": -1,
+            "NameInSource": "Date",
+            "Alias": "Date",
+            "Type": "System.DateTime"
+          },
+          "10": {
+            "Name": "Number",
+            "Index": -1,
+            "NameInSource": "Number",
+            "Alias": "Number",
+            "Type": "System.Nullable`1[System.Decimal]"
+          },
+          "11": {
+            "Name": "Percentage",
+            "Index": -1,
+            "NameInSource": "Percentage",
+            "Alias": "Percentage",
+            "Type": "System.Nullable`1[System.Decimal]"
+          },
+          "12": {
+            "Name": "Sentiment",
+            "Index": -1,
+            "NameInSource": "Sentiment",
+            "Alias": "Sentiment",
+            "Type": "System.String"
+          },
+          "13": {
+            "Name": "Direction",
+            "Index": -1,
+            "NameInSource": "Direction",
+            "Alias": "Direction",
+            "Type": "System.String"
+          },
+          "14": {
+            "Name": "MacroExecutionDate",
+            "Index": -1,
+            "NameInSource": "MacroExecutionDate",
+            "Alias": "MacroExecutionDate",
+            "Type": "System.DateTime",
+            "Key": "3c428db24a7f4cd2892a752d5d187317"
+          }
+        },
+        "NameInSource": "FundProcessUniverse.portfolioMacroComputations"
       }
     },
     "Databases": {
@@ -5276,20 +5651,6 @@
         "ChildSource": "Sicavs"
       },
       "15": {
-        "Name": "ManCo",
-        "ChildColumns": {
-          "0": "ManCoEntityId"
-        },
-        "ParentColumns": {
-          "0": "Id"
-        },
-        "NameInSource": "SicavMancoEntity",
-        "Alias": "ManCo",
-        "Key": "e094895b7b0b4933819d3ae79ecaef55",
-        "ParentSource": "Entities",
-        "ChildSource": "Sicavs"
-      },
-      "16": {
         "Name": "RoleProviderEntity",
         "ChildColumns": {
           "0": "RoleProviderEntityId"
@@ -5303,7 +5664,7 @@
         "ParentSource": "Entities",
         "ChildSource": "SicavRoles"
       },
-      "17": {
+      "16": {
         "Name": "SicavEntity",
         "ChildColumns": {
           "0": "SicavEntityId"
@@ -5317,7 +5678,7 @@
         "ParentSource": "Entities",
         "ChildSource": "SicavRoles"
       },
-      "18": {
+      "17": {
         "Name": "InternalShareClass",
         "ChildColumns": {
           "0": "ShareClassId"
@@ -5331,7 +5692,7 @@
         "ParentSource": "InternalShareClasses",
         "ChildSource": "ShareClassStatements"
       },
-      "19": {
+      "18": {
         "Name": "Portfolio",
         "ChildColumns": {
           "0": "PortfolioId"
@@ -5345,7 +5706,7 @@
         "ParentSource": "Portfolios",
         "ChildSource": "ShareClassStatements"
       },
-      "20": {
+      "19": {
         "Name": "Entity",
         "ChildColumns": {
           "0": "EntityId"
@@ -5359,7 +5720,7 @@
         "ParentSource": "Entities",
         "ChildSource": "Counterparties"
       },
-      "21": {
+      "20": {
         "Name": "Portfolio",
         "ChildColumns": {
           "0": "PortfolioId"
@@ -5373,7 +5734,7 @@
         "ParentSource": "Portfolios",
         "ChildSource": "PortfolioHistValues"
       },
-      "22": {
+      "21": {
         "Name": "DueDiligence",
         "ChildColumns": {
           "0": "DueDiligenceId"
@@ -5388,7 +5749,7 @@
         "ParentSource": "DueDiligences",
         "ChildSource": "DueDiligenceTasks"
       },
-      "23": {
+      "22": {
         "Name": "Entity",
         "ChildColumns": {
           "0": "EntityId"
@@ -5403,7 +5764,7 @@
         "ParentSource": "Entities",
         "ChildSource": "DueDiligences"
       },
-      "24": {
+      "23": {
         "Name": "Portfolio",
         "ChildColumns": {
           "0": "SubFundId"
@@ -5418,7 +5779,7 @@
         "ParentSource": "Portfolios",
         "ChildSource": "ForecastedCashFlows"
       },
-      "25": {
+      "24": {
         "Name": "Role",
         "ChildColumns": {
           "0": "EntityId"
@@ -5432,7 +5793,7 @@
         "ParentSource": "Roles",
         "ChildSource": "DueDiligences"
       },
-      "26": {
+      "25": {
         "Name": "Manager1Role",
         "ChildColumns": {
           "0": "Manager1EntityId"
@@ -5446,7 +5807,7 @@
         "ParentSource": "Roles",
         "ChildSource": "Portfolios"
       },
-      "27": {
+      "26": {
         "Name": "Investor",
         "ChildColumns": {
           "0": "EntityId"
@@ -5460,7 +5821,7 @@
         "ParentSource": "Investors",
         "ChildSource": "DueDiligences"
       },
-      "28": {
+      "27": {
         "Name": "Counterparty",
         "ChildColumns": {
           "0": "EntityId"
@@ -5474,7 +5835,7 @@
         "ParentSource": "Counterparties",
         "ChildSource": "DueDiligences"
       },
-      "29": {
+      "28": {
         "Name": "DueDiligence",
         "ChildColumns": {
           "0": "EntityId"
@@ -5488,7 +5849,7 @@
         "ParentSource": "DueDiligences",
         "ChildSource": "Investors"
       },
-      "30": {
+      "29": {
         "Name": "Entity",
         "ChildColumns": {
           "0": "EntityId"
@@ -5503,7 +5864,7 @@
         "ParentSource": "Entities",
         "ChildSource": "Investors"
       },
-      "31": {
+      "30": {
         "Name": "Security",
         "ChildColumns": {
           "0": "SecurityId"
@@ -5518,7 +5879,7 @@
         "ParentSource": "Securities",
         "ChildSource": "SecurityClassifications"
       },
-      "32": {
+      "31": {
         "Name": "PrimaryAdvisor",
         "ChildColumns": {
           "0": "PrimaryInternalAdvisorEntityId"
@@ -5532,7 +5893,7 @@
         "ParentSource": "Entities",
         "ChildSource": "Investors"
       },
-      "33": {
+      "32": {
         "Name": "Responsible",
         "ChildColumns": {
           "0": "ResponsibleEntityId"
@@ -5546,7 +5907,7 @@
         "ParentSource": "Entities",
         "ChildSource": "DueDiligences"
       },
-      "34": {
+      "33": {
         "Name": "Entity",
         "ChildColumns": {
           "0": "EntityId"
@@ -5560,7 +5921,7 @@
         "ParentSource": "Entities",
         "ChildSource": "Roles"
       },
-      "35": {
+      "34": {
         "Name": "Sicav",
         "ChildColumns": {
           "0": "SicavEntityId"
@@ -5574,7 +5935,7 @@
         "ParentSource": "Sicavs",
         "ChildSource": "Portfolios"
       },
-      "36": {
+      "35": {
         "Name": "TimeFrames",
         "ChildColumns": {
           "0": "Id"
@@ -5588,7 +5949,7 @@
         "ParentSource": "TimeFrames",
         "ChildSource": "Portfolios"
       },
-      "37": {
+      "36": {
         "Name": "Portfolio",
         "ChildColumns": {
           "0": "PortfolioId"
@@ -5603,7 +5964,7 @@
         "ParentSource": "Portfolios",
         "ChildSource": "LastStatistics"
       },
-      "38": {
+      "37": {
         "Name": "Security",
         "ChildColumns": {
           "0": "SecurityId"
@@ -5617,7 +5978,7 @@
         "ParentSource": "Securities",
         "ChildSource": "LastStatistics"
       },
-      "39": {
+      "38": {
         "Name": "Currency",
         "ChildColumns": {
           "0": "CcyIso"
@@ -5631,7 +5992,7 @@
         "ParentSource": "Currencies",
         "ChildSource": "SecuritySummaries"
       },
-      "40": {
+      "39": {
         "Name": "Sicav",
         "ChildColumns": {
           "0": "SicavEntityId"
@@ -5645,7 +6006,7 @@
         "ParentSource": "Sicavs",
         "ChildSource": "PortfolioSummaries"
       },
-      "41": {
+      "40": {
         "Name": "InternalShareClass",
         "ChildColumns": {
           "0": "PrimaryShareClassId"
@@ -5660,7 +6021,7 @@
         "ParentSource": "InternalShareClasses",
         "ChildSource": "PortfolioSummaries"
       },
-      "42": {
+      "41": {
         "Name": "Portfolio",
         "ChildColumns": {
           "0": "PortfolioId"
@@ -5674,7 +6035,7 @@
         "ParentSource": "Portfolios",
         "ChildSource": "PortfolioNotes"
       },
-      "43": {
+      "42": {
         "Name": "Performances",
         "ChildColumns": {
           "0": "Id"
@@ -5688,7 +6049,7 @@
         "ParentSource": "Performances",
         "ChildSource": "InternalShareClasses"
       },
-      "44": {
+      "43": {
         "Name": "Volatilities",
         "ChildColumns": {
           "0": "Id"
@@ -5702,7 +6063,7 @@
         "ParentSource": "AnnualizedVolatilities",
         "ChildSource": "InternalShareClasses"
       },
-      "45": {
+      "44": {
         "Name": "Security",
         "ChildColumns": {
           "0": "SecurityId"
@@ -5716,7 +6077,7 @@
         "ParentSource": "Securities",
         "ChildSource": "SecurityTransactions"
       },
-      "46": {
+      "45": {
         "Name": "TimeFrames",
         "ChildColumns": {
           "0": "PortfolioId"
@@ -5729,6 +6090,34 @@
         "Key": "18d567c96ccb4efc99ae0a1c55b699bf",
         "ParentSource": "TimeFrames",
         "ChildSource": "SecurityTransactions"
+      },
+      "46": {
+        "Name": "ParentRow",
+        "ChildColumns": {
+          "0": "ParentRowCode"
+        },
+        "ParentColumns": {
+          "0": "Code"
+        },
+        "NameInSource": "ParentRow",
+        "Alias": "ParentRow",
+        "Key": "708725282b364a428adbcebb2f19c2f5",
+        "ParentSource": "PortfolioMacroComputations",
+        "ChildSource": "PortfolioMacroComputations"
+      },
+      "47": {
+        "Name": "ParentList",
+        "ChildColumns": {
+          "0": "ParentListCode"
+        },
+        "ParentColumns": {
+          "0": "Code"
+        },
+        "NameInSource": "ParentList",
+        "Alias": "ParentList",
+        "Key": "aa2c7fc1df2f4f88b4cea7906fb9f236",
+        "ParentSource": "PortfolioMacroComputations",
+        "ChildSource": "PortfolioMacroComputations"
       }
     }
   },
@@ -5843,7 +6232,7 @@
                     "Ident": "StiInteraction"
                   },
                   "Text": {
-                    "Value": "{ToProperCase(MonthName(InternalShareClasses.Portfolio.TimeFrames.LastDate))} {Year(InternalShareClasses.Portfolio.TimeFrames.LastDate)}"
+                    "Value": "{ToProperCase(MonthName(InternalShareClasses.Portfolio.TimeFrames.LastDate))} {Day(InternalShareClasses.Portfolio.TimeFrames.LastDate)}, {Year(InternalShareClasses.Portfolio.TimeFrames.LastDate)}"
                   },
                   "Font": ";;Italic;",
                   "Border": ";;;;;;;solid:Black",
@@ -5860,7 +6249,7 @@
                   "Guid": "ff1cf7a7f3c9d6d7bd86fc1b152e5af9",
                   "MinSize": "0,1",
                   "MaxSize": "0,1",
-                  "ClientRectangle": "10.6,0,3,1",
+                  "ClientRectangle": "10.6,0,2.6,1",
                   "Interaction": {
                     "Ident": "StiInteraction"
                   },
@@ -5882,7 +6271,7 @@
                   "Guid": "02c172beddbc6e35a99802e71620d1f1",
                   "CanShrink": true,
                   "CanGrow": true,
-                  "ClientRectangle": "13.8,0.2,0.8,0.7",
+                  "ClientRectangle": "13.4,0.2,0.8,0.7",
                   "Interaction": {
                     "Ident": "StiInteraction"
                   },
@@ -5907,7 +6296,7 @@
                   "Name": "Text25",
                   "Guid": "53c1e6f9748f4671b7d5e4b9886b79f3",
                   "CanShrink": true,
-                  "ClientRectangle": "14.15,0.27,0.8,0.7",
+                  "ClientRectangle": "13.75,0.27,0.8,0.7",
                   "Interaction": {
                     "Ident": "StiInteraction"
                   },
@@ -6348,7 +6737,7 @@
                       },
                       "TrendLine": {
                         "Ident": "StiTrendLineNone",
-                        "LineColor": "DimGray"
+                        "LineColor": "105,105,105"
                       },
                       "Value": {
                         "Value": "{SectorBreakdown.Weight_Sum*100}"
@@ -6475,7 +6864,7 @@
                     "ShowShadow": false,
                     "BorderColor": "225,225,225",
                     "Brush": "solid:255,255,255",
-                    "TitleColor": "DimGray",
+                    "TitleColor": "105,105,105",
                     "LabelsColor": "140,140,140",
                     "Visible": false,
                     "MarkerSize": {
@@ -6627,7 +7016,7 @@
                       "Name": "CrossTab2_RowTotal2",
                       "Guid": "90bf6b484f8b4455ae3af3b9705e46f0",
                       "MaxSize": "0,0.3",
-                      "ClientRectangle": "2,1.3,1,0.2",
+                      "ClientRectangle": "2,1.3,1,0.3",
                       "Restrictions": "AllowMove, AllowResize, AllowSelect, AllowChange",
                       "Interaction": {
                         "Ident": "StiInteraction"
@@ -6747,7 +7136,7 @@
                       "Name": "CrossTab2_Row2",
                       "Guid": "6e0865ea94f14300b19558b5a4f97930",
                       "MaxSize": "0,0.3",
-                      "ClientRectangle": "2,0.9,1,0.25",
+                      "ClientRectangle": "2,0.9,1,0.3",
                       "Alias": "Region",
                       "Restrictions": "AllowMove, AllowResize, AllowSelect, AllowChange",
                       "Interaction": {
@@ -6792,7 +7181,7 @@
                         "Value": "{Positions.Date}"
                       },
                       "DisplayValue": {
-                        "Value": "{Format(\"{0:yyyy-MM}\", Positions.Date)}"
+                        "Value": "{Format(\"{0:yyyy-MM-dd}\", Positions.Date)}"
                       },
                       "TotalGuid": "bb874ead4083423face97b7595789708",
                       "SortDirection": "Desc"
@@ -6803,7 +7192,7 @@
                       "Guid": "967efa1268ec41dea4ef21cd15481d20",
                       "MinSize": "1.25,0",
                       "MaxSize": "0,0.3",
-                      "ClientRectangle": "3.05,0.9,1.4,0.1",
+                      "ClientRectangle": "3.05,0.9,1.4,0.3",
                       "Alias": "Weight",
                       "Restrictions": "AllowMove, AllowResize, AllowSelect, AllowChange",
                       "Interaction": {
@@ -6903,7 +7292,7 @@
                             "Ident": "StiInteraction"
                           },
                           "Text": {
-                            "Value": "{GetTranslation(PortfolioNotes.Text)}"
+                            "Value": "{Left(GetTranslation(PortfolioNotes.Text),750)}"
                           },
                           "CanBreak": true,
                           "HorAlignment": "Width",
@@ -7084,7 +7473,7 @@
                     "Ident": "StiInteraction"
                   },
                   "Text": {
-                    "Value": "&#8226;<b>&nbsp;Fund Type:</b>{InternalShareClasses.Portfolio.Sicav.SicavType != null? GetEnumValue(\"SicavType\",InternalShareClasses.Portfolio.Sicav.SicavType.Value,EnumConversion):\"\"}<br>\r\n&#8226;<b>&nbsp;Legal Form:</b> {InternalShareClasses.Portfolio.Sicav.LegalForm != null?  GetEnumValue(\"LegalForm\",InternalShareClasses.Portfolio.Sicav.LegalForm.Value,EnumConversion):\"\"}<br>\r\n&#8226;<b>&nbsp;SICAV:</b> {InternalShareClasses.Portfolio.SicavEntity.Name}<br>\r\n&#8226;<b>&nbsp;Fiscal Year End:</b> {InternalShareClasses.Portfolio.SicavEntity.YearEnd}<br>\r\n&#8226;<b>&nbsp;Order Placement:</b> {GetEnumValue(\"FrequencyType\",InternalShareClasses.Portfolio.PricingFrequency,EnumConversion)}<br>\r\n&#8226;<b>&nbsp;Order Cut-Off Time:</b> Before {InternalShareClasses.Portfolio.CutOffTime} (CET/CEST)<br>\r\n&#8226;<b>&nbsp;Category:</b> {GetTranslation(InternalShareClasses.Portfolio.Custom1Classification)}<br>\r\n"
+                    "Value": "&#8226;<b>&nbsp;Fund Type:</b> {GetEnumValue(\"SicavType\",InternalShareClasses.Portfolio.Sicav.SicavType,EnumConversion)}<br>\r\n&#8226;<b>&nbsp;Legal Form:</b> {GetEnumValue(\"LegalForm\",InternalShareClasses.Portfolio.Sicav.LegalForm,EnumConversion)}<br>\r\n&#8226;<b>&nbsp;SICAV:</b> {InternalShareClasses.Portfolio.SicavEntity.Name}<br>\r\n&#8226;<b>&nbsp;Fiscal Year End:</b> {InternalShareClasses.Portfolio.SicavEntity.YearEnd}<br>\r\n&#8226;<b>&nbsp;Order Placement:</b> {GetEnumValue(\"FrequencyType\",InternalShareClasses.Portfolio.PricingFrequency,EnumConversion)}<br>\r\n&#8226;<b>&nbsp;Order Cut-Off Time:</b> Before {InternalShareClasses.Portfolio.CutOffTime} (CET/CEST)<br>\r\n&#8226;<b>&nbsp;Category:</b> {GetTranslation(InternalShareClasses.Portfolio.Custom1Classification)}<br>\r\n"
                   },
                   "Border": ";;;;;;;solid:Black",
                   "Brush": "solid:",
@@ -7577,7 +7966,7 @@
                           },
                           "TrendLine": {
                             "Ident": "StiTrendLineNone",
-                            "LineColor": "DimGray"
+                            "LineColor": "105,105,105"
                           },
                           "ArgumentDataColumn": "Compositions.Date",
                           "Value": {
@@ -7692,7 +8081,7 @@
                         "ShowShadow": false,
                         "BorderColor": "225,225,225",
                         "Brush": "solid:255,255,255",
-                        "TitleColor": "DimGray",
+                        "TitleColor": "105,105,105",
                         "LabelsColor": "140,140,140",
                         "MarkerSize": {
                           "Width": 10,
@@ -7795,7 +8184,7 @@
                           },
                           "TrendLine": {
                             "Ident": "StiTrendLineNone",
-                            "LineColor": "DimGray"
+                            "LineColor": "105,105,105"
                           },
                           "Value": {
                             "Value": "{CurrencyBreakdown.Weight_Sum *100}"
@@ -7921,7 +8310,7 @@
                         "ShowShadow": false,
                         "BorderColor": "225,225,225",
                         "Brush": "solid:255,255,255",
-                        "TitleColor": "DimGray",
+                        "TitleColor": "105,105,105",
                         "LabelsColor": "140,140,140",
                         "Visible": false,
                         "MarkerSize": {
@@ -8022,24 +8411,7 @@
                     "Ident": "StiInteraction"
                   },
                   "Border": ";;;;;;;solid:Black",
-                  "Brush": "solid:",
-                  "Components": {
-                    "0": {
-                      "Ident": "StiImage",
-                      "Name": "Image2",
-                      "ClientRectangle": "0,0,5,1.4",
-                      "Interaction": {
-                        "Ident": "StiInteraction"
-                      },
-                      "HorAlignment": "Right",
-                      "VertAlignment": "Center",
-                      "Border": ";;;;;;;solid:Black",
-                      "Brush": "solid:",
-                      "ImageURL": {
-                        "Value": "resource://Logo-FundProcess"
-                      }
-                    }
-                  }
+                  "Brush": "solid:"
                 }
               }
             },
@@ -8123,7 +8495,7 @@
                               },
                               "TrendLine": {
                                 "Ident": "StiTrendLineNone",
-                                "LineColor": "DimGray"
+                                "LineColor": "105,105,105"
                               },
                               "Value": {
                                 "Value": "{AnnualPerformances.Performance*100}"
@@ -8161,7 +8533,7 @@
                               },
                               "TrendLine": {
                                 "Ident": "StiTrendLineNone",
-                                "LineColor": "DimGray"
+                                "LineColor": "105,105,105"
                               },
                               "Value": {
                                 "Value": "{AnnualPerformances.BenchmarkPerformance*100}"
@@ -8286,7 +8658,7 @@
                             "ShowShadow": false,
                             "BorderColor": "225,225,225",
                             "Brush": "solid:255,255,255",
-                            "TitleColor": "DimGray",
+                            "TitleColor": "105,105,105",
                             "LabelsColor": "140,140,140",
                             "MarkerSize": {
                               "Width": 10,
@@ -8471,7 +8843,7 @@
                   "Ident": "StiText",
                   "Name": "Text130",
                   "Guid": "e286fdd843dcf31e15e58fa5d5d1bb85",
-                  "ClientRectangle": "3.6,0,1.6,0.5",
+                  "ClientRectangle": "3.6,0,1.4,0.5",
                   "Interaction": {
                     "Ident": "StiInteraction"
                   },
@@ -8493,7 +8865,7 @@
                   "Ident": "StiText",
                   "Name": "Text142",
                   "Guid": "480900f50d78d0f3f5923bf0be55ca13",
-                  "ClientRectangle": "5.2,0,1.4,0.5",
+                  "ClientRectangle": "5,0,1.6,0.5",
                   "Interaction": {
                     "Ident": "StiInteraction"
                   },
@@ -8653,7 +9025,7 @@
                     "Ident": "StiInteraction"
                   },
                   "Text": {
-                    "Value": "{InternalShareClasses.InvestorType}"
+                    "Value": "{GetEnumValue(\"InvestorType\",InternalShareClasses.InvestorType,EnumConversion)}\r\n"
                   },
                   "HorAlignment": "Center",
                   "VertAlignment": "Center",
@@ -8668,7 +9040,7 @@
                     "GroupSeparator": ",",
                     "State": "DecimalDigits"
                   },
-                  "Type": "DataColumn"
+                  "Type": "Expression"
                 },
                 "11": {
                   "Ident": "StiPanel",
@@ -9092,7 +9464,7 @@
                     "Ident": "StiInteraction"
                   },
                   "Text": {
-                    "Value": "(2) Value-at-Risk calculated on exposure as of {InternalShareClasses.Portfolio.TimeFrames.LastDate}, with a 1-year time window, a level of confidence of 99% and a holding period of 20 days."
+                    "Value": "(2) Value-at-Risk calculated on exposure as of {Format(\"{0:dd/MM/yyyy}\", InternalShareClasses.Portfolio.TimeFrames.LastDate)}, with a 1-year time window, a level of confidence of 99% and a holding period of 20 days."
                   },
                   "Font": "Microsoft Sans Serif;6;;",
                   "Border": ";;;;;;;solid:Black",
@@ -9116,24 +9488,7 @@
                 "Ident": "StiInteraction"
               },
               "Border": ";;;;;;;solid:Black",
-              "Brush": "solid:",
-              "Components": {
-                "0": {
-                  "Ident": "StiImage",
-                  "Name": "Image3",
-                  "ClientRectangle": "0,0,5,1.4",
-                  "Interaction": {
-                    "Ident": "StiInteraction"
-                  },
-                  "HorAlignment": "Right",
-                  "VertAlignment": "Center",
-                  "Border": ";;;;;;;solid:Black",
-                  "Brush": "solid:",
-                  "ImageURL": {
-                    "Value": "resource://Logo-FundProcess"
-                  }
-                }
-              }
+              "Brush": "solid:"
             }
           }
         },
@@ -9189,7 +9544,7 @@
               "Ident": "StiText",
               "Name": "Text121",
               "Guid": "a35aad375bdcd431cf16e9ba3d14e188",
-              "ClientRectangle": "3.6,0,1.6,1",
+              "ClientRectangle": "3.6,0,1.4,1",
               "Interaction": {
                 "Ident": "StiInteraction"
               },
@@ -9208,7 +9563,7 @@
               "Ident": "StiText",
               "Name": "Text122",
               "Guid": "b8f95695ac762d8f7e574c2b0bfbbfe0",
-              "ClientRectangle": "5.2,0,1.4,1",
+              "ClientRectangle": "5,0,1.6,1",
               "Interaction": {
                 "Ident": "StiInteraction"
               },
@@ -9625,7 +9980,7 @@
                       },
                       "TrendLine": {
                         "Ident": "StiTrendLineNone",
-                        "LineColor": "DimGray"
+                        "LineColor": "105,105,105"
                       },
                       "ValueDataColumn": "ShareClassHistValues.Nav",
                       "ArgumentDataColumn": "ShareClassHistValues.Date",
@@ -9665,7 +10020,7 @@
                       },
                       "TrendLine": {
                         "Ident": "StiTrendLineNone",
-                        "LineColor": "DimGray"
+                        "LineColor": "105,105,105"
                       },
                       "ValueDataColumn": "ShareClassHistValues.BenchmarkAdjustedPrice",
                       "ArgumentDataColumn": "ShareClassHistValues.Date",
@@ -9868,7 +10223,7 @@
                         "Ident": "StiInteraction"
                       },
                       "Text": {
-                        "Value": "Annualised Performance"
+                        "Value": "Annualized Performance"
                       },
                       "HorAlignment": "Center",
                       "VertAlignment": "Center",
@@ -10017,7 +10372,7 @@
                             "Ident": "StiInteraction"
                           },
                           "Text": {
-                            "Value": "1 Year"
+                            "Value": "{RecentSubFund? \"3 Months\":\"1 Year\"}"
                           },
                           "HorAlignment": "Center",
                           "VertAlignment": "Center",
@@ -10036,7 +10391,7 @@
                             "Ident": "StiInteraction"
                           },
                           "Text": {
-                            "Value": "3 Years"
+                            "Value": "{RecentSubFund? \"6 Months\":\"3 Years\"}"
                           },
                           "HorAlignment": "Center",
                           "VertAlignment": "Center",
@@ -10055,7 +10410,7 @@
                             "Ident": "StiInteraction"
                           },
                           "Text": {
-                            "Value": "5 Years"
+                            "Value": "{RecentSubFund? \"1 Year\":\"5 Years\"}"
                           },
                           "HorAlignment": "Center",
                           "VertAlignment": "Center",
@@ -10144,7 +10499,7 @@
                             "Ident": "StiInteraction"
                           },
                           "Text": {
-                            "Value": "{Performances.YearToDate - Performances.YearToDateBenchmark}"
+                            "Value": "{Performances.YearToDate==null?\"-\": \r\n(Performances.YearToDate - Performances.YearToDateBenchmark).ToString()}"
                           },
                           "HorAlignment": "Center",
                           "VertAlignment": "Center",
@@ -10318,7 +10673,7 @@
                             "Ident": "StiInteraction"
                           },
                           "Text": {
-                            "Value": "{Performances.OneYear==null?\"-\":Performances.OneYear.ToString()}"
+                            "Value": "{RecentSubFund?\r\n(Performances.ThreeMonths==null?\"-\":Performances.ThreeMonths.ToString())\r\n:(Performances.OneYear==null?\"-\":Performances.OneYear.ToString())\r\n}"
                           },
                           "HorAlignment": "Center",
                           "VertAlignment": "Center",
@@ -10344,7 +10699,7 @@
                             "Ident": "StiInteraction"
                           },
                           "Text": {
-                            "Value": "{Performances.OneYearBenchmark}"
+                            "Value": "{RecentSubFund?\r\n(Performances.ThreeMonthsBenchmark==null?\"-\":Performances.ThreeMonthsBenchmark.ToString())\r\n:(Performances.OneYearBenchmark==null?\"-\":Performances.OneYearBenchmark.ToString())\r\n}"
                           },
                           "HorAlignment": "Center",
                           "VertAlignment": "Center",
@@ -10370,7 +10725,7 @@
                             "Ident": "StiInteraction"
                           },
                           "Text": {
-                            "Value": "{Performances.OneYear - Performances.OneYearBenchmark}"
+                            "Value": "{RecentSubFund?\r\n(Performances.ThreeMonths==null?\"-\":\r\n\t(Performances.ThreeMonths- Performances.ThreeMonthsBenchmark).ToString())\r\n:(Performances.OneYear==null?\"-\":\r\n\t(Performances.OneYear - Performances.OneYearBenchmark).ToString())\r\n}"
                           },
                           "HorAlignment": "Center",
                           "VertAlignment": "Center",
@@ -10396,7 +10751,7 @@
                             "Ident": "StiInteraction"
                           },
                           "Text": {
-                            "Value": "{Performances.ThreeYears==null?\"-\":Performances.ThreeYears.ToString()}"
+                            "Value": "{RecentSubFund?\r\n(Performances.SixMonths==null?\"-\":Performances.SixMonths.ToString())\r\n:(Performances.ThreeYears==null?\"-\":Performances.ThreeYears.ToString())\r\n}"
                           },
                           "HorAlignment": "Center",
                           "VertAlignment": "Center",
@@ -10422,7 +10777,7 @@
                             "Ident": "StiInteraction"
                           },
                           "Text": {
-                            "Value": "{Performances.ThreeYearsBenchmark}"
+                            "Value": "{RecentSubFund?\r\n(Performances.SixMonthsBenchmark==null?\"-\":Performances.SixMonthsBenchmark.ToString())\r\n:(Performances.ThreeYearsBenchmark==null?\"-\":Performances.ThreeYearsBenchmark.ToString())\r\n}"
                           },
                           "HorAlignment": "Center",
                           "VertAlignment": "Center",
@@ -10448,7 +10803,7 @@
                             "Ident": "StiInteraction"
                           },
                           "Text": {
-                            "Value": "{Performances.ThreeYears - Performances.ThreeYearsBenchmark}"
+                            "Value": "{RecentSubFund?\r\n(Performances.SixMonths ==null?\"-\":\r\n\t(Performances.SixMonths - Performances.SixMonthsBenchmark).ToString())\r\n:(Performances.ThreeYears ==null?\"-\":\r\n\t(Performances.ThreeYears - Performances.ThreeYearsBenchmark).ToString())\r\n}"
                           },
                           "HorAlignment": "Center",
                           "VertAlignment": "Center",
@@ -10474,7 +10829,7 @@
                             "Ident": "StiInteraction"
                           },
                           "Text": {
-                            "Value": "{Performances.FiveYears==null?\"-\":Performances.FiveYears.ToString()}"
+                            "Value": "{RecentSubFund? \r\n(Performances.OneYear==null?\"-\":Performances.OneYear.ToString())\r\n:\r\n(Performances.FiveYears==null?\"-\":Performances.FiveYears.ToString())\r\n}"
                           },
                           "HorAlignment": "Center",
                           "VertAlignment": "Center",
@@ -10500,7 +10855,7 @@
                             "Ident": "StiInteraction"
                           },
                           "Text": {
-                            "Value": "{Performances.FiveYearsBenchmark}"
+                            "Value": "{RecentSubFund? \r\n(Performances.OneYearBenchmark==null?\"-\":Performances.OneYearBenchmark.ToString())\r\n:\r\n(Performances.FiveYearsBenchmark==null?\"-\":Performances.FiveYearsBenchmark.ToString())\r\n}"
                           },
                           "HorAlignment": "Center",
                           "VertAlignment": "Center",
@@ -10526,7 +10881,7 @@
                             "Ident": "StiInteraction"
                           },
                           "Text": {
-                            "Value": "{Performances.FiveYears - Performances.FiveYearsBenchmark}"
+                            "Value": "{RecentSubFund? \r\n(Performances.OneYear==null?\"-\": \r\n(Performances.OneYear - Performances.OneYearBenchmark).ToString())\r\n:\r\n(Performances.FiveYears==null?\"-\": \r\n(Performances.FiveYears - Performances.FiveYearsBenchmark).ToString())\r\n}\r\n\r\n"
                           },
                           "HorAlignment": "Center",
                           "VertAlignment": "Center",
@@ -10578,7 +10933,7 @@
                             "Ident": "StiInteraction"
                           },
                           "Text": {
-                            "Value": "{Performances.ThreeYearsBenchmarkAnnualized}"
+                            "Value": "{Performances.ThreeYearsBenchmarkAnnualized==null?\"-\":Performances.ThreeYearsBenchmarkAnnualized.ToString()}"
                           },
                           "HorAlignment": "Center",
                           "VertAlignment": "Center",
@@ -10604,7 +10959,7 @@
                             "Ident": "StiInteraction"
                           },
                           "Text": {
-                            "Value": "{Performances.ThreeYearsAnnualized - Performances.ThreeYearsBenchmarkAnnualized}"
+                            "Value": "{Performances.ThreeYearsAnnualized==null? \"-\": \r\n(Performances.ThreeYearsAnnualized - Performances.ThreeYearsBenchmarkAnnualized).ToString()}"
                           },
                           "HorAlignment": "Center",
                           "VertAlignment": "Center",
@@ -10656,7 +11011,7 @@
                             "Ident": "StiInteraction"
                           },
                           "Text": {
-                            "Value": "{Performances.FiveYearsBenchmarkAnnualized}"
+                            "Value": "{Performances.FiveYearsBenchmarkAnnualized==null?\"-\":\r\nPerformances.FiveYearsBenchmarkAnnualized.ToString()}"
                           },
                           "HorAlignment": "Center",
                           "VertAlignment": "Center",
@@ -10682,7 +11037,7 @@
                             "Ident": "StiInteraction"
                           },
                           "Text": {
-                            "Value": "{Performances.FiveYearsAnnualized - Performances.FiveYearsBenchmarkAnnualized}"
+                            "Value": "{Performances.FiveYearsAnnualized==null? \"-\": \r\n(Performances.FiveYearsAnnualized - Performances.FiveYearsBenchmarkAnnualized).ToString()}"
                           },
                           "HorAlignment": "Center",
                           "VertAlignment": "Center",
@@ -10914,7 +11269,7 @@
                             "Ident": "StiInteraction"
                           },
                           "Text": {
-                            "Value": "1 Year"
+                            "Value": "{RecentSubFund? \"3 Months\":\"1 Year\"}"
                           },
                           "HorAlignment": "Center",
                           "VertAlignment": "Center",
@@ -10933,7 +11288,7 @@
                             "Ident": "StiInteraction"
                           },
                           "Text": {
-                            "Value": "3 Years"
+                            "Value": "{RecentSubFund? \"6 Months\":\"3 Years\"}"
                           },
                           "HorAlignment": "Center",
                           "VertAlignment": "Center",
@@ -10952,7 +11307,7 @@
                             "Ident": "StiInteraction"
                           },
                           "Text": {
-                            "Value": "5 Years"
+                            "Value": "{RecentSubFund? \"1 Year\":\"5 Years\"}"
                           },
                           "HorAlignment": "Center",
                           "VertAlignment": "Center",
@@ -11177,7 +11532,7 @@
                             "Ident": "StiInteraction"
                           },
                           "Text": {
-                            "Value": "{AnnualizedVolatilities.OneYear}"
+                            "Value": "{RecentSubFund? AnnualizedVolatilities.ThreeMonths:AnnualizedVolatilities.OneYear}"
                           },
                           "HorAlignment": "Center",
                           "VertAlignment": "Center",
@@ -11203,7 +11558,7 @@
                             "Ident": "StiInteraction"
                           },
                           "Text": {
-                            "Value": "{AnnualizedVolatilities.OneYearBenchmark}"
+                            "Value": "{RecentSubFund? AnnualizedVolatilities.ThreeMonthsBenchmark\r\n\t: AnnualizedVolatilities.OneYearBenchmark}"
                           },
                           "HorAlignment": "Center",
                           "VertAlignment": "Center",
@@ -11229,7 +11584,7 @@
                             "Ident": "StiInteraction"
                           },
                           "Text": {
-                            "Value": "{-1* (( AnnualizedVolatilities.OneYear\r\n/AnnualizedVolatilities.OneYearBenchmark) -1)}"
+                            "Value": "{RecentSubFund? \r\n(-1* (( AnnualizedVolatilities.ThreeMonths/AnnualizedVolatilities.ThreeMonthsBenchmark) -1)).ToString()\r\n\t: \r\n(-1* (( AnnualizedVolatilities.OneYear/AnnualizedVolatilities.OneYearBenchmark) -1)).ToString()}\r\n"
                           },
                           "HorAlignment": "Center",
                           "VertAlignment": "Center",
@@ -11255,7 +11610,7 @@
                             "Ident": "StiInteraction"
                           },
                           "Text": {
-                            "Value": "{AnnualizedVolatilities.ThreeYears}"
+                            "Value": "{RecentSubFund? AnnualizedVolatilities.SixMonths:AnnualizedVolatilities.ThreeYears}"
                           },
                           "HorAlignment": "Center",
                           "VertAlignment": "Center",
@@ -11281,7 +11636,7 @@
                             "Ident": "StiInteraction"
                           },
                           "Text": {
-                            "Value": "{AnnualizedVolatilities.ThreeYearsBenchmark}"
+                            "Value": "{RecentSubFund? AnnualizedVolatilities.SixMonthsBenchmark:\r\nAnnualizedVolatilities.ThreeYearsBenchmark}"
                           },
                           "HorAlignment": "Center",
                           "VertAlignment": "Center",
@@ -11307,7 +11662,7 @@
                             "Ident": "StiInteraction"
                           },
                           "Text": {
-                            "Value": "{ -1* ((AnnualizedVolatilities.ThreeYears\r\n/AnnualizedVolatilities.ThreeYearsBenchmark) -1)}"
+                            "Value": "{RecentSubFund? \r\n( -1* ((AnnualizedVolatilities.SixMonths/AnnualizedVolatilities.SixMonthsBenchmark) -1)).ToString()\r\n:\r\n( -1* ((AnnualizedVolatilities.ThreeYears/AnnualizedVolatilities.ThreeYearsBenchmark) -1)).ToString()\r\n}"
                           },
                           "HorAlignment": "Center",
                           "VertAlignment": "Center",
@@ -11333,7 +11688,7 @@
                             "Ident": "StiInteraction"
                           },
                           "Text": {
-                            "Value": "{AnnualizedVolatilities.FiveYears}"
+                            "Value": "{RecentSubFund? AnnualizedVolatilities.OneYear:AnnualizedVolatilities.FiveYears}"
                           },
                           "HorAlignment": "Center",
                           "VertAlignment": "Center",
@@ -11359,7 +11714,7 @@
                             "Ident": "StiInteraction"
                           },
                           "Text": {
-                            "Value": "{AnnualizedVolatilities.FiveYearsBenchmark}"
+                            "Value": "{RecentSubFund? AnnualizedVolatilities.OneYearBenchmark:\r\nAnnualizedVolatilities.FiveYearsBenchmark}"
                           },
                           "HorAlignment": "Center",
                           "VertAlignment": "Center",
@@ -11385,7 +11740,7 @@
                             "Ident": "StiInteraction"
                           },
                           "Text": {
-                            "Value": "{ -1* ((AnnualizedVolatilities.FiveYears\r\n/AnnualizedVolatilities.FiveYearsBenchmark) -1)}"
+                            "Value": "{RecentSubFund? \r\n(-1* ((AnnualizedVolatilities.OneYear /AnnualizedVolatilities.OneYearBenchmark) -1)).ToString()\r\n:\r\n(-1* ((AnnualizedVolatilities.FiveYears /AnnualizedVolatilities.FiveYearsBenchmark) -1)).ToString()\r\n}\r\n"
                           },
                           "HorAlignment": "Center",
                           "VertAlignment": "Center",
@@ -11432,7 +11787,7 @@
                   "Ident": "StiText",
                   "Name": "Text116",
                   "Guid": "258a374625ff3fc91fb4dc27653722d3",
-                  "ClientRectangle": "0,0,9.1,0.4",
+                  "ClientRectangle": "0,0,10.8,0.4",
                   "Interaction": {
                     "Ident": "StiInteraction"
                   },
@@ -11584,7 +11939,7 @@
                           "Ident": "StiText",
                           "Name": "Text108",
                           "Guid": "84b841b5f6d895963a4c445347c5184e",
-                          "ClientRectangle": "0,0,3.8,0.4",
+                          "ClientRectangle": "0,0,4.2,0.4",
                           "Interaction": {
                             "Ident": "StiInteraction"
                           },
@@ -11687,7 +12042,7 @@
                             "Ident": "StiInteraction"
                           },
                           "Text": {
-                            "Value": "{\r\n(Length(GetTranslation(\r\nLastStatistics.ClassificationName))>35)?\r\n(Left(GetTranslation(LastStatistics.ClassificationName),30)+\"...\")\r\n:GetTranslation(LastStatistics.ClassificationName)\r\n}"
+                            "Value": "{IIF((Length(GetTranslation(LastStatistics.ClassificationName))>30),\r\n(Left(GetTranslation(LastStatistics.ClassificationName),25)+\"...\"),\r\nGetTranslation(LastStatistics.ClassificationName))\r\n}"
                           },
                           "CanBreak": true,
                           "VertAlignment": "Center",
@@ -11937,6 +12292,7 @@
             "2": {
               "Ident": "StiDataBand",
               "Name": "DataBand18",
+              "CanShrink": true,
               "ClientRectangle": "0,4.8,19,1.4",
               "Conditions": {
                 "0": {
@@ -11958,6 +12314,7 @@
                   "Ident": "StiText",
                   "Name": "Text161",
                   "Guid": "46dd0c704d52b17a9dfd7551005662a8",
+                  "CanShrink": true,
                   "CanGrow": true,
                   "ClientRectangle": "0,0.6,18.4,0.6",
                   "Interaction": {
@@ -12029,6 +12386,7 @@
                   "Ident": "StiText",
                   "Name": "Text164",
                   "Guid": "5188a5752a9fc56f4ca21614ba1a41b9",
+                  "CanShrink": true,
                   "CanGrow": true,
                   "ClientRectangle": "0,1.2,18.4,0.6",
                   "Interaction": {
@@ -12124,7 +12482,7 @@
                     "Ident": "StiInteraction"
                   },
                   "Text": {
-                    "Value": "<ul><li>Prior to an investment, prospective investors should carefully read the latest Key Investor Information Document (KIID) as well as the offering documentation, including but not limited to the fund's prospectus which contains inter alia a comprehensive disclosure of applicable risks.</li>\r\n<li>These documents can be obtained free of charge on the FundProcess website (www.fundprocess.lu) or upon request at +352 281 39 220.</li>\r\n<li>For any claim please contact the FundProcess claim service (info@fundprocess.lu) or the external mediation service (+32 2 702 52 20 or contact@mediationconsommateur.be).</li><ul>"
+                    "Value": "<ul><li>Prior to an investment, prospective investors should carefully read the latest Key Investor Information Document (KIID) as well as the offering documentation, including but not limited to the fund's prospectus which contains inter alia a comprehensive disclosure of applicable risks.</li>\r\n<li>These documents can be obtained free of charge on our website or upon request (by phone or by email).</li>\r\n<li>For any claim please contact the company claim service.</li><ul>"
                   },
                   "HorAlignment": "Width",
                   "VertAlignment": "Center",
@@ -12161,29 +12519,6 @@
           "Type": "Expression"
         },
         "2": {
-          "Ident": "StiText",
-          "Name": "Text169",
-          "Guid": "cb8c77a6920d3dc7170e1450f7b5e586",
-          "CanGrow": true,
-          "ClientRectangle": "1,24.8,19,2.8",
-          "Interaction": {
-            "Ident": "StiInteraction"
-          },
-          "Text": {
-            "Value": "<b>Disclaimer</b><br>This document has been issued by <b>FundProcess</b>. FundProcess is a limited liability company governed by the laws of the Grand Duchy of Luxembourg and authorized as a regulated investment company by the CSSF. This document may not be reproduced, disseminated or communicated, in whole or in part, without prior authorisation from the management company. This document is used for promotional purposes and does not constitute an investment advice. The information contained in this document may be partial information and may be modified without prior notice. Access to the fund may be subject to restrictions with regard to certain persons or countries. The fund may not be offered or sold, directly or indirectly, for the benefit or on behalf of a 'U.S. person', according to the definition of the US ‘Regulation S’ and/or FATCA. The fund presents a risk of loss of capital. The risks and fees are described in the KIID (Key Investor Information Document). The fund's prospectus, KIIDs and annual reports are available at www.fundprocess.lu, or upon request to the Management Company and are available in Belgium via the financial service of RBC Investor Services Belgium, Boulevard Du Roi Albert II 37 - 1030 Schaerbeek. The KIID must be made available to the subscriber prior to subscription and should be read prior to an investment."
-          },
-          "Font": ";7;;",
-          "Border": ";;;;;;;solid:Black",
-          "Brush": "solid:WhiteSmoke",
-          "TextBrush": "solid:Black",
-          "TextOptions": {
-            "WordWrap": true
-          },
-          "TextQuality": "Wysiwyg",
-          "AllowHtmlTags": true,
-          "Type": "Expression"
-        },
-        "3": {
           "Ident": "StiPanel",
           "Name": "Panel55",
           "ClientRectangle": "1,28.4,19,1.4",
@@ -12205,27 +12540,46 @@
               "Brush": "solid:",
               "Components": {
                 "0": {
-                  "Ident": "StiText",
-                  "Name": "Text168",
-                  "Guid": "a03f97f8704c4448b48049ee3ff54783",
-                  "DockStyle": "Fill",
-                  "ClientRectangle": "0,0,14,1.4",
+                  "Ident": "StiDataBand",
+                  "Name": "DataBand25",
+                  "ClientRectangle": "0,0.4,14,0.8",
                   "Interaction": {
-                    "Ident": "StiInteraction"
+                    "Ident": "StiBandInteraction"
                   },
-                  "Text": {
-                    "Value": "<b>FundProcess Investment Management</b>, LHoFT - 9, rue du Laboratoire - L-1911 Luxembourg - Tel : (+352) 281 39 21\r\n<br>Investment fund management company approved by the CSSF\r\n<br>Public limited company - RC Luxembourg B 230 944 - Autorisation d'établissement: 10093161/0"
-                  },
-                  "Font": "Microsoft Sans Serif;6;;",
                   "Border": ";;;;;;;solid:Black",
                   "Brush": "solid:",
-                  "TextBrush": "solid:Black",
-                  "TextOptions": {
-                    "WordWrap": true
+                  "Components": {
+                    "0": {
+                      "Ident": "StiText",
+                      "Name": "Text111",
+                      "CanShrink": true,
+                      "ClientRectangle": "0,0,14,0.8",
+                      "Interaction": {
+                        "Ident": "StiInteraction"
+                      },
+                      "Text": {
+                        "Value": "{Left(GetTranslation(Notes.Text),500)}"
+                      },
+                      "Font": "Microsoft Sans Serif;6;;",
+                      "Border": ";;;;;;;solid:Black",
+                      "Brush": "solid:",
+                      "TextBrush": "solid:Black",
+                      "TextOptions": {
+                        "WordWrap": true
+                      },
+                      "TextQuality": "Wysiwyg",
+                      "AllowHtmlTags": true,
+                      "Type": "Expression"
+                    }
                   },
-                  "TextQuality": "Wysiwyg",
-                  "AllowHtmlTags": true,
-                  "Type": "Expression"
+                  "DataSourceName": "Notes",
+                  "Filters": {
+                    "0": {
+                      "Ident": "StiFilter",
+                      "Column": "Category",
+                      "Value1": "FootNote"
+                    }
+                  }
                 }
               }
             },
@@ -12238,22 +12592,86 @@
                 "Ident": "StiInteraction"
               },
               "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:"
+            }
+          }
+        },
+        "3": {
+          "Ident": "StiPanel",
+          "Name": "Panel61",
+          "CanGrow": true,
+          "ClientRectangle": "1,19.8,19,6.2",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiDataBand",
+              "Name": "DataBand24",
+              "CanShrink": true,
+              "ClientRectangle": "0,0.4,19,5.6",
+              "Interaction": {
+                "Ident": "StiBandInteraction"
+              },
+              "Border": ";;;;;;;solid:Black",
               "Brush": "solid:",
               "Components": {
                 "0": {
-                  "Ident": "StiImage",
-                  "Name": "Image5",
-                  "ClientRectangle": "0,0,5,1.4",
+                  "Ident": "StiText",
+                  "Name": "Text4",
+                  "CanShrink": true,
+                  "CanGrow": true,
+                  "ClientRectangle": "0,0.4,19,5.2",
                   "Interaction": {
                     "Ident": "StiInteraction"
                   },
-                  "HorAlignment": "Right",
-                  "VertAlignment": "Center",
+                  "Text": {
+                    "Value": "{GetTranslation(Notes.Text)}"
+                  },
+                  "HorAlignment": "Width",
+                  "Font": ";7;;",
                   "Border": ";;;;;;;solid:Black",
-                  "Brush": "solid:",
-                  "ImageURL": {
-                    "Value": "resource://Logo-FundProcess"
-                  }
+                  "Brush": "solid:WhiteSmoke",
+                  "TextBrush": "solid:Black",
+                  "TextOptions": {
+                    "WordWrap": true
+                  },
+                  "TextQuality": "Wysiwyg",
+                  "AllowHtmlTags": true,
+                  "Type": "Expression"
+                },
+                "1": {
+                  "Ident": "StiText",
+                  "Name": "Text110",
+                  "Guid": "a43886f0b8574da09d574c898410897d",
+                  "CanGrow": true,
+                  "ClientRectangle": "0,0,19,0.4",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "<b>Disclaimer</b>"
+                  },
+                  "Font": ";7;;",
+                  "Border": ";;;;;;;solid:Black",
+                  "Brush": "solid:WhiteSmoke",
+                  "TextBrush": "solid:Black",
+                  "TextOptions": {
+                    "WordWrap": true
+                  },
+                  "TextQuality": "Wysiwyg",
+                  "AllowHtmlTags": true,
+                  "Type": "Expression"
+                }
+              },
+              "DataSourceName": "Notes",
+              "Filters": {
+                "0": {
+                  "Ident": "StiFilter",
+                  "Column": "Category",
+                  "Value1": "General Disclaimer"
                 }
               }
             }
@@ -12415,8 +12833,7 @@
         "1": {
           "Ident": "StiPanel",
           "Name": "Panel58",
-          "Guid": "d58d6ca162d3b301175a8e86165b6d4a",
-          "ClientRectangle": "1.2,28.4,19,1.4",
+          "ClientRectangle": "1,28.2,19,1.4",
           "Interaction": {
             "Ident": "StiInteraction"
           },
@@ -12426,9 +12843,8 @@
             "0": {
               "Ident": "StiPanel",
               "Name": "Panel60",
-              "Guid": "e4299272e81450ecd6437739a86d417a",
-              "DockStyle": "Right",
-              "ClientRectangle": "14,0,5,1.4",
+              "DockStyle": "Left",
+              "ClientRectangle": "0,0,14,1.4",
               "Interaction": {
                 "Ident": "StiInteraction"
               },
@@ -12436,19 +12852,56 @@
               "Brush": "solid:",
               "Components": {
                 "0": {
-                  "Ident": "StiImage",
-                  "Name": "Image4",
-                  "Guid": "940890e63d72fecd8179a9c1d97ac9c9",
-                  "ClientRectangle": "0,0,5,1.4",
+                  "Ident": "StiDataBand",
+                  "Name": "DataBand26",
+                  "ClientRectangle": "0,0.4,14,0.8",
                   "Interaction": {
-                    "Ident": "StiInteraction"
+                    "Ident": "StiBandInteraction"
                   },
-                  "HorAlignment": "Right",
-                  "VertAlignment": "Center",
                   "Border": ";;;;;;;solid:Black",
                   "Brush": "solid:",
-                  "ImageURL": {
-                    "Value": "resource://Logo-FundProcess"
+                  "Components": {
+                    "0": {
+                      "Ident": "StiText",
+                      "Name": "Text112",
+                      "CanShrink": true,
+                      "ClientRectangle": "0,0,14,0.8",
+                      "Interaction": {
+                        "Ident": "StiInteraction"
+                      },
+                      "Text": {
+                        "Value": "{Left(GetTranslation(Notes.Text),500)}"
+                      },
+                      "Font": "Microsoft Sans Serif;6;;",
+                      "Border": ";;;;;;;solid:Black",
+                      "Brush": "solid:",
+                      "TextBrush": "solid:Black",
+                      "TextOptions": {
+                        "WordWrap": true
+                      },
+                      "TextQuality": "Wysiwyg",
+                      "AllowHtmlTags": true,
+                      "Type": "Expression"
+                    },
+                    "1": {
+                      "Ident": "StiPanel",
+                      "Name": "Panel62",
+                      "DockStyle": "Right",
+                      "ClientRectangle": "9,0,5,0.8",
+                      "Interaction": {
+                        "Ident": "StiInteraction"
+                      },
+                      "Border": ";;;;;;;solid:Black",
+                      "Brush": "solid:"
+                    }
+                  },
+                  "DataSourceName": "Notes",
+                  "Filters": {
+                    "0": {
+                      "Ident": "StiFilter",
+                      "Column": "Category",
+                      "Value1": "FootNote"
+                    }
                   }
                 }
               }
